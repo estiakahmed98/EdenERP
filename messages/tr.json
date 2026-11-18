@@ -1,8 +1,8 @@
 {
   "common": {
     "demoRequest": {
-      "title": "Danışmanımızla Görüşün\nCanlı Demoyu Keşfedin",
-      "description": "Birkaç kısa bilgi paylaşın. AdonERP demonuzu planlamak için sizi arayalım.",
+      "title": "Canlı Demo için\nDanışmanımızla Görüşün",
+      "description": "Birkaç kısa bilgi paylaşın, AdonERP demonuzu planlamak için sizi arayalım.",
       "fullName": "Ad Soyad",
       "companyName": "Şirket Adı",
       "phone": "Telefon Numarası",
@@ -26,21 +26,22 @@
       "required": "Zorunlu",
       "invalid": "Lütfen işaretlenen alanları kontrol edin.",
       "failed": "Talebiniz kaydedilemedi. Lütfen yeniden deneyin.",
-      "rateLimited": "Çok fazla talep gönderdiniz. Lütfen daha sonra yeniden deneyin.",
-      "changed": "Güncel talebinizi göndermek için lütfen yeniden deneyin.",
-      "successCaption": "İşletmenizi daha yakından tanımayı sabırsızlıkla bekliyoruz.",
+      "rateLimited": "Çok fazla istek alındı. Lütfen biraz sonra yeniden deneyin.",
+      "changed": "Güncellenen talebinizi göndermek için lütfen yeniden deneyin.",
+      "successCaption": "İşletmenizi yakından tanımak için sabırsızlanıyoruz.",
       "liveDemo": "Canlı demo",
       "loading": "Talebiniz güvenle kaydediliyor…",
       "eyebrow": "Tanışalım",
       "fullNamePlaceholder": "Adınız ve soyadınız",
       "companyNamePlaceholder": "Şirketinizin veya kuruluşunuzun adı",
       "phonePlaceholder": "Size ulaşabileceğimiz telefon numarası",
-      "visualTitle": "Odağımız İşletmeniz.\nÇözümlerimiz Canlı Demoda.",
-      "visualCaption": "İş yapış biçiminize göre şekillenen bir ürün tanıtımı.",
+      "visualTitle": "İşletmeniz,\ncanlı ve odakta.",
+      "visualCaption": "Çalışma biçiminize göre şekillenen bir uygulama turu.",
       "phoneFollowUp": "Demonuzu planlamak için sizi arayacağız."
     },
     "languageSwitcher": {
       "label": "Dil",
+      "switchToEnglish": "İngilizceye geç",
       "options": {
         "en": "EN",
         "bn": "বাংলা",
@@ -49,46 +50,80 @@
     },
     "theme": {
       "label": "Tema",
-      "switchToLight": "Açık moda geç",
-      "switchToDark": "Koyu moda geç",
+      "switchToLight": "Açık temaya geç",
+      "switchToDark": "Koyu temaya geç",
       "light": "Açık",
       "dark": "Koyu",
       "green": "Yeşil",
       "oceanBlue": "Okyanus Mavisi"
     },
     "actions": {
-      "liveDemo": "Danışmanımızla Görüşün, Canlı Demoyu Keşfedin",
-      "watchDemo": "Demoyu İzle",
+      "liveDemo": "Canlı Demo için Danışmanla Görüşün",
+      "watchDemo": "Demoyu İzleyin",
       "viewAllApps": "İş modüllerini keşfedin",
       "seeAllFeatures": "Tüm özellikleri keşfedin",
       "contactSales": "Satış Ekibiyle Görüşün",
       "talkToSales": "Satış Ekibiyle Görüşün",
-      "viewPlans": "Planları Görüntüle",
-      "startFreeTrial": "Ücretsiz Denemeyi Başlat",
+      "viewPlans": "Planları İnceleyin",
+      "startFreeTrial": "Ücretsiz Denemeye Başlayın",
       "getStarted": "Başlayın",
-      "learnMore": "Daha fazla bilgi",
-      "viewAll": "Tümünü görüntüle"
+      "learnMore": "Daha fazla bilgi alın",
+      "viewAll": "Tümünü görüntüleyin"
     },
     "states": {
       "included": "Dahil",
       "notIncluded": "Dahil değil",
-      "free": "Ücretsiz",
+      "free": "ÜCRETSİZ",
       "custom": "Özel"
-    }
-  ,
-"whatsapp": {
-  "label": "WhatsApp üzerinden iletişim",
-  "scrollTop": "Başa dön"
-},
+    },
+    "whatsapp": {
+      "label": "WhatsApp ile iletişime geçin",
+      "scrollTop": "Başa dön"
+    },
     "chat": {
+      "title": "Bizimle sohbet edin",
+      "open": "Canlı sohbeti aç",
+      "close": "Sohbeti kapat",
+      "online": "Destek ekibi çevrimiçi",
+      "offline": "Mesajınızı bırakın, en kısa sürede yanıtlayalım",
+      "reconnecting": "Yeniden bağlanılıyor…",
+      "intro": "Kendinizi tanıtın, yanıtımızı doğrudan burada iletelim.",
+      "welcome": "Merhaba {name}! Mesajınızı yazın, ekibimiz size buradan yanıt verecek.",
+      "placeholder": "Mesajınızı yazın…",
+      "send": "Gönder",
+      "loadOlder": "Önceki mesajları yükle",
+      "typing": "{name} yazıyor…",
+      "support": "Destek",
+      "closedNotice": "Bu görüşme kapatıldı. Yeniden açmak için bir mesaj gönderin.",
+      "retry": "Gönderilemedi. Yeniden denemek için dokunun",
+      "status": {
+        "pending": "Gönderiliyor",
+        "failed": "Gönderilemedi",
+        "sent": "Gönderildi",
+        "delivered": "İletildi",
+        "read": "Okundu"
+      },
+      "form": {
+        "name": "Adınız",
+        "email": "E-posta (isteğe bağlı)",
+        "phone": "Telefon (isteğe bağlı)",
+        "message": "Size nasıl yardımcı olabiliriz? (isteğe bağlı)",
+        "start": "Sohbeti başlat"
+      },
+      "errors": {
+        "RATE_LIMITED": "Çok fazla mesaj gönderildi. Lütfen biraz bekleyin.",
+        "TOO_LONG": "Bu mesaj çok uzun.",
+        "invalid": "Lütfen bilgilerinizi kontrol edin.",
+        "generic": "Bir sorun oluştu. Lütfen yeniden deneyin."
+      },
       "composer": {
         "emoji": "Emoji seç",
         "attachedImage": "Eklenen görseli görüntüle",
         "react": "Mesaja tepki ver",
-        "reactionFailed": "Tepki güncellenemedi. Tekrar deneyin."
+        "reactionFailed": "Tepki güncellenemedi. Lütfen yeniden deneyin."
       }
     }
-},
+  },
   "layout": {
     "header": {
       "nav": {
@@ -100,13 +135,13 @@
         "help": "Yardım",
         "signIn": "Giriş yap",
         "signOut": "Çıkış yap",
-        "dashboard": "Genel Bakış",
+        "dashboard": "Gösterge Paneli",
         "account": "Hesabım",
         "tryFree": "Ücretsiz deneyin"
       },
       "menu": {
         "explore": "Adon {label} Uygulamalarını Keşfedin",
-        "description": "Tek bir birleşik ERP platformunda birbirine bağlı premium iş araçları.",
+        "description": "Tek bir ERP platformunda birbirine bağlı, üst düzey iş araçları.",
         "apps": {
           "finance": "Finans",
           "sales": "Satış",
@@ -128,11 +163,11 @@
           "subscriptions": "Abonelikler",
           "rental": "Kiralama",
           "websiteBuilder": "Web Sitesi Oluşturucu",
-          "ecommerce": "e-Ticaret",
+          "ecommerce": "E-Ticaret",
           "blog": "Blog",
           "forum": "Forum",
           "liveChat": "Canlı Sohbet",
-          "elearning": "e-Öğrenme",
+          "elearning": "E-Öğrenme",
           "inventory": "Stok",
           "manufacturing": "Üretim",
           "manufacturingOverview": "Genel Bakış",
@@ -159,7 +194,7 @@
           "transportPool": "Araç Havuzu",
           "biAnalyticsReporting": "BI Analitik ve Raporlama",
           "fundAccounting": "Fon Muhasebesi",
-          "fundDashboard": "Fon Paneli",
+          "fundDashboard": "Fon Gösterge Paneli",
           "grants": "Hibeler",
           "donorsFunds": "Bağışçılar ve Fonlar",
           "fundReports": "Fon Raporları",
@@ -177,10 +212,25 @@
         },
         "industries": {
           "garmentsTextile": "Hazır Giyim ve Tekstil",
+          "fmcg": "Hızlı Tüketim Ürünleri",
+          "groupOfIndustries": "Sektör Grupları",
+          "fmcgFood": "Gıda",
+          "fmcgBeverages": "İçecekler",
+          "fmcgPersonalCare": "Kişisel Bakım ve Güzellik",
+          "fmcgHomeCare": "Ev Bakımı ve Temizlik",
+          "fmcgHealthHygiene": "Sağlık ve Hijyen (Reçetesiz)",
+          "fmcgBabyCare": "Bebek ve Çocuk Bakımı",
+          "fmcgTobacco": "Tütün Sektörü",
+          "fmcgPetCare": "Evcil Hayvan Bakımı",
+          "groupManufacturing": "Üretim",
+          "groupTextiles": "Tekstil",
+          "groupPharmaceuticals": "İlaç",
+          "groupHeavyIndustry": "Ağır Sanayi",
+          "groupFinancialServices": "Finansal Hizmetler",
           "others": "Diğer",
           "education": "Eğitim",
           "retail": "Perakende",
-          "foodHospitality": "Yiyecek ve Konaklama",
+          "foodHospitality": "Yiyecek-İçecek ve Konaklama",
           "realEstate": "Gayrimenkul",
           "consulting": "Danışmanlık",
           "manufacturing": "Üretim",
@@ -191,47 +241,32 @@
           "hardwareStore": "Hırdavat Mağazası",
           "toyStore": "Oyuncak Mağazası",
           "restaurant": "Restoran",
-          "fastFood": "Hızlı Servis Restoranı",
-          "guestHouse": "Konukevi",
+          "fastFood": "Fast Food",
+          "guestHouse": "Pansiyon",
           "beverageDistributor": "İçecek Distribütörü",
           "hotel": "Otel",
-          "realEstateAgency": "Gayrimenkul Ajansı",
+          "realEstateAgency": "Emlak Ofisi",
           "architectureFirm": "Mimarlık Firması",
           "construction": "İnşaat",
-          "accountingFirm": "Muhasebe Firması",
+          "accountingFirm": "Muhasebe Bürosu",
           "marketingAgency": "Pazarlama Ajansı",
           "auditCertification": "Denetim ve Belgelendirme",
           "talentAcquisition": "Yetenek Kazanımı",
           "textile": "Tekstil",
-          "metal": "maden",
-          "furniture": "Mobilya",
-          "fmcg": "Hızlı Tüketim Ürünleri",
-          "groupOfIndustries": "Sanayi Grupları",
-          "fmcgFood": "Gıda",
-          "fmcgBeverages": "İçecekler",
-          "fmcgPersonalCare": "Kişisel Bakım ve Güzellik",
-          "fmcgHomeCare": "Ev ve Ev Bakımı",
-          "fmcgHealthHygiene": "Sağlık ve Hijyen (OTC)",
-          "fmcgBabyCare": "Bebek ve Çocuk Bakımı",
-          "fmcgTobacco": "Tütün Sektörü",
-          "fmcgPetCare": "Evcil Hayvan Bakımı",
-          "groupManufacturing": "İmalat",
-          "groupTextiles": "Tekstil",
-          "groupPharmaceuticals": "İlaç",
-          "groupHeavyIndustry": "Ağır Sanayi",
-          "groupFinancialServices": "Finansal Hizmetler"
+          "metal": "Metal",
+          "furniture": "Mobilya"
         },
         "community": {
           "learn": "Öğrenin",
           "getServices": "Hizmet Alın",
           "collaborate": "İş Birliği Yapın",
-          "tutorials": "Eğitimler",
+          "tutorials": "Rehberler",
           "documentation": "Dokümantasyon",
           "training": "Eğitim",
           "blog": "Blog",
           "findPartner": "İş Ortağı Bulun",
           "meetAdvisor": "Bir Danışmanla Görüşün",
-          "implementation": "Uygulama",
+          "implementation": "Devreye Alma",
           "support": "Destek",
           "customerStories": "Müşteri Hikâyeleri",
           "github": "GitHub",
@@ -245,38 +280,38 @@
         "hospital": {
           "title": "Hastane",
           "links": {
-            "hospital-dashboard": "Hastane panosu",
+            "hospital-dashboard": "Hastane Gösterge Paneli",
             "patients": "Hastalar",
-            "opd-serials": "Poliklinik sıraları",
+            "opd-serials": "Poliklinik Sıra Numaraları",
             "consultations": "Muayeneler",
-            "billing": "Faturalandırma",
-            "day-close": "Gün sonu",
-            "doctors-money": "Hekim ödemeleri",
-            "wards-beds": "Servisler ve yataklar",
+            "billing": "Faturalama",
+            "day-close": "Gün Kapanışı",
+            "doctors-money": "Hekim Hakedişleri",
+            "wards-beds": "Servisler ve Yataklar",
             "admissions": "Yatışlar",
-            "bed-census": "Yatak sayımı",
+            "bed-census": "Yatak Sayımı",
             "laboratory": "Laboratuvar",
             "imaging": "Görüntüleme",
             "pharmacy": "Eczane",
             "operating-theatre": "Ameliyathane",
-            "emergency": "Acil servis",
-            "blood-bank": "Kan bankası",
-            "payers": "Ödeyici kurumlar",
+            "emergency": "Acil Servis",
+            "blood-bank": "Kan Bankası",
+            "payers": "Ödeyici Kurumlar",
             "indicators": "Göstergeler",
-            "doctors-sittings": "Hekimler ve çalışma saatleri",
-            "services-prices": "Hizmetler ve fiyatlar",
-            "hospital-departments": "Hastane birimleri",
-            "staff-registrations": "Personel kayıtları",
-            "record-access-log": "Kayıt erişim günlüğü",
-            "hospital-settings": "Hastane ayarları"
+            "doctors-sittings": "Hekimler ve Çalışma Saatleri",
+            "services-prices": "Hizmetler ve Fiyatlar",
+            "hospital-departments": "Hastane Bölümleri",
+            "staff-registrations": "Personel Kayıtları",
+            "record-access-log": "Kayıt Erişim Günlüğü",
+            "hospital-settings": "Hastane Ayarları"
           }
         },
         "industries": {
           "title": "Sektörler",
           "links": {
-            "buyingHouse": "Tedarik Ofisi",
+            "buyingHouse": "Satın Alma Ofisi",
             "accessories": "Aksesuarlar",
-            "ecommerce": "E-ticaret",
+            "ecommerce": "E-Ticaret",
             "lms": "LMS",
             "school": "Okul",
             "college": "Yüksekokul",
@@ -287,8 +322,8 @@
             "garments": "Hazır Giyim",
             "ngo": "Sivil Toplum Kuruluşları",
             "realEstate": "Gayrimenkul",
-            "agroRice": "Tarım - Pirinç",
-            "tv": "TV",
+            "agroRice": "Tarım (Pirinç)",
+            "tv": "TV Kanalı",
             "steel": "Çelik"
           }
         },
@@ -311,13 +346,13 @@
             "pettyCash": "Küçük Kasa",
             "chequeRegister": "Çek Kayıt Defteri",
             "closingFy": "Kapanış ve Mali Yıl",
-            "financialReports": "Mali Raporlar",
+            "financialReports": "Finansal Raporlar",
             "vatRegister": "KDV Defteri",
             "discountsCoupons": "İndirimler ve Kuponlar",
             "loanManagement": "Kredi Yönetimi",
             "fixedAssetRegister": "Sabit Kıymet Defteri",
             "exchangeRates": "Döviz Kurları",
-            "arApAging": "Alacak / Borç vade analizi",
+            "arApAging": "Alacak / Borç Yaşlandırma",
             "bankReconciliation": "Banka Mutabakatı"
           }
         },
@@ -329,22 +364,22 @@
             "budgets": "Bütçeler",
             "jobCost": "İş Maliyeti",
             "changeOrders": "Değişiklik Emirleri",
-            "wip": "WIP",
+            "wip": "Devam Eden İşler (WIP)",
             "progressBilling": "Hakediş Faturalama",
-            "schedule": "Takvim",
+            "schedule": "İş Programı",
             "risksIssues": "Riskler ve Sorunlar",
             "documents": "Belgeler",
             "milestones": "Kilometre Taşları",
-            "boq": "BOQ",
+            "boq": "Metraj Listesi (BOQ)",
             "billAllocations": "Fatura Dağıtımları",
-            "pAndL": "P&L"
+            "pAndL": "Kâr ve Zarar (P&L)"
           }
         },
         "budgetManagement": {
           "title": "Bütçe Yönetimi",
           "links": {
             "overview": "Genel Bakış",
-            "lines": "Kalemler",
+            "lines": "Bütçe Kalemleri",
             "requisitions": "Talepler",
             "variance": "Sapma",
             "approvals": "Onaylar",
@@ -356,10 +391,10 @@
           "links": {
             "overview": "Genel Bakış",
             "goodsReceipts": "Mal Kabul",
-            "landedCost": "Varış Maliyeti",
-            "procurement": "Satın Alma",
+            "landedCost": "Nihai Maliyet (Landed Cost)",
+            "procurement": "Tedarik",
             "purchaseRequisitions": "Satın Alma Talepleri",
-            "comparativeStatements": "Karşılaştırma Tabloları",
+            "comparativeStatements": "Teklif Karşılaştırma Tabloları",
             "tenderManagement": "İhale Yönetimi"
           }
         },
@@ -369,8 +404,8 @@
             "demandForecast": "Talep Tahmini",
             "warehouses": "Depolar",
             "stockMovements": "Stok Hareketleri",
-            "inventorySummary": "Envanter Özeti",
-            "gatePasses": "Kapı Geçiş Belgeleri",
+            "inventorySummary": "Stok Özeti",
+            "gatePasses": "Kapı Çıkış Belgeleri",
             "weighbridgeScales": "Kantar ve Teraziler"
           }
         },
@@ -378,8 +413,8 @@
           "title": "Açık Platform",
           "links": {
             "taxRates": "Vergi Oranları",
-            "migrationStudio": "Taşıma Stüdyosu",
-            "exportTakeout": "Dışa Aktarım / Veri Alma"
+            "migrationStudio": "Veri Aktarım Stüdyosu",
+            "exportTakeout": "Dışa Aktarım / Veri Çıkışı"
           }
         },
         "manufacturing": {
@@ -398,21 +433,21 @@
             "productionOrders": "Üretim Emirleri",
             "batchesLots": "Partiler / Lotlar",
             "serialNumbers": "Seri Numaraları",
-            "qcTemplates": "KK Şablonları",
+            "qcTemplates": "Kalite Kontrol Şablonları",
             "qualityControl": "Kalite Kontrol",
             "scrapWaste": "Hurda / Fire",
             "subcontracting": "Fason Üretim",
-            "standardCosting": "Standart Maliyet",
-            "productionCosting": "Üretim Maliyeti"
+            "standardCosting": "Standart Maliyetlendirme",
+            "productionCosting": "Üretim Maliyetlendirme"
           }
         },
         "quality": {
           "title": "Kalite (QMS)",
           "links": {
-            "qualityDashboard": "Kalite Paneli",
+            "qualityDashboard": "Kalite Gösterge Paneli",
             "nonConformance": "Uygunsuzluk",
             "capa": "CAPA",
-            "aqlSampling": "AQL Örnekleme",
+            "aqlSampling": "AQL Örneklemesi",
             "spc": "SPC"
           }
         },
@@ -429,18 +464,18 @@
             "approvalsInbox": "Onay Kutusu",
             "taxBracketsNbr": "Vergi Dilimleri (NBR)",
             "form108Annual": "Form 108 (Yıllık)",
-            "hrPolicyPfGratuity": "İK Politikası (PF/İkramiye)",
+            "hrPolicyPfGratuity": "İK Politikası (PF/Kıdem Tazminatı)",
             "shifts": "Vardiyalar",
             "holidayCalendar": "Tatil Takvimi",
             "leaveTypes": "İzin Türleri",
             "leaveApplications": "İzin Başvuruları",
             "attendance": "Devam Takibi",
             "projects": "Projeler",
-            "finalSettlements": "Nihai Hesaplaşmalar",
+            "finalSettlements": "İşten Ayrılış Ödemeleri",
             "serviceRecords": "Hizmet Kayıtları",
             "recruitment": "İşe Alım",
-            "appraisals": "Performans Değerlendirme",
-            "wppfWelfare": "WPPF ve Refah",
+            "appraisals": "Performans Değerlendirmeleri",
+            "wppfWelfare": "WPPF ve Sosyal Yardımlar",
             "salaryBudgets": "Maaş Bütçeleri",
             "hrReports": "İK Raporları"
           }
@@ -452,7 +487,7 @@
             "myPayslips": "Bordrolarım",
             "myLeaves": "İzinlerim",
             "myAttendance": "Devam Kayıtlarım",
-            "myPfGratuity": "PF ve İkramiyem"
+            "myPfGratuity": "PF ve Kıdem Tazminatım"
           }
         },
         "engineeringMaintenance": {
@@ -463,7 +498,7 @@
             "pmSchedules": "Önleyici Bakım Planları",
             "workOrders": "İş Emirleri",
             "spareParts": "Yedek Parçalar",
-            "downtime": "Duruş Süresi",
+            "downtime": "Duruş Süreleri",
             "calibration": "Kalibrasyon"
           }
         },
@@ -481,7 +516,7 @@
           "links": {
             "salesContracts": "Satış Sözleşmeleri",
             "lettersOfCredit": "Akreditifler",
-            "ttRemittances": "Havale (TT) Transferleri",
+            "ttRemittances": "TT Havaleleri",
             "exportShipments": "İhracat Sevkiyatları",
             "bdExportPapers": "BD İhracat Belgeleri"
           }
@@ -490,12 +525,12 @@
           "title": "Satış ve CRM",
           "groups": {
             "pipeline": "Satış Hunisi",
-            "activities": "Aktiviteler",
+            "activities": "Faaliyetler",
             "orders": "Siparişler",
-            "accounts": "Hesaplar",
+            "accounts": "Müşteri Hesapları",
             "distribution": "Dağıtım",
             "finance": "Finans",
-            "engageAi": "Etkileşim ve AI",
+            "engageAi": "Etkileşim ve Yapay Zekâ",
             "dms": "DMS",
             "tradePromo": "Ticari Promosyon",
             "vanSales": "Araçlı Satış",
@@ -513,7 +548,7 @@
             "salesOrders": "Satış Siparişleri",
             "returns": "İadeler",
             "customer360": "Müşteri 360",
-            "accountPlans": "Hesap Planları",
+            "accountPlans": "Müşteri Hesap Planları",
             "objections": "İtirazlar",
             "playbook": "Satış Rehberi",
             "pricing": "Fiyatlandırma",
@@ -523,24 +558,24 @@
             "orgAccess": "Organizasyon ve Erişim",
             "dispatch": "Sevkiyat",
             "commissions": "Komisyonlar",
-            "credit": "Alacak",
+            "credit": "Kredi",
             "collections": "Tahsilatlar",
             "capture": "Veri Toplama",
-            "sequences": "Diziler",
-            "askAi": "AI'ya Sor",
+            "sequences": "Takip Dizileri",
+            "askAi": "Yapay Zekâya Sor",
             "secondarySales": "İkincil Satışlar",
             "distributorStock": "Distribütör Stoku",
             "marketReturns": "Pazar İadeleri",
-            "sellThrough": "Satış Devri",
+            "sellThrough": "Sell-Through",
             "secondaryTargets": "İkincil Hedefler",
             "promotions": "Promosyonlar",
-            "claims": "Talepler",
+            "claims": "Hak Talepleri",
             "rebates": "Ciro Primleri",
             "vans": "Araçlar",
             "trips": "Seferler",
             "vanSales": "Araçlı Satış",
             "vanStock": "Araç Stoku",
-            "dashboard": "Genel Bakış",
+            "dashboard": "Gösterge Paneli",
             "targets": "Hedefler",
             "forecast": "Tahmin",
             "relationships": "İlişkiler",
@@ -561,44 +596,44 @@
           "title": "Analitik",
           "links": {
             "biAnalyticsReporting": "BI Analitik ve Raporlama",
-            "executiveDashboard": "Yönetici Panosu",
-            "financialReports": "Mali Raporlar",
+            "executiveDashboard": "Yönetici Gösterge Paneli",
+            "financialReports": "Finansal Raporlar",
             "hrPayroll": "İK ve Bordro",
             "demandForecast": "Talep Tahmini",
-            "exportTakeout": "Dışa Aktarım / Veri Alma"
+            "exportTakeout": "Dışa Aktarım / Veri Çıkışı"
           }
         },
         "realEstate": {
           "title": "Gayrimenkul",
           "links": {
-            "salesDashboard": "Satış Panosu",
+            "salesDashboard": "Satış Gösterge Paneli",
             "properties": "Mülkler",
             "units": "Birimler",
             "bookings": "Rezervasyonlar",
             "collections": "Tahsilatlar",
-            "handover": "Teslim",
-            "revenueRecognition": "Gelir Tahakkuku",
-            "leases": "Kiralamalar",
-            "brokers": "Komisyoncular",
+            "handover": "Teslim İşlemleri",
+            "revenueRecognition": "Gelir Tanıma",
+            "leases": "Kira Sözleşmeleri",
+            "brokers": "Emlak Aracıları",
             "buyerPortal": "Alıcı Portalı"
           }
         },
         "education": {
           "title": "Eğitim",
           "links": {
-            "educationDashboard": "Eğitim Panosu",
-            "admissions": "Başvurular ve Kayıt",
+            "educationDashboard": "Eğitim Gösterge Paneli",
+            "admissions": "Kayıt ve Kabul",
             "students": "Öğrenciler",
             "academics": "Akademik",
-            "studentAttendance": "Öğrenci Devamı",
+            "studentAttendance": "Öğrenci Devam Takibi",
             "timetable": "Ders Programı",
             "examsResults": "Sınavlar ve Sonuçlar",
             "promotionCertificates": "Sınıf Geçme ve Sertifikalar",
             "hifz": "Hafızlık",
-            "boardingMess": "Yatakhane ve Yemekhane",
+            "boardingMess": "Yurt ve Yemekhane",
             "welfareFunds": "Yardım Fonları",
             "notices": "Duyurular",
-            "onlinePayments": "Online Ödemeler",
+            "onlinePayments": "Çevrimiçi Ödemeler",
             "library": "Kütüphane",
             "schoolBus": "Okul Servisi",
             "storeIssues": "Depo Çıkışları",
@@ -615,7 +650,7 @@
             "shifts": "Vardiyalar",
             "receipts": "Satış Fişleri",
             "daySummaryZ": "Gün Sonu Özeti (Z)",
-            "outletDashboard": "Mağaza Paneli",
+            "outletDashboard": "Mağaza Gösterge Paneli",
             "loyaltyVouchers": "Sadakat ve Hediye Çekleri",
             "transfers": "Transferler",
             "stockLots": "Stok Partileri",
@@ -626,13 +661,13 @@
         "merchandising": {
           "title": "Sipariş Yönetimi",
           "links": {
-            "merchandisingDashboard": "Merchandising Panosu",
+            "merchandisingDashboard": "Sipariş Yönetimi Gösterge Paneli",
             "stylesCosting": "Modeller ve Maliyetlendirme",
-            "tnaCalendar": "Zaman ve Aksiyon Takvimi",
+            "tnaCalendar": "Zaman ve Aksiyon Takvimi (TNA)",
             "materialBooking": "Malzeme Rezervasyonu",
             "productionFollowUp": "Üretim Takibi",
             "factories": "Fabrikalar",
-            "inHouseReceipts": "Mal Kabul",
+            "inHouseReceipts": "Şirket İçi Mal Kabul",
             "profitability": "Kârlılık",
             "buyerPortal": "Alıcı Portalı"
           }
@@ -640,18 +675,18 @@
         "fundAccounting": {
           "title": "Fon Muhasebesi",
           "links": {
-            "fundDashboard": "Fon Paneli",
+            "fundDashboard": "Fon Gösterge Paneli",
             "grants": "Hibeler",
             "donorsFunds": "Bağışçılar ve Fonlar",
             "fundReports": "Fon Raporları",
-            "beneficiariesME": "Faydalanıcılar ve İ&D",
+            "beneficiariesME": "Yararlanıcılar ve İzleme-Değerlendirme",
             "costAllocation": "Maliyet Dağıtımı"
           }
         },
         "university": {
           "title": "Üniversite",
           "links": {
-            "universityDashboard": "Üniversite Panosu",
+            "universityDashboard": "Üniversite Gösterge Paneli",
             "universityAdmissions": "Üniversite Kabulleri",
             "universityStudents": "Üniversite Öğrencileri",
             "facultiesProgrammes": "Fakülteler ve Programlar",
@@ -675,7 +710,7 @@
             "intake-admission": "Kontenjan ve Kabul",
             "cards-items": "Değerlendirme Kartları",
             "professional-exams": "Mesleki Sınavlar",
-            "ward-placement": "Klinik Rotasyon",
+            "ward-placement": "Servis Yerleştirme",
             "interns": "İntörnler",
             "postgraduate-trainees": "Uzmanlık Öğrencileri",
             "governance": "Yönetişim",
@@ -687,12 +722,12 @@
     },
     "comingSoon": {
       "title": "Çok Yakında",
-      "description": "Bu sayfa üzerinde çalışıyoruz. Yakında tekrar kontrol edin.",
+      "description": "Bu sayfayı hazırlıyoruz. Lütfen daha sonra tekrar ziyaret edin.",
       "back": "Tüm uygulamalara dön",
       "backIndustries": "Tüm sektörlere dön"
     },
     "footer": {
-      "description": "Finans, satış, operasyonlar ve büyüme için tek bir bağlantılı ERP platformunda birleşik uygulamalar.",
+      "description": "Finans, satış, operasyon ve büyüme için tek bir ERP platformunda bir araya gelen, birbiriyle bağlantılı uygulamalar.",
       "sections": {
         "product": "Ürün",
         "company": "Şirket",
@@ -710,10 +745,10 @@
         "collaborate": "İş Birliği Yapın",
         "helpCenter": "Yardım Merkezi",
         "documentation": "Dokümantasyon",
-        "tutorials": "Eğitimler",
+        "tutorials": "Rehberler",
         "training": "Eğitim",
         "privacy": "Gizlilik",
-        "terms": "Koşullar",
+        "terms": "Kullanım Koşulları",
         "cookies": "Çerezler",
         "gdpr": "GDPR"
       },
@@ -10290,208 +10325,208 @@
         }
       },
       "invForecast": {
-    "meta": {
-      "title": "Talep Tahmini: Stoklar Tükenmeden Ne Zaman Yeniden Sipariş Vereceğinizi Bilin",
-      "description": "Geçmiş stok tüketiminden gelecekteki talebi tahmin edin, her ürünün stokunun kaç gün yeteceğini görün ve şimdi neleri sipariş etmeniz gerektiğini öğrenin. Bangladeş’teki işletmeler için geliştirildi.",
-      "keywords": [
-        "Bangladeş talep tahmin yazılımı",
-        "stok talep tahmini",
-        "yeniden sipariş planlaması",
-        "stok karşılama süresi",
-        "Adon ERP talep tahmini"
-      ]
-    },
-    "hero": {
-      "title": "Stokların bitmesini beklemeyin, verilere göre tam zamanında sipariş verin",
-      "lead": "Adon ERP, her ürünün geçmiş aylardaki tüketimini analiz ederek önümüzdeki üç ayın tahmini talebini hesaplar. Bu tahmini mevcut stoklarla karşılaştırır; hangi ürünün önce tükeneceğini, ne zaman sipariş verilmesi gerektiğini ve yaklaşık maliyeti gösterir.",
-      "secondaryCta": "Stokun kaç gün yeteceği nasıl hesaplanıyor?"
-    },
-    "sample": {
-      "count": "5 ürün",
-      "notes": [
-        "Geçmiş tüketimden gelecekteki talep tahmini",
-        "Her ürün için stok karşılama süresi",
-        "Tahmini sipariş maliyeti"
-      ]
-    },
-    "ui": {
-      "title": "Talep Tahmini",
-      "accuracy": "Tahmin doğruluğu",
-      "accuracySub": "Son 6 ay",
-      "atRisk": "Hemen yeniden sipariş verilecek ürünler",
-      "atRiskSub": "Stoku 20 günden az yetecek ürünler",
-      "horizon": "Tahmin dönemi",
-      "horizonValue": "90 gün",
-      "horizonSub": "Önümüzdeki üç ay",
-      "suggested": "Tahmini sipariş tutarı",
-      "suggestedSub": "Hemen sipariş verilmesi gereken ürünler için",
-      "chart": "PP granül aylık tüketimi (ton)",
-      "actual": "Gerçekleşen",
-      "forecast": "Tahmin",
-      "chartNote": "Düz sütunlar geçmişteki gerçek tüketimi, kesikli sütunlar ise eğilime göre önümüzdeki üç ay için öngörülen tüketimi gösterir.",
-      "cover": "Stok karşılama süresi",
-      "days": "gün",
-      "orderNow": "Hemen sipariş ver",
-      "soon": "Yakında sipariş ver",
-      "ok": "Stok yeterli",
-      "caption": "Adon ERP Talep Tahmini özelliğinin kısmi önizlemesi. Gösterilen şirket ve rakamlar örnek amaçlıdır."
-    },
-    "flow": {
-      "title": "Geçmiş tüketimden yeniden sipariş listesine, yalnızca 3 adımda",
-      "intro": "Hesaplama yöntemi, depo sorumlusunun bile elle kontrol edebileceği kadar açık ve anlaşılırdır.",
-      "steps": [
-        {
-          "tag": "Geçmiş tüketim",
-          "question": "Gerçekte ne kadar kullandınız?",
-          "body": "Sisteme önceden kaydedilmiş stok hareketlerinden her ürünün aylık çıkış miktarı hesaplanır."
+        "meta": {
+          "title": "Talep Tahmini: Stoklar Tükenmeden Ne Zaman Yeniden Sipariş Vereceğinizi Bilin",
+          "description": "Geçmiş stok tüketiminden gelecekteki talebi tahmin edin, her ürünün stokunun kaç gün yeteceğini görün ve şimdi neleri sipariş etmeniz gerektiğini öğrenin. Bangladeş’teki işletmeler için geliştirildi.",
+          "keywords": [
+            "Bangladeş talep tahmin yazılımı",
+            "stok talep tahmini",
+            "yeniden sipariş planlaması",
+            "stok karşılama süresi",
+            "Adon ERP talep tahmini"
+          ]
         },
-        {
-          "tag": "Talep tahmini",
-          "question": "Önümüzdeki aylarda ne kadar gerekecek?",
-          "body": "Tüketim eğilimi analiz edilerek gelecek üç ayın talebi öngörülür; mevsimsel artışlar da dikkate alınır."
+        "hero": {
+          "title": "Stokların bitmesini beklemeyin, verilere göre tam zamanında sipariş verin",
+          "lead": "Adon ERP, her ürünün geçmiş aylardaki tüketimini analiz ederek önümüzdeki üç ayın tahmini talebini hesaplar. Bu tahmini mevcut stoklarla karşılaştırır; hangi ürünün önce tükeneceğini, ne zaman sipariş verilmesi gerektiğini ve yaklaşık maliyeti gösterir.",
+          "secondaryCta": "Stokun kaç gün yeteceği nasıl hesaplanıyor?"
         },
-        {
-          "tag": "Stok karşılama süresi",
-          "question": "Mevcut stok kaç gün daha yeter?",
-          "body": "Mevcut stok, tahmini günlük tüketime bölünerek süre hesaplanır. 20 günün altı “Hemen sipariş ver”, 30 günün altı “Yakında sipariş ver” olarak işaretlenir."
-        }
-      ],
-      "formTitle": "Bu sayfada neler görebilirsiniz?",
-      "form": [
-        {
-          "label": "Tahmin doğruluğu",
-          "body": "Önceki tahminlerin gerçek tüketimle ne kadar örtüştüğü."
+        "sample": {
+          "count": "5 ürün",
+          "notes": [
+            "Geçmiş tüketimden gelecekteki talep tahmini",
+            "Her ürün için stok karşılama süresi",
+            "Tahmini sipariş maliyeti"
+          ]
         },
-        {
-          "label": "Yeniden sipariş verilecek ürünler",
-          "body": "Stoku 20 günden az yetecek ürün sayısı."
+        "ui": {
+          "title": "Talep Tahmini",
+          "accuracy": "Tahmin doğruluğu",
+          "accuracySub": "Son 6 ay",
+          "atRisk": "Hemen yeniden sipariş verilecek ürünler",
+          "atRiskSub": "Stoku 20 günden az yetecek ürünler",
+          "horizon": "Tahmin dönemi",
+          "horizonValue": "90 gün",
+          "horizonSub": "Önümüzdeki üç ay",
+          "suggested": "Tahmini sipariş tutarı",
+          "suggestedSub": "Hemen sipariş verilmesi gereken ürünler için",
+          "chart": "PP granül aylık tüketimi (ton)",
+          "actual": "Gerçekleşen",
+          "forecast": "Tahmin",
+          "chartNote": "Düz sütunlar geçmişteki gerçek tüketimi, kesikli sütunlar ise eğilime göre önümüzdeki üç ay için öngörülen tüketimi gösterir.",
+          "cover": "Stok karşılama süresi",
+          "days": "gün",
+          "orderNow": "Hemen sipariş ver",
+          "soon": "Yakında sipariş ver",
+          "ok": "Stok yeterli",
+          "caption": "Adon ERP Talep Tahmini özelliğinin kısmi önizlemesi. Gösterilen şirket ve rakamlar örnek amaçlıdır."
         },
-        {
-          "label": "Talep grafiği",
-          "body": "Geçmiş tüketim düz, tahminler kesikli sütunlarla gösterilir."
+        "flow": {
+          "title": "Geçmiş tüketimden yeniden sipariş listesine, yalnızca 3 adımda",
+          "intro": "Hesaplama yöntemi, depo sorumlusunun bile elle kontrol edebileceği kadar açık ve anlaşılırdır.",
+          "steps": [
+            {
+              "tag": "Geçmiş tüketim",
+              "question": "Gerçekte ne kadar kullandınız?",
+              "body": "Sisteme önceden kaydedilmiş stok hareketlerinden her ürünün aylık çıkış miktarı hesaplanır."
+            },
+            {
+              "tag": "Talep tahmini",
+              "question": "Önümüzdeki aylarda ne kadar gerekecek?",
+              "body": "Tüketim eğilimi analiz edilerek gelecek üç ayın talebi öngörülür; mevsimsel artışlar da dikkate alınır."
+            },
+            {
+              "tag": "Stok karşılama süresi",
+              "question": "Mevcut stok kaç gün daha yeter?",
+              "body": "Mevcut stok, tahmini günlük tüketime bölünerek süre hesaplanır. 20 günün altı “Hemen sipariş ver”, 30 günün altı “Yakında sipariş ver” olarak işaretlenir."
+            }
+          ],
+          "formTitle": "Bu sayfada neler görebilirsiniz?",
+          "form": [
+            {
+              "label": "Tahmin doğruluğu",
+              "body": "Önceki tahminlerin gerçek tüketimle ne kadar örtüştüğü."
+            },
+            {
+              "label": "Yeniden sipariş verilecek ürünler",
+              "body": "Stoku 20 günden az yetecek ürün sayısı."
+            },
+            {
+              "label": "Talep grafiği",
+              "body": "Geçmiş tüketim düz, tahminler kesikli sütunlarla gösterilir."
+            },
+            {
+              "label": "Stok karşılama süresi",
+              "body": "Her ürün için ayrı bir çubuk ve 30 günlük referans işareti."
+            },
+            {
+              "label": "Tahmini sipariş tutarı",
+              "body": "Hemen sipariş edilmesi gereken ürünlerin açık miktarı, son birim fiyatla çarpılarak hesaplanır."
+            }
+          ]
         },
-        {
-          "label": "Stok karşılama süresi",
-          "body": "Her ürün için ayrı bir çubuk ve 30 günlük referans işareti."
-        },
-        {
-          "label": "Tahmini sipariş tutarı",
-          "body": "Hemen sipariş edilmesi gereken ürünlerin açık miktarı, son birim fiyatla çarpılarak hesaplanır."
-        }
-      ]
-    },
-    "connect": {
-      "title": "Stok geçmişinizi akıllı bir satın alma planına dönüştürün",
-      "intro": "Geçmiş stok çıkışlarını analiz ederek ihtiyaç duyulan ürünler için satın alma talebi oluşturmayı kolaylaştırır.",
-      "groups": {
-        "before": "Tahminden önce",
-        "after": "Tahminden sonra",
-        "shows": "Bilgilerin görüntülendiği yer"
-      },
-      "items": {
-        "itemsProducts": "Yeniden sipariş noktaları ve ölçü birimleri.",
-        "invMovements": "Tahminin dayandığı stok hareketi geçmişi.",
-        "scRequisitions": "Eksik ürünler için satın alma talebi oluşturun.",
-        "purchaseOrders": "İhtiyaç netse doğrudan satın alma siparişi verin.",
-        "invSummary": "Stok değeri ve devir hızı.",
-        "scOverview": "Açık satın alma taleplerini tek bakışta görün.",
-        "financialReports": "Finansal raporlarda satın alma verilerini inceleyin."
-      }
-    },
-    "local": {
-      "title": "Uzun tedarik sürelerinde bile zamanında stok planlaması",
-      "intro": "Yurt dışından ham madde getirmek haftalar sürebilir. Yeniden siparişte gecikme, üretim hattını durdurabilir. Stokun kaç gün yeteceğini bilmek, tesis yöneticisinin zamanında karar almasını sağlar.",
-      "points": [
-        {
-          "title": "Yalnızca miktar değil, kaç gün yeteceği de önemli",
-          "body": "2.000 kilogram stokun çok mu az mı olduğu, günlük tüketime bağlıdır."
-        },
-        {
-          "title": "Tedarik süresini hesaba katın",
-          "body": "Stoku az gün yetecek ve tedariki uzun sürecek ürünlere öncelik verin."
-        },
-        {
-          "title": "Mevsimsel talebi öngörün",
-          "body": "Bayram dönemleri ve ihracatın yoğunlaştığı zamanlardaki talep değişimini geçmiş tüketim eğilimlerinde görün."
-        },
-        {
-          "title": "Sipariş maliyetini önceden görün",
-          "body": "Finans ekibi, satın alma talebi açılmadan önce tahmini maliyeti inceleyebilir."
-        }
-      ],
-      "story": {
-        "title": "Talep tahmininden satın alma talebine: tüm süreç bir arada",
-        "intro": "Bir ham madde stok değerlendirmesi üzerinden örnek akışı inceleyin.",
-        "steps": [
-          {
-            "time": "1 Kasım",
-            "text": "PP granül tüketimi beş aydır aralıksız artıyor."
+        "connect": {
+          "title": "Stok geçmişinizi akıllı bir satın alma planına dönüştürün",
+          "intro": "Geçmiş stok çıkışlarını analiz ederek ihtiyaç duyulan ürünler için satın alma talebi oluşturmayı kolaylaştırır.",
+          "groups": {
+            "before": "Tahminden önce",
+            "after": "Tahminden sonra",
+            "shows": "Bilgilerin görüntülendiği yer"
           },
-          {
-            "time": "1 Kasım",
-            "text": "Aralık ayı için tahmini talep 51 ton."
-          },
-          {
-            "time": "1 Kasım",
-            "text": "Mevcut stok yalnızca 15 gün yeteceğinden “Hemen sipariş ver” uyarısı çıkıyor."
-          },
-          {
-            "time": "2 Kasım",
-            "text": "Eksik miktar için satın alma talebi oluşturuluyor."
-          },
-          {
-            "time": "20 Kasım",
-            "text": "Yeni malzeme, stok tükenmeden teslim ediliyor."
+          "items": {
+            "itemsProducts": "Yeniden sipariş noktaları ve ölçü birimleri.",
+            "invMovements": "Tahminin dayandığı stok hareketi geçmişi.",
+            "scRequisitions": "Eksik ürünler için satın alma talebi oluşturun.",
+            "purchaseOrders": "İhtiyaç netse doğrudan satın alma siparişi verin.",
+            "invSummary": "Stok değeri ve devir hızı.",
+            "scOverview": "Açık satın alma taleplerini tek bakışta görün.",
+            "financialReports": "Finansal raporlarda satın alma verilerini inceleyin."
           }
-        ]
-      }
-    },
-    "industries": {
-      "title": "Farklı sektörler talep tahmininden nasıl yararlanıyor?",
-      "angles": {
-        "retail": "Mevsime ve satış eğilimlerine göre stok planlaması.",
-        "food-hospitality": "Haftalık tüketime göre malzeme ve ihtiyaç planlaması.",
-        "real-estate": "Proje aşamalarına göre yapı malzemesi ihtiyacı.",
-        "consulting": "Çalışan sayısına göre sarf malzemesi planlaması.",
-        "manufacturing": "Üretim planına göre ham madde ve ambalaj ihtiyacı.",
-        "health-fitness": "Kullanıma göre sarf malzemesi ve satış ürünleri için stok planlaması.",
-        "trades": "İş hacmine göre yedek parça ihtiyacı.",
-        "others": "Program takvimine göre malzeme planlaması."
-      }
-    },
-    "faq": {
-      "title": "Talep tahmini hakkında sık sorulan sorular",
-      "items": [
-        {
-          "q": "Talep tahmini nasıl yapılır?",
-          "a": "Her ürünün geçmiş aylardaki tüketimi analiz edilir ve eğilimi geleceğe yansıtılarak tahmini talep hesaplanır."
         },
-        {
-          "q": "Stok karşılama süresi nedir?",
-          "a": "Mevcut stokun, tahmini tüketim hızına göre kaç gün yeteceğidir."
+        "local": {
+          "title": "Uzun tedarik sürelerinde bile zamanında stok planlaması",
+          "intro": "Yurt dışından ham madde getirmek haftalar sürebilir. Yeniden siparişte gecikme, üretim hattını durdurabilir. Stokun kaç gün yeteceğini bilmek, tesis yöneticisinin zamanında karar almasını sağlar.",
+          "points": [
+            {
+              "title": "Yalnızca miktar değil, kaç gün yeteceği de önemli",
+              "body": "2.000 kilogram stokun çok mu az mı olduğu, günlük tüketime bağlıdır."
+            },
+            {
+              "title": "Tedarik süresini hesaba katın",
+              "body": "Stoku az gün yetecek ve tedariki uzun sürecek ürünlere öncelik verin."
+            },
+            {
+              "title": "Mevsimsel talebi öngörün",
+              "body": "Bayram dönemleri ve ihracatın yoğunlaştığı zamanlardaki talep değişimini geçmiş tüketim eğilimlerinde görün."
+            },
+            {
+              "title": "Sipariş maliyetini önceden görün",
+              "body": "Finans ekibi, satın alma talebi açılmadan önce tahmini maliyeti inceleyebilir."
+            }
+          ],
+          "story": {
+            "title": "Talep tahmininden satın alma talebine: tüm süreç bir arada",
+            "intro": "Bir ham madde stok değerlendirmesi üzerinden örnek akışı inceleyin.",
+            "steps": [
+              {
+                "time": "1 Kasım",
+                "text": "PP granül tüketimi beş aydır aralıksız artıyor."
+              },
+              {
+                "time": "1 Kasım",
+                "text": "Aralık ayı için tahmini talep 51 ton."
+              },
+              {
+                "time": "1 Kasım",
+                "text": "Mevcut stok yalnızca 15 gün yeteceğinden “Hemen sipariş ver” uyarısı çıkıyor."
+              },
+              {
+                "time": "2 Kasım",
+                "text": "Eksik miktar için satın alma talebi oluşturuluyor."
+              },
+              {
+                "time": "20 Kasım",
+                "text": "Yeni malzeme, stok tükenmeden teslim ediliyor."
+              }
+            ]
+          }
         },
-        {
-          "q": "Bir ürün ne zaman “Hemen sipariş ver” olarak görünür?",
-          "a": "Stok karşılama süresi 20 günün altına düştüğünde."
+        "industries": {
+          "title": "Farklı sektörler talep tahmininden nasıl yararlanıyor?",
+          "angles": {
+            "retail": "Mevsime ve satış eğilimlerine göre stok planlaması.",
+            "food-hospitality": "Haftalık tüketime göre malzeme ve ihtiyaç planlaması.",
+            "real-estate": "Proje aşamalarına göre yapı malzemesi ihtiyacı.",
+            "consulting": "Çalışan sayısına göre sarf malzemesi planlaması.",
+            "manufacturing": "Üretim planına göre ham madde ve ambalaj ihtiyacı.",
+            "health-fitness": "Kullanıma göre sarf malzemesi ve satış ürünleri için stok planlaması.",
+            "trades": "İş hacmine göre yedek parça ihtiyacı.",
+            "others": "Program takvimine göre malzeme planlaması."
+          }
         },
-        {
-          "q": "Sistem siparişleri kendiliğinden oluşturur mu?",
-          "a": "Hayır. Yeniden sipariş edilmesi gereken ürünleri gösterir; satın alma talebini siz oluşturursunuz."
+        "faq": {
+          "title": "Talep tahmini hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Talep tahmini nasıl yapılır?",
+              "a": "Her ürünün geçmiş aylardaki tüketimi analiz edilir ve eğilimi geleceğe yansıtılarak tahmini talep hesaplanır."
+            },
+            {
+              "q": "Stok karşılama süresi nedir?",
+              "a": "Mevcut stokun, tahmini tüketim hızına göre kaç gün yeteceğidir."
+            },
+            {
+              "q": "Bir ürün ne zaman “Hemen sipariş ver” olarak görünür?",
+              "a": "Stok karşılama süresi 20 günün altına düştüğünde."
+            },
+            {
+              "q": "Sistem siparişleri kendiliğinden oluşturur mu?",
+              "a": "Hayır. Yeniden sipariş edilmesi gereken ürünleri gösterir; satın alma talebini siz oluşturursunuz."
+            },
+            {
+              "q": "Ne kadar ileriye dönük tahmin yapılır?",
+              "a": "90 gün, yani önümüzdeki üç ay."
+            },
+            {
+              "q": "Adon ERP nerelerde kullanılabilir?",
+              "a": "Şu anda Dakka’daki işletmelerin Adon ERP kullanmaya başlamasına yardımcı oluyoruz. Demo randevusu alın; ekibimiz örnek verilerle özelliği size anlatsın."
+            }
+          ]
         },
-        {
-          "q": "Ne kadar ileriye dönük tahmin yapılır?",
-          "a": "90 gün, yani önümüzdeki üç ay."
-        },
-        {
-          "q": "Adon ERP nerelerde kullanılabilir?",
-          "a": "Şu anda Dakka’daki işletmelerin Adon ERP kullanmaya başlamasına yardımcı oluyoruz. Demo randevusu alın; ekibimiz örnek verilerle özelliği size anlatsın."
+        "closing": {
+          "title": "En çok kullandığınız 10 ürünü ve geçen yılın tüketim kayıtlarını getirin; demoda gelecekteki talebi birlikte tahmin edelim."
         }
-      ]
-    },
-    "closing": {
-      "title": "En çok kullandığınız 10 ürünü ve geçen yılın tüketim kayıtlarını getirin; demoda gelecekteki talebi birlikte tahmin edelim."
-    }
-  },
+      },
       "invWarehouses": {
         "meta": {
           "title": "Depolar: Her Mağaza, Bölge ve Depo Tek Yerde",
@@ -19453,67 +19488,74 @@
       },
       "mcOverviewPage": {
         "meta": {
-          "title": "Tıp Merkezi: Fabrika Kliniğiniz, Bugün",
-          "description": "Dinlenme ve hastalık izni için HR ile bağlantılı günümüzün klinik ziyaretlerini, bekleme kuyruğunu, işyerindeki yaralanmaları, kullanılan yatakları ve azalan ilaçları görün. Bangladeş'teki şirketler için tasarlandı.",
+          "title": "Sağlık Merkezi: Fabrika Kliniğinizin Bugünkü Durumu",
+          "description": "Bugünkü klinik ziyaretlerini, bekleme sırasını, iş kazalarını, kullanımdaki yatakları ve azalan ilaçları görün; dinlenme ve hastalık izni önerileri İK'ya iletilir. Bangladeş'teki şirketler için tasarlandı.",
           "keywords": [
             "fabrika kliniği yazılımı",
             "iş sağlığı Bangladeş",
-            "işyeri tıp merkezi",
-            "HR yazılımı Dhaka",
-            "Adon ERP tıp merkezi"
+            "işyeri sağlık merkezi",
+            "İK yazılımı Dhaka",
+            "Adon ERP sağlık merkezi"
           ]
         },
         "hero": {
-          "title": "Sağlık merkezi: fabrika kliniğini işletmenizin diğer birimleriyle birlikte yönetin",
-          "lead": "Ziyaretler, kuyruk, iş yerindeki yaralanmalar, tuvaletteki yataklar ve ilaç stoğu tek sayfada. Dinlenme ve hastalık izni tavsiyesi kağıt fişi olmadan HR'ye gönderilir.",
-          "secondaryCta": "Kliniğe bakın"
+          "title": "Sağlık merkezi: fabrika kliniğiniz, şirketin geri kalanıyla aynı düzende",
+          "lead": "Ziyaretler, sıra, iş kazaları, dinlenme odasındaki yataklar ve ilaç stoku tek sayfada. Dinlenme ve hastalık izni önerileri kâğıt form olmadan İK'ya iletilir.",
+          "secondaryCta": "Kliniği görün",
+          "features": [
+            "Bugünün kliniği: ziyaretler, sıra ve kullanımdaki yataklar",
+            "İş kazaları hastalıklardan ayrı kaydedilir",
+            "Azalan veya son kullanma tarihi yaklaşan ilaçlar",
+            "Bölümlere göre zamanı gelen sağlık kontrolleri",
+            "Hastalık izni ve dinlenme önerileri İK'ya iletilir"
+          ]
         },
         "sample": {
           "count": "Bugün 30 ziyaret",
           "notes": [
-            "dört rakamlı gün",
-            "kim bekliyor",
-            "kliniğin en yoğun olduğu zaman"
+            "günün özeti, dört rakamda",
+            "kimler bekliyor",
+            "kliniğin en yoğun olduğu saatler"
           ]
         },
         "ui": {
           "title": "Sağlık Merkezi",
           "visits": "Ziyaretler",
           "today": "Bugün",
-          "injuries": "İş yerinde yaralanmalar",
-          "injuriesSub": "Her ikisi de küçük",
+          "injuries": "İş kazaları",
+          "injuriesSub": "İkisi de hafif",
           "beds": "Dinlenme yatakları",
           "bedsSub": "Kullanımda",
-          "stock": "İlaçlar düşük",
-          "stockSub": "Minimumun altında",
+          "stock": "Azalan ilaçlar",
+          "stockSub": "Minimum stokun altında",
           "queueTitle": "Sıra",
-          "qWithDoctor": "Doktor ile",
-          "qDressing": "Giyinme",
+          "qWithDoctor": "Doktorda",
+          "qDressing": "Pansuman",
           "qWaiting": "Bekliyor",
-          "hourTitle": "Saat bazında ziyaretler",
-          "caption": "Adon ERP'deki Tıp Merkezinin kısmi önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
+          "hourTitle": "Saate göre ziyaretler",
+          "caption": "Adon ERP'deki Sağlık Merkezi modülünün kısmi önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
         },
         "flow": {
-          "title": "Klinik üç bölümden oluşuyor",
-          "intro": "İnsanları görün, ilaç verin, onları sağlıklı tutun.",
+          "title": "Klinik üç bölümden oluşur",
+          "intro": "Hastayı görün, ilacı verin, çalışanları sağlıklı tutun.",
           "steps": [
             {
               "tag": "Ziyaretler",
-              "question": "görülen her insan",
-              "body": "Çalışan tarafından şikayet, hayati bilgiler, bulgular ve tavsiyeler."
+              "question": "Görülen her kişi",
+              "body": "Çalışana göre şikâyet, vital bulgular, muayene sonuçları ve öneriler."
             },
             {
               "tag": "Eczane",
               "question": "Verilen ilaçlar",
-              "body": "Kliniğin kendi stoğundan partiler halinde çıkarılmıştır."
+              "body": "Kliniğin kendi stokundan, parti bazında çıkış yapılır."
             },
             {
-              "tag": "Kontroller",
+              "tag": "Sağlık Kontrolleri",
               "question": "Önleme",
-              "body": "İstihdam öncesi ve periyodik kontroller, sonuçların saklanması."
+              "body": "İşe giriş ve periyodik kontroller; sonuçlar kayıt altında tutulur."
             }
           ],
-          "formTitle": "Genel bakış neyi gösteriyor?",
+          "formTitle": "Genel bakış neleri gösterir?",
           "form": [
             {
               "label": "Ziyaretler",
@@ -19521,59 +19563,59 @@
             },
             {
               "label": "Yaralanmalar",
-              "body": "Kaza kaydı için ayrı tutuldu."
+              "body": "İş kazası kaydı için ayrı tutulur."
             },
             {
               "label": "Yataklar",
-              "body": "Dinlenme odası yatakları kullanılıyor."
+              "body": "Kullanımdaki dinlenme odası yatakları."
             },
             {
               "label": "Stok",
-              "body": "İlaçların süresi azalmış veya son kullanma tarihi yaklaşmış."
+              "body": "Azalan veya son kullanma tarihi yaklaşan ilaçlar."
             }
           ]
         },
         "connect": {
-          "title": "Klinik HR ile çalışıyor",
-          "intro": "HR'den kişilerin kim olduğunu bilir ve dinlenme ve tavsiyeleri geri gönderir.",
+          "title": "Klinik, İK ile birlikte çalışır",
+          "intro": "Çalışan bilgilerini İK'dan alır, dinlenme ve izin önerilerini İK'ya geri gönderir.",
           "groups": {
             "before": "Şuradan okur:",
-            "after": "Devam ediyor",
+            "after": "Şunun üzerinde çalışır",
             "shows": "Nerede görünür"
           },
           "items": {
             "hrEmployees": "Hastanın kim olduğu.",
             "mcVisits": "Her ziyaret.",
             "mcPharmacy": "İlaç stoku.",
-            "mcCheckups": "Kontrollerin zamanı geldi ve bitti.",
-            "hrLeaveApps": "Klinikten hastalık izni.",
-            "hrReports": "Devamsızlık hastalıkla bağlantılı."
+            "mcCheckups": "Zamanı gelen ve tamamlanan kontroller.",
+            "hrLeaveApps": "Klinikten gelen hastalık izni.",
+            "hrReports": "Hastalıkla ilişkili devamsızlık."
           }
         },
         "local": {
-          "title": "Buradaki fabrikaların yönettiği gibi bir tıp merkezi",
-          "intro": "Sahada bir doktor veya hemşire, küçük bir dispanser ve işyerindeki yaralanmaları kaydetme görevi.",
+          "title": "Buradaki fabrikaların işlettiği şekliyle bir sağlık merkezi",
+          "intro": "Sahada bir doktor veya hemşire, küçük bir dispanser ve iş kazalarını kayda geçirme yükümlülüğü.",
           "points": [
             {
-              "title": "Yaralanmalar kaydedildi",
+              "title": "İş kazaları kaydedilir",
               "body": "Kaza kaydı için."
             },
             {
-              "title": "Gece vardiyaları kapsanıyor",
-              "body": "Stock geç saatlere kadar izledi."
+              "title": "Gece vardiyaları kapsanır",
+              "body": "Gece saatleri için stok takip edilir."
             },
             {
-              "title": "HR'ye tavsiye bırakın",
-              "body": "Yolda kaybolan kağıt parçası yok."
+              "title": "İzin önerisi İK'ya gider",
+              "body": "Yolda kaybolan kâğıt form olmaz."
             },
             {
-              "title": "Özel",
-              "body": "Tıbbi notlar yalnızca klinik personeli tarafından görülebilir."
+              "title": "Gizlilik",
+              "body": "Tıbbi notları yalnızca klinik personeli görür."
             }
           ],
           "story": {
-            "title": "Bir sabah klinikte",
-            "intro": "Genellikle olduğu gibi bir örnek değişimi.",
+            "title": "Klinikte bir sabah",
+            "intro": "Olağan işleyişe uygun örnek bir vardiya.",
             "steps": [
               {
                 "time": "08:00",
@@ -19581,92 +19623,99 @@
               },
               {
                 "time": "09:00",
-                "text": "İlk saatte dokuz kişi geliyor."
+                "text": "İlk saatte dokuz kişi gelir."
               },
               {
                 "time": "09:12",
-                "text": "Kesilen el giydirilir ve yaralanma olarak kaydedilir."
+                "text": "Kesik bir elin pansumanı yapılır ve iş kazası olarak kaydedilir."
               },
               {
                 "time": "10:00",
-                "text": "Parasetamol düşük olarak işaretlendi."
+                "text": "Parasetamol azalan ilaçlar arasına girer."
               },
               {
                 "time": "12:00",
-                "text": "Bir dinlenme günü tavsiyesi HR'ye gitti."
+                "text": "İK'ya bir günlük istirahat önerisi iletilir."
               }
             ]
           }
         },
         "industries": {
-          "title": "Farklı meslekler bir tıp merkezini nasıl kullanır?",
+          "title": "Farklı sektörler sağlık merkezini nasıl kullanır?",
           "angles": {
             "retail": "Büyük mağazalarda ilk yardım.",
-            "food-hospitality": "Mutfak yanıkları ve kesiklerinde ilk yardım.",
-            "real-estate": "Saha ilk yardım ve yaralanmalar.",
-            "consulting": "Ofis sağlığı ve refahı.",
+            "food-hospitality": "Mutfaktaki yanık ve kesikler için ilk yardım.",
+            "real-estate": "Şantiyede ilk yardım ve iş kazaları.",
+            "consulting": "Ofis sağlığı ve çalışan refahı.",
             "manufacturing": "Her vardiya için fabrika klinikleri.",
             "health-fitness": "Hastanelerde personel sağlığı.",
-            "trades": "Saha ekiplerine ilk yardım.",
-            "others": "Sahadaki personel için sağlık."
+            "trades": "Saha ekipleri için ilk yardım.",
+            "others": "Sahadaki personel için sağlık hizmetleri."
           }
         },
         "faq": {
-          "title": "Tıp merkezi hakkında aldığımız sorular",
+          "title": "Sağlık merkezi hakkında sık sorulan sorular",
           "items": [
             {
               "q": "Tıbbi notları kimler görebilir?",
-              "a": "Erişim haklarına göre yalnızca klinik personeli."
+              "a": "Yalnızca klinik personeli, erişim yetkilerine göre."
             },
             {
-              "q": "Yaralanmalar ayrı ayrı kaydediliyor mu?",
-              "a": "Evet, kaza kaydı için."
+              "q": "İş kazaları ayrı mı kaydediliyor?",
+              "a": "Evet, iş kazası kaydı için ayrı tutulur."
             },
             {
-              "q": "HR tanıyı görüyor mu?",
-              "a": "Hayır, yalnızca geri kalanı veya tavsiye bırakın."
+              "q": "İK tanıyı görebilir mi?",
+              "a": "Hayır, yalnızca dinlenme veya izin önerisini görür."
             },
             {
-              "q": "Birden fazla klinik çalıştırılabilir mi?",
-              "a": "Evet, her site için bir tane."
+              "q": "Birden fazla klinik yönetilebilir mi?",
+              "a": "Evet, her lokasyon için bir klinik."
             },
             {
-              "q": "İlaç stoğu takip ediliyor mu?",
-              "a": "Evet, partiye ve son kullanma tarihine göre."
+              "q": "İlaç stoku takip ediliyor mu?",
+              "a": "Evet, parti ve son kullanma tarihine göre."
             },
             {
               "q": "Adon ERP nerede kullanılabilir?",
-              "a": "Şu anda Dhaka'da şirket alımı yapıyoruz. Bir demo rezervasyonu yapın ve örnek verilerle üzerinden geçelim."
+              "a": "Şu anda Dhaka'daki şirketleri sisteme alıyoruz. Demo talep edin, örnek verilerle birlikte inceleyelim."
             }
           ]
         },
         "closing": {
-          "title": "Kliniğinizin kaydını getirin. Demoda bir gün ayarlayacağız."
+          "title": "Klinik kayıt defterinizi getirin; demoda bir günü birlikte kuralım."
         }
       },
       "mcVisitsPage": {
         "meta": {
-          "title": "Klinik Ziyaretleri: Hayati Bilgiler, Bulgular, İlaçlar ve İzin Önerileri",
-          "description": "Fabrika kliniğine yapılan her ziyareti hayati bilgiler, şikayetler, bulgular, verilen ilaçlar ve sonuçlarla birlikte, kaza kaydı için tutulan yaralanmalarla ve HR'ye gönderilen dinlenme tavsiyeleriyle birlikte kaydedin. Bangladeş'teki şirketler için tasarlandı.",
+          "title": "Klinik Ziyaretleri: Vital Bulgular, Muayene, İlaç ve İzin Önerisi",
+          "description": "Fabrika kliniğine yapılan her ziyareti vital bulgular, şikâyet, muayene sonucu, verilen ilaçlar ve sonuçla birlikte kaydedin. İş kazaları kaza kaydına işlenir, dinlenme önerileri İK'ya iletilir. Bangladeş'teki şirketler için tasarlandı.",
           "keywords": [
             "klinik ziyaret kaydı",
             "iş sağlığı kaydı",
             "fabrika kliniği kaydı",
-            "HR yazılımı Bangladeş",
+            "İK yazılımı Bangladeş",
             "Adon ERP klinik ziyaretleri"
           ]
         },
         "hero": {
-          "title": "Klinik ziyaretleri: yaşamsal bulgulardan önerilere kadar tek bir kayıt",
-          "lead": "Hayati bilgiler, şikayet, bulunanlar ve verilenler tek ekranda. İşe dönüş, dinlenme veya sevk sonucu HR'ye aktarılır ve iş yerinde meydana gelen bir yaralanma kaza kaydına alınır.",
-          "secondaryCta": "Bir ziyareti görün"
+          "title": "Klinik ziyaretleri: vital bulgulardan öneriye, her ziyaret için tek kayıt",
+          "lead": "Vital bulgular, şikâyet, muayene sonucu ve verilen ilaçlar tek ekranda. Sonuç (işe dönüş, istirahat veya sevk) İK'ya iletilir; iş kazaları ise kaza kaydına işlenir.",
+          "secondaryCta": "Bir ziyareti görün",
+          "features": [
+            "Fabrika kliniğine yapılan her ziyaret, çalışan bazında",
+            "Vital bulgular, şikâyet, muayene sonucu ve öneriler",
+            "Kliniğin kendi stokundan verilen ilaçlar",
+            "İş kazaları, kaza kaydı için ayrıca kaydedilir",
+            "İstirahat veya hastalık izni önerisi tek tıkla İK'ya iletilir"
+          ]
         },
         "sample": {
           "count": "1 ziyaret",
           "notes": [
-            "Bir bakışta hayati önem taşıyanlar",
+            "vital bulgulara tek bakışta ulaşın",
             "verilen ilaçlar",
-            "HR sonucu"
+            "İK'ya iletilen sonuç"
           ]
         },
         "ui": {
@@ -19674,111 +19723,111 @@
           "who": "Makine Operatörü · Kalıpçılık · 29 yıl",
           "visitNo": "Bu yıl 3. ziyaret",
           "allergy": "Bilinen alerji yok",
-          "vitals": "Hayati bilgiler",
+          "vitals": "Vital bulgular",
           "vBp": "Kan basıncı",
           "vPulse": "Nabız",
-          "vTemp": "Sıcaklık",
+          "vTemp": "Ateş",
           "vSpo2": "SpO₂",
-          "complaint": "Şikayet",
-          "complaintValue": "Dün geceden bu yana ateş ve gevşek dışkı",
-          "finding": "Bulma",
-          "findingValue": "Hafif dehidrasyon, başka belirti yok",
-          "rx": "Klinikten verilen",
-          "thMed": "Tıp",
+          "complaint": "Şikâyet",
+          "complaintValue": "Dün geceden beri ateş ve ishal",
+          "finding": "Muayene bulgusu",
+          "findingValue": "Hafif dehidrasyon, başka bulgu yok",
+          "rx": "Klinikten verilenler",
+          "thMed": "İlaç",
           "thDose": "Doz",
-          "thDays": "Günler",
-          "thQty": "Miktar",
-          "oReturn": "İşe geri dön",
-          "oRest": "1 gün dinlenme",
-          "oRefer": "Bakınız",
-          "leaveNote": "1 günlük hastalık izni onay için HR'ye gönderilecektir.",
-          "caption": "Adon ERP'deki Klinik Ziyaretlerinin kısmi bir önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
+          "thDays": "Gün",
+          "thQty": "Adet",
+          "oReturn": "İşe dönüş",
+          "oRest": "1 gün istirahat",
+          "oRefer": "Sevk",
+          "leaveNote": "1 günlük hastalık izni onay için İK'ya iletilecek.",
+          "caption": "Adon ERP'deki Klinik Ziyaretleri modülünün kısmi önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
         },
         "flow": {
-          "title": "Üç bölümden oluşan bir klinik ziyareti",
-          "intro": "Ne görüldü, ne yapıldı ve bundan sonra ne olacak.",
+          "title": "Bir klinik ziyareti üç bölümden oluşur",
+          "intro": "Ne görüldü, ne yapıldı, bundan sonra ne olacak.",
           "steps": [
             {
-              "tag": "Değerlendir",
-              "question": "Hayati bilgiler ve şikayet",
-              "body": "Tansiyon, nabız, ateş ve oksijen, kişinin kendi deyimiyle şikayetiyle birlikte."
+              "tag": "Değerlendirme",
+              "question": "Vital bulgular ve şikâyet",
+              "body": "Tansiyon, nabız, ateş ve oksijen satürasyonu; şikâyet kişinin kendi ifadesiyle kaydedilir."
             },
             {
               "tag": "Tedavi",
               "question": "İlaçlar ve bakım",
-              "body": "İlaçlar kliniğin stoğundan temin edilir ve ziyarette parti kayıt altına alınır."
+              "body": "İlaçlar kliniğin stokundan verilir ve ziyaret kaydında parti bilgisi tutulur."
             },
             {
               "tag": "Sonuç",
-              "question": "Geri dönün, dinlenin veya bakın",
-              "body": "Dinlenme tavsiyesi hastalık izni olarak HR'ye gider; Takip için yönlendirmeler not edilir."
+              "question": "İşe dönüş, istirahat veya sevk",
+              "body": "İstirahat önerisi hastalık izni olarak İK'ya iletilir; sevkler takip için not edilir."
             }
           ],
-          "formTitle": "Ne ziyaret kayıtları",
+          "formTitle": "Bir ziyarette neler kaydedilir?",
           "form": [
             {
               "label": "Çalışan",
-              "body": "Alerjisi ve geçmişi olan HR'den."
+              "body": "İK'dan gelir; alerji ve geçmiş bilgileriyle birlikte."
             },
             {
-              "label": "Hayati bilgiler",
-              "body": "Her zamanki dörtlü ve gerekirse diğerleri."
+              "label": "Vital bulgular",
+              "body": "Temel dört ölçüm; gerekirse diğerleri."
             },
             {
-              "label": "Şikayet ve bulma",
-              "body": "Basit bir ifadeyle."
+              "label": "Şikâyet ve muayene bulgusu",
+              "body": "Sade bir dille."
             },
             {
               "label": "İlaçlar",
-              "body": "Stoktan çıkarılmıştır."
+              "body": "Stoktan verilir."
             },
             {
               "label": "Sonuç",
-              "body": "İşe dönün, dinlenin veya sevk edin."
+              "body": "İşe dönüş, istirahat veya sevk."
             }
           ]
         },
         "connect": {
-          "title": "Bir ziyaret HR'den okur ve eczaneye yazar ve ayrılır",
-          "intro": "Bir kayıt, önemli olan üç yer.",
+          "title": "Ziyaret İK'dan okur, eczane ve izin kayıtlarına yazar",
+          "intro": "Tek kayıt, üç ayrı yerde işe yarar.",
           "groups": {
             "before": "Şuradan okur:",
-            "after": "Şuraya yazar:",
+            "after": "Şuraya yazar",
             "shows": "Nerede görünür"
           },
           "items": {
             "hrEmployees": "Hastanın kim olduğu.",
             "mcCheckups": "Bağlam için geçmiş sonuçlar.",
-            "mcPharmacy": "İlaçlar stoktan alınmıştır.",
-            "hrLeaveApps": "Dinlenme tavsiyesinden hastalık izni.",
+            "mcPharmacy": "Stoktan verilen ilaçlar.",
+            "hrLeaveApps": "İstirahat önerisinden oluşan hastalık izni.",
             "mcOverview": "Bugünkü ziyaretler.",
-            "hrReports": "Hastalık ve yaralanma eğilimleri."
+            "hrReports": "Hastalık ve iş kazası eğilimleri."
           }
         },
         "local": {
-          "title": "Klinik buradaki fabrika kliniklerinin çalışma şeklini ziyaret ediyor",
-          "intro": "Çoğu ziyaret kısa sürer: ateş, ağrı, küçük kesikler. Bunlardan birkaçı, düzgün bir şekilde kaydedilmesi gereken iş yerindeki yaralanmalardır.",
+          "title": "Buradaki fabrika kliniklerinin çalışma düzenine uygun ziyaret kaydı",
+          "intro": "Ziyaretlerin çoğu kısadır: ateş, ağrı, küçük kesikler. Birkaçı ise doğru biçimde kaydedilmesi gereken iş kazalarıdır.",
           "points": [
             {
               "title": "Hızlı kayıt",
-              "body": "Yaklaşık bir dakika içinde bir ziyaret."
+              "body": "Bir ziyaret yaklaşık bir dakikada kaydedilir."
             },
             {
-              "title": "Yaralanmalar ayrı tutuldu",
+              "title": "İş kazaları ayrı tutulur",
               "body": "Kaza kaydı için."
             },
             {
-              "title": "Tekrarlanan ziyaretler görüldü",
-              "body": "Desenler bir yıl boyunca görülebilir."
+              "title": "Tekrarlayan ziyaretler görünür",
+              "body": "Bir yıl boyunca örüntüler izlenebilir."
             },
             {
-              "title": "Tıbbi notlar özel",
-              "body": "HR yalnızca sonucu görür."
+              "title": "Tıbbi notlar gizlidir",
+              "body": "İK yalnızca sonucu görür."
             }
           ],
           "story": {
-            "title": "Sıradan hastalık iznine kadar tek ziyaret",
-            "intro": "Genellikle yürütüldüğü şekilde örnek bir ziyaret.",
+            "title": "Sıradan hastalık iznine tek ziyaret",
+            "intro": "Olağan işleyişe uygun örnek bir ziyaret.",
             "steps": [
               {
                 "time": "09:05",
@@ -19786,11 +19835,11 @@
               },
               {
                 "time": "09:08",
-                "text": "Hayati veriler alınır; sıcaklık 100,8 °F'dir."
+                "text": "Vital bulgular alınır; ateş 100,8 °F'dir."
               },
               {
                 "time": "09:12",
-                "text": "Parasetamol ve ORS stoktan verilmektedir."
+                "text": "Stoktan parasetamol ve ORS verilir."
               },
               {
                 "time": "09:14",
@@ -19798,61 +19847,61 @@
               },
               {
                 "time": "09:14",
-                "text": "Hastalık izni onay için HR'ye ulaşır."
+                "text": "Hastalık izni onay için İK'ya ulaşır."
               }
             ]
           }
         },
         "industries": {
-          "title": "Farklı meslekler klinik ziyaretlerini nasıl kullanıyor?",
+          "title": "Farklı sektörler klinik ziyaretlerini nasıl kullanır?",
           "angles": {
             "retail": "Mağazalarda ilk yardım.",
-            "food-hospitality": "Mutfaklarda yanıklar ve kesikler.",
-            "real-estate": "Saha yaralanmaları kaydedildi.",
+            "food-hospitality": "Mutfaklarda yanık ve kesikler.",
+            "real-estate": "Şantiye kazalarının kaydı.",
             "consulting": "Ofis sağlık ziyaretleri.",
-            "manufacturing": "Her vardiya fabrikaları ziyaret ediyor.",
+            "manufacturing": "Fabrikalarda her vardiyanın ziyaretleri.",
             "health-fitness": "Hastanelerde personel ziyaretleri.",
-            "trades": "Saha yaralanmaları kaydedildi.",
+            "trades": "Saha kazalarının kaydı.",
             "others": "Sahada personel sağlığı."
           }
         },
         "faq": {
-          "title": "Klinik ziyaretleriyle ilgili aldığımız sorular",
+          "title": "Klinik ziyaretleri hakkında sık sorulan sorular",
           "items": [
             {
               "q": "Ziyareti kimler görebilir?",
-              "a": "Yalnızca klinik personeli; HR sonucu görüyor."
+              "a": "Yalnızca klinik personeli; İK sonucu görür."
             },
             {
-              "q": "İlaçlar stoktan mı alınıyor?",
-              "a": "Evet, toplu olarak."
+              "q": "İlaçlar stoktan mı düşülüyor?",
+              "a": "Evet, parti bazında."
             },
             {
-              "q": "Bir yaralanma farklı şekilde mi kaydediliyor?",
-              "a": "Evet, aynı zamanda kaza kayıtlarına da giriyor."
+              "q": "İş kazası farklı mı kaydedilir?",
+              "a": "Evet, ayrıca kaza kaydına da işlenir."
             },
             {
-              "q": "Dinlenme tavsiyesi izne dönüşür mü?",
-              "a": "Onay için hastalık izni olarak HR'ye gönderilir."
+              "q": "İstirahat önerisi izne dönüşür mü?",
+              "a": "Hastalık izni olarak onay için İK'ya iletilir."
             },
             {
               "q": "Geçmiş ziyaretleri görebilir miyim?",
-              "a": "Evet, çalışanın klinik geçmişi hakkında."
+              "a": "Evet, çalışanın klinik geçmişinden."
             },
             {
               "q": "Adon ERP nerede kullanılabilir?",
-              "a": "Şu anda Dhaka'da şirket alımı yapıyoruz. Bir demo rezervasyonu yapın ve örnek verilerle üzerinden geçelim."
+              "a": "Şu anda Dhaka'daki şirketleri sisteme alıyoruz. Demo talep edin, örnek verilerle birlikte inceleyelim."
             }
           ]
         },
         "closing": {
-          "title": "Kliniğinizin kayıt defterinin bir sayfasını getirin. Demoda ziyaret olarak gireceğiz."
+          "title": "Klinik kayıt defterinizden bir sayfa getirin; demoda ziyaret olarak girelim."
         }
       },
       "mcPharmacyPage": {
         "meta": {
-          "title": "Klinik Eczanesi: İlaç Stoku, Serileri ve Son Kullanma Tarihi",
-          "description": "Kliniğin ilaçlarını ve ilk yardım stokunu partiler halinde tutun, en eski partiyi ilk önce verin, son kullanma tarihlerini ve minimum stoku izleyin ve her sorunu bir klinik ziyaretine bağlayın. Bangladeş'teki şirketler için tasarlandı.",
+          "title": "Klinik Eczanesi: İlaç Stoku, Partiler ve Son Kullanma Tarihi",
+          "description": "Kliniğin ilaç ve ilk yardım stokunu parti bazında tutun, en eski partiyi önce verin, son kullanma tarihlerini ve minimum stoku izleyin; her çıkışı bir klinik ziyaretine bağlayın. Bangladeş'teki şirketler için tasarlandı.",
           "keywords": [
             "klinik eczane stoku",
             "ilaç son kullanma tarihi takibi",
@@ -19862,279 +19911,309 @@
           ]
         },
         "hero": {
-          "title": "Eczane: ilaçların stok ve son kullanma tarihlerini takip edin",
-          "lead": "Her ilaç, son kullanma tarihi ile birlikte parti halinde saklanır. En eski parti ilk önce çıkar, kısa vadeli stoklar kırmızıyla işaretlenir ve minimumun altındaki her şey yeniden sipariş edilmeye hazırdır.",
-          "secondaryCta": "Stokları görün"
+          "title": "Eczane: kliniğin ilaçları stokta ve tarihinde",
+          "lead": "Her ilaç, son kullanma tarihiyle birlikte parti bazında tutulur. En eski parti önce çıkar, tarihi yaklaşan stoklar kırmızıyla işaretlenir, minimum seviyenin altına inenler yeniden sipariş için hazır olur.",
+          "secondaryCta": "Stoku görün",
+          "features": [
+            "Kliniğin ilaç ve ilk yardım stoku, parti bazında",
+            "Son kullanma tarihleri; en eski parti önce verilir",
+            "Minimum stok sayesinde gece vardiyasında ilaç tükenmez",
+            "Her ilaç çıkışı bir klinik ziyaretine bağlanır",
+            "Stok azaldığında satın alma talebi oluşturulur"
+          ]
         },
         "sample": {
           "count": "6 ürün gösteriliyor",
           "notes": [
-            "minimuma karşı stok",
-            "aylar içinde sona erme",
-            "düşük stok işaretlendi"
+            "minimum seviyeye göre stok",
+            "ay cinsinden son kullanma",
+            "azalan stok işaretlenir"
           ]
         },
         "ui": {
+          "m0": "Parasetamol 500 mg tablet",
+          "m1": "Oral rehidrasyon tuzu",
+          "m2": "Antasit 400 mg tablet",
+          "m3": "Povidon iyot %10 100 ml",
+          "m4": "Setirizin 10 mg tablet",
+          "m5": "Krep bandaj 10 cm",
           "title": "Eczane",
-          "expiring": "2'sinin süresi 3 ay içinde doluyor",
-          "low": "Minimumun 1 altında",
-          "count": "48 öğeden 6'sı",
-          "thMed": "Tıp",
-          "thBatch": "Toplu",
+          "expiring": "2 kalem 3 ay içinde sona eriyor",
+          "low": "1 kalem minimumun altında",
+          "count": "48 kalemden 6'sı",
+          "thMed": "İlaç",
+          "thBatch": "Parti",
           "thStock": "Eldeki stok",
-          "thExpiry": "Süresi doluyor",
+          "thExpiry": "Kalan süre",
           "belowMin": "Minimumun altında",
           "months": "ay",
-          "caption": "Adon ERP'de Eczane'nin kısmi bir önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
+          "caption": "Adon ERP'deki Eczane modülünün kısmi önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
         },
         "flow": {
-          "title": "Klinik stoğu, üç kuralda",
-          "intro": "Önce en eskisi, hiç tükenmedi, süresi dolmadı.",
+          "title": "Klinik stoku, üç kuralda",
+          "intro": "Önce en eski çıkar, stok tükenmez, süresi geçmiş ilaç verilmez.",
           "steps": [
             {
               "tag": "FEFO",
-              "question": "İlk vade, ilk çıkar",
-              "body": "Süresi en kısa sürede dolan parti, verilen partidir."
+              "question": "İlk sona eren, ilk çıkar",
+              "body": "Son kullanma tarihi en yakın olan parti ilk verilir."
             },
             {
-              "tag": "Asgari",
-              "question": "Asla tükenme",
-              "body": "Her öğenin gece vardiyasını ve hafta sonunu kapsayan bir minimum değeri vardır."
+              "tag": "Minimum",
+              "question": "Stok asla tükenmez",
+              "body": "Her kalem için gece vardiyasını ve hafta sonunu kapsayan bir minimum seviye tanımlanır."
             },
             {
               "tag": "Son Kullanma",
-              "question": "Son kullanma tarihi geçmiş stokları asla vermeyin",
-              "body": "Kısa tarihli partiler işaretlenir ve son kullanma tarihi geçmiş olanlar engellenir."
+              "question": "Süresi geçmiş ilaç verilmez",
+              "body": "Tarihi yaklaşan partiler işaretlenir, süresi geçenler ise bloke edilir."
             }
           ],
-          "formTitle": "Bir ilaç için doldurduğunuz bilgiler",
+          "formTitle": "Bir ilaç için girilen bilgiler",
           "form": [
             {
-              "label": "İsim ve güç",
-              "body": "Parasetamol 500 mg gibi."
+              "label": "Ad ve doz",
+              "body": "Örneğin Parasetamol 500 mg."
             },
             {
-              "label": "Toplu iş ve son kullanma tarihi",
-              "body": "Kutusundan, teslim alındığında."
+              "label": "Parti ve son kullanma tarihi",
+              "body": "Mal kabulde kutunun üzerinden girilir."
             },
             {
-              "label": "Asgari",
-              "body": "En azından saklarsın."
+              "label": "Minimum",
+              "body": "Stokta tutulacak en az miktar."
             },
             {
               "label": "Birim",
-              "body": "Tablet, şişe, poşet."
+              "body": "Tablet, şişe, saşe."
             }
           ]
         },
         "connect": {
-          "title": "Eczane kliniğin içinde küçük bir mağazadır",
-          "intro": "Diğer stoklar gibi alınır, ziyaretlerde dağıtılır, satın alma yoluyla yeniden düzenlenir.",
+          "title": "Eczane, kliniğin içindeki küçük bir depodur",
+          "intro": "Diğer stoklar gibi mal kabulle girer, ziyaretlerde verilir, satın alma yoluyla yeniden sipariş edilir.",
           "groups": {
-            "before": "Aracılığıyla alındı",
-            "after": "Verildi ve yeniden düzenlendi",
+            "before": "Şu kayıtla alınır",
+            "after": "Verilir ve yeniden sipariş edilir",
             "shows": "Nerede görünür"
           },
           "items": {
-            "itemsProducts": "Stok kalemleri olarak ilaçlar.",
-            "scGoodsReceipts": "Partiler alındı.",
+            "itemsProducts": "İlaçlar stok kalemi olarak.",
+            "scGoodsReceipts": "Teslim alınan partiler.",
             "mcVisits": "Ziyarette verilen ilaçlar.",
-            "scRequisitions": "Düşük stok için siparişler.",
+            "scRequisitions": "Azalan stok için siparişler.",
             "invSummary": "Klinik stokunun değeri.",
-            "mcOverview": "Düşük ve süresi dolmuş öğeler."
+            "mcOverview": "Azalan ve son kullanma tarihi yaklaşan kalemler."
           }
         },
         "local": {
-          "title": "Buradaki fabrikaların tuttuğu gibi bir klinik eczanesi",
-          "intro": "Yaygın olarak kullanılan ilaçlar, ilk yardım malzemeleriyle dolu bir dolap ve bunları güncel tutma görevi.",
+          "title": "Buradaki fabrikaların tuttuğu şekilde bir klinik eczanesi",
+          "intro": "Yaygın ilaçların ve ilk yardım malzemelerinin durduğu bir dolap ve bunları tarihinde tutma sorumluluğu.",
           "points": [
             {
-              "title": "Toplu olarak",
-              "body": "Her kutu takip edildi."
+              "title": "Parti bazında",
+              "body": "Her kutu izlenebilir."
             },
             {
-              "title": "Son kullanma tarihi izlendi",
-              "body": "Süresi dolmuş stok verilmedi."
+              "title": "Son kullanma tarihi izlenir",
+              "body": "Süresi geçmiş ilaç verilmez."
             },
             {
-              "title": "Gece vardiyaları kapsanıyor",
-              "body": "Geç saatler için minimumlar."
+              "title": "Gece vardiyaları kapsanır",
+              "body": "Gece saatleri için minimum stok."
             },
             {
-              "title": "Ziyaretlerle bağlantılı",
+              "title": "Ziyaretlere bağlı",
               "body": "Kim neyi, ne zaman aldı?"
             }
           ],
           "story": {
-            "title": "Son kullanma tarihi dolmadan kullanılmış, kısa süreli bir parti",
-            "intro": "Örnek bir ay, genelde olduğu gibi.",
+            "title": "Tarihi yaklaşan bir parti, süresi dolmadan tüketildi",
+            "intro": "Olağan işleyişe uygun örnek bir ay.",
             "steps": [
               {
                 "time": "1 Kas",
-                "text": "Povidon iyot grubu B-2402, 1 ay kaldığını gösteriyor."
+                "text": "Povidon iyot B-2402 partisinde 1 ay kaldığı görünür."
               },
               {
                 "time": "1 Kas",
-                "text": "Yeni stoklardan önce çıkması planlanıyor."
+                "text": "Yeni stoktan önce çıkacak şekilde ayarlanır."
               },
               {
-                "time": "Kasım ayına kadar",
-                "text": "Pansumanlar önce eski partiyi kullanır."
+                "time": "Kasım boyunca",
+                "text": "Pansumanlarda önce eski parti kullanılır."
               },
               {
                 "time": "28 Kasım",
-                "text": "Toplu iş tükendi."
+                "text": "Parti tamamen kullanılır."
               },
               {
                 "time": "1 Aralık",
-                "text": "Hiçbir şey yazılmıyor."
+                "text": "Zayiat kaydı yapılmaz."
               }
             ]
           }
         },
         "industries": {
-          "title": "Farklı meslekler klinik eczaneyi nasıl kullanır?",
+          "title": "Farklı sektörler klinik eczanesini nasıl kullanır?",
           "angles": {
-            "retail": "Mağazalardaki ilk yardım kutuları.",
-            "food-hospitality": "Mutfaklarda yakma kitleri.",
-            "real-estate": "Sitelerde ilk yardım stoğu.",
+            "retail": "Mağazalardaki ilk yardım dolapları.",
+            "food-hospitality": "Mutfaklardaki yanık setleri.",
+            "real-estate": "Şantiyelerde ilk yardım stoku.",
             "consulting": "Ofis ilk yardım malzemeleri.",
             "manufacturing": "Fabrika kliniği ilaçları.",
-            "health-fitness": "Hastanelerdeki personel kliniği stoğu.",
-            "trades": "Saha ekipleri için kitler.",
-            "others": "Tesise göre saha kitleri."
+            "health-fitness": "Hastanelerde personel kliniği stoku.",
+            "trades": "Saha ekipleri için setler.",
+            "others": "Lokasyona göre saha setleri."
           }
         },
         "faq": {
-          "title": "Klinik eczane hakkında aldığımız sorular",
+          "title": "Klinik eczanesi hakkında sık sorulan sorular",
           "items": [
             {
-              "q": "Stok partiler halinde tutuluyor mu?",
-              "a": "Evet, son kullanma tarihi ile."
+              "q": "Stok parti bazında mı tutuluyor?",
+              "a": "Evet, son kullanma tarihiyle birlikte."
             },
             {
-              "q": "İlk önce hangi parti verilir?",
-              "a": "Süresi en kısa sürede dolan."
+              "q": "Önce hangi parti verilir?",
+              "a": "Son kullanma tarihi en yakın olan."
             },
             {
-              "q": "Süresi dolmuş stoklara ne olur?",
-              "a": "Bloke edilir ve silinebilir."
+              "q": "Süresi geçmiş stoka ne olur?",
+              "a": "Bloke edilir ve zayiat olarak kayıttan düşülebilir."
             },
             {
               "q": "Buradan yeniden sipariş verebilir miyim?",
-              "a": "Stok düşük olduğunda talep önerilir."
+              "a": "Stok azaldığında satın alma talebi önerilir."
             },
             {
-              "q": "Envanterin bir parçası mı?",
-              "a": "Evet, stokların geri kalanıyla birlikte değerlendi."
+              "q": "Stok yönetiminin bir parçası mı?",
+              "a": "Evet, diğer stoklarla birlikte değerlenir."
             },
             {
               "q": "Adon ERP nerede kullanılabilir?",
-              "a": "Şu anda Dhaka'da şirket alımı yapıyoruz. Bir demo rezervasyonu yapın ve örnek verilerle üzerinden geçelim."
+              "a": "Şu anda Dhaka'daki şirketleri sisteme alıyoruz. Demo talep edin, örnek verilerle birlikte inceleyelim."
             }
           ]
         },
         "closing": {
-          "title": "Kliniğinizin stok listesini getirin. Demoda toplu olarak yükleyeceğiz."
+          "title": "Klinik stok listenizi getirin; demoda parti bazında yükleyelim."
         }
       },
       "mcCheckupsPage": {
         "meta": {
-          "title": "Sağlık Kontrolleri: İşe Giriş ve Periyodik Kontrol Sonuçları",
-          "description": "Departmana göre istihdam öncesi, periyodik ve işe özel kontrolleri planlayın, sonuçları normal aralıklara göre kaydedin, takipleri kaydedin ve uygunluk sonuçlarını HR'ye gönderin. Bangladeş'teki şirketler için tasarlandı.",
+          "title": "Sağlık Kontrolleri: İşe Giriş ve Periyodik Muayeneler, Sonuçlarıyla",
+          "description": "İşe giriş, periyodik ve işe özel kontrolleri bölümlere göre planlayın, sonuçları normal aralıklarla karşılaştırarak kaydedin, takip muayenelerini ayarlayın ve uygunluk sonucunu İK'ya iletin. Bangladeş'teki şirketler için tasarlandı.",
           "keywords": [
             "çalışan sağlık kontrol yazılımı",
             "periyodik tıbbi muayene",
             "iş sağlığı Bangladeş",
-            "istihdam öncesi tıbbi",
+            "işe giriş sağlık muayenesi",
             "Adon ERP sağlık kontrolleri"
           ]
         },
         "hero": {
-          "title": "Sağlık kontrolleri: taramaları planlayın, riskli çalışanları izleyin",
-          "lead": "Kontrolleri departmana göre planlayın, sonuçları normal aralığa göre kaydedin ve bunun dışındaki herhangi bir şey için takip randevusu alın. HR formda kalır, sınırlara uyum sağlar veya tıbbi ayrıntılara uymaz.",
-          "secondaryCta": "Bir kontrole bakın"
+          "title": "Sağlık kontrolleri: herkes kontrol edilir, risk taşıyanlar takip edilir",
+          "lead": "Kontrolleri bölümlere göre planlayın, sonuçları normal aralıkla karşılaştırarak kaydedin, aralığın dışında kalanlar için takip muayenesi ayarlayın. İK tıbbi ayrıntıyı değil, yalnızca uygun, kısıtlı uygun veya uygun değil sonucunu alır.",
+          "secondaryCta": "Bir kontrolü görün",
+          "features": [
+            "İşe giriş, periyodik ve işe özel kontroller",
+            "Kimin sırası geldiği, bölüm ve tarihe göre",
+            "Normal aralıkla karşılaştırılan sonuçlar; dışında kalanlar işaretlenir",
+            "İşaretlenen herkes için takip muayenesi ayarlanır",
+            "Uygun, kısıtlı uygun veya uygun değil sonucu İK'ya iletilir"
+          ]
         },
         "sample": {
-          "count": "212 sonuçtan 158'i tamamlandı",
+          "count": "212 kişiden 158'i tamamlandı",
           "notes": [
-            "departmana göre ilerleme",
-            "aralığa göre sonuçlar",
-            "takip işaretlendi"
+            "bölüme göre ilerleme",
+            "aralıkla karşılaştırılan sonuçlar",
+            "takip gereken kişiler işaretlenir"
           ]
         },
         "ui": {
+          "dProduction": "Üretim",
+          "dQuality": "Kalite",
+          "dSupplyChain": "Tedarik Zinciri",
+          "dSales": "Satış",
+          "dOffice": "Ofis",
+          "tHb": "Hemoglobin",
+          "tFbs": "Açlık kan şekeri",
+          "tBp": "Kan basıncı, sistolik",
+          "tBmi": "Beden kitle indeksi",
+          "tHearing": "İşitme, 4 kHz",
           "title": "Sağlık Kontrolleri",
-          "campaign": "Yıllık muayene 2026",
+          "campaign": "2026 yıllık kontrol",
           "resultTitle": "Sonuç · Tanvir Hasan",
           "followUp": "Takip: kan şekeri",
           "verdict": "İşe uygunluk",
-          "fit": "Göreve uygun",
-          "caption": "Adon ERP'deki Durum Kontrollerinin kısmi bir önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
+          "fit": "İşe uygun",
+          "caption": "Adon ERP'deki Sağlık Kontrolleri modülünün kısmi önizlemesi. Şirket, kişiler ve rakamlar örnek verilerdir."
         },
         "flow": {
           "title": "Üç adımda bir kontrol turu",
-          "intro": "Kimin geleceğini planlayın, bulunanları kaydedin, aralığın dışında kalanlara göre hareket edin.",
+          "intro": "Sırası gelenleri planlayın, bulguları kaydedin, aralığın dışında kalanlar için harekete geçin.",
           "steps": [
             {
-              "tag": "Planı",
-              "question": "Kimin zamanı var",
-              "body": "Departmana, son kontrol tarihine veya işin maruziyetine göre."
+              "tag": "Planlama",
+              "question": "Sırası gelenler",
+              "body": "Bölüme, son kontrol tarihine veya işin maruziyet düzeyine göre."
             },
             {
-              "tag": "Kaydedin",
-              "question": "Aralığa göre sonuçlar",
-              "body": "Her test normal aralığıyla; dışarıdaki her şey işaretlenir."
+              "tag": "Kayıt",
+              "question": "Aralıkla karşılaştırılan sonuçlar",
+              "body": "Her test normal aralığıyla kaydedilir; aralığın dışındaki değerler işaretlenir."
             },
             {
               "tag": "Takip",
-              "question": "Bayraklara göre hareket edin",
-              "body": "Bir klinik ziyareti rezerve edilir ve kondisyon durumu HR'ye gönderilir."
+              "question": "İşaretlenenler için aksiyon",
+              "body": "Klinik muayenesi ayarlanır ve uygunluk sonucu İK'ya iletilir."
             }
           ],
-          "formTitle": "Ne bir kontrol kayıtları",
+          "formTitle": "Bir kontrolde neler kaydedilir?",
           "form": [
             {
               "label": "Tür",
-              "body": "İstihdam öncesi, periyodik veya işe özel."
+              "body": "İşe giriş, periyodik veya işe özel."
             },
             {
               "label": "Testler",
-              "body": "Belirlediğiniz bir paketten."
+              "body": "Sizin tanımladığınız bir paketten."
             },
             {
               "label": "Sonuçlar",
-              "body": "Normal aralıklarda."
+              "body": "Normal aralıklarıyla birlikte."
             },
             {
               "label": "İşe uygunluk",
-              "body": "Uygun, sınırlara uygun veya uygun değil."
+              "body": "Uygun, kısıtlı uygun veya uygun değil."
             }
           ]
         },
         "connect": {
-          "title": "Kontroller HR'den başlar ve kliniğe geri döner",
-          "intro": "Kimin hak sahibi olduğu HR'den gelir; takipler klinik ziyaretlerine gider.",
+          "title": "Kontroller İK'dan başlar, kliniğe geri döner",
+          "intro": "Sırası gelenler İK'dan alınır; takip muayeneleri klinik ziyaretlerine dönüşür.",
           "groups": {
-            "before": "Şuradan okur:",
-            "after": "Şuna yol açar:",
+            "before": "Şuradan okur",
+            "after": "Şuna dönüşür",
             "shows": "Nerede görünür"
           },
           "items": {
-            "hrEmployees": "Kimin zamanı var.",
+            "hrEmployees": "Sırası gelenler.",
             "hrDepartments": "Bölümlere göre turlar.",
             "mcVisits": "Takip ziyaretleri.",
-            "mcOverview": "Kontrollerin zamanı geldi.",
-            "hrReports": "Bölümlere göre fitness."
+            "mcOverview": "Zamanı gelen kontroller.",
+            "hrReports": "Bölümlere göre işe uygunluk."
           }
         },
         "local": {
-          "title": "Buradaki fabrikalarda kontroller yapılıyor",
-          "intro": "Her yeni çalışan için bir istihdam öncesi tıbbi muayene ve alıcıların denetimlerinin istediği yıllık bir tur.",
+          "title": "Buradaki fabrikaların uyguladığı şekilde sağlık kontrolleri",
+          "intro": "Her yeni çalışan için işe giriş muayenesi ve alıcı firma denetimlerinde sorulan yıllık bir kontrol turu.",
           "points": [
             {
-              "title": "Her yeni marangoz",
-              "body": "İlk vardiyadan önce kontrol edildi."
+              "title": "Her yeni çalışan",
+              "body": "İlk vardiyadan önce kontrol edilir."
             },
             {
               "title": "Yıllık turlar",
@@ -20142,84 +20221,84 @@
             },
             {
               "title": "Gürültü ve toz",
-              "body": "Maruziyetin yüksek olduğu işe özel testler."
+              "body": "Maruziyetin yüksek olduğu yerlerde işe özel testler."
             },
             {
-              "title": "Özel",
-              "body": "HR sonuçları değil uygunluğu görür."
+              "title": "Gizlilik",
+              "body": "İK sonuçları değil, uygunluğu görür."
             }
           ],
           "story": {
-            "title": "Yıllık bir tur, bir ayda gerçekleştirilir",
-            "intro": "Genellikle yürütüldüğü şekilde bir örnek tur.",
+            "title": "Bir ayda tamamlanan yıllık kontrol turu",
+            "intro": "Olağan işleyişe uygun örnek bir tur.",
             "steps": [
               {
                 "time": "1 Eki",
-                "text": "212 çalışanın yıllık muayenesi var."
+                "text": "212 çalışanın yıllık kontrol zamanı gelir."
               },
               {
-                "time": "1. Hafta",
-                "text": "Kalite ve ofis bitti."
+                "time": "1. hafta",
+                "text": "Kalite ve ofis tamamlanır."
               },
               {
-                "time": "3. Hafta",
-                "text": "Üretimin dörtte üçü tamamlandı."
+                "time": "3. hafta",
+                "text": "Üretimin dörtte üçü tamamlanır."
               },
               {
-                "time": "3. Hafta",
-                "text": "Bir yüksek kan şekeri takip için işaretlenir."
+                "time": "3. hafta",
+                "text": "Yüksek çıkan bir kan şekeri değeri takip için işaretlenir."
               },
               {
                 "time": "31 Eki",
-                "text": "158 yapıldı; geri kalanı Kasım ayı için rezerve edildi."
+                "text": "158 kontrol tamamlanır; kalanlar Kasım için planlanır."
               }
             ]
           }
         },
         "industries": {
-          "title": "Farklı meslekler sağlık kontrollerini nasıl kullanıyor?",
+          "title": "Farklı sektörler sağlık kontrollerini nasıl kullanır?",
           "angles": {
             "retail": "Mağaza personeli için yıllık kontroller.",
-            "food-hospitality": "Mutfaklar için gıda işleyicisi kontrolleri.",
-            "real-estate": "Saha çalışması için uygunluk kontrolleri.",
-            "consulting": "Ofis personeli için sağlık muayeneleri.",
-            "manufacturing": "İstihdam öncesi ve yıllık turlar.",
-            "health-fitness": "Hastanelerde personel taraması yapılıyor.",
+            "food-hospitality": "Mutfaklar için portör muayeneleri.",
+            "real-estate": "Şantiye işleri için uygunluk kontrolleri.",
+            "consulting": "Ofis personeli için sağlık taramaları.",
+            "manufacturing": "İşe giriş ve yıllık kontrol turları.",
+            "health-fitness": "Hastanelerde personel taraması.",
             "trades": "Sürücüler için uygunluk kontrolleri.",
-            "others": "Saha personelinin kontrolleri."
+            "others": "Saha personeli için kontroller."
           }
         },
         "faq": {
-          "title": "Sağlık kontrolleriyle ilgili aldığımız sorular",
+          "title": "Sağlık kontrolleri hakkında sık sorulan sorular",
           "items": [
             {
-              "q": "Testler işe göre farklılık gösterebilir mi?",
-              "a": "Evet, her iş türü için pakete göre."
+              "q": "Testler işe göre değişebilir mi?",
+              "a": "Evet, her iş türü için ayrı paket tanımlanabilir."
             },
             {
-              "q": "Sonuçları kim görüyor?",
-              "a": "Klinik personeli; HR yalnızca uygunluğu görür."
+              "q": "Sonuçları kimler görür?",
+              "a": "Klinik personeli; İK yalnızca uygunluğu görür."
             },
             {
-              "q": "Normal aralıklar yerleşik mi?",
-              "a": "Bunları doktorunuzla birlikte ayarlarsınız."
+              "q": "Normal aralıklar hazır olarak geliyor mu?",
+              "a": "Hekiminizle birlikte siz tanımlarsınız."
             },
             {
-              "q": "Dışarıdaki laboratuvarlar kullanılabilir mi?",
-              "a": "Evet, sonuçlar girilebilir veya eklenebilir."
+              "q": "Dış laboratuvarlar kullanılabilir mi?",
+              "a": "Evet, sonuçlar girilebilir veya ek olarak yüklenebilir."
             },
             {
-              "q": "Bir takip rezervasyonu yapıldı mı?",
-              "a": "Evet, aralığın dışındaki herhangi bir şey için."
+              "q": "Takip muayenesi ayarlanıyor mu?",
+              "a": "Evet, aralığın dışında kalan her değer için."
             },
             {
               "q": "Adon ERP nerede kullanılabilir?",
-              "a": "Şu anda Dhaka'da şirket alımı yapıyoruz. Bir demo rezervasyonu yapın ve örnek verilerle üzerinden geçelim."
+              "a": "Şu anda Dhaka'daki şirketleri sisteme alıyoruz. Demo talep edin, örnek verilerle birlikte inceleyelim."
             }
           ]
         },
         "closing": {
-          "title": "Kontrol formunuzu getirin. Demoda bir tur ayarlayacağız."
+          "title": "Kontrol formunuzu getirin; demoda bir tur kuralım."
         }
       },
       "uniCommon": {
@@ -45590,29 +45669,28 @@
       "cta": {
         "title": "İşletmenizi bir sonraki seviyeye taşıyın",
         "description": "Adon ERP ile faturalandırma, ödemeler, yenilemeler, müşteri ilişkileri ve raporlamayı tek bir birleşik platformdan yönetin."
+      },
+      "demo": {
+        "preview": "AdonERP · ürün önizlemesi",
+        "title": "Müşteri abonelikleri",
+        "subtitle": "Faturalama ve yenileme örneği",
+        "disclosure": "Temsili örnek veriler. Şirketler ve rakamlar kurgusaldır; canlı müşteri kayıtları veya ölçülmüş sonuçlar değildir.",
+        "records": "{count} örnek kayıt",
+        "revenue": "Aylık gelir",
+        "growth": "Örnek değişim",
+        "renewing": "Örnek yenilemeler",
+        "id": "ID",
+        "business": "İşletme",
+        "renewal": "Yenileme",
+        "plan": "Plan",
+        "status": "Durum",
+        "starter": "Başlangıç",
+        "businessPlan": "İşletme",
+        "enterprise": "Kurumsal",
+        "active": "Etkin",
+        "pending": "Bekliyor"
       }
-    ,
-"demo": {
-  "preview": "AdonERP · ürün önizlemesi",
-  "title": "Müşteri abonelikleri",
-  "subtitle": "Faturalama ve yenileme örneği",
-  "disclosure": "Temsili örnek veriler. Şirketler ve rakamlar kurgusaldır; canlı müşteri kayıtları veya ölçülmüş sonuçlar değildir.",
-  "records": "{count} örnek kayıt",
-  "revenue": "Aylık gelir",
-  "growth": "Örnek değişim",
-  "renewing": "Örnek yenilemeler",
-  "id": "ID",
-  "business": "İşletme",
-  "renewal": "Yenileme",
-  "plan": "Plan",
-  "status": "Durum",
-  "starter": "Başlangıç",
-  "businessPlan": "İşletme",
-  "enterprise": "Kurumsal",
-  "active": "Etkin",
-  "pending": "Bekliyor"
-}
-},
+    },
     "hotel": {
       "metadata": {
         "title": "Otel | AdonERP",
@@ -64675,32 +64753,31 @@
           "description": "Sağlanan yazılım kayıtlarından parti referansları, ürünler, miktarlar ve üretim tarihleri."
         }
       }
-    }
-  ,
-"industryDirectory": {
-  "eyebrow": "Sektörel çözümler",
-  "title": "İşinize uygun ERP,",
-  "highlight": "sektörünüze özel yaklaşım.",
-  "lead": "Sektörünüzün ürün sayfalarını ve bağlantılı iş akışlarını inceleyin. Ardından ihtiyaç duyduğunuz modülleri ve kurulumu ekibimizle görüşün.",
-  "explore": "Sektörleri inceleyin",
-  "directoryTitle": "Sektörünüzü bulun.",
-  "search": "Sektör veya işletme arayın",
-  "workflow": "İlgili ürün sayfaları",
-  "sectorsCount": "{count} sektör",
-  "solutionsCount": "{count} sektör sayfası",
-  "sectors": {
-    "garmentsTextile": "Hazır giyim ve tekstil operasyonlarında model geliştirme, malzeme rezervasyonu ve üretim takibini bir arada inceleyin.",
-    "fmcg": "Gıda, içecek, kişisel bakım ve ev bakım markalarında parti, son kullanma tarihi, distribütör ve ticari kampanyaları takip edin.",
-    "groupOfIndustries": "Birden fazla şirketi tek bir grup olarak yönetin; üretim, FMCG, tekstil, ilaç, ağır sanayi ve finans genelinde konsolide raporlar alın.",
-    "manufacturing": "Malzemeden üretim emirlerine, kalite kontrolünden sevkiyata kadar iş akışını izleyin.",
-    "retail": "Farklı mağazalar için satış, stok, müşteri kayıtları ve şube raporlarını inceleyin.",
-    "foodHospitality": "Yiyecek ve konaklama işletmelerinde stok, hizmet, kasa ve faturalama süreçlerini inceleyin.",
-    "education": "Kabul, öğrenci kayıtları, devam, ücretler ve öğrenim yönetimini inceleyin.",
-    "realEstate": "Gayrimenkul kayıtlarını, proje işlerini, faturalamayı ve finansal raporları inceleyin.",
-    "consulting": "Profesyonel ekipler için müşteri kayıtlarını, hizmet sunumunu, faturalamayı ve raporlamayı inceleyin.",
-    "others": "E-ticaret, STK ve yayıncılık işletmelerinin iş akışlarını inceleyin."
-  }
-},
+    },
+    "industryDirectory": {
+      "eyebrow": "Sektörel çözümler",
+      "title": "İşinize uygun ERP,",
+      "highlight": "sektörünüze özel yaklaşım.",
+      "lead": "Sektörünüzün ürün sayfalarını ve bağlantılı iş akışlarını inceleyin. Ardından ihtiyaç duyduğunuz modülleri ve kurulumu ekibimizle görüşün.",
+      "explore": "Sektörleri inceleyin",
+      "directoryTitle": "Sektörünüzü bulun.",
+      "search": "Sektör veya işletme arayın",
+      "workflow": "İlgili ürün sayfaları",
+      "sectorsCount": "{count} sektör",
+      "solutionsCount": "{count} sektör sayfası",
+      "sectors": {
+        "garmentsTextile": "Hazır giyim ve tekstil operasyonlarında model geliştirme, malzeme rezervasyonu ve üretim takibini bir arada inceleyin.",
+        "fmcg": "Gıda, içecek, kişisel bakım ve ev bakım markalarında parti, son kullanma tarihi, distribütör ve ticari kampanyaları takip edin.",
+        "groupOfIndustries": "Birden fazla şirketi tek bir grup olarak yönetin; üretim, FMCG, tekstil, ilaç, ağır sanayi ve finans genelinde konsolide raporlar alın.",
+        "manufacturing": "Malzemeden üretim emirlerine, kalite kontrolünden sevkiyata kadar iş akışını izleyin.",
+        "retail": "Farklı mağazalar için satış, stok, müşteri kayıtları ve şube raporlarını inceleyin.",
+        "foodHospitality": "Yiyecek ve konaklama işletmelerinde stok, hizmet, kasa ve faturalama süreçlerini inceleyin.",
+        "education": "Kabul, öğrenci kayıtları, devam, ücretler ve öğrenim yönetimini inceleyin.",
+        "realEstate": "Gayrimenkul kayıtlarını, proje işlerini, faturalamayı ve finansal raporları inceleyin.",
+        "consulting": "Profesyonel ekipler için müşteri kayıtlarını, hizmet sunumunu, faturalamayı ve raporlamayı inceleyin.",
+        "others": "E-ticaret, STK ve yayıncılık işletmelerinin iş akışlarını inceleyin."
+      }
+    },
     "medicalCollegeApp": {
       "ui": {
         "college": "Tıp Fakültesi",
@@ -66737,7 +66814,7 @@
         }
       }
     }
-},
+  },
   "admin": {
     "shell": {
       "brandTitle": "Adon ERP yönetimi",

@@ -15,7 +15,7 @@ optional information. Choosing Yes does not make any optional field required.
 
 Design #6 uses an 860 px maximum desktop width and a 646 px default height,
 bounded by the visual viewport. The repository's original AdonERP logo replaces
-the former invented EdenERP wordmark. A compact illustrated area sits beside a
+the former invented AdonERP wordmark. A compact illustrated area sits beside a
 white form card on a pale blue surface. The custom vector ERP concept includes
 an isometric dashboard, layered base, floating module objects and fine curves.
 It contains no customer data, performance figures, advisor profiles or endorsements.

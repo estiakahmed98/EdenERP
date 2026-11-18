@@ -11,7 +11,7 @@ module.exports = function assertSafeExtglobs(input) {
     }
 
     if ((input[i] === '+' || input[i] === '*') && input[i + 1] === '(') {
-      throw new SyntaxError('Repeated extglobs are disabled by the EdenERP security patch');
+      throw new SyntaxError('Repeated extglobs are disabled by the AdonERP security patch');
     }
   }
 };

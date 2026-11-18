@@ -73,7 +73,7 @@ for (const locale of locales) {
       signature(master[key]),
       `${locale}: ICU ${key}`,
     );
-    assert.ok(!/EdenERP|ZXQ|QXZ/.test(value), `${locale}: invalid ${key}`);
+    assert.ok(!/AdonERP|ZXQ|QXZ/.test(value), `${locale}: invalid ${key}`);
     if (locale !== "en" && !["CAPA", "SPC"].includes(master[key]))
       assert.notEqual(value, master[key], `${locale}: untranslated ${key}`);
   }

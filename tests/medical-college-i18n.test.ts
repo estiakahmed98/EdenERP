@@ -97,7 +97,7 @@ test("all eight College pages and menu labels have complete Bengali coverage and
     if (key === "ui.unitA" || key === "ui.unitB")
       prose = prose.replace(/[AB]/g, "");
     assert.ok(!/[A-Za-z]/.test(prose), `${key}: unintended English prose`);
-    assert.doesNotMatch(target, /EdenERP|[০-৯]?[0-9]|৷/, key);
+    assert.doesNotMatch(target, /AdonERP|[০-৯]?[0-9]|৷/, key);
   }
   for (const page of collegePages)
     assert.equal(

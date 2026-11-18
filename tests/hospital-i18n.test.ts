@@ -67,7 +67,7 @@ test("all 24 Hospital pages have complete copy in all eight locales with intact 
       );
       if (locale !== "en")
         assert.notEqual(target, original, `${locale}.${key}: English fallback`);
-      assert.doesNotMatch(target, /EdenERP/, `${locale}.${key}`);
+      assert.doesNotMatch(target, /AdonERP/, `${locale}.${key}`);
     }
     for (const page of hospitalPages)
       assert.equal(

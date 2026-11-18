@@ -176,7 +176,7 @@ export default function GithubPage() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://github.com/estiakahmed98/EdenERP"
+                href="https://github.com/estiakahmed98/AdonERP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
@@ -762,7 +762,7 @@ export default function GithubPage() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://github.com/estiakahmed98/EdenERP"
+                href="https://github.com/estiakahmed98/AdonERP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
