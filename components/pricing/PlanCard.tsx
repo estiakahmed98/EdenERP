@@ -8,6 +8,7 @@ import type { PricingPageData } from "@/lib/pricing/types";
 import type { BillingCycle, CurrencyCode, ERPPlan } from "./types";
 import { formatCurrency } from "./utils";
 import { getPlanPrice } from "./plan-presentation";
+import { PlanIcon } from "./PlanIcon";
 import css from "./pricing.module.css";
 
 interface PlanCardProps {
@@ -49,9 +50,7 @@ export function PlanCard({
       data-pricing-mode={price ? "priced" : "quote"}
     >
       <div className={css.planTop}>
-        <span className={css.planIcon} aria-hidden="true">
-          {plan.icon}
-        </span>
+        <PlanIcon planId={plan.id} icon={plan.icon} className={css.planIcon} />
         {plan.badge && <span className={css.planBadge}>{plan.badge}</span>}
       </div>
       <h3 id={`plan-title-${plan.id}`}>{plan.name}</h3>
