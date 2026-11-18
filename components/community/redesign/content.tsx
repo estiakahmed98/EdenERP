@@ -36,6 +36,7 @@ import { Note, base, css } from "./ui";
 import { useTranslations } from "next-intl";
 export type ContactInfo = {
   supportEmail: string;
+  supportEmails: string[];
   salesEmail: string;
   phones: { number: string; display: string }[];
 };
@@ -461,11 +462,13 @@ function SupportContent({ contact }: { contact: ContactInfo }) {
   return (
     <>
       <div className={css.contactRoutes}>
-        <a href={`mailto:${contact.supportEmail}`}>
-          <span>{tx("content.configuredSupportEmail")}</span>
-          <b>{contact.supportEmail}</b>
-          <ArrowUpRight size={16} />
-        </a>
+        {contact.supportEmails.map((email) => (
+          <a key={email} href={`mailto:${email}`}>
+            <span>{tx("content.configuredSupportEmail")}</span>
+            <b dir="ltr">{email}</b>
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        ))}
         {contact.phones.map((phone) => <a key={phone.number} href={`tel:${phone.number}`}>
           <span>{tx("content.configuredBusinessPhone")}</span>
           <b dir="ltr">{phone.display}</b>

@@ -29,6 +29,7 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
     business = siteConfig.business;
   const contact: ContactInfo = {
     supportEmail: business.supportEmail,
+    supportEmails: [...business.supportEmails],
     salesEmail: business.salesEmail,
     phones: [...business.phones],
   };

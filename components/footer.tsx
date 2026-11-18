@@ -185,9 +185,11 @@ export default function Footer({
               <Headphones size={15} aria-hidden="true" />
               {t("sections.support")}
             </p>
-            <a href={`mailto:${siteConfig.business.supportEmail}`} dir="ltr">
-              {siteConfig.business.supportEmail}
-            </a>
+            {siteConfig.business.supportEmails.map((email) => (
+              <a key={email} href={`mailto:${email}`} dir="ltr">
+                {email}
+              </a>
+            ))}
           </div>
         </address>
 

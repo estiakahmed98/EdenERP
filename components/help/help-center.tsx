@@ -39,7 +39,7 @@ type HelpResource = {
 type Props = {
   resources: HelpResource[];
   faqs: [string, string][];
-  contact: { email: string; phones: { number: string; display: string }[] };
+  contact: { emails: string[]; phones: { number: string; display: string }[] };
 };
 
 const shortcuts = [
@@ -371,16 +371,18 @@ export default function HelpCenter({ resources, faqs, contact }: Props) {
             {t("categories.contactSupport.description")}
           </p>
           <div className={css.contactLinks}>
-            <a href={`mailto:${contact.email}`}>
-              <span className={css.channelIcon}>
-                <Mail size={18} aria-hidden="true" />
-              </span>
-              <span>
-                <b>{t("supportOptions.emailSupport.title")}</b>
-                <small dir="ltr">{contact.email}</small>
-              </span>
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            {contact.emails.map((email) => (
+              <a key={email} href={`mailto:${email}`}>
+                <span className={css.channelIcon}>
+                  <Mail size={18} aria-hidden="true" />
+                </span>
+                <span>
+                  <b>{t("supportOptions.emailSupport.title")}</b>
+                  <small dir="ltr">{email}</small>
+                </span>
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            ))}
             {contact.phones.map((phone) => <a key={phone.number} href={`tel:${phone.number}`}>
               <span className={css.channelIcon}>
                 <Phone size={18} aria-hidden="true" />

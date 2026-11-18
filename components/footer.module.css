@@ -251,7 +251,8 @@
     gap: 22px 20px;
   }
   .addressGroup,
-  .phoneGroup {
+  .phoneGroup,
+  .contactGroup:last-child {
     grid-column: 1 / -1;
   }
   .phoneLinks {

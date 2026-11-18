@@ -145,7 +145,7 @@ const organizationSchema = {
       "@type": "ContactPoint",
       contactType: "customer support",
       telephone: phone.number,
-      email: business.supportEmail,
+      email: [...business.supportEmails],
       areaServed: "BD",
       availableLanguage: ["English", "Bengali"],
     },

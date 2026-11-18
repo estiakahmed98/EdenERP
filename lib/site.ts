@@ -50,6 +50,11 @@ const businessPhones = [
   { number: "+8801805412462", display: "+880 1805412462" },
 ] as const;
 const businessEmail = "adonventure@gmail.com";
+const supportEmails = [
+  "support@adonerp.com",
+  "support@adonerp.com.bd",
+  "support@adonerp.bd",
+] as const;
 
 export const siteConfig = {
   name: "Adon ERP",
@@ -100,7 +105,8 @@ export const siteConfig = {
     whatsapp: "8801842781978",
     email: businessEmail,
     salesEmail: businessEmail,
-    supportEmail: "support@adonerp.com",
+    supportEmail: supportEmails[0],
+    supportEmails,
     addressLines: officeAddressLines,
     address: {
       streetAddress: `${officeAddress.building}, ${officeAddress.road}`,

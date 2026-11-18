@@ -96,8 +96,8 @@ export default function ContactClient() {
     {
       icon: "mail",
       title: t("contactInfo.email.title"),
-      details: [siteConfig.business.email, siteConfig.business.supportEmail],
-      detailHrefs: [siteConfig.business.email, siteConfig.business.supportEmail].map((email) => `mailto:${email}`),
+      details: [siteConfig.business.email, ...siteConfig.business.supportEmails],
+      detailHrefs: [siteConfig.business.email, ...siteConfig.business.supportEmails].map((email) => `mailto:${email}`),
       action: t("contactInfo.email.action"),
       href: `mailto:${siteConfig.business.email}`,
     },
