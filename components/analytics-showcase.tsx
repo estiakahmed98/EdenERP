@@ -925,7 +925,7 @@ function ExportCenter({ t }: { t: ReturnType<typeof useTranslations<"pages.analy
     const url = URL.createObjectURL(new Blob([content], { type: mimeType }));
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `eden-erp-demo-${bundle ? "takeout" : dataset}-${asOfDate}.${extension}`;
+    anchor.download = `adon-erp-demo-${bundle ? "takeout" : dataset}-${asOfDate}.${extension}`;
     document.body.appendChild(anchor);
     anchor.click();
     anchor.remove();

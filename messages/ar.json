@@ -45560,7 +45560,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "منصة Eden Defence IoT",
+        "title": "منصة AdonERP Defence  IoT",
         "description": "ابنِ أنظمة طائرات بدون طيار متصلة وروبوتات ذاتية ومراقبة صواريخ وعمليات قيادة الدفاع الجوي بمنصة إنترنت أشياء ذكية واحدة."
       },
       "hero": {
@@ -45570,7 +45570,7 @@
         "startButton": "ابدأ الآن",
         "advisorButton": "قابل مستشاراً",
         "dashboard": {
-          "title": "Eden Defence IoT",
+          "title": "AdonERP Defence  IoT",
           "subtitle": "وحدة تحكم عمليات الدفاع الموحدة",
           "liveBadge": "نظام مباشر",
           "cards": [

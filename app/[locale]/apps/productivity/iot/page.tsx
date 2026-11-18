@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site";
 
-const title = "Eden Defence IoT Platform";
+const title = "AdonERP Defence IoT Platform";
 const description =
   "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform.";
 

@@ -83,7 +83,7 @@ Counts come from `scripts/audit-bn-translations.mjs` (all 39,340 strings) and th
 | `pages.recruitment.hero.titleHighlight` | "ATS" became "AI-powered ATS" | ATS |
 | `pages.timesheets.hero.title` | *সময়ের অবচয়* ("depreciation of time") | সময় নষ্ট নয়, |
 | `pages.crm/hr/performance.hero.titleHighlight` | "Magic" replaced by generic text | জাদু |
-| `pages.iotdefence.metadata.title` | Product name "Eden Defence" replaced | Eden Defence IoT প্ল্যাটফর্ম |
+| `pages.iotdefence.metadata.title` | Product name "AdonERP Defence " replaced | AdonERP Defence  IoT প্ল্যাটফর্ম |
 | `pages.community.find-partner.partners[3].name` | Added "Saudi … and Family Welfare" | স্বাস্থ্য মন্ত্রণালয় |
 | `pages.accounting.cta.description` | Brand misspelled *আডন ইআরপি* | AdonERP |
 | `pages.accountingShowcase.ep{Payslips,Profile}Page.industries.angles.retail` | "Store staff" became "store your staff" | ফোনেই স্টোরের কর্মীরা। |

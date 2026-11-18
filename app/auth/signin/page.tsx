@@ -132,7 +132,7 @@ export default function SignInPage() {
                     required
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="admin@eden-erp.com"
+                    placeholder="admin@adon-erp.com"
                     className="block w-full rounded-xl border border-slate-200 bg-white pl-10 pr-3 py-2.5 text-sm outline-none transition focus:border-purple-400 focus:ring-1 focus:ring-purple-400"
                   />
                 </div>

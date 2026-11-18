@@ -46204,7 +46204,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "Eden Defence IoT Platform",
+        "title": "AdonERP Defence  IoT Platform",
         "description": "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform."
       },
       "hero": {
@@ -46214,7 +46214,7 @@
         "startButton": "Start now",
         "advisorButton": "Meet an advisor",
         "dashboard": {
-          "title": "Eden Defence IoT",
+          "title": "AdonERP Defence  IoT",
           "subtitle": "Unified Defence Operations Console",
           "liveBadge": "LIVE SYSTEM",
           "cards": [
