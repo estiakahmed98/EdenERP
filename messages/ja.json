@@ -41151,8 +41151,8 @@
         },
         "address": {
           "title": "訪問する",
-          "line1": "タワー 71、フラット # 9 A-B、516/3 South Manikdi",
-          "line2": "Matikata Road、ECB Chattar、ダッカカントンメント",
+          "line1": "タワー71、9 A-B号室、516/3 サウス・マニクディ",
+          "line2": "マティカタ通り、ECBチャッタル、ダッカ駐屯地",
           "line3": "ダッカ - 1206、バングラデシュ"
         },
         "hours": {
@@ -41167,7 +41167,9 @@
         "description": "会議、相談、または挨拶のためにオフィスを訪問してください。直接お会いできることを楽しみにしています。"
       },
       "office": {
-        "fullAddress": "本社"
+        "fullAddress": "本社",
+        "landmark": "目印：ECBチャッタルの交差点の隣",
+        "directions": "タワー71（ECBチャッタル）への経路を確認"
       },
       "whyChoose": {
         "title": "なぜAdon ERPを選ぶのか？",

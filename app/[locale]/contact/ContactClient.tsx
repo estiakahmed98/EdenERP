@@ -83,6 +83,9 @@ function SectionEyebrow({
 
 export default function ContactClient() {
   const t = useTranslations("pages.contact");
+  const addressLines = (["line1", "line2", "line3"] as const).map((key) =>
+    t(`contactInfo.address.${key}`),
+  );
 
   const contactInfo: ContactInfo[] = [
     {
@@ -104,7 +107,7 @@ export default function ContactClient() {
     {
       icon: "mapPin",
       title: t("contactInfo.address.title"),
-      details: [...siteConfig.business.addressLines],
+      details: addressLines,
     },
     {
       icon: "clock",
@@ -166,7 +169,7 @@ export default function ContactClient() {
                   <div className="mt-3 space-y-1">
                     {info.icon === "mapPin" && <BusinessCompanyName />}
                     {info.details.map((detail, idx) => (
-                      <p key={idx} dir={info.icon === "clock" ? undefined : "ltr"} className="text-sm text-slate-600 dark:text-slate-300">
+                      <p key={idx} dir={info.icon === "clock" || info.icon === "mapPin" ? undefined : "ltr"} className="text-sm text-slate-600 dark:text-slate-300">
                         {info.detailHrefs?.[idx] ? <a className="break-all hover:text-primary focus-visible:outline-2 focus-visible:outline-primary" href={info.detailHrefs[idx]}>{detail}</a> : detail}
                       </p>
                     ))}
@@ -212,13 +215,13 @@ export default function ContactClient() {
                   <h3 className="text-lg font-semibold text-slate-950 dark:text-slate-100">
                     {t("office.fullAddress")}
                   </h3>
-                  <p dir="ltr" className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     <BusinessCompanyName />
-                    {siteConfig.business.addressLines.map((line) => <span key={line} className="block">{line}</span>)}
+                    {addressLines.map((line) => <span key={line} className="block">{line}</span>)}
                   </p>
                   <div className="mt-3 flex items-center gap-2 text-xs text-primary">
                     <MapPin className="h-3 w-3" />
-                    <span>📍 Landmark: Beside ECB Chattar Circle</span>
+                    <span>{t("office.landmark")}</span>
                   </div>
                 </div>
               </div>
@@ -233,7 +236,7 @@ export default function ContactClient() {
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
               >
                 <MapPin className="h-4 w-4" />
-                Get Directions to Tower 71, ECB Chattar
+                {t("office.directions")}
                 <ChevronRight className="h-4 w-4" />
               </a>
             </div>

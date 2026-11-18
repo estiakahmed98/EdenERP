@@ -151,9 +151,9 @@ export default function Footer({
               rel="noopener noreferrer"
               className={css.addressLink}
             >
-              <span dir="ltr">
-                {siteConfig.business.addressLines.map((line) => (
-                  <span key={line}>{line}</span>
+              <span>
+                {(["line1", "line2", "line3"] as const).map((key) => (
+                  <span key={key}>{contactT(`address.${key}`)}</span>
                 ))}
               </span>
             </a>

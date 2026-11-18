@@ -41151,9 +41151,9 @@
         },
         "address": {
           "title": "到访我们",
-          "line1": "71 号塔楼 # 9 A-B, 516/3 南马尼克迪",
-          "line2": "马蒂卡塔路，ECB 查塔尔，达卡兵营",
-          "line3": "达卡 - 1206, 孟加拉国"
+          "line1": "71号楼，9 A-B室，516/3 南马尼克迪",
+          "line2": "马蒂卡塔路，ECB广场，达卡军营区",
+          "line3": "达卡 - 1206，孟加拉国"
         },
         "hours": {
           "title": "营业时间",
@@ -41167,7 +41167,9 @@
         "description": "欢迎到办公室参加会议、咨询，或只是来打个招呼。我们很期待与您见面。"
       },
       "office": {
-        "fullAddress": "公司总部"
+        "fullAddress": "公司总部",
+        "landmark": "地标：ECB广场环岛旁",
+        "directions": "查看前往ECB广场71号楼的路线"
       },
       "whyChoose": {
         "title": "为什么选择 Adon ERP？",

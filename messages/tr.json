@@ -41213,8 +41213,8 @@
         },
         "address": {
           "title": "Bizi Ziyaret Edin",
-          "line1": "Kule 71, Daire # 9 A-B, 516/3 Güney Manikdi",
-          "line2": "Matikata Yolu, ECB Chattar, Dhaka Kantonu",
+          "line1": "Kule 71, Daire 9 A-B, 516/3 Güney Manikdi",
+          "line2": "Matikata Caddesi, ECB Meydanı, Dakka Askerî Bölgesi",
           "line3": "Dakka - 1206, Bangladeş"
         },
         "hours": {
@@ -41229,7 +41229,9 @@
         "description": "Toplantılar, danışmanlık veya sadece merhaba demek için ofisimizi ziyaret edin. Sizinle yüz yüze tanışmayı çok isteriz."
       },
       "office": {
-        "fullAddress": "Kurumsal Merkez"
+        "fullAddress": "Kurumsal Merkez",
+        "landmark": "Konum: ECB Meydanı kavşağının yanında",
+        "directions": "Kule 71, ECB Meydanı için yol tarifi alın"
       },
       "whyChoose": {
         "title": "Neden Adon ERP?",

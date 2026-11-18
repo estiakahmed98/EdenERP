@@ -41008,7 +41008,9 @@
         "description": "Visit our office for meetings, consultations, or just to say hello. We'd love to meet you in person."
       },
       "office": {
-        "fullAddress": "Corporate Headquarters"
+        "fullAddress": "Corporate Headquarters",
+        "landmark": "Landmark: Beside ECB Chattar Circle",
+        "directions": "Get directions to Tower 71, ECB Chattar"
       },
       "whyChoose": {
         "title": "Why choose Adon ERP?",

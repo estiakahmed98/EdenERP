@@ -41151,8 +41151,8 @@
         },
         "address": {
           "title": "Ghé thăm chúng tôi",
-          "line1": "Tháp 71, Căn hộ số 9 A-B, 516/3 Nam Manikdi",
-          "line2": "Đường Matikata, ECB Chattar, Bang Dhaka",
+          "line1": "Tòa nhà 71, căn hộ 9 A-B, 516/3 Nam Manikdi",
+          "line2": "Đường Matikata, Quảng trường ECB, Khu quân sự Dhaka",
           "line3": "Dhaka - 1206, Bangladesh"
         },
         "hours": {
@@ -41167,7 +41167,9 @@
         "description": "Ghé văn phòng để họp, tư vấn hoặc đơn giản là chào hỏi. Chúng tôi rất vui được gặp bạn trực tiếp."
       },
       "office": {
-        "fullAddress": "Trụ sở chính"
+        "fullAddress": "Trụ sở chính",
+        "landmark": "Địa điểm gần đó: Bên cạnh vòng xuyến ECB Chattar",
+        "directions": "Xem đường đến Tòa nhà 71, ECB Chattar"
       },
       "whyChoose": {
         "title": "Tại sao chọn Adon ERP?",
