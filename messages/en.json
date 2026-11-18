@@ -4318,6 +4318,8 @@
           "title": "Bring one of your loan letters. We will enter it and show its schedule in the demo."
         }
       },
+
+
       "fixedAssetRegister": {
         "meta": {
           "title": "Fixed Asset Register: Cost, Depreciation and Book Value",
@@ -4549,7 +4551,6 @@
           "title": "Bring your asset list. We will load a few assets and run depreciation in the demo."
         }
       },
-
       "exchangeRates": {
         "meta": {
           "title": "Exchange Rates: Dated Rates for Foreign-Currency Invoices",
@@ -6366,6 +6367,7 @@
           "title": "Bring a project in progress. We will work out its WIP in the demo."
         }
       },
+
       "pjProgressBilling": {
         "meta": {
           "title": "Progress Billing: Interim Payment Certificates With Retention, AIT and VDS",
@@ -6998,7 +7000,6 @@
           "title": "Bring your top three project worries. We will log them as risks in the demo."
         }
       },
-
       "pjDocuments": {
         "meta": {
           "title": "Project Documents: Licences, Permits and Contracts on the Project",
@@ -7983,7 +7984,6 @@
           "title": "Bring a finished project. We will build its P&L in the demo."
         }
       },
-
       "bmOverview": {
         "meta": {
           "title": "Budget Management: Versions, Requisitions, Approval and Variance",
@@ -8372,6 +8372,7 @@
           "title": "Bring one department’s budget sheet. We will enter it as lines in the demo."
         }
       },
+
       "bmRequisitions": {
         "meta": {
           "title": "Requisitions: Departments Ask, the Budget Answers",
@@ -9138,7 +9139,6 @@
           "title": "Bring a line that has run out. We will re-budget it in the demo."
         }
       },
-
       "scOverview": {
         "meta": {
           "title": "Supply Chain: From Requisition to Landed Cost in One Flow",
@@ -12399,6 +12399,7 @@
           "software-reseller": "Software Reseller"
         }
       },
+
       "ledgers": {
         "meta": {
           "title": "Ledgers: Keep Every Stream of Entries Apart",
@@ -14479,6 +14480,7 @@
           "title": "Bring last month's salary sheet. We will run the same month in the demo."
         }
       },
+
       "hrInbox": {
         "meta": {
           "title": "Approvals Inbox: Every HR Request in One List",
@@ -16415,6 +16417,7 @@
           "title": "Bring a recent settlement you worked out by hand. We will do it in the demo."
         }
       },
+
       "hrService": {
         "meta": {
           "title": "Service Records: An Employee's Working Life, with Dates",
@@ -18325,6 +18328,7 @@
           "title": "Bring your machine list and last month's breakdowns. We will set them up in the demo."
         }
       },
+
       "emEquipmentPage": {
         "meta": {
           "title": "Equipment Register: Every Machine, Its History and Its Cost",
@@ -20286,6 +20290,7 @@
           "title": "Bring your checkup form. We will set up a round in the demo."
         }
       },
+
       "uniCommon": {
         "module": "University",
         "term": "Autumn 2027",
@@ -21072,6 +21077,7 @@
           "title": "Bring last year's applicant list. We will load it into a round in the demo."
         }
       },
+
       "edStudentsPage": {
         "meta": {
           "title": "Student Records: ID, Class, Roll and Guardian in One Register",
@@ -21979,6 +21985,7 @@
           "title": "Bring one notice you sent last month. We will resend it in the demo."
         }
       },
+      
       "edOnlinePage": {
         "meta": {
           "title": "Online Fee Payments: Gateway Payments Matched to Receipts and Settled",

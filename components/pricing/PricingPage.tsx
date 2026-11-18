@@ -5,19 +5,20 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  Blocks,
+  Building2,
   Check,
   CircleHelp,
   Layers3,
-  LifeBuoy,
-  SlidersHorizontal,
-  Sparkles,
+  Handshake,
+  MessagesSquare,
+  PanelsTopLeft,
   Users,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import LiveDemoButton from "@/components/live-demo-button";
 import type { BillingCycle, CurrencyCode, PricingContent } from "./types";
 import { PlanCard } from "./PlanCard";
+import { PlanIcon } from "./PlanIcon";
 import { FaqItem } from "./FaqItem";
 import { getPlanPrice, hasConfiguredFeature } from "./plan-presentation";
 import css from "./pricing.module.css";
@@ -136,7 +137,11 @@ export function PricingPage({
               aria-atomic="true"
             >
               <div className={css.previewIdentity}>
-                <span aria-hidden="true">{preview.icon}</span>
+                <PlanIcon
+                  planId={preview.id}
+                  icon={preview.icon}
+                  className={css.previewPlanIcon}
+                />
                 <div>
                   <small>{t("yourPlan")}</small>
                   <strong>{preview.name}</strong>
@@ -312,12 +317,12 @@ export function PricingPage({
         <div className={css.decisionSteps}>
           {[
             { icon: Users, key: "team" },
-            { icon: Blocks, key: "modules" },
-            { icon: SlidersHorizontal, key: "implementation" },
+            { icon: PanelsTopLeft, key: "modules" },
+            { icon: Handshake, key: "implementation" },
           ].map(({ icon: Icon, key }, index) => (
             <div key={key}>
               <span className={css.decisionNumber}>0{index + 1}</span>
-              <Icon size={21} aria-hidden="true" />
+              <Icon size={21} strokeWidth={1.65} aria-hidden="true" />
               <h3>{t(`${key}Title`)}</h3>
               <p>{t(`${key}Description`)}</p>
               {key === "implementation" && (
@@ -458,7 +463,7 @@ export function PricingPage({
           <div className={css.enterprisePanel}>
             <div>
               <p className={css.eyebrow}>
-                <Sparkles size={14} aria-hidden="true" />
+                <Building2 size={15} strokeWidth={1.65} aria-hidden="true" />
                 {t("enterpriseEyebrow")}
               </p>
               <h2 id="enterprise-title">
@@ -490,7 +495,7 @@ export function PricingPage({
         >
           <div className={css.faqIntro}>
             <span className={css.faqIcon}>
-              <LifeBuoy size={28} aria-hidden="true" />
+              <MessagesSquare size={26} strokeWidth={1.65} aria-hidden="true" />
             </span>
             <p className={css.eyebrow}>{t("faqEyebrow")}</p>
             <h2 id="pricing-faq-title">{data.faq.title}</h2>
@@ -510,9 +515,7 @@ export function PricingPage({
         aria-labelledby="pricing-final-title"
       >
         <div className={css.finalOrbit} aria-hidden="true">
-          <i />
-          <i />
-          <Layers3 size={29} />
+          <Handshake size={28} strokeWidth={1.65} />
         </div>
         <h2 id="pricing-final-title">{data.finalCta.title}</h2>
         <p>{data.finalCta.description}</p>

@@ -215,15 +215,9 @@
   align-items: center;
   gap: 12px;
 }
-.previewIdentity > span {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  background: var(--p-soft);
-  border: 1px solid var(--p-line);
-  border-radius: 13px;
-  font-size: 23px;
+.previewPlanIcon {
+  width: 46px;
+  height: 46px;
 }
 .previewIdentity > div {
   flex: 1;
@@ -572,15 +566,40 @@
   gap: 10px;
   min-height: 38px;
 }
-.planIcon {
+.planIllustration {
+  --icon-ink: #287563;
   display: grid;
   place-items: center;
-  width: 35px;
-  height: 35px;
-  border: 1px solid var(--p-line);
-  background: var(--p-soft);
-  border-radius: 11px;
-  font-size: 22px;
+  flex: none;
+  color: var(--icon-ink);
+  background: color-mix(in srgb, var(--icon-ink) 8%, var(--p-paper));
+  border: 1px solid color-mix(in srgb, var(--icon-ink) 13%, var(--p-paper));
+  border-radius: 14px;
+}
+.planIllustration[data-tone="blue"] {
+  --icon-ink: #3e6f9c;
+}
+.planIllustration[data-tone="amber"] {
+  --icon-ink: #9a6b2d;
+}
+.planIllustration[data-tone="violet"] {
+  --icon-ink: #79609b;
+}
+:global(.dark) .planIllustration {
+  --icon-ink: #96c9b7;
+}
+:global(.dark) .planIllustration[data-tone="blue"] {
+  --icon-ink: #9fc4e7;
+}
+:global(.dark) .planIllustration[data-tone="amber"] {
+  --icon-ink: #dabc8b;
+}
+:global(.dark) .planIllustration[data-tone="violet"] {
+  --icon-ink: #c4afe0;
+}
+.planIcon {
+  width: 44px;
+  height: 44px;
 }
 .planBadge {
   padding: 5px 8px;
@@ -1112,12 +1131,12 @@
 .faqIcon {
   display: grid;
   place-items: center;
-  background: var(--p-soft);
-  color: var(--p-blue);
+  background: color-mix(in srgb, var(--p-green) 6%, var(--p-paper));
+  color: var(--p-green);
   width: 58px;
   height: 58px;
   border: 1px solid var(--p-line);
-  border-radius: 17px;
+  border-radius: 50%;
   margin-bottom: 23px;
 }
 .faqIntro h2 {
@@ -1208,27 +1227,15 @@
   margin-top: 19px;
 }
 .finalOrbit {
-  position: relative;
   display: grid;
   place-items: center;
-  color: var(--p-blue);
-  width: 66px;
-  height: 66px;
-  border: 1px solid var(--p-line);
-  border-radius: 20px;
-  background: var(--p-soft);
-  margin: 0 auto 31px;
-  transform: rotate(-8deg);
-}
-.finalOrbit i {
-  position: absolute;
-  inset: -12px;
-  border: 1px dashed color-mix(in srgb, var(--p-blue) 20%, transparent);
+  color: var(--p-green);
+  width: 64px;
+  height: 64px;
+  border: 1px solid color-mix(in srgb, var(--p-green) 14%, var(--p-paper));
   border-radius: 50%;
-}
-.finalOrbit i + i {
-  inset: -23px;
-  border-color: color-mix(in srgb, var(--p-green) 12%, transparent);
+  background: color-mix(in srgb, var(--p-green) 6%, var(--p-paper));
+  margin: 0 auto 24px;
 }
 .quoteDetail {
   max-width: 850px;
