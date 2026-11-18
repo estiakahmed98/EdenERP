@@ -7207,9 +7207,9 @@
       ]
     },
     "hero": {
-      "title": "Kilometre taşları: parayı açan anlar",
-      "lead": "Önemli noktaları adlandırın, her birine bir hedef tarih ve sözleşme bunlara göre ödüyorsa faturalanabilir bir tutar verin. Tamamlanan kilometre taşları gelire dönüşür ve liste ne kadarının faturalandığını gösterir.",
-      "secondaryCta": "Bir kilometre taşının nasıl çalıştığını görün"
+      "title": "Kilometre taşları: ödemeye esas proje aşamaları",
+      "lead": "Projenin önemli aşamalarını adlandırın ve her biri için bir hedef tarih belirleyin. Sözleşmede bu aşamalara bağlı ödeme öngörülüyorsa faturalanabilir tutarı da girin. Tamamlanan kilometre taşları gelire dönüşür; listede ne kadarının faturalandığını görebilirsiniz.",
+      "secondaryCta": "Kilometre taşı işleyişini inceleyin"
     },
     "sample": {
       "count": "3 kilometre taşı",
@@ -7239,8 +7239,8 @@
       "caption": "Adon ERP Proje Muhasebesi'ndeki Kilometre Taşları'ndan kısmi bir önizleme. Şirket, proje ve tutarlar örnek verilerdir."
     },
     "flow": {
-      "title": "Bir kilometre taşının üç anı vardır",
-      "intro": "Planlanır, ulaşılır ve ardından faturalanır. Liste her birinin nerede olduğunu gösterir.",
+      "title": "Kilometre taşlarını üç adımda takip edin",
+      "intro": "Önce planlayın, ardından tamamlayın ve faturalayın. Her kilometre taşının hangi aşamada olduğunu listeden izleyin.",
       "steps": [
         {
           "tag": "Beklemede",
@@ -7274,7 +7274,7 @@
         },
         {
           "label": "Faturalanabilir tutar",
-          "body": "Ulaşıldığında sözleşmenin ödediği tutar."
+          "body": "Kilometre taşı tamamlandığında sözleşme gereği ödenecek tutar."
         },
         {
           "label": "Sıralama düzeni",
@@ -7294,7 +7294,7 @@
         "pjSchedule": "Kilometre taşlarının oturduğu tarihler.",
         "pjOverview": "Ait oldukları sözleşme.",
         "invoicesAr": "Tamamlanan bir kilometre taşını faturalayın.",
-        "pjProgressBilling": "Bunun yerine sertifikayla faturalayın.",
+        "pjProgressBilling": "Alternatif olarak hakediş belgesi üzerinden faturalama.",
         "pjPnl": "Gelir olarak tamamlanan kilometre taşları.",
         "pjWip": "Kazanılana karşı faturalanan."
       }
@@ -7317,7 +7317,7 @@
         },
         {
           "title": "Hedef olarak tarihler",
-          "body": "Her biri için bir hedef tarih; böylece kayan bir taş görülür."
+          "body": "Her kilometre taşı için hedef tarih belirleyerek gecikmeleri görün."
         }
       ],
       "story": {
@@ -7365,7 +7365,7 @@
       "items": [
         {
           "q": "Kilometre taşı nedir?",
-          "a": "Bir projede adlandırılmış bir nokta; bir hedef tarih ve isteğe bağlı olarak ulaşıldığında faturalanabilecek bir tutarla."
+          "a": "Projede adı ve hedef tarihi belirlenen bir aşamadır. İsteğe bağlı olarak, bu aşama tamamlandığında faturalanabilecek tutar da tanımlanabilir."
         },
         {
           "q": "Neleri doldurmam gerekir?",
@@ -7380,8 +7380,8 @@
           "a": "Faturalanan sütununda."
         },
         {
-          "q": "Bunun yerine sertifika kullanabilir miyim?",
-          "a": "Evet. Hakediş faturalaması, yapılan işe göre ödenen sözleşmeleri kapsar."
+          "q": "Bunun yerine hakediş belgesi kullanabilir miyim?",
+          "a": "Evet. Yapılan iş karşılığında ödeme öngören sözleşmeler için hakediş faturalamasını kullanabilirsiniz."
         },
         {
           "q": "Adon ERP nerede kullanılabilir?",
@@ -15848,7 +15848,7 @@
       ]
     },
     "hero": {
-      "title": "İzin başvuruları: gönderildiden sonuçlanana kadar her talep tek panoda",
+      "title": "İzin başvuruları: başvurudan sonuca tüm talepler tek panoda",
       "lead": "Talepler portaldan veya İK'dan gelir. Her biri bakiyeyi, tarihleri ve ekiple herhangi bir çakışmayı gösterir. Onaylanan izin doğrudan devam durumuna ve bordroya gider.",
       "secondaryCta": "Panoyu görün"
     },
@@ -15884,7 +15884,7 @@
         {
           "tag": "Karar ver",
           "question": "Yönetici, sonra İK",
-          "body": "Yönetici başka kimin izinde olduğunu görür. İK, politikanın söylediği yerde devreye girer."
+          "body": "Yönetici, başka kimlerin izinde olduğunu görür. İK, izin politikasında belirtilen durumlarda sürece katılır."
         },
         {
           "tag": "Kaydet",
@@ -16219,9 +16219,9 @@
       ]
     },
     "hero": {
-      "title": "Nihai uzlaşmalar: kimse ayrılmadan önce iki yönde de borçlu olunan her şey",
-      "lead": "Son güne kadar maaş, kazanılmış izin, ikramiye ve PF bir tarafta. İhbar tazminatı, avanslar ve vergi diğer tarafta. Net ödenmeden önce her departman kişiyi ibra eder.",
-      "secondaryCta": "Bir uzlaşma görün"
+      "title": "Nihai uzlaşmalar: işten ayrılmadan önce tüm alacak ve borçlar netleşsin",
+      "lead": "Bir tarafta son çalışma gününe kadar maaş, kazanılmış izin, ikramiye ve PF; diğer tarafta ihbar tazminatı, avanslar ve vergi yer alır. Net tutar ödenmeden önce tüm departmanlar çalışanın ilişik kesme işlemini onaylar.",
+      "secondaryCta": "Örnek uzlaşmayı inceleyin"
     },
     "sample": {
       "count": "1 uzlaşma",
@@ -16251,7 +16251,7 @@
     },
     "flow": {
       "title": "Bir nihai uzlaşma, üç adımda",
-      "intro": "Hesaplayın, ibra edin, sonra ödeyin.",
+      "intro": "Tutarları hesaplayın, ilişik kesme onaylarını alın ve ödemeyi yapın.",
       "steps": [
         {
           "tag": "Hesapla",
@@ -16259,9 +16259,9 @@
           "body": "Bordro, izin, politika ve avanslardan ödenecek ve geri alınacak tutarlar."
         },
         {
-          "tag": "İbra et",
+          "tag": "İlişik kesme",
           "question": "Her departman imzalar",
-          "body": "BT, depo, muhasebe ve idari hiçbir şeyin kalmadığını onaylar."
+          "body": "BT, depo, muhasebe ve idari işler birimleri, çalışanın bekleyen bir yükümlülüğü olmadığını onaylar."
         },
         {
           "tag": "Öde",
@@ -16276,7 +16276,7 @@
           "body": "Son ayda çalışılan günler."
         },
         {
-          "label": "İzin paraya çevirme",
+          "label": "Kullanılmayan izin ücreti",
           "body": "Kalan kazanılmış izin."
         },
         {
@@ -16382,11 +16382,11 @@
         },
         {
           "q": "İhbar süresi çalışılmadıysa ne olur?",
-          "a": "İhbar tazminatı politikanın söylediği gibi geri alınabilir."
+          "a": "İhbar süresine uyulmadığında, ihbar tazminatı şirket politikasına göre çalışandan tahsil edilebilir."
         },
         {
-          "q": "Ödeme ibra için bekleyebilir mi?",
-          "a": "Evet, tüm departmanlar ibra edene kadar bekletilir."
+          "q": "Ödeme, ilişik kesme onayları tamamlanana kadar bekletilebilir mi?",
+          "a": "Evet, tüm departmanların ilişik kesme onayı alınana kadar bekletilir."
         },
         {
           "q": "Çalışan kaydı kapatılır mı?",
@@ -17379,9 +17379,9 @@
       ]
     },
     "hero": {
-      "title": "Maaş bordrolarım: her ay ne ödendiğiniz ve neden",
+      "title": "Maaş bordrolarım: her ay ne kadar, ne için ödeme aldığınızı görün",
       "lead": "Her ayın maaş bordrosu, bordro onaylandığı gün oradadır: her kazanç, her kesinti ve net ödeme. Banka için bir PDF indirin veya telefonunuzda saklayın.",
-      "secondaryCta": "Bir maaş bordrosu görün"
+      "secondaryCta": "Örnek maaş bordrosunu görüntüleyin"
     },
     "sample": {
       "count": "5 maaş bordrosu",
@@ -19888,9 +19888,9 @@
       ]
     },
     "hero": {
-      "title": "Eczane: kliniğin ilaçları, tarihinde ve stokta",
-      "lead": "Her ilaç son kullanma tarihiyle partisine göre tutulur. En eski parti önce çıkar, tarihi yaklaşan stok kırmızı işaretlenir ve minimumun altındaki her şey yeniden sipariş için hazırdır.",
-      "secondaryCta": "Stoğu görün",
+      "title": "Eczane: ilaçlar stokta, son kullanma tarihleri kontrol altında",
+      "lead": "İlaçları parti ve son kullanma tarihiyle takip edin. Önce en eski parti kullanılır; son kullanma tarihi yaklaşan stoklar kırmızıyla işaretlenir. Asgari stok seviyesinin altına düşen kalemler yeniden siparişe hazırdır.",
+      "secondaryCta": "İlaç stoğunu görüntüleyin",
       "features": [
         "Kliniğin ilaçları ve ilk yardım stoğu, partisine göre",
         "Son kullanma tarihleri, en eski parti önce verilir",
@@ -19928,12 +19928,12 @@
     },
     "flow": {
       "title": "Klinik stoğu, üç kuralda",
-      "intro": "En eski önce, asla tükenmez, asla süresi geçmez.",
+      "intro": "Önce en eski partiyi kullanın, stokların tükenmesini ve son kullanma tarihlerinin geçmesini önleyin.",
       "steps": [
         {
           "tag": "FEFO",
-          "question": "Önce son kullanma, önce çıkış",
-          "body": "Süresi en yakında dolan parti verilen partidir."
+          "question": "Son kullanma tarihi önce dolan, önce çıkar",
+          "body": "Son kullanma tarihi en yakın olan parti önce verilir."
         },
         {
           "tag": "Minimum",
@@ -19949,16 +19949,16 @@
       "formTitle": "Bir ilaç için doldurduğunuz alanlar",
       "form": [
         {
-          "label": "Ad ve güç",
+          "label": "İlaç adı ve etken madde miktarı",
           "body": "Örneğin Parasetamol 500 mg."
         },
         {
-          "label": "Parti ve son kullanma",
-          "body": "Kutudan, teslim alırken."
+          "label": "Parti ve son kullanma tarihi",
+          "body": "Teslim alırken ambalaj üzerindeki bilgileri girin."
         },
         {
-          "label": "Minimum",
-          "body": "Tuttuğunuz en az miktar."
+          "label": "Asgari stok",
+          "body": "Stokta tutulması gereken en az miktar."
         },
         {
           "label": "Birim",
@@ -19980,12 +19980,12 @@
         "mcVisits": "Ziyarette verilen ilaçlar.",
         "scRequisitions": "Düşük stok için siparişler.",
         "invSummary": "Klinik stoğunun değeri.",
-        "mcOverview": "Düşük ve sona eren kalemler."
+        "mcOverview": "Stoğu azalan ve son kullanma tarihi yaklaşan kalemler."
       }
     },
     "local": {
       "title": "Buradaki fabrikaların tuttuğu şekilde bir klinik eczanesi",
-      "intro": "Yaygın ilaçlarla dolu bir dolap, ilk yardım malzemeleri ve bunları tarihinde tutma görevi.",
+      "intro": "Fabrika kliniğindeki yaygın ilaçların ve ilk yardım malzemelerinin son kullanma tarihlerini düzenli olarak takip edin.",
       "points": [
         {
           "title": "Partiye göre",
@@ -20005,7 +20005,7 @@
         }
       ],
       "story": {
-        "title": "Süresi dolmadan kullanılan bir kısa tarihli parti",
+        "title": "Son kullanma tarihi yaklaşan bir parti, süresi dolmadan tüketildi",
         "intro": "Örnek bir ay ve tipik işleyişi.",
         "steps": [
           {
@@ -20018,7 +20018,7 @@
           },
           {
             "time": "Kasım boyunca",
-            "text": "Pansumanlar önce eski partiyi kullanır."
+            "text": "Pansumanlarda önce eski parti kullanılır."
           },
           {
             "time": "28 Kas",
@@ -20026,7 +20026,7 @@
           },
           {
             "time": "1 Ara",
-            "text": "Hiçbir şey silinmez."
+            "text": "Hiçbir stok kaleminin kayıttan düşülmesine gerek kalmaz."
           }
         ]
       }
@@ -20057,7 +20057,7 @@
         },
         {
           "q": "Süresi geçmiş stoka ne olur?",
-          "a": "Bloke edilir ve silinebilir."
+          "a": "Kullanıma kapatılır ve stok kayıtlarından düşülebilir."
         },
         {
           "q": "Buradan yeniden sipariş verebilir miyim?",
@@ -21344,17 +21344,17 @@
       ]
     },
     "hero": {
-      "title": "Ders programı: her ders yerleştirilmiş, hiçbir derslik veya öğretmen iki kez yok",
-      "mark": "hiçbir derslik veya öğretmen iki kez yok",
-      "lead": "Her şubenin haftasını düzenleyin veya otomatik doldurmanın öğretim yüklerinden önermesine izin verin. Ders programı iki kez rezerve edilen bir öğretmeni veya dersliği reddeder; böylece çakışmalar sınıfa asla ulaşmaz.",
-      "cta": "Bir sınıf ders programı görün"
+      "title": "Ders programı: her ders planlı, öğretmen ve dersliklerde çakışma yok",
+      "mark": "öğretmen ve dersliklerde çakışma yok",
+      "lead": "Her şubenin haftalık ders programını oluşturun veya ders yüklerine göre otomatik bir öneri alın. Sistem, aynı öğretmenin ya da dersliğin aynı saatte birden fazla derse atanmasını engeller; çakışmalar daha planlama aşamasında önlenir.",
+      "cta": "Örnek sınıf ders programını görüntüleyin"
     },
     "features": [
       "Her şube için haftalık bir çizelge, tiffin molası dahil",
       "Öğretmen görünümünde öğretmenin kendi haftası",
       "Ders saatleriyle bir zil programı",
-      "Öğretim yüklerinden otomatik doldurma, sonra elle ayarlama",
-      "Bir öğretmen yokken kaydedilen yerine öğretmenler"
+      "Ders yüklerine göre otomatik doldurma ve ardından elle düzenleme",
+      "Öğretmenlerin yokluğunda yerlerine görevlendirilen öğretmenlerin kaydı"
     ],
     "steps": [
       {
@@ -21365,12 +21365,12 @@
       {
         "tag": "Yerleştir",
         "title": "Çizelgeyi doldur",
-        "body": "Bir ders yerleştirmek için bir hücreye dokunun veya öğretim yüklerinden otomatik doldurun."
+        "body": "Ders eklemek için bir hücreye dokunun veya programı ders yüklerine göre otomatik doldurun."
       },
       {
-        "tag": "Kapat",
-        "title": "Yerine öğretmenler",
-        "body": "Bir öğretmen yokken o gün için bir yerine öğretmen atayın."
+        "tag": "Görevlendir",
+        "title": "Yerine öğretmen görevlendirme",
+        "body": "Bir öğretmen gelmediğinde, o gün için yerine başka bir öğretmen atayın."
       }
     ],
     "ui": {
@@ -21378,11 +21378,11 @@
       "tabTeacher": "Öğretmen görünümü",
       "tabBell": "Zil programı",
       "tabAuto": "Otomatik doldur ve yükle",
-      "tabSubs": "Yerine öğretmenler",
+      "tabSubs": "Yerine öğretmen görevlendirme",
       "fSection": "Şube",
       "sectionValue": "8. Sınıf, A",
       "print": "Yazdır",
-      "hint": "Bir ders koymak için bir hücreye dokunun.",
+      "hint": "Ders eklemek için bir hücreye dokunun.",
       "period": "Ders",
       "tiffin": "Tiffin molası",
       "sun": "Pazar",
@@ -21398,8 +21398,8 @@
     },
     "faq": [
       {
-        "q": "Çift rezervasyonu engeller mi?",
-        "a": "Evet. O ders saatinde zaten yerleştirilmiş bir öğretmen veya derslik reddedilir."
+        "q": "Öğretmen ve derslik çakışmalarını engeller mi?",
+        "a": "Evet. Aynı ders saatinde başka bir derse atanmış öğretmen veya derslik yeniden atanamaz."
       },
       {
         "q": "Ders programını yazdırabilir miyim?",
@@ -21407,11 +21407,11 @@
       },
       {
         "q": "Otomatik doldurma neyi kullanır?",
-        "a": "Akademik'te belirlediğiniz öğretim yüklerini: hangi öğretmenin hangi şube için hangi dersi aldığını."
+        "a": "Akademik bölümünde belirlediğiniz ders yüklerini kullanır: hangi öğretmenin hangi şubede hangi dersi verdiğini esas alır."
       },
       {
         "q": "Derslikler nereden gelir?",
-        "a": "Derslikler listesinden. Bir kez var olduğunda, ders programı oradan bir derslik seçer."
+        "a": "Derslikler listesinden gelir. Liste oluşturulduktan sonra ders programında bu listedeki derslikler kullanılabilir."
       },
       {
         "q": "Adon ERP nerede kullanılabilir?",
@@ -21875,7 +21875,7 @@
   "edNoticesPage": {
     "meta": {
       "title": "Okul Duyuruları: Bir Kez Yazın, Portal, SMS ve E-posta ile Gönderin",
-      "description": "Bir duyuruyu bir kez yazın ve veli portalı, SMS ve e-posta yoluyla bir kitleye gönderin; birleştirme alanları, şablonlar, zamanlama ve bir teslimat kaydıyla. Bangladeş'teki okullar için tasarlandı.",
+      "description": "Duyurunuzu bir kez yazın; veli portalı, SMS ve e-posta üzerinden seçtiğiniz alıcılara gönderin. Kişiselleştirme alanlarını, şablonları, zamanlamayı ve gönderim kayıtlarını kullanın. Bangladeş'teki okullar için tasarlandı.",
       "keywords": [
         "okul duyuru SMS",
         "veli portalı duyurusu",
@@ -21887,41 +21887,41 @@
     "hero": {
       "title": "Duyurular: bir kez yazın, her veliye ulaşın",
       "mark": "bir kez yazın",
-      "lead": "Kime olduğunu seçin, duyuruyu yazın ve veli portalı, SMS ve e-posta ile gönderin. Birleştirme alanları her çocuğun kendi bilgilerini doldurur ve kitle, duyuru gönderildiğinde hesaplanır.",
-      "cta": "Bir duyuru görün"
+      "lead": "Alıcıları seçin, duyurunuzu yazın ve veli portalı, SMS ve e-posta üzerinden gönderin. Kişiselleştirme alanları her öğrencinin bilgileriyle otomatik doldurulur. Alıcı listesi, duyurunun gönderildiği anda belirlenir.",
+      "cta": "Örnek duyuruyu görüntüleyin"
     },
     "features": [
-      "Bir kitle: tüm okul, bir sınıf veya bir şube",
+      "Alıcı seçimi: tüm okul, bir sınıf veya bir şube",
       "Tek gönderimde veli portalı, SMS ve e-posta",
-      "Öğrenci, sınıf, borç ve sonuç gibi birleştirme alanları",
+      "Öğrenci, sınıf, borç ve sonuç bilgileri için kişiselleştirme alanları",
       "Şablonlar, taslaklar ve zamanlanmış gönderim",
-      "Neyin kime ulaştığını gösteren bir teslimat kaydı"
+      "Hangi duyurunun kime ulaştığını gösteren gönderim kayıtları"
     ],
     "steps": [
       {
         "tag": "Seç",
-        "title": "Kitle ve kanallar",
+        "title": "Alıcılar ve kanallar",
         "body": "Sınıfı veya şubeyi ve kullanılacak kanalları seçin."
       },
       {
         "tag": "Yaz",
         "title": "Duyuru ve SMS metni",
-        "body": "Bir kez yazın. Birleştirme alanları bunu her çocuk için kişiselleştirir."
+        "body": "Metni bir kez yazın. Kişiselleştirme alanları metni her öğrenciye özel hale getirir."
       },
       {
         "tag": "Gönder",
         "title": "Şimdi veya sonra",
-        "body": "Kime ulaştığını önizleyin, sonra şimdi gönderin veya zamanlayın. Kayıt sonucu tutar."
+        "body": "Duyurunun kimlere ulaşacağını önizleyin, ardından hemen gönderin veya gönderimi zamanlayın. Sonuçlar gönderim kayıtlarında saklanır."
       }
     ],
     "ui": {
       "tabCompose": "Oluştur",
       "tabNotices": "Duyurular",
       "tabTemplates": "Şablonlar",
-      "tabLog": "Teslimat kaydı",
+      "tabLog": "Gönderim kayıtları",
       "tabAuto": "Otomatik",
       "fTemplate": "Bir şablondan başla",
-      "fAudience": "Kitle",
+      "fAudience": "Alıcılar",
       "fClass": "Sınıf",
       "fSection": "Şube",
       "fTitle": "Başlık",
@@ -21938,7 +21938,7 @@
       "titleValue": "Yarıyıl sınav programı",
       "noticeValue": "Sayın {guardian}, {class} sınıfındaki {student} için yarıyıl sınavı 14 Haziran'da başlıyor. Programı portalda görebilirsiniz.",
       "smsCount": "(112/480)",
-      "merge": "Birleştirme alanları",
+      "merge": "Kişiselleştirme alanları",
       "mergeList": "{student} {studentCode} {class} {section} {roll} {guardian} {school} {dues} {overdue} {attendance} {date} {exam} {grade} {gpa} {position} {dueDate}",
       "preview": "Önizle",
       "saveDraft": "Taslak kaydet",
@@ -21951,8 +21951,8 @@
     },
     "faq": [
       {
-        "q": "Birleştirme alanları nedir?",
-        "a": "Duyuru gönderildiğinde her çocuk için ayrı ayrı doldurulan öğrenci adı veya borç gibi yer tutuculardır."
+        "q": "Kişiselleştirme alanları nedir?",
+        "a": "Öğrenci adı veya borç tutarı gibi bilgiler için kullanılan yer tutuculardır. Duyuru gönderilirken her öğrencinin bilgileriyle ayrı ayrı doldurulur."
       },
       {
         "q": "Bir duyuruyu zamanlayabilir miyim?",
@@ -21960,11 +21960,11 @@
       },
       {
         "q": "Velilerin portala ihtiyacı var mı?",
-        "a": "Hayır. SMS veya e-postayı seçin; portala sahip olmayan bir veli de alır."
+        "a": "Hayır. SMS veya e-posta kanalını seçerseniz portalı kullanmayan veliler de duyuruyu alır."
       },
       {
         "q": "Kimin aldığını görebilir miyim?",
-        "a": "Evet. Teslimat kaydı her kanal için sonucu gösterir."
+        "a": "Evet. Gönderim kayıtlarında her kanalın sonucunu görebilirsiniz."
       },
       {
         "q": "Adon ERP nerede kullanılabilir?",
