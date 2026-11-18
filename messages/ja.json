@@ -46580,7 +46580,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "AdonERP Defence  IoTプラットフォーム",
+        "title": "AdonERP Defence IoTプラットフォーム",
         "description": "一つのインテリジェントIoTプラットフォームで、接続されたドローンシステム、自律ロボット、ミサイル監視、防空指揮業務を構築します。"
       },
       "hero": {
@@ -46590,7 +46590,7 @@
         "startButton": "今すぐ始める",
         "advisorButton": "アドバイザーに相談",
         "dashboard": {
-          "title": "エデンディフェンス IoT",
+          "title": "AdonERP ディフェンス IoT",
           "subtitle": "統合防衛業務コンソール",
           "liveBadge": "ライブシステム",
           "cards": [
@@ -57640,7 +57640,7 @@
           "daysBeforePcd": "PCD の数日前",
           "calculatedDate": "計算日",
           "localAssumptionNotASavedTna": "ローカルの仮定 · 保存された TNA プランではない",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ コンセプトキャンバス",
           "illustrativeRecordsNoLiveConnection": "実例レコード · ライブ接続なし",
@@ -58044,7 +58044,7 @@
           "exampleFloor": "フロア例",
           "initialState": "初期状態",
           "illustrativeDailyRate": "日割り料金の例",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "foodHospitality": "食とおもてなし /",
           "conceptCanvasFictionalRecords": "コンセプトキャンバス・架空の記録",
@@ -58298,7 +58298,7 @@
           "exampleStockPcs": "在庫例・個数",
           "requiredPcs": "必須・個",
           "shortPcs": "ショート・個",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "コンセプトキャンバス・架空の記録",
           "staticIllustrativeRecordsBasedOnThe": "編集可能なワークスペースとは別に、最初の例に基づいた静的な説明レコード",
@@ -58519,7 +58519,7 @@
           "stockContext": "株式コンテキスト"
         },
         "page": {
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "illustrativeQuantityCanvas": "/イラスト数量キャンバス",
           "exampleRecordsNotLiveErpData": "レコードの例 · ライブではない ERP データ",
@@ -58794,7 +58794,7 @@
           "duration": "期間",
           "starts": "始まります",
           "ends": "終わり",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ コンセプトキャンバス",
           "illustrativeRecordsNoLiveConnection": "実例レコード · ライブ接続なし",
@@ -59232,7 +59232,7 @@
           "n1Room3NightsBdt5": "1室×3泊×BDT 5,000",
           "transfer": "転送",
           "enteredOnce": "一度入力しました",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "コンセプトキャンバス・架空の記録",
           "staticIllustrativeRecordsBasedOnThe": "編集可能なワークスペースとは別に、最初の例に基づいた静的な説明レコード",
@@ -59705,7 +59705,7 @@
           "selectedToyTotal": "選択されたおもちゃの合計",
           "budgetRemaining": "残り予算",
           "fictionalToy": "架空のおもちゃ",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "retail": "小売 /",
           "conceptCanvasFictionalRecords": "コンセプトキャンバス・架空の記録",
@@ -60258,7 +60258,7 @@
         "aCloserLookAtTheWorkspace": "ワークスペースを詳しく見てみましょう。",
         "suppliedSoftwareRecordsPresentedAsA": "提供されたソフトウェアの記録。履歴プレビューとして表示されます。アドバイザーと一緒にプロセス全体を詳しく見てみましょう。",
         "exploreTheCompleteStyleToShipment": "ガイド付きの製品会話で、スタイルから出荷までの完全なワークフロー、記録、商品化の決定を確認します。",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "merchandising": "/ マーチャンダイジング /",
         "suppliedSoftwareSnapshot": "提供されたソフトウェアのスナップショット",
@@ -60685,7 +60685,7 @@
         "bashundharaCity": "ボシュンダラ市",
         "suppliedHistoricalDashboardNoInventedTre": "提供された履歴ダッシュボード - 発明されたトレンドなし",
         "aBalanceWorthUnderstanding": "理解する価値のあるバランス。",
-        "eden": "EDEN",
+        "eden": "ADON",
         "erp": "ERP",
         "retail": "/ 小売",
         "loyaltyAccounts": "ロイヤルティアカウント",
@@ -60863,7 +60863,7 @@
         "theDetailBehindTheExperience": "体験の背後にある詳細。",
         "suppliedSoftwareDataPresentedAsA": "提供されたソフトウェア データは、履歴プレビューとして表示されます。アドバイザーと一緒にワークフロー全体を探索してください。",
         "exploreTheCompleteCheckoutReportingAnd": "ガイド付きの製品会話で、チェックアウト、レポート、アウトレット在庫の完全なワークフローを確認します。",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "pointOfSale": "/ 販売時点管理 /",
         "suppliedSnapshot": "提供されたスナップショット"

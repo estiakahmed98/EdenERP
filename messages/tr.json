@@ -46658,7 +46658,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "AdonERP Defence  IoT Platformu",
+        "title": "AdonERP Defence IoT Platformu",
         "description": "Tek bir akıllı IoT platformuyla bağlantılı drone sistemleri, otonom robotlar, füze izleme ve hava savunma komuta operasyonları oluşturun."
       },
       "hero": {
@@ -46668,7 +46668,7 @@
         "startButton": "Şimdi başlayın",
         "advisorButton": "Bir danışmanla görüşün",
         "dashboard": {
-          "title": "Eden Savunma IoT",
+          "title": "AdonERP Savunma IoT",
           "subtitle": "Birleşik Savunma Operasyonları Konsolu",
           "liveBadge": "CANLI SİSTEM",
           "cards": [
@@ -57718,7 +57718,7 @@
           "daysBeforePcd": "PCD'den önceki günler",
           "calculatedDate": "Hesaplanan tarih",
           "localAssumptionNotASavedTna": "Yerel varsayım · kaydedilmiş bir TNA planı değil",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ Concept canvas",
           "illustrativeRecordsNoLiveConnection": "temsili kayıtlar · canlı bağlantı yok",
@@ -58122,7 +58122,7 @@
           "exampleFloor": "Örnek kat",
           "initialState": "Başlangıç durumu",
           "illustrativeDailyRate": "temsili günlük ücret",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "foodHospitality": "Yiyecek ve Konaklama /",
           "conceptCanvasFictionalRecords": "Konsept tuvali · kurgusal kayıtlar",
@@ -58376,7 +58376,7 @@
           "exampleStockPcs": "Örnek stok · adet",
           "requiredPcs": "Gerekli · adet",
           "shortPcs": "Kısa · adet",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "Konsept tuvali · kurgusal kayıtlar",
           "staticIllustrativeRecordsBasedOnThe": "Düzenlenebilir çalışma alanından ayrı, ilk örneğe dayalı statik temsili kayıtlar",
@@ -58597,7 +58597,7 @@
           "stockContext": "Stok bağlamı"
         },
         "page": {
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "illustrativeQuantityCanvas": "/ Illustrative quantity canvas",
           "exampleRecordsNotLiveErpData": "Örnek kayıtlar · canlı olmayan ERP verileri",
@@ -58872,7 +58872,7 @@
           "duration": "Süre",
           "starts": "Başlangıçlar",
           "ends": "biter",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ Concept canvas",
           "illustrativeRecordsNoLiveConnection": "temsili kayıtlar · canlı bağlantı yok",
@@ -59310,7 +59310,7 @@
           "n1Room3NightsBdt5": "1 oda × 3 gece × BDT 5.000",
           "transfer": "Aktarım",
           "enteredOnce": "Bir kez girildi",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "Konsept tuvali · kurgusal kayıtlar",
           "staticIllustrativeRecordsBasedOnThe": "Düzenlenebilir çalışma alanından ayrı, ilk örneğe dayalı statik temsili kayıtlar",
@@ -59783,7 +59783,7 @@
           "selectedToyTotal": "Seçilen oyuncak toplamı",
           "budgetRemaining": "Kalan bütçe",
           "fictionalToy": "Kurgusal oyuncak",
-          "eden": "Cennet",
+          "eden": "Adon",
           "erp": "ERP",
           "retail": "Perakende /",
           "conceptCanvasFictionalRecords": "Konsept tuvali · kurgusal kayıtlar",
@@ -60336,7 +60336,7 @@
         "aCloserLookAtTheWorkspace": "Çalışma alanına daha yakından bakış.",
         "suppliedSoftwareRecordsPresentedAsA": "Sağlanan yazılım kayıtları, geçmiş bir önizleme olarak sunulur. Bir danışmanla tüm süreci keşfedin.",
         "exploreTheCompleteStyleToShipment": "Rehberli bir ürün görüşmesinde stilden sevkiyata kadar iş akışının tamamını, kayıtları ve satış kararlarını keşfedin.",
-        "eden": "Cennet",
+        "eden": "Adon",
         "erp": "ERP",
         "merchandising": "/ Merchandising /",
         "suppliedSoftwareSnapshot": "Birlikte verilen yazılımın anlık görüntüsü",
@@ -60763,7 +60763,7 @@
         "bashundharaCity": "Bashundhara Şehri",
         "suppliedHistoricalDashboardNoInventedTre": "Birlikte verilen tarihsel kontrol paneli · icat edilmiş bir trend yok",
         "aBalanceWorthUnderstanding": "Anlamaya değer bir denge.",
-        "eden": "EDEN",
+        "eden": "ADON",
         "erp": "ERP",
         "retail": "/ RETAIL",
         "loyaltyAccounts": "SADAKAT HESAPLARI",
@@ -60941,7 +60941,7 @@
         "theDetailBehindTheExperience": "Deneyimin ardındaki ayrıntı.",
         "suppliedSoftwareDataPresentedAsA": "Sağlanan yazılım verileri, geçmiş bir önizleme olarak sunulur. Bir danışmanla iş akışının tamamını keşfedin.",
         "exploreTheCompleteCheckoutReportingAnd": "Rehberli bir ürün görüşmesinde ödeme, raporlama ve outlet stok iş akışının tamamını keşfedin.",
-        "eden": "Cennet",
+        "eden": "Adon",
         "erp": "ERP",
         "pointOfSale": "/ Point of Sale /",
         "suppliedSnapshot": "Paylaşılan veri özeti"

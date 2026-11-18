@@ -46580,7 +46580,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "Eden 国防物联网平台",
+        "title": "AdonERP 国防物联网平台",
         "description": "通过一个智能物联网平台构建互联的无人机系统、自主机器人、导弹监控和防空指挥运营。"
       },
       "hero": {
@@ -46590,7 +46590,7 @@
         "startButton": "立即开始",
         "advisorButton": "咨询顾问",
         "dashboard": {
-          "title": "伊甸防御 IoT",
+          "title": "AdonERP 国防 IoT",
           "subtitle": "统一国防运营控制台",
           "liveBadge": "实时系统",
           "cards": [
@@ -57640,7 +57640,7 @@
           "daysBeforePcd": "PCD 之前的天数",
           "calculatedDate": "计算日期",
           "localAssumptionNotASavedTna": "本地假设 · 不是已保存的 TNA 计划",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ 概念画布",
           "illustrativeRecordsNoLiveConnection": "说明性记录·无实时连接",
@@ -58044,7 +58044,7 @@
           "exampleFloor": "示例楼层",
           "initialState": "初始状态",
           "illustrativeDailyRate": "每日费率说明",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "foodHospitality": "食品与酒店 /",
           "conceptCanvasFictionalRecords": "概念画布·虚构记录",
@@ -58298,7 +58298,7 @@
           "exampleStockPcs": "库存示例 · 件",
           "requiredPcs": "必填·个",
           "shortPcs": "短·个",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "概念画布·虚构记录",
           "staticIllustrativeRecordsBasedOnThe": "基于初始示例的静态说明性记录，与可编辑工作区分开",
@@ -58519,7 +58519,7 @@
           "stockContext": "股票背景"
         },
         "page": {
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "illustrativeQuantityCanvas": "/ 说明性数量画布",
           "exampleRecordsNotLiveErpData": "示例记录 · 非实时 ERP 数据",
@@ -58794,7 +58794,7 @@
           "duration": "时长",
           "starts": "开始",
           "ends": "结束",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ 概念画布",
           "illustrativeRecordsNoLiveConnection": "说明性记录·无实时连接",
@@ -59232,7 +59232,7 @@
           "n1Room3NightsBdt5": "1 间客房 × 3 晚 × BDT 5,000",
           "transfer": "转乘",
           "enteredOnce": "已输入一次",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "概念画布·虚构记录",
           "staticIllustrativeRecordsBasedOnThe": "基于初始示例的静态说明性记录，与可编辑工作区分开",
@@ -59705,7 +59705,7 @@
           "selectedToyTotal": "所选玩具总数",
           "budgetRemaining": "剩余预算",
           "fictionalToy": "虚构玩具",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "retail": "零售/",
           "conceptCanvasFictionalRecords": "概念画布·虚构记录",
@@ -60258,7 +60258,7 @@
         "aCloserLookAtTheWorkspace": "仔细看看工作区。",
         "suppliedSoftwareRecordsPresentedAsA": "提供的软件记录，以历史预览的形式呈现。与顾问一起探索整个流程。",
         "exploreTheCompleteStyleToShipment": "在引导式产品对话中探索完整的款式到发货工作流程、记录和销售决策。",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "merchandising": "/ 商品推销 /",
         "suppliedSoftwareSnapshot": "提供的软件快照",
@@ -60685,7 +60685,7 @@
         "bashundharaCity": "巴顺达拉市",
         "suppliedHistoricalDashboardNoInventedTre": "提供历史仪表板 · 没有发明趋势",
         "aBalanceWorthUnderstanding": "值得理解的平衡。",
-        "eden": "EDEN",
+        "eden": "ADON",
         "erp": "ERP",
         "retail": "/ 零售",
         "loyaltyAccounts": "忠诚度账户",
@@ -60863,7 +60863,7 @@
         "theDetailBehindTheExperience": "体验背后的细节。",
         "suppliedSoftwareDataPresentedAsA": "提供的软件数据，以历史预览的形式呈现。与顾问一起探索完整的工作流程。",
         "exploreTheCompleteCheckoutReportingAnd": "在引导式产品对话中探索完整的结账、报告和直销店库存工作流程。",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "pointOfSale": "/ 销售点 /",
         "suppliedSnapshot": "提供的快照"

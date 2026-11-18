@@ -46580,7 +46580,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "AdonERP Defence  IoT प्लेटफर्म",
+        "title": "AdonERP Defence IoT प्लेटफर्म",
         "description": "एक बुद्धिमान IoT प्लेटफर्मसँग जडान गरिएको ड्रोन प्रणाली, स्वायत्त रोबोट, मिसाइल अनुगमन र वायु रक्षा कमाण्ड सञ्चालनहरू निर्माण गर्नुहोस्।"
       },
       "hero": {
@@ -46590,7 +46590,7 @@
         "startButton": "अहिले सुरु गर्नुहोस्",
         "advisorButton": "सल्लाहकारलाई भेट्नुहोस्",
         "dashboard": {
-          "title": "इडेन रक्षा IoT",
+          "title": "AdonERP रक्षा IoT",
           "subtitle": "एकीकृत रक्षा सञ्चालन कन्सोल",
           "liveBadge": "प्रत्यक्ष प्रणाली",
           "cards": [
@@ -57640,7 +57640,7 @@
           "daysBeforePcd": "PCD अघि दिनहरू",
           "calculatedDate": "गणना गरिएको मिति",
           "localAssumptionNotASavedTna": "स्थानीय धारणा · बचत गरिएको TNA योजना होइन",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ अवधारणा क्यानभास",
           "illustrativeRecordsNoLiveConnection": "चित्रण रेकर्डहरू · कुनै प्रत्यक्ष जडान छैन",
@@ -58044,7 +58044,7 @@
           "exampleFloor": "उदाहरण भुइँ",
           "initialState": "प्रारम्भिक अवस्था",
           "illustrativeDailyRate": "चित्रण दैनिक दर",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "foodHospitality": "खाना र आतिथ्य /",
           "conceptCanvasFictionalRecords": "अवधारणा क्यानभास · काल्पनिक रेकर्डहरू",
@@ -58298,7 +58298,7 @@
           "exampleStockPcs": "उदाहरण स्टक · pcs",
           "requiredPcs": "आवश्यक · pcs",
           "shortPcs": "छोटो · पीसी",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "अवधारणा क्यानभास · काल्पनिक रेकर्डहरू",
           "staticIllustrativeRecordsBasedOnThe": "प्रारम्भिक उदाहरणमा आधारित स्थिर चित्रण रेकर्डहरू, सम्पादन योग्य कार्यस्थानबाट अलग",
@@ -58519,7 +58519,7 @@
           "stockContext": "स्टक सन्दर्भ"
         },
         "page": {
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "illustrativeQuantityCanvas": "/ चित्रण मात्रा क्यानभास",
           "exampleRecordsNotLiveErpData": "उदाहरण रेकर्डहरू · प्रत्यक्ष ERP डाटा छैन",
@@ -58794,7 +58794,7 @@
           "duration": "अवधि",
           "starts": "सुरु हुन्छ",
           "ends": "समाप्त हुन्छ",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ अवधारणा क्यानभास",
           "illustrativeRecordsNoLiveConnection": "चित्रण रेकर्डहरू · कुनै प्रत्यक्ष जडान छैन",
@@ -59232,7 +59232,7 @@
           "n1Room3NightsBdt5": "१ कोठा × ३ रात × BDT ५,०००",
           "transfer": "स्थानान्तरण",
           "enteredOnce": "एक पटक प्रवेश गरे",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "अवधारणा क्यानभास · काल्पनिक रेकर्डहरू",
           "staticIllustrativeRecordsBasedOnThe": "प्रारम्भिक उदाहरणमा आधारित स्थिर चित्रण रेकर्डहरू, सम्पादन योग्य कार्यस्थानबाट अलग",
@@ -59705,7 +59705,7 @@
           "selectedToyTotal": "कुल चयन गरिएको खेलौना",
           "budgetRemaining": "बजेट बाँकी छ",
           "fictionalToy": "काल्पनिक खेलौना",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "retail": "खुद्रा /",
           "conceptCanvasFictionalRecords": "अवधारणा क्यानभास · काल्पनिक रेकर्डहरू",
@@ -60258,7 +60258,7 @@
         "aCloserLookAtTheWorkspace": "कार्यक्षेत्रमा नजिकबाट हेर्नुहोस्।",
         "suppliedSoftwareRecordsPresentedAsA": "सफ्टवेयर रेकर्डहरू, ऐतिहासिक पूर्वावलोकनको रूपमा प्रस्तुत गरियो। एक सल्लाहकार संग पूर्ण प्रक्रिया अन्वेषण गर्नुहोस्।",
         "exploreTheCompleteStyleToShipment": "निर्देशित उत्पादन कुराकानीमा पूर्ण शैली-देखि-शिपमेन्ट कार्यप्रवाह, रेकर्ड र व्यापारिक निर्णयहरू अन्वेषण गर्नुहोस्।",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "merchandising": "/ व्यापारिक /",
         "suppliedSoftwareSnapshot": "सफ्टवेयर स्न्यापसट प्रदान गरियो",
@@ -60685,7 +60685,7 @@
         "bashundharaCity": "बसुन्धरा सिटी",
         "suppliedHistoricalDashboardNoInventedTre": "आपूर्ति गरिएको ऐतिहासिक ड्यासबोर्ड · आविष्कार गरिएको प्रवृत्ति छैन",
         "aBalanceWorthUnderstanding": "बुझ्न लायकको सन्तुलन।",
-        "eden": "EDEN",
+        "eden": "ADON",
         "erp": "ERP",
         "retail": "/ रिटेल",
         "loyaltyAccounts": "वफादार खाताहरू",
@@ -60863,7 +60863,7 @@
         "theDetailBehindTheExperience": "अनुभव पछिको विवरण।",
         "suppliedSoftwareDataPresentedAsA": "एक ऐतिहासिक पूर्वावलोकनको रूपमा प्रस्तुत गरिएको सफ्टवेयर डेटा प्रदान गरियो। एक सल्लाहकार संग पूर्ण कार्यप्रवाह अन्वेषण गर्नुहोस्।",
         "exploreTheCompleteCheckoutReportingAnd": "निर्देशित उत्पादन कुराकानीमा पूर्ण चेकआउट, रिपोर्टिङ र आउटलेट-स्टक कार्यप्रवाह अन्वेषण गर्नुहोस्।",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "pointOfSale": "/ बिक्री बिन्दु /",
         "suppliedSnapshot": "प्रदान गरिएको स्न्यापसट"

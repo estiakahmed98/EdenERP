@@ -46204,7 +46204,7 @@
     },
     "iotdefence": {
       "metadata": {
-        "title": "AdonERP Defence  IoT Platform",
+        "title": "AdonERP Defence IoT Platform",
         "description": "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform."
       },
       "hero": {
@@ -46214,7 +46214,7 @@
         "startButton": "Start now",
         "advisorButton": "Meet an advisor",
         "dashboard": {
-          "title": "AdonERP Defence  IoT",
+          "title": "AdonERP Defence IoT",
           "subtitle": "Unified Defence Operations Console",
           "liveBadge": "LIVE SYSTEM",
           "cards": [
@@ -56838,7 +56838,7 @@
           "daysBeforePcd": "Days before PCD",
           "calculatedDate": "Calculated date",
           "localAssumptionNotASavedTna": "Local assumption · not a saved TNA plan",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ Concept canvas",
           "illustrativeRecordsNoLiveConnection": "Illustrative records · no live connection",
@@ -57242,7 +57242,7 @@
           "exampleFloor": "Example floor",
           "initialState": "Initial state",
           "illustrativeDailyRate": "Illustrative daily rate",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "foodHospitality": "Food & Hospitality /",
           "conceptCanvasFictionalRecords": "Concept canvas · fictional records",
@@ -57496,7 +57496,7 @@
           "exampleStockPcs": "Example stock · pcs",
           "requiredPcs": "Required · pcs",
           "shortPcs": "Short · pcs",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "Concept canvas · fictional records",
           "staticIllustrativeRecordsBasedOnThe": "Static illustrative records based on the initial example, separate from the editable workspace",
@@ -57717,7 +57717,7 @@
           "stockContext": "Stock context"
         },
         "page": {
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "illustrativeQuantityCanvas": "/ Illustrative quantity canvas",
           "exampleRecordsNotLiveErpData": "Example records · not live ERP data",
@@ -57992,7 +57992,7 @@
           "duration": "Duration",
           "starts": "Starts",
           "ends": "Ends",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvas": "/ Concept canvas",
           "illustrativeRecordsNoLiveConnection": "Illustrative records · no live connection",
@@ -58430,7 +58430,7 @@
           "n1Room3NightsBdt5": "1 room × 3 nights × BDT 5,000",
           "transfer": "Transfer",
           "enteredOnce": "Entered once",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "conceptCanvasFictionalRecords": "Concept canvas · fictional records",
           "staticIllustrativeRecordsBasedOnThe": "Static illustrative records based on the initial example, separate from the editable workspace",
@@ -58903,7 +58903,7 @@
           "selectedToyTotal": "Selected toy total",
           "budgetRemaining": "Budget remaining",
           "fictionalToy": "Fictional toy",
-          "eden": "Eden",
+          "eden": "Adon",
           "erp": "ERP",
           "retail": "Retail /",
           "conceptCanvasFictionalRecords": "Concept canvas · fictional records",
@@ -59456,7 +59456,7 @@
         "aCloserLookAtTheWorkspace": "A closer look at the workspace.",
         "suppliedSoftwareRecordsPresentedAsA": "Supplied software records, presented as a historical preview. Explore the full process with an advisor.",
         "exploreTheCompleteStyleToShipment": "Explore the complete style-to-shipment workflow, records and merchandising decisions in a guided product conversation.",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "merchandising": "/ Merchandising /",
         "suppliedSoftwareSnapshot": "Supplied software snapshot",
@@ -59883,7 +59883,7 @@
         "bashundharaCity": "Bashundhara City",
         "suppliedHistoricalDashboardNoInventedTre": "Supplied historical dashboard · no invented trend",
         "aBalanceWorthUnderstanding": "A balance worth understanding.",
-        "eden": "EDEN",
+        "eden": "ADON",
         "erp": "ERP",
         "retail": "/ RETAIL",
         "loyaltyAccounts": "LOYALTY ACCOUNTS",
@@ -60061,7 +60061,7 @@
         "theDetailBehindTheExperience": "The detail behind the experience.",
         "suppliedSoftwareDataPresentedAsA": "Supplied software data, presented as a historical preview. Explore the full workflow with an advisor.",
         "exploreTheCompleteCheckoutReportingAnd": "Explore the complete checkout, reporting and outlet-stock workflow in a guided product conversation.",
-        "eden": "Eden",
+        "eden": "Adon",
         "erp": "ERP",
         "pointOfSale": "/ Point of Sale /",
         "suppliedSnapshot": "Supplied snapshot"
