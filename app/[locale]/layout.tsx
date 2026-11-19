@@ -75,9 +75,10 @@ export function generateStaticParams() {
  */
 const SERVER_ONLY_PAGE_NAMESPACES = [
   "accountingShowcase",
-  // FMCG / Group of Industries pages render only as Server Components.
+  // FMCG / Group of Industries / Health pages render only as Server Components.
   "sectorFmcg",
   "sectorGroup",
+  "sectorHealth",
   "sectorCommon",
 ] as const;
 

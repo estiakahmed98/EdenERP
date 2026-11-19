@@ -254,7 +254,13 @@
           "talentAcquisition": "Yetenek Kazanımı",
           "textile": "Tekstil",
           "metal": "Metal",
-          "furniture": "Mobilya"
+          "furniture": "Mobilya",
+          "health": "Sağlık",
+          "healthHospital": "Hastane",
+          "healthMedicalCenter": "Tıp Merkezi / Klinik",
+          "healthDiagnosticCenter": "Tanı Merkezi",
+          "healthMedicalCollege": "Tıp Fakültesi",
+          "healthPharmacy": "Eczane"
         },
         "community": {
           "learn": "Öğrenin",
@@ -63886,7 +63892,8 @@
         "education": "Kabul, öğrenci kayıtları, devam, ücretler ve öğrenim yönetimini inceleyin.",
         "realEstate": "Gayrimenkul kayıtlarını, proje işlerini, faturalamayı ve finansal raporları inceleyin.",
         "consulting": "Profesyonel ekipler için müşteri kayıtlarını, hizmet sunumunu, faturalamayı ve raporlamayı inceleyin.",
-        "others": "E-ticaret, STK ve yayıncılık işletmelerinin iş akışlarını inceleyin."
+        "others": "E-ticaret, STK ve yayıncılık işletmelerinin iş akışlarını inceleyin.",
+        "health": "Hastane, klinik ve tıp fakültelerinde hasta sıraları, yatışlar, laboratuvar raporları, öğrenci kayıtları ve eczane stoklarının nasıl yönetildiğini keşfedin."
       }
     },
     "medicalCollegeApp": {
@@ -64165,7 +64172,8 @@
       "faqTitle": "Ekiplerin sık sorduğu sorular",
       "relatedFmcg": "Diğer hızlı tüketim kategorileri",
       "relatedGroup": "Diğer grup sektörleri",
-      "ctaEyebrow": "Birlikte değerlendirelim"
+      "ctaEyebrow": "Birlikte değerlendirelim",
+      "relatedHealth": "Diğer sağlık sektörleri"
     },
     "sectorFmcg": {
       "food": {
@@ -65697,6 +65705,713 @@
         "cta": {
           "title": "AdonERP'de grubunuzu yakından görün",
           "body": "Şirket yapınızı getirin, konsolidasyonu bir demoda ele alalım."
+        }
+      }
+    },
+    "sectorHealth": {
+      "hospital": {
+        "meta": {
+          "title": "Hastane Yönetimi ERP",
+          "description": "Bangladeş'teki özel hastaneler için poliklinik sıraları, yatışlar, servis ve yataklar, faturalandırma ve hekim ücretleri tek bir ERP'de."
+        },
+        "hero": {
+          "eyebrow": "Sağlık · Hastane",
+          "title": "Poliklinik kayıttan",
+          "highlight": "taburcuya kadar tek kayıt.",
+          "lead": "Hastayı bir kez kaydedin; ardından her sıra numarasını, yatışı, yatağı, tetkiki ve faturayı son hesap kapanışına kadar izleyin. Böylece danışma, servisler ve muhasebe aynı bilgiyle çalışır."
+        },
+        "stats": [
+          {
+            "value": "Poliklinik",
+            "label": "hekime göre sıra ve muayeneler"
+          },
+          {
+            "value": "Yatan hasta",
+            "label": "yatışlar, servisler ve yatak sayımı"
+          },
+          {
+            "value": "Fatura",
+            "label": "avans, ara ve kesin faturalar"
+          }
+        ],
+        "visual": {
+          "jOpd": "Poliklinik sırası",
+          "jAdmit": "Yatış",
+          "jWard": "Servis ve yatak",
+          "jBill": "Ara fatura",
+          "jDischarge": "Taburcu",
+          "journeyCaption": "Her adımda aynı hasta numarası",
+          "wardTitle": "B Servisi · yatak panosu",
+          "wardCaption": "Örnek yatak panosu · kurgusal veriler",
+          "legendOccupied": "Dolu",
+          "legendFree": "Boş",
+          "legendCleaning": "Temizleniyor",
+          "pillarsTitle": "Danışma, servisler ve muhasebe tek kayıtta",
+          "flowTitle": "Bir hasta hastanede nasıl ilerler",
+          "clinicalNote": "Adon ERP idari ve faturalama kayıtlarını tutar. Klinik kararlar hekimlerinize aittir; hasta verileri hastanenizin gizlilik politikasına ve yürürlükteki mevzuata göre işlenir."
+        },
+        "pillars": [
+          {
+            "title": "Hasta kaydı",
+            "body": "Poliklinik, yatış, tetkik ve faturalama için tek hasta numarası; bilgiler hiçbir zaman iki kez girilmez."
+          },
+          {
+            "title": "Yataklar ve servisler",
+            "body": "Servis bazında dolu, boş ve temizlenen yatakları görün; hastaları ücretleri kaybetmeden nakledin."
+          },
+          {
+            "title": "Açık hesaplar",
+            "body": "Oda ücreti, tetkikler, ilaçlar ve işlemler gerçekleştikçe hastanın faturasına işlenir."
+          },
+          {
+            "title": "Hekim ücretleri",
+            "body": "Uzman hekim ücretleri ve payları faturalardan hesaplanır ve zamanında ödenir."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Kayıt ve sıra numarası",
+            "body": "Danışma hastayı kaydeder ve seçilen hekim için poliklinik sıra numarası verir."
+          },
+          {
+            "title": "Servise yatış",
+            "body": "Yatış önerildiğinde bir yatak atayın ve avans alın."
+          },
+          {
+            "title": "Hizmetleri günlük işleyin",
+            "body": "Tetkikler, ilaçlar ve işlemler her gün açık hesaba eklenir."
+          },
+          {
+            "title": "Hesap kapatma ve taburcu",
+            "body": "Kesin faturayı hazırlayın, avansı mahsup edin ve taburcuyu kaydedin."
+          }
+        ],
+        "sample": {
+          "title": "Bugünkü yatışlar",
+          "caption": "Kurgusal hastalar ve rakamlar, yalnızca örnek amaçlıdır.",
+          "columns": [
+            "Yatış no",
+            "Hasta",
+            "Servis / yatak",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "IPD-2611-0412",
+              "Rahima Begum",
+              "B Servisi · 07",
+              "Yatışı yapıldı"
+            ],
+            [
+              "IPD-2611-0413",
+              "Kamal Hossain",
+              "Oda 304",
+              "Gözlem altında"
+            ],
+            [
+              "IPD-2611-0414",
+              "Nusrat Jahan",
+              "Doğum servisi · 12",
+              "Ara fatura gönderildi"
+            ],
+            [
+              "IPD-2611-0415",
+              "Abdul Karim",
+              "A Servisi · 03",
+              "Taburcuya hazır"
+            ]
+          ]
+        },
+        "modules": [
+          "Poliklinik sıra numarası verin ve her hekimin sırasını yönetin.",
+          "Hasta yatışı yapın ve avansları kaydedin.",
+          "Tüm servisleri ve yatakları tek bakışta görün.",
+          "Açık ve kesin faturaları otomatik oluşturun."
+        ],
+        "faqs": [
+          {
+            "q": "Ayaktan ve yatan hasta işlemlerini aynı sistemde yürütebilir miyiz?",
+            "a": "Evet. Poliklinik ziyaretleri, yatışlar, tetkikler ve faturalama tek bir hasta kaydında ilerler."
+          },
+          {
+            "q": "Adon ERP klinik notları saklar mı?",
+            "a": "Her ziyaretin idari kaydını tutar. Hangi klinik bilgilerin kaydedileceğine ve kimlerin görebileceğine tıbbi ekibinizle birlikte karar verin."
+          },
+          {
+            "q": "Bu sayfadaki hastalar gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm isimler ve rakamlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Hastanenizin hasta akışını Adon ERP'de görün",
+          "body": "Kendi bölümlerinizle kayıt, yatış, faturalama ve taburcu sürecini birlikte inceleyelim."
+        }
+      },
+      "medicalCenter": {
+        "meta": {
+          "title": "Klinik ve Tıp Merkezi ERP",
+          "description": "Bangladeş'teki klinikler ve tıp merkezleri için hekim muayenehaneleri, hasta sıraları, muayeneler ve faturalandırma."
+        },
+        "hero": {
+          "eyebrow": "Sağlık · Tıp merkezi / klinik",
+          "title": "Her muayenehane,",
+          "highlight": "her sıra zamanında.",
+          "lead": "Hekimlerin muayene saatlerini yayınlayın, telefonla ya da gişede sıra verin, muayeneleri kaydedin ve ücretleri tahsil edin. Hastalar daha az bekler, klinik de her günün gelirini bilir."
+        },
+        "stats": [
+          {
+            "value": "Muayenehane",
+            "label": "hekim ve güne göre programlar"
+          },
+          {
+            "value": "Sıra",
+            "label": "telefonla veya gişede"
+          },
+          {
+            "value": "Gün sonu",
+            "label": "her akşam nakit ve hekim payları"
+          }
+        ],
+        "visual": {
+          "chamberTitle": "Bugünkü muayenehaneler",
+          "chamberCaption": "Örnek program · kurgusal hekimler",
+          "doc1": "Dr. Farhana Akter",
+          "spec1": "Kadın Hastalıkları",
+          "time1": "10:00–13:00",
+          "serials1": "18 sıra",
+          "doc2": "Dr. Mahmud Hasan",
+          "spec2": "Dahiliye",
+          "time2": "16:00–20:00",
+          "serials2": "26 sıra",
+          "doc3": "Dr. Tanvir Ahmed",
+          "spec3": "Çocuk Sağlığı",
+          "time3": "18:00–21:00",
+          "serials3": "14 sıra",
+          "nowServing": "Şu an muayenede",
+          "serialNo": "Sıra 12",
+          "pillarsTitle": "Programına sadık bir klinik",
+          "flowTitle": "Sıra almaktan akşam kapanışına kadar"
+        },
+        "pillars": [
+          {
+            "title": "Muayene programları",
+            "body": "Her hekimin günlerini, saatlerini ve hasta sınırını belirleyin; hekim yokken muayenehaneyi kapatın."
+          },
+          {
+            "title": "Sıra randevusu",
+            "body": "Telefonla veya gişede sıra verin ve hastalara sıradaki yerlerini gösterin."
+          },
+          {
+            "title": "Muayene kaydı",
+            "body": "Ziyareti, öneriyi ve kontrol tarihini hasta numarasına kaydedin."
+          },
+          {
+            "title": "Ücretler ve paylar",
+            "body": "Muayene ücretlerini tahsil edin ve gün sonunda her hekimin payını hesaplayın."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Sıra verin",
+            "body": "Resepsiyon hastayı hekimin muayenehanesine kaydeder ve sıra numarasını onaylar."
+          },
+          {
+            "title": "Giriş ve bekleme",
+            "body": "Hasta geldiğinde girişi yapılır ve sıra numarasına göre çağrılır."
+          },
+          {
+            "title": "Muayene ve öneri",
+            "body": "Hekim muayeneyi, istenen tetkikleri ve bir sonraki ziyareti kaydeder."
+          },
+          {
+            "title": "Günü kapatın",
+            "body": "Nakit, dijital ödemeler ve hekim payları her akşam mutabık kılınır."
+          }
+        ],
+        "sample": {
+          "title": "Akşam muayene listesi",
+          "caption": "Kurgusal hastalar ve rakamlar, yalnızca örnek amaçlıdır.",
+          "columns": [
+            "Sıra",
+            "Hasta",
+            "Hekim",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "S-07",
+              "Shirin Akter",
+              "Dr. Mahmud Hasan",
+              "Muayene edildi"
+            ],
+            [
+              "S-08",
+              "Rafiq Uddin",
+              "Dr. Mahmud Hasan",
+              "Muayenede"
+            ],
+            [
+              "S-09",
+              "Jannatul Ferdous",
+              "Dr. Mahmud Hasan",
+              "Bekliyor"
+            ],
+            [
+              "S-10",
+              "Habibur Rahman",
+              "Dr. Mahmud Hasan",
+              "Telefonla alındı"
+            ]
+          ]
+        },
+        "modules": [
+          "Hekimlerin muayene günlerini ve saatlerini belirleyin.",
+          "Hasta sıraları verin ve hastaları çağırın.",
+          "Muayeneleri ve kontrolleri kaydedin.",
+          "Günün nakdini ve hekim paylarını kapatın."
+        ],
+        "faqs": [
+          {
+            "q": "Hastalar telefonla sıra alabilir mi?",
+            "a": "Evet. Resepsiyon telefonla sıra verebilir; hasta geldiğinde girişi yapılır."
+          },
+          {
+            "q": "Misafir hekimlerin payları farklı olabilir mi?",
+            "a": "Evet. Her hekimin ücreti ve payı ayrı ayrı belirlenir ve gün sonunda uygulanır."
+          },
+          {
+            "q": "Hekimler ve hastalar gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm isimler ve rakamlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Kliniğinizin muayene programını birlikte planlayalım",
+          "body": "Kliniğiniz için örnek bir program, sıra sistemi ve gün sonu kapanışı hazırlayalım."
+        }
+      },
+      "diagnosticCenter": {
+        "meta": {
+          "title": "Tanı Merkezi ERP",
+          "description": "Bangladeş'teki tanı merkezleri için tetkik istemleri, numune alma, laboratuvar ve görüntüleme raporları, sevk payları ve faturalandırma."
+        },
+        "hero": {
+          "eyebrow": "Sağlık · Tanı merkezi",
+          "title": "Numune alımından",
+          "highlight": "onaylı rapora kadar.",
+          "lead": "Tetkikleri kaydedin, numuneleri etiketleyin, her birini laboratuvarda veya görüntüleme odasında izleyin ve onaylı raporları zamanında teslim edin. Her fatura ve sevk payı da kayıt altında olur."
+        },
+        "stats": [
+          {
+            "value": "Barkod",
+            "label": "her numunede etiket"
+          },
+          {
+            "value": "TAT",
+            "label": "tetkike göre rapor süresi"
+          },
+          {
+            "value": "Sevkler",
+            "label": "sevk eden hekime göre paylar"
+          }
+        ],
+        "visual": {
+          "pipeTitle": "Bugünkü numuneler",
+          "pipeCollected": "Alınan",
+          "pipeLab": "Laboratuvarda",
+          "pipeVerified": "Onaylandı",
+          "pipeDelivered": "Teslim edildi",
+          "nCollected": "142",
+          "nLab": "38",
+          "nVerified": "61",
+          "nDelivered": "43",
+          "pipeCaption": "Örnek numune takibi · kurgusal rakamlar",
+          "tatLabel": "Zamanında teslim edilen raporlar",
+          "tatValue": "%94",
+          "pillarsTitle": "Her tetkik izlenir, her rapor kontrol edilir",
+          "flowTitle": "Bir tetkik merkezde nasıl ilerler",
+          "referralNote": "Sevk ödemeleri merkezinizin politikasına ve yürürlükteki mevzuata uygun olmalıdır. Adon ERP yalnızca kararlaştırılan payları kaydeder, payları belirlemez."
+        },
+        "pillars": [
+          {
+            "title": "Tetkik istemi ve fatura",
+            "body": "Tekli tetkik veya paket kaydedin, indirim uygulayın ve faturayı numune talimatlarıyla birlikte yazdırın."
+          },
+          {
+            "title": "Numune takibi",
+            "body": "Her numune barkodlu etiket alır; durumu alımdan teslime kadar görünür."
+          },
+          {
+            "title": "Laboratuvar ve görüntüleme raporları",
+            "body": "Sonuçlar girilir, uzman hekim tarafından onaylanır ve ancak onaydan sonra yayımlanır."
+          },
+          {
+            "title": "Sevk payları",
+            "body": "Sevk eden hekimlerin payları ödenmiş faturalardan hesaplanır ve zamanında ödenir."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Tetkikleri kaydedin",
+            "body": "Resepsiyon tetkikleri kaydeder, ödemeyi alır ve numune etiketlerini yazdırır."
+          },
+          {
+            "title": "Numuneyi alın",
+            "body": "Numune alınır, etiketlenir ve ilgili bölüme gönderilir."
+          },
+          {
+            "title": "Test ve onay",
+            "body": "Laboratuvar veya görüntüleme ekibi sonuçları girer, uzman hekim raporu onaylar."
+          },
+          {
+            "title": "Raporu teslim edin",
+            "body": "Hasta raporu gişeden alır ya da rapor hazır olduğunda SMS ile bilgilendirilir."
+          }
+        ],
+        "sample": {
+          "title": "Rapor durum panosu",
+          "caption": "Kurgusal numuneler ve sonuçlar, yalnızca örnek amaçlıdır.",
+          "columns": [
+            "Numune",
+            "Tetkik",
+            "Bölüm",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "LAB-2611-1182",
+              "Tam kan sayımı",
+              "Hematoloji",
+              "Onaylandı"
+            ],
+            [
+              "LAB-2611-1183",
+              "Lipid profili",
+              "Biyokimya",
+              "Çalışılıyor"
+            ],
+            [
+              "IMG-2611-0341",
+              "Akciğer grafisi",
+              "Görüntüleme",
+              "Rapor bekleniyor"
+            ],
+            [
+              "LAB-2611-1184",
+              "HbA1c",
+              "Biyokimya",
+              "Teslim edildi"
+            ]
+          ]
+        },
+        "modules": [
+          "Numuneleri izleyin ve laboratuvar sonuçlarını onaylayın.",
+          "Görüntüleme randevularını planlayın ve raporları yayımlayın.",
+          "Tetkikleri, paketleri ve indirimleri faturalandırın.",
+          "Hekim paylarını hesaplayın ve ödeyin."
+        ],
+        "faqs": [
+          {
+            "q": "Uzman hekim raporları yayımlanmadan önce onaylayabilir mi?",
+            "a": "Evet. Raporlar, atanan uzman hekim onaylayana kadar bekletilir."
+          },
+          {
+            "q": "Rapor hazır olduğunda hastaya bildirim gidebilir mi?",
+            "a": "Evet. Bu özelliği açarsanız rapor yayımlandığında SMS gönderilir."
+          },
+          {
+            "q": "Bu sayfadaki sonuçlar gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm numuneler, tetkikler ve rakamlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Tetkik sürecinizi Adon ERP'de planlayın",
+          "body": "Kendi bölüm ve tetkiklerinizle bir numuneyi kayıttan rapora kadar birlikte izleyelim."
+        }
+      },
+      "medicalCollege": {
+        "meta": {
+          "title": "Tıp Fakültesi Yönetimi ERP",
+          "description": "Bangladeş'teki tıp fakülteleri için kabul, mesleki sınavlar, servis stajları, intörnlük ve uzmanlık öğrencisi kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Sağlık · Tıp fakültesi",
+          "title": "Kayıttan intörnlüğe kadar,",
+          "highlight": "her öğrenci kayıt altında.",
+          "lead": "Kabulleri, kart ve madde sınavlarını, mesleki sınavları, servis stajlarını ve intörnlük karnelerini eğitim hastanesiyle birlikte tek bir akademik kayıtta tutun."
+        },
+        "stats": [
+          {
+            "value": "Mesleki sınavlar",
+            "label": "döneme göre uygunluk ve sonuçlar"
+          },
+          {
+            "value": "Servisler",
+            "label": "gruba göre klinik stajlar"
+          },
+          {
+            "value": "İntörnlük",
+            "label": "rotasyonlar ve karneler"
+          }
+        ],
+        "visual": {
+          "timelineTitle": "MBBS yolculuğu",
+          "p1": "Kabul",
+          "p2": "Birinci mesleki sınav",
+          "p3": "İkinci mesleki sınav",
+          "p4": "Üçüncü mesleki sınav",
+          "p5": "Son mesleki sınav",
+          "p6": "İntörnlük",
+          "timelineCaption": "Akademik dönemlerin sadeleştirilmiş gösterimi",
+          "pillarsTitle": "Birinci yıldan intörnlüğe tek akademik kayıt",
+          "flowTitle": "Bir sınıf fakültede nasıl ilerler",
+          "regNote": "Adon ERP akademik kayıtları tutar. Müfredat, sınav kuralları ve tescil, üniversitenizin ve düzenleyici kurumun gerekliliklerine göre yürütülür."
+        },
+        "pillars": [
+          {
+            "title": "Kabul",
+            "body": "Her dönem kabul edilen öğrencileri, belgelerini ve ücret durumlarını kaydedin."
+          },
+          {
+            "title": "Kartlar, maddeler ve sınavlar",
+            "body": "Kart ve madde tamamlanmasını izleyin, hangi öğrencinin hangi mesleki sınava girebileceğini görün."
+          },
+          {
+            "title": "Klinik stajlar",
+            "body": "Grupları servislere ve ünitelere atayın, her stajda devamı kaydedin."
+          },
+          {
+            "title": "İntörnler ve asistanlar",
+            "body": "İntörnlük rotasyonlarını, karneleri ve uzmanlık öğrencisi kayıtlarını bir arada tutun."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Dönemi kabul edin",
+            "body": "Öğrenciler kabul edilir, belgeler kontrol edilir ve ücretler tanımlanır."
+          },
+          {
+            "title": "Kart ve maddeleri tamamlayın",
+            "body": "Bölümler her dönemde tamamlanan kart ve maddeleri kaydeder."
+          },
+          {
+            "title": "Mesleki sınavlara girin",
+            "body": "Uygun öğrenciler sınava girer ve sonuçlar derse göre kaydedilir."
+          },
+          {
+            "title": "İntörnlüğe başlayın",
+            "body": "Mezunlar, her ünite için bir karneyle eğitim hastanesinde rotasyona başlar."
+          }
+        ],
+        "sample": {
+          "title": "Üçüncü mesleki sınav uygunluğu",
+          "caption": "Kurgusal öğrenciler ve rakamlar, yalnızca örnek amaçlıdır.",
+          "columns": [
+            "Numara",
+            "Öğrenci",
+            "Tamamlanan madde",
+            "Uygunluk"
+          ],
+          "rows": [
+            [
+              "MC-21-034",
+              "Sadia Islam",
+              "38 / 40",
+              "Uygun"
+            ],
+            [
+              "MC-21-035",
+              "Arif Chowdhury",
+              "40 / 40",
+              "Uygun"
+            ],
+            [
+              "MC-21-036",
+              "Mehedi Hasan",
+              "31 / 40",
+              "Eksik madde var"
+            ],
+            [
+              "MC-21-037",
+              "Tasnim Rahman",
+              "36 / 40",
+              "İnceleniyor"
+            ]
+          ]
+        },
+        "modules": [
+          "Dönemlere göre kabul ve kayıt işlemlerini yönetin.",
+          "Mesleki sınav uygunluğunu ve sonuçlarını izleyin.",
+          "Her grubun servis stajlarını planlayın.",
+          "İntörnlük rotasyonlarını ve karneleri tutun."
+        ],
+        "faqs": [
+          {
+            "q": "Eğitim hastanemizle birlikte çalışır mı?",
+            "a": "Evet. Servis stajları ve intörnlük, hastanenin aynı bölüm ve ünitelerini kullanabilir."
+          },
+          {
+            "q": "Her öğrencinin kart ve maddelerini izleyebilir miyiz?",
+            "a": "Evet. Bölümler tamamlanmayı kaydeder, uygunluk durumu otomatik güncellenir."
+          },
+          {
+            "q": "Bu sayfadaki öğrenciler gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm isimler ve rakamlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Akademik kayıtlarınızı birlikte inceleyelim",
+          "body": "Fakülteniz için kabul, sınav ve staj süreçlerinin nasıl kurulacağını gösterelim."
+        }
+      },
+      "pharmacy": {
+        "meta": {
+          "title": "Eczane Yönetimi ERP",
+          "description": "Bangladeş'teki eczaneler için tezgâh satışları, parti ve son kullanma takibi, yeniden sipariş seviyeleri ve tedarikçi alımları."
+        },
+        "hero": {
+          "eyebrow": "Sağlık · Eczane",
+          "title": "Tezgâhta daha hızlı satış,",
+          "highlight": "hiçbir son kullanma tarihi gözden kaçmaz.",
+          "lead": "İlaçları saniyeler içinde faturalayın, her partiyi ve son kullanma tarihini kayıt altında tutun, stok bitmeden yeniden sipariş verin ve tedarikçilerden anlaşılan fiyatlarla alım yapın. Tek eczane de olsa zincir de."
+        },
+        "stats": [
+          {
+            "value": "Parti",
+            "label": "ve son kullanma tarihi her üründe"
+          },
+          {
+            "value": "Sipariş",
+            "label": "stok bitmeden uyarı"
+          },
+          {
+            "value": "Şubeler",
+            "label": "her şubenin stoku ve satışı"
+          }
+        ],
+        "visual": {
+          "receiptTitle": "Tezgâh fişi",
+          "item1": "Parasetamol 500 mg",
+          "qty1": "2 blister",
+          "amt1": "40,00",
+          "batch1": "PC-2609",
+          "exp1": "08/2028",
+          "item2": "Omeprazol 20 mg",
+          "qty2": "1 blister",
+          "amt2": "70,00",
+          "batch2": "OM-2607",
+          "exp2": "05/2028",
+          "item3": "Oral rehidrasyon tuzu",
+          "qty3": "5 saşe",
+          "amt3": "30,00",
+          "batch3": "OS-2610",
+          "exp3": "10/2027",
+          "batchLabel": "Parti",
+          "expiryLabel": "SKT",
+          "totalLabel": "Toplam",
+          "totalValue": "140,00",
+          "receiptCaption": "Örnek fiş · kurgusal fiyatlar",
+          "alertTitle": "90 gün içinde süresi dolacaklar",
+          "alert1": "Setirizin 10 mg · 3 kutu",
+          "alert2": "Antasit süspansiyon · 6 şişe",
+          "pillarsTitle": "Tezgâh, stok ve satın alma uyum içinde",
+          "flowTitle": "Tedarikçiden tezgâha",
+          "rxNote": "Adon ERP satış ve stok kayıtlarını tutar. Reçeteli ilaçlar yürürlükteki mevzuata ve eczacınızın değerlendirmesine göre verilmelidir."
+        },
+        "pillars": [
+          {
+            "title": "Hızlı tezgâh satışı",
+            "body": "Marka veya etken madde adıyla arayın, partiyi seçin ve faturayı saniyeler içinde yazdırın."
+          },
+          {
+            "title": "Parti ve son kullanma",
+            "body": "Her alım, partisi ve son kullanma tarihiyle saklanır; önce en eski stok satılır."
+          },
+          {
+            "title": "Yeniden sipariş seviyeleri",
+            "body": "Her ürün için asgari stok belirleyin ve ürün bitmeden alım listesini alın."
+          },
+          {
+            "title": "Tedarikçi alımları",
+            "body": "Her ilaç firması veya dağıtıcı için alımları, iadeleri ve borçları kaydedin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Tedarikçiden teslim alın",
+            "body": "Alımlar parti, son kullanma tarihi ve alış fiyatıyla kaydedilir."
+          },
+          {
+            "title": "Tezgâhta satın",
+            "body": "Tezgâh önce son kullanma tarihi en yakın partiyi satar ve fişi yazdırır."
+          },
+          {
+            "title": "Son kullanma ve stoku izleyin",
+            "body": "Süresi yaklaşan ürünler ve azalan stok, zarara dönüşmeden önce görünür."
+          },
+          {
+            "title": "Sipariş ve iade",
+            "body": "Azalan stok için satın alma siparişi verin, süresi dolan ürünleri tedarikçiye iade edin."
+          }
+        ],
+        "sample": {
+          "title": "Son kullanma tarihi yaklaşan stok",
+          "caption": "Kurgusal ürünler ve rakamlar, yalnızca örnek amaçlıdır.",
+          "columns": [
+            "Parti",
+            "İlaç",
+            "SKT",
+            "Stok"
+          ],
+          "rows": [
+            [
+              "CT-2508",
+              "Setirizin 10 mg",
+              "Ocak 2027",
+              "3 kutu"
+            ],
+            [
+              "AS-2504",
+              "Antasit süspansiyon",
+              "Şubat 2027",
+              "6 şişe"
+            ],
+            [
+              "VD-2511",
+              "D vitamini 1000 IU",
+              "Mart 2027",
+              "12 blister"
+            ],
+            [
+              "ZN-2502",
+              "Çinko şurubu",
+              "Mart 2027",
+              "4 şişe"
+            ]
+          ]
+        },
+        "modules": [
+          "İlaç stokunu parti ve son kullanma tarihine göre yönetin.",
+          "Tezgâhta müşterileri hızla faturalayın.",
+          "Tüm eczane ve depolardaki stok seviyelerini görün.",
+          "Tedarikçilerden alım yapın ve borçları izleyin."
+        ],
+        "faqs": [
+          {
+            "q": "Etken madde adıyla arama yapabilir miyiz?",
+            "a": "Evet. Tezgâhta ilaçlar marka veya etken madde adıyla bulunabilir."
+          },
+          {
+            "q": "Eczane zincirleri için uygun mu?",
+            "a": "Evet. Her şube kendi stokunu ve satışını tutar, genel merkez hepsini görür."
+          },
+          {
+            "q": "Bu sayfadaki fiyatlar gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm ürünler ve rakamlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Eczane tezgâhınızı birlikte kuralım",
+          "body": "Kendi ilaçlarınızdan bir örnekle faturalama, parti takibi ve sipariş uyarılarını gösterelim."
         }
       }
     }

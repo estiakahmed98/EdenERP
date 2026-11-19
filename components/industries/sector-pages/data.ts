@@ -1,6 +1,6 @@
 /**
- * FMCG and Group of Industries pages. Copy lives in messages/<locale>.json under
- * `pages.sectorFmcg.<key>` / `pages.sectorGroup.<key>` (server-only namespaces,
+ * FMCG, Group of Industries and Health pages. Copy lives in messages/<locale>.json
+ * under `pages.sectorFmcg.<key>` / `pages.sectorGroup.<key>` / `pages.sectorHealth.<key>` (server-only namespaces,
  * see SERVER_ONLY_PAGE_NAMESPACES in app/[locale]/layout.tsx).
  */
 export const sectorFamilies = {
@@ -31,12 +31,29 @@ export const sectorFamilies = {
       "financial-services": { key: "financialServices", menu: "groupFinancialServices" },
     },
   },
+  health: {
+    namespace: "sectorHealth",
+    base: "/industries/health",
+    menuKey: "menu.industries.health",
+    pages: {
+      hospital: { key: "hospital", menu: "healthHospital" },
+      "medical-center": { key: "medicalCenter", menu: "healthMedicalCenter" },
+      "diagnostic-center": { key: "diagnosticCenter", menu: "healthDiagnosticCenter" },
+      "medical-college": { key: "medicalCollege", menu: "healthMedicalCollege" },
+      pharmacy: { key: "pharmacy", menu: "healthPharmacy" },
+    },
+  },
 } as const;
 
 export type SectorFamily = keyof typeof sectorFamilies;
 export type FmcgSlug = keyof (typeof sectorFamilies)["fmcg"]["pages"];
 export type GroupSlug = keyof (typeof sectorFamilies)["group"]["pages"];
-export type SectorSlug<F extends SectorFamily> = F extends "fmcg" ? FmcgSlug : GroupSlug;
+export type HealthSlug = keyof (typeof sectorFamilies)["health"]["pages"];
+export type SectorSlug<F extends SectorFamily> = F extends "fmcg"
+  ? FmcgSlug
+  : F extends "group"
+    ? GroupSlug
+    : HealthSlug;
 
 /** Existing product pages each industry page links to (4 per page, same order as `modules` copy). */
 export const sectorModules: Record<string, readonly string[]> = {
@@ -117,6 +134,36 @@ export const sectorModules: Record<string, readonly string[]> = {
     "/apps/accounting/bank-reconciliation",
     "/apps/accounting/loan-management",
     "/apps/budget-management/variance",
+  ],
+  "health/hospital": [
+    "/apps/hospital/opd-serials",
+    "/apps/hospital/admissions",
+    "/apps/hospital/wards-beds",
+    "/apps/hospital/billing",
+  ],
+  "health/medical-center": [
+    "/apps/hospital/doctors-sittings",
+    "/apps/hospital/opd-serials",
+    "/apps/hospital/consultations",
+    "/apps/hospital/day-close",
+  ],
+  "health/diagnostic-center": [
+    "/apps/hospital/laboratory",
+    "/apps/hospital/imaging",
+    "/apps/hospital/billing",
+    "/apps/hospital/doctors-money",
+  ],
+  "health/medical-college": [
+    "/apps/medical-college/intake-admission",
+    "/apps/medical-college/professional-exams",
+    "/apps/medical-college/ward-placement",
+    "/apps/medical-college/interns",
+  ],
+  "health/pharmacy": [
+    "/apps/hospital/pharmacy",
+    "/apps/pos/register-till",
+    "/apps/inventory/inventory-summary",
+    "/apps/supply-chain/procurement",
   ],
 };
 

@@ -9,6 +9,7 @@ const order = [
   "foodHospitality",
   "education",
   "realEstate",
+  "health",
   "consulting",
   "others",
 ];
@@ -52,6 +53,11 @@ const paths: Record<string, string[]> = {
     "/apps/real-estate/properties",
     "/apps/accounting/invoices-ar",
     "/apps/accounting/financial-reports",
+  ],
+  health: [
+    "/apps/hospital/opd-serials",
+    "/apps/hospital/laboratory",
+    "/apps/hospital/billing",
   ],
   consulting: [
     "/apps/accounting/customers-ar",

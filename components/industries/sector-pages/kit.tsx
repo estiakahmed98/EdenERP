@@ -219,11 +219,17 @@ export function Faqs({ s }: { s: LoadedSector }) {
   );
 }
 
+const relatedLabel: Record<SectorFamily, string> = {
+  fmcg: "relatedFmcg",
+  group: "relatedGroup",
+  health: "relatedHealth",
+};
+
 export function Related({ s }: { s: LoadedSector }) {
   return (
     <div>
       <p className="mb-4 text-sm font-semibold text-(--ink)">
-        {s.family === "fmcg" ? s.c.relatedFmcg : s.c.relatedGroup}
+        {s.c[relatedLabel[s.family]]}
       </p>
       <div className="flex flex-wrap gap-2">
         {s.related.map((r) => (

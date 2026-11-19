@@ -255,7 +255,13 @@
           "groupTextiles": "Dệt may",
           "groupPharmaceuticals": "Dược phẩm",
           "groupHeavyIndustry": "Công nghiệp nặng",
-          "groupFinancialServices": "Dịch vụ tài chính"
+          "groupFinancialServices": "Dịch vụ tài chính",
+          "health": "Y tế",
+          "healthHospital": "Bệnh viện",
+          "healthMedicalCenter": "Trung tâm y tế / Phòng khám",
+          "healthDiagnosticCenter": "Trung tâm chẩn đoán",
+          "healthMedicalCollege": "Trường đại học y",
+          "healthPharmacy": "Nhà thuốc"
         },
         "community": {
           "learn": "Tìm hiểu",
@@ -64780,7 +64786,8 @@
     "education": "Khám phá tuyển sinh, hồ sơ học sinh, điểm danh, học phí và quản lý học tập.",
     "realEstate": "Xem hồ sơ bất động sản, công việc dự án, lập hóa đơn và báo cáo tài chính.",
     "consulting": "Khám phá hồ sơ khách hàng, cung cấp dịch vụ, lập hóa đơn và báo cáo cho đội ngũ chuyên môn.",
-    "others": "Khám phá quy trình của thương mại điện tử, NGO và đơn vị truyền hình."
+    "others": "Khám phá quy trình của thương mại điện tử, NGO và đơn vị truyền hình.",
+    "health": "Khám phá cách bệnh viện, phòng khám và trường y quản lý số thứ tự khám, nhập viện, kết quả xét nghiệm, hồ sơ học tập và tồn kho nhà thuốc."
   }
 },
     "medicalCollegeApp": {
@@ -65059,7 +65066,8 @@
       "faqTitle": "Câu hỏi thường gặp",
       "relatedFmcg": "Các nhóm hàng tiêu dùng nhanh khác",
       "relatedGroup": "Các lĩnh vực khác của tập đoàn",
-      "ctaEyebrow": "Cùng trao đổi về nhu cầu của bạn"
+      "ctaEyebrow": "Cùng trao đổi về nhu cầu của bạn",
+      "relatedHealth": "Các lĩnh vực y tế khác"
     },
     "sectorFmcg": {
       "food": {
@@ -66816,6 +66824,713 @@
         "cta": {
           "title": "Xem nhóm của bạn thân thiết trong AdonERP",
           "body": "Mang theo cấu trúc công ty của bạn và chúng tôi sẽ hướng dẫn quá trình hợp nhất trong bản demo."
+        }
+      }
+    },
+    "sectorHealth": {
+      "hospital": {
+        "meta": {
+          "title": "ERP quản lý bệnh viện",
+          "description": "Số thứ tự khám ngoại trú, nhập viện, khoa phòng và giường bệnh, viện phí và thù lao bác sĩ trong một hệ thống ERP cho bệnh viện tư nhân tại Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Y tế · Bệnh viện",
+          "title": "Từ quầy khám ngoại trú",
+          "highlight": "đến khi ra viện, chỉ một hồ sơ.",
+          "lead": "Đăng ký bệnh nhân một lần, sau đó theo dõi mọi số thứ tự, lần nhập viện, giường bệnh, xét nghiệm và hóa đơn cho đến khi quyết toán, để quầy tiếp đón, khoa phòng và kế toán cùng làm việc trên một nguồn thông tin."
+        },
+        "stats": [
+          {
+            "value": "Ngoại trú",
+            "label": "số thứ tự và lượt khám theo bác sĩ"
+          },
+          {
+            "value": "Nội trú",
+            "label": "nhập viện, khoa phòng và công suất giường"
+          },
+          {
+            "value": "Viện phí",
+            "label": "tạm ứng, hóa đơn tạm tính và quyết toán"
+          }
+        ],
+        "visual": {
+          "jOpd": "Số thứ tự khám",
+          "jAdmit": "Nhập viện",
+          "jWard": "Khoa và giường",
+          "jBill": "Hóa đơn tạm tính",
+          "jDischarge": "Ra viện",
+          "journeyCaption": "Một mã bệnh nhân xuyên suốt mọi bước",
+          "wardTitle": "Khoa B · bảng giường bệnh",
+          "wardCaption": "Bảng giường minh họa · dữ liệu giả định",
+          "legendOccupied": "Có bệnh nhân",
+          "legendFree": "Còn trống",
+          "legendCleaning": "Đang vệ sinh",
+          "pillarsTitle": "Tiếp đón, khoa phòng và kế toán trên một hồ sơ",
+          "flowTitle": "Hành trình của bệnh nhân trong bệnh viện",
+          "clinicalNote": "Adon ERP lưu trữ hồ sơ hành chính và viện phí. Quyết định lâm sàng thuộc về bác sĩ của bệnh viện, còn dữ liệu bệnh nhân được xử lý theo chính sách bảo mật của bệnh viện và pháp luật hiện hành."
+        },
+        "pillars": [
+          {
+            "title": "Đăng ký bệnh nhân",
+            "body": "Một mã bệnh nhân cho khám ngoại trú, nhập viện, xét nghiệm và viện phí, nên thông tin không bao giờ phải nhập hai lần."
+          },
+          {
+            "title": "Giường và khoa phòng",
+            "body": "Xem giường có bệnh nhân, còn trống và đang vệ sinh theo từng khoa, chuyển giường mà không bỏ sót chi phí."
+          },
+          {
+            "title": "Hóa đơn cập nhật liên tục",
+            "body": "Tiền phòng, xét nghiệm, thuốc và thủ thuật được ghi vào hóa đơn của bệnh nhân ngay khi phát sinh."
+          },
+          {
+            "title": "Thù lao bác sĩ",
+            "body": "Phí khám và phần chia của bác sĩ chuyên khoa được tính từ hóa đơn và thanh toán đúng hạn."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Đăng ký và cấp số",
+            "body": "Quầy tiếp đón đăng ký bệnh nhân và cấp số thứ tự khám với bác sĩ được chọn."
+          },
+          {
+            "title": "Nhập viện vào khoa",
+            "body": "Khi có chỉ định nhập viện, xếp giường và thu tiền tạm ứng."
+          },
+          {
+            "title": "Ghi nhận dịch vụ hằng ngày",
+            "body": "Xét nghiệm, thuốc và thủ thuật được cộng vào hóa đơn mỗi ngày."
+          },
+          {
+            "title": "Quyết toán và ra viện",
+            "body": "Lập hóa đơn quyết toán, trừ tiền tạm ứng và ghi nhận ra viện."
+          }
+        ],
+        "sample": {
+          "title": "Bệnh nhân nhập viện hôm nay",
+          "caption": "Bệnh nhân và số liệu giả định, chỉ để minh họa.",
+          "columns": [
+            "Mã nhập viện",
+            "Bệnh nhân",
+            "Khoa / giường",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "IPD-2611-0412",
+              "Rahima Begum",
+              "Khoa B · 07",
+              "Đã nhập viện"
+            ],
+            [
+              "IPD-2611-0413",
+              "Kamal Hossain",
+              "Phòng 304",
+              "Đang theo dõi"
+            ],
+            [
+              "IPD-2611-0414",
+              "Nusrat Jahan",
+              "Khoa sản · 12",
+              "Đã gửi hóa đơn tạm tính"
+            ],
+            [
+              "IPD-2611-0415",
+              "Abdul Karim",
+              "Khoa A · 03",
+              "Sẵn sàng ra viện"
+            ]
+          ]
+        },
+        "modules": [
+          "Cấp số thứ tự khám và quản lý hàng chờ của từng bác sĩ.",
+          "Làm thủ tục nhập viện và ghi nhận tạm ứng.",
+          "Xem toàn bộ khoa phòng và giường bệnh trong nháy mắt.",
+          "Tự động lập hóa đơn tạm tính và quyết toán."
+        ],
+        "faqs": [
+          {
+            "q": "Có thể quản lý ngoại trú và nội trú trên cùng một hệ thống không?",
+            "a": "Có. Lượt khám ngoại trú, nhập viện, xét nghiệm và viện phí đều nằm trên cùng một hồ sơ bệnh nhân."
+          },
+          {
+            "q": "Adon ERP có lưu ghi chú lâm sàng không?",
+            "a": "Hệ thống lưu hồ sơ hành chính của mỗi lượt khám. Hãy cùng đội ngũ y tế quyết định thông tin lâm sàng nào được ghi lại và ai được xem."
+          },
+          {
+            "q": "Bệnh nhân trên trang này có thật không?",
+            "a": "Không. Mọi tên và số liệu trên trang này đều là giả định."
+          }
+        ],
+        "cta": {
+          "title": "Xem quy trình bệnh nhân của bệnh viện bạn trên Adon ERP",
+          "body": "Chúng tôi sẽ cùng bạn đi qua đăng ký, nhập viện, viện phí và ra viện với chính các khoa của bệnh viện."
+        }
+      },
+      "medicalCenter": {
+        "meta": {
+          "title": "ERP cho phòng khám và trung tâm y tế",
+          "description": "Lịch khám của bác sĩ, số thứ tự, hồ sơ khám và thu phí cho phòng khám và trung tâm y tế tại Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Y tế · Trung tâm y tế / phòng khám",
+          "title": "Mọi phòng khám,",
+          "highlight": "mọi số thứ tự đều đúng giờ.",
+          "lead": "Công bố giờ khám của bác sĩ, cấp số qua điện thoại hoặc tại quầy, ghi nhận lượt khám và thu phí, để bệnh nhân chờ ít hơn và phòng khám nắm rõ doanh thu mỗi ngày."
+        },
+        "stats": [
+          {
+            "value": "Lịch khám",
+            "label": "theo bác sĩ và theo ngày"
+          },
+          {
+            "value": "Số thứ tự",
+            "label": "qua điện thoại hoặc tại quầy"
+          },
+          {
+            "value": "Chốt ngày",
+            "label": "tiền mặt và phần chia bác sĩ mỗi tối"
+          }
+        ],
+        "visual": {
+          "chamberTitle": "Lịch khám hôm nay",
+          "chamberCaption": "Lịch minh họa · bác sĩ giả định",
+          "doc1": "BS. Farhana Akter",
+          "spec1": "Phụ khoa",
+          "time1": "10:00–13:00",
+          "serials1": "18 số",
+          "doc2": "BS. Mahmud Hasan",
+          "spec2": "Nội khoa",
+          "time2": "16:00–20:00",
+          "serials2": "26 số",
+          "doc3": "BS. Tanvir Ahmed",
+          "spec3": "Nhi khoa",
+          "time3": "18:00–21:00",
+          "serials3": "14 số",
+          "nowServing": "Đang khám",
+          "serialNo": "Số 12",
+          "pillarsTitle": "Phòng khám vận hành đúng lịch",
+          "flowTitle": "Từ đặt số đến chốt sổ buổi tối"
+        },
+        "pillars": [
+          {
+            "title": "Lịch khám",
+            "body": "Đặt ngày, giờ và số bệnh nhân tối đa cho từng bác sĩ, tạm dừng phòng khám khi bác sĩ vắng."
+          },
+          {
+            "title": "Đặt số thứ tự",
+            "body": "Đặt số qua điện thoại hoặc tại quầy và cho bệnh nhân biết vị trí của mình trong hàng chờ."
+          },
+          {
+            "title": "Hồ sơ khám",
+            "body": "Ghi nhận lượt khám, lời dặn và ngày tái khám theo mã bệnh nhân."
+          },
+          {
+            "title": "Phí khám và phần chia",
+            "body": "Thu phí khám và tính phần chia của từng bác sĩ khi chốt ngày."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Đặt số",
+            "body": "Lễ tân đặt lịch cho bệnh nhân vào phòng khám của bác sĩ và xác nhận số thứ tự."
+          },
+          {
+            "title": "Check-in và chờ khám",
+            "body": "Bệnh nhân đến được check-in và được gọi theo số thứ tự."
+          },
+          {
+            "title": "Khám và tư vấn",
+            "body": "Bác sĩ ghi lại lượt khám, các xét nghiệm chỉ định và lần khám tiếp theo."
+          },
+          {
+            "title": "Chốt sổ cuối ngày",
+            "body": "Tiền mặt, thanh toán điện tử và phần chia bác sĩ được đối chiếu mỗi tối."
+          }
+        ],
+        "sample": {
+          "title": "Danh sách khám buổi tối",
+          "caption": "Bệnh nhân và số liệu giả định, chỉ để minh họa.",
+          "columns": [
+            "Số",
+            "Bệnh nhân",
+            "Bác sĩ",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "S-07",
+              "Shirin Akter",
+              "BS. Mahmud Hasan",
+              "Đã khám"
+            ],
+            [
+              "S-08",
+              "Rafiq Uddin",
+              "BS. Mahmud Hasan",
+              "Đang khám"
+            ],
+            [
+              "S-09",
+              "Jannatul Ferdous",
+              "BS. Mahmud Hasan",
+              "Đang chờ"
+            ],
+            [
+              "S-10",
+              "Habibur Rahman",
+              "BS. Mahmud Hasan",
+              "Đặt qua điện thoại"
+            ]
+          ]
+        },
+        "modules": [
+          "Đặt ngày và giờ khám cho bác sĩ.",
+          "Cấp số và gọi bệnh nhân.",
+          "Ghi nhận lượt khám và lịch tái khám.",
+          "Chốt tiền mặt trong ngày và phần chia bác sĩ."
+        ],
+        "faqs": [
+          {
+            "q": "Bệnh nhân có thể đặt số qua điện thoại không?",
+            "a": "Có. Lễ tân đặt số qua điện thoại và bệnh nhân check-in khi đến."
+          },
+          {
+            "q": "Bác sĩ thỉnh giảng có thể có tỷ lệ chia khác nhau không?",
+            "a": "Có. Phí khám và phần chia của mỗi bác sĩ được thiết lập riêng và áp dụng khi chốt ngày."
+          },
+          {
+            "q": "Bác sĩ và bệnh nhân có thật không?",
+            "a": "Không. Mọi tên và số liệu trên trang này đều là giả định."
+          }
+        ],
+        "cta": {
+          "title": "Cùng chúng tôi lên lịch khám cho phòng khám của bạn",
+          "body": "Chúng tôi sẽ thiết lập lịch khám mẫu, số thứ tự và chốt sổ cuối ngày cho phòng khám của bạn."
+        }
+      },
+      "diagnosticCenter": {
+        "meta": {
+          "title": "ERP cho trung tâm chẩn đoán",
+          "description": "Chỉ định xét nghiệm, lấy mẫu, kết quả xét nghiệm và chẩn đoán hình ảnh, phần chia giới thiệu và thu phí cho trung tâm chẩn đoán tại Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Y tế · Trung tâm chẩn đoán",
+          "title": "Từ khâu lấy mẫu",
+          "highlight": "đến kết quả đã duyệt.",
+          "lead": "Đăng ký xét nghiệm, dán nhãn mẫu, theo dõi từng mẫu trong phòng xét nghiệm hoặc phòng chụp và trả kết quả đã duyệt đúng hạn, với mọi hóa đơn và phần chia giới thiệu đều được ghi nhận."
+        },
+        "stats": [
+          {
+            "value": "Mã vạch",
+            "label": "nhãn trên mọi mẫu"
+          },
+          {
+            "value": "TAT",
+            "label": "thời gian trả kết quả theo xét nghiệm"
+          },
+          {
+            "value": "Giới thiệu",
+            "label": "phần chia theo bác sĩ giới thiệu"
+          }
+        ],
+        "visual": {
+          "pipeTitle": "Mẫu hôm nay",
+          "pipeCollected": "Đã lấy",
+          "pipeLab": "Đang xét nghiệm",
+          "pipeVerified": "Đã duyệt",
+          "pipeDelivered": "Đã trả",
+          "nCollected": "142",
+          "nLab": "38",
+          "nVerified": "61",
+          "nDelivered": "43",
+          "pipeCaption": "Theo dõi mẫu minh họa · số liệu giả định",
+          "tatLabel": "Kết quả trả đúng hạn",
+          "tatValue": "94%",
+          "pillarsTitle": "Mọi xét nghiệm đều truy vết được, mọi kết quả đều được duyệt",
+          "flowTitle": "Một xét nghiệm đi qua trung tâm như thế nào",
+          "referralNote": "Khoản chi giới thiệu phải tuân theo chính sách của trung tâm và pháp luật hiện hành. Adon ERP chỉ ghi nhận phần chia đã thỏa thuận, không ấn định phần chia."
+        },
+        "pillars": [
+          {
+            "title": "Chỉ định và thu phí",
+            "body": "Đăng ký xét nghiệm lẻ hoặc gói, áp dụng giảm giá và in hóa đơn kèm hướng dẫn lấy mẫu."
+          },
+          {
+            "title": "Theo dõi mẫu",
+            "body": "Mỗi mẫu có nhãn mã vạch, trạng thái hiển thị từ lúc lấy mẫu đến khi trả kết quả."
+          },
+          {
+            "title": "Kết quả xét nghiệm và hình ảnh",
+            "body": "Kết quả được nhập, bác sĩ chuyên khoa duyệt và chỉ phát hành sau khi phê duyệt."
+          },
+          {
+            "title": "Phần chia giới thiệu",
+            "body": "Phần chia cho bác sĩ giới thiệu được tính từ hóa đơn đã thanh toán và chi trả đúng hạn."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Đăng ký xét nghiệm",
+            "body": "Lễ tân đăng ký xét nghiệm, thu tiền và in nhãn mẫu."
+          },
+          {
+            "title": "Lấy mẫu",
+            "body": "Mẫu được lấy, dán nhãn và chuyển đến đúng bộ phận."
+          },
+          {
+            "title": "Xét nghiệm và duyệt",
+            "body": "Bộ phận xét nghiệm hoặc chẩn đoán hình ảnh nhập kết quả, bác sĩ chuyên khoa duyệt báo cáo."
+          },
+          {
+            "title": "Trả kết quả",
+            "body": "Bệnh nhân nhận kết quả tại quầy hoặc nhận SMS khi kết quả sẵn sàng."
+          }
+        ],
+        "sample": {
+          "title": "Bảng trạng thái kết quả",
+          "caption": "Mẫu và kết quả giả định, chỉ để minh họa.",
+          "columns": [
+            "Mẫu",
+            "Xét nghiệm",
+            "Bộ phận",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "LAB-2611-1182",
+              "Tổng phân tích tế bào máu",
+              "Huyết học",
+              "Đã duyệt"
+            ],
+            [
+              "LAB-2611-1183",
+              "Mỡ máu",
+              "Hóa sinh",
+              "Đang xử lý"
+            ],
+            [
+              "IMG-2611-0341",
+              "X-quang ngực",
+              "Chẩn đoán hình ảnh",
+              "Chờ đọc kết quả"
+            ],
+            [
+              "LAB-2611-1184",
+              "HbA1c",
+              "Hóa sinh",
+              "Đã trả"
+            ]
+          ]
+        },
+        "modules": [
+          "Theo dõi mẫu và duyệt kết quả xét nghiệm.",
+          "Lên lịch chụp chiếu và phát hành kết quả.",
+          "Lập hóa đơn xét nghiệm, gói khám và giảm giá.",
+          "Tính và chi trả phần chia cho bác sĩ."
+        ],
+        "faqs": [
+          {
+            "q": "Bác sĩ chuyên khoa có thể duyệt kết quả trước khi phát hành không?",
+            "a": "Có. Kết quả được giữ lại cho đến khi bác sĩ chuyên khoa phụ trách phê duyệt."
+          },
+          {
+            "q": "Có thể báo cho bệnh nhân khi có kết quả không?",
+            "a": "Có. Nếu bật tính năng này, SMS sẽ được gửi ngay khi kết quả được phát hành."
+          },
+          {
+            "q": "Kết quả trên trang này có thật không?",
+            "a": "Không. Mọi mẫu, xét nghiệm và số liệu trên trang này đều là giả định."
+          }
+        ],
+        "cta": {
+          "title": "Sắp xếp quy trình xét nghiệm của bạn trên Adon ERP",
+          "body": "Chúng tôi sẽ theo một mẫu từ lúc đăng ký đến khi trả kết quả với chính các bộ phận và xét nghiệm của bạn."
+        }
+      },
+      "medicalCollege": {
+        "meta": {
+          "title": "ERP quản lý trường đại học y",
+          "description": "Tuyển sinh, kỳ thi chuyên môn, thực tập lâm sàng tại khoa phòng, nội trú thực tập và học viên sau đại học cho các trường y tại Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Y tế · Trường đại học y",
+          "title": "Từ nhập học đến thực tập,",
+          "highlight": "mọi sinh viên đều có hồ sơ.",
+          "lead": "Lưu tuyển sinh, kiểm tra thẻ và mục học phần, kỳ thi chuyên môn, thực tập lâm sàng và sổ nhật ký thực tập trong một hồ sơ học tập duy nhất, gắn với bệnh viện thực hành."
+        },
+        "stats": [
+          {
+            "value": "Thi chuyên môn",
+            "label": "điều kiện dự thi và kết quả theo giai đoạn"
+          },
+          {
+            "value": "Khoa phòng",
+            "label": "thực tập lâm sàng theo khóa"
+          },
+          {
+            "value": "Thực tập",
+            "label": "luân khoa và sổ nhật ký"
+          }
+        ],
+        "visual": {
+          "timelineTitle": "Hành trình MBBS",
+          "p1": "Nhập học",
+          "p2": "Kỳ thi chuyên môn thứ nhất",
+          "p3": "Kỳ thi chuyên môn thứ hai",
+          "p4": "Kỳ thi chuyên môn thứ ba",
+          "p5": "Kỳ thi chuyên môn cuối",
+          "p6": "Thực tập",
+          "timelineCaption": "Minh họa đơn giản các giai đoạn học tập",
+          "pillarsTitle": "Một hồ sơ học tập từ năm nhất đến thực tập",
+          "flowTitle": "Một khóa học tiến triển trong trường như thế nào",
+          "regNote": "Adon ERP lưu trữ hồ sơ học tập. Chương trình đào tạo, quy chế thi và đăng ký hành nghề tuân theo yêu cầu của trường đại học và cơ quan quản lý."
+        },
+        "pillars": [
+          {
+            "title": "Tuyển sinh",
+            "body": "Ghi nhận sinh viên trúng tuyển mỗi khóa, hồ sơ của họ và tình trạng học phí."
+          },
+          {
+            "title": "Thẻ, mục học phần và kỳ thi",
+            "body": "Theo dõi việc hoàn thành thẻ và mục học phần, xem ai đủ điều kiện dự từng kỳ thi chuyên môn."
+          },
+          {
+            "title": "Thực tập lâm sàng",
+            "body": "Phân khóa vào các khoa và đơn vị, ghi nhận chuyên cần trong mỗi đợt thực tập."
+          },
+          {
+            "title": "Thực tập sinh và học viên",
+            "body": "Quản lý chung lịch luân khoa, sổ nhật ký và hồ sơ học viên sau đại học."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Nhập học khóa mới",
+            "body": "Sinh viên nhập học, hồ sơ được kiểm tra và học phí được thiết lập."
+          },
+          {
+            "title": "Hoàn thành thẻ và mục học phần",
+            "body": "Các bộ môn ghi nhận thẻ và mục học phần đã hoàn thành ở từng giai đoạn."
+          },
+          {
+            "title": "Dự kỳ thi chuyên môn",
+            "body": "Sinh viên đủ điều kiện dự thi và kết quả được ghi theo môn."
+          },
+          {
+            "title": "Bắt đầu thực tập",
+            "body": "Sinh viên tốt nghiệp bắt đầu luân khoa tại bệnh viện thực hành với sổ nhật ký cho từng đơn vị."
+          }
+        ],
+        "sample": {
+          "title": "Điều kiện dự kỳ thi chuyên môn thứ ba",
+          "caption": "Sinh viên và số liệu giả định, chỉ để minh họa.",
+          "columns": [
+            "Mã SV",
+            "Sinh viên",
+            "Mục đã hoàn thành",
+            "Điều kiện"
+          ],
+          "rows": [
+            [
+              "MC-21-034",
+              "Sadia Islam",
+              "38 / 40",
+              "Đủ điều kiện"
+            ],
+            [
+              "MC-21-035",
+              "Arif Chowdhury",
+              "40 / 40",
+              "Đủ điều kiện"
+            ],
+            [
+              "MC-21-036",
+              "Mehedi Hasan",
+              "31 / 40",
+              "Còn thiếu mục"
+            ],
+            [
+              "MC-21-037",
+              "Tasnim Rahman",
+              "36 / 40",
+              "Đang xem xét"
+            ]
+          ]
+        },
+        "modules": [
+          "Quản lý tuyển sinh và nhập học theo khóa.",
+          "Theo dõi điều kiện dự thi và kết quả kỳ thi chuyên môn.",
+          "Lập kế hoạch thực tập khoa phòng cho từng khóa.",
+          "Quản lý luân khoa và sổ nhật ký thực tập."
+        ],
+        "faqs": [
+          {
+            "q": "Hệ thống có kết nối với bệnh viện thực hành của chúng tôi không?",
+            "a": "Có. Thực tập lâm sàng và thực tập sau tốt nghiệp có thể dùng chính các khoa và đơn vị của bệnh viện."
+          },
+          {
+            "q": "Có theo dõi được thẻ và mục học phần của từng sinh viên không?",
+            "a": "Có. Các bộ môn ghi nhận việc hoàn thành và điều kiện dự thi được cập nhật tự động."
+          },
+          {
+            "q": "Sinh viên trên trang này có thật không?",
+            "a": "Không. Mọi tên và số liệu trên trang này đều là giả định."
+          }
+        ],
+        "cta": {
+          "title": "Cùng chúng tôi rà soát hồ sơ học tập của trường",
+          "body": "Chúng tôi sẽ trình bày tuyển sinh, kỳ thi và thực tập được thiết lập cho trường của bạn."
+        }
+      },
+      "pharmacy": {
+        "meta": {
+          "title": "ERP quản lý nhà thuốc",
+          "description": "Bán thuốc tại quầy, theo dõi lô và hạn dùng, mức đặt hàng lại và mua hàng từ nhà cung cấp cho nhà thuốc tại Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Y tế · Nhà thuốc",
+          "title": "Bán nhanh hơn tại quầy,",
+          "highlight": "không bỏ sót hạn dùng nào.",
+          "lead": "Lập hóa đơn thuốc trong vài giây, lưu mọi số lô và hạn dùng, đặt hàng trước khi hết hàng và mua từ nhà cung cấp theo giá đã thỏa thuận, dù là một cửa hàng hay cả chuỗi."
+        },
+        "stats": [
+          {
+            "value": "Số lô",
+            "label": "và hạn dùng cho mọi mặt hàng"
+          },
+          {
+            "value": "Đặt hàng lại",
+            "label": "cảnh báo trước khi hết hàng"
+          },
+          {
+            "value": "Chi nhánh",
+            "label": "tồn kho và doanh số từng điểm bán"
+          }
+        ],
+        "visual": {
+          "receiptTitle": "Hóa đơn tại quầy",
+          "item1": "Paracetamol 500 mg",
+          "qty1": "2 vỉ",
+          "amt1": "40,00",
+          "batch1": "PC-2609",
+          "exp1": "08/2028",
+          "item2": "Omeprazol 20 mg",
+          "qty2": "1 vỉ",
+          "amt2": "70,00",
+          "batch2": "OM-2607",
+          "exp2": "05/2028",
+          "item3": "Oresol",
+          "qty3": "5 gói",
+          "amt3": "30,00",
+          "batch3": "OS-2610",
+          "exp3": "10/2027",
+          "batchLabel": "Lô",
+          "expiryLabel": "HSD",
+          "totalLabel": "Tổng cộng",
+          "totalValue": "140,00",
+          "receiptCaption": "Hóa đơn minh họa · giá giả định",
+          "alertTitle": "Hết hạn trong 90 ngày",
+          "alert1": "Cetirizin 10 mg · 3 hộp",
+          "alert2": "Hỗn dịch kháng axit · 6 chai",
+          "pillarsTitle": "Quầy bán, tồn kho và mua hàng đồng bộ",
+          "flowTitle": "Từ nhà cung cấp đến quầy thuốc",
+          "rxNote": "Adon ERP ghi nhận doanh số và tồn kho. Thuốc kê đơn phải được bán theo quy định pháp luật hiện hành và theo đánh giá chuyên môn của dược sĩ."
+        },
+        "pillars": [
+          {
+            "title": "Thanh toán nhanh tại quầy",
+            "body": "Tìm theo tên biệt dược hoặc tên hoạt chất, chọn lô và in hóa đơn trong vài giây."
+          },
+          {
+            "title": "Số lô và hạn dùng",
+            "body": "Mỗi lần nhập hàng được lưu theo lô và hạn dùng, hàng cũ nhất được bán trước."
+          },
+          {
+            "title": "Mức đặt hàng lại",
+            "body": "Đặt mức tồn tối thiểu cho từng mặt hàng và nhận danh sách cần mua trước khi hết hàng."
+          },
+          {
+            "title": "Mua hàng từ nhà cung cấp",
+            "body": "Ghi nhận hàng nhập, hàng trả và công nợ với từng công ty dược hoặc nhà phân phối."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Nhận hàng từ nhà cung cấp",
+            "body": "Hàng nhập được ghi nhận cùng số lô, hạn dùng và giá nhập."
+          },
+          {
+            "title": "Bán tại quầy",
+            "body": "Quầy bán lô có hạn dùng gần nhất trước và in hóa đơn."
+          },
+          {
+            "title": "Theo dõi hạn dùng và tồn kho",
+            "body": "Hàng sắp hết hạn và hàng tồn thấp được cảnh báo trước khi gây thất thoát."
+          },
+          {
+            "title": "Đặt hàng và trả hàng",
+            "body": "Tạo đơn mua cho hàng tồn thấp và trả hàng hết hạn cho nhà cung cấp."
+          }
+        ],
+        "sample": {
+          "title": "Hàng sắp hết hạn",
+          "caption": "Mặt hàng và số liệu giả định, chỉ để minh họa.",
+          "columns": [
+            "Lô",
+            "Thuốc",
+            "Hạn dùng",
+            "Tồn kho"
+          ],
+          "rows": [
+            [
+              "CT-2508",
+              "Cetirizin 10 mg",
+              "Tháng 1/2027",
+              "3 hộp"
+            ],
+            [
+              "AS-2504",
+              "Hỗn dịch kháng axit",
+              "Tháng 2/2027",
+              "6 chai"
+            ],
+            [
+              "VD-2511",
+              "Vitamin D 1000 IU",
+              "Tháng 3/2027",
+              "12 vỉ"
+            ],
+            [
+              "ZN-2502",
+              "Siro kẽm",
+              "Tháng 3/2027",
+              "4 chai"
+            ]
+          ]
+        },
+        "modules": [
+          "Quản lý tồn kho thuốc theo lô và hạn dùng.",
+          "Thanh toán nhanh cho khách tại quầy.",
+          "Xem mức tồn kho tại mọi cửa hàng và kho.",
+          "Mua hàng từ nhà cung cấp và theo dõi công nợ."
+        ],
+        "faqs": [
+          {
+            "q": "Có thể tìm theo tên hoạt chất không?",
+            "a": "Có. Tại quầy có thể tìm thuốc theo tên biệt dược hoặc tên hoạt chất."
+          },
+          {
+            "q": "Hệ thống có phù hợp với chuỗi nhà thuốc không?",
+            "a": "Có. Mỗi điểm bán quản lý tồn kho và doanh số riêng, còn văn phòng chính xem được tất cả."
+          },
+          {
+            "q": "Giá trên trang này có thật không?",
+            "a": "Không. Mọi mặt hàng và số liệu trên trang này đều là giả định."
+          }
+        ],
+        "cta": {
+          "title": "Cùng chúng tôi thiết lập quầy thuốc của bạn",
+          "body": "Chúng tôi sẽ trình bày thanh toán, quản lý lô và cảnh báo đặt hàng với một số loại thuốc của bạn."
         }
       }
     }

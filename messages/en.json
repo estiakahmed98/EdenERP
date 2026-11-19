@@ -254,7 +254,13 @@
           "talentAcquisition": "Talent Acquisition",
           "textile": "Textile",
           "metal": "Metal",
-          "furniture": "Furniture"
+          "furniture": "Furniture",
+          "health": "Health",
+          "healthHospital": "Hospital",
+          "healthMedicalCenter": "Medical Center / Clinic",
+          "healthDiagnosticCenter": "Diagnostic Center",
+          "healthMedicalCollege": "Medical College",
+          "healthPharmacy": "Pharmacy"
         },
         "community": {
           "learn": "Learn",
@@ -63816,7 +63822,8 @@
         "education": "Explore admissions, student records, attendance, fees and learning administration.",
         "realEstate": "Bring property records, project work, billing and financial reporting into view.",
         "consulting": "Explore client records, service delivery, billing and reporting for professional teams.",
-        "others": "Explore the workflows behind e-commerce, NGOs and broadcasting."
+        "others": "Explore the workflows behind e-commerce, NGOs and broadcasting.",
+        "health": "Explore patient serials, admissions, lab reports, academic records and pharmacy stock across hospitals, clinics and colleges."
       }
     },
     "medicalCollegeApp": {
@@ -64095,7 +64102,8 @@
       "faqTitle": "Questions teams ask",
       "relatedFmcg": "Other FMCG categories",
       "relatedGroup": "Other group sectors",
-      "ctaEyebrow": "Let's talk it through"
+      "ctaEyebrow": "Let's talk it through",
+      "relatedHealth": "Other health sectors"
     },
     "sectorFmcg": {
       "food": {
@@ -65602,6 +65610,713 @@
         "cta": {
           "title": "See your group close in AdonERP",
           "body": "Bring your company structure and we will walk through consolidation in a demo."
+        }
+      }
+    },
+    "sectorHealth": {
+      "hospital": {
+        "meta": {
+          "title": "Hospital Management ERP",
+          "description": "Outpatient serials, admissions, wards and beds, billing and doctors' fees in one hospital ERP for private hospitals in Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Health · Hospital",
+          "title": "From the OPD counter",
+          "highlight": "to discharge, one record.",
+          "lead": "Register patients once, then follow every serial, admission, bed, test and bill to the final settlement, so the front desk, wards and accounts work from the same information."
+        },
+        "stats": [
+          {
+            "value": "OPD",
+            "label": "serials and consultations by doctor"
+          },
+          {
+            "value": "IPD",
+            "label": "admissions, wards and bed census"
+          },
+          {
+            "value": "Billing",
+            "label": "advance, interim and final bills"
+          }
+        ],
+        "visual": {
+          "jOpd": "OPD serial",
+          "jAdmit": "Admission",
+          "jWard": "Ward & bed",
+          "jBill": "Interim bill",
+          "jDischarge": "Discharge",
+          "journeyCaption": "One patient ID follows every step",
+          "wardTitle": "Ward B · bed board",
+          "wardCaption": "Example bed board · fictional data",
+          "legendOccupied": "Occupied",
+          "legendFree": "Available",
+          "legendCleaning": "Being cleaned",
+          "pillarsTitle": "Front desk, wards and accounts on one record",
+          "flowTitle": "How a patient moves through the hospital",
+          "clinicalNote": "Adon ERP keeps administrative and billing records. Clinical decisions remain with your doctors, and patient data follows your hospital's own privacy policy and the applicable law."
+        },
+        "pillars": [
+          {
+            "title": "Patient registration",
+            "body": "One patient ID for OPD, admission, tests and billing, so history is never entered twice."
+          },
+          {
+            "title": "Beds and wards",
+            "body": "See occupied, available and cleaning beds by ward, and transfer patients without losing charges."
+          },
+          {
+            "title": "Running bills",
+            "body": "Room rent, tests, medicines and procedures post to the patient's bill as they happen."
+          },
+          {
+            "title": "Doctors' fees",
+            "body": "Consultant fees and shares are calculated from the bills and settled on schedule."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Register and issue a serial",
+            "body": "The front desk registers the patient and gives an OPD serial for the chosen doctor."
+          },
+          {
+            "title": "Admit to a ward",
+            "body": "When admission is advised, assign a bed and take an advance."
+          },
+          {
+            "title": "Post services daily",
+            "body": "Tests, medicines and procedures are added to the running bill each day."
+          },
+          {
+            "title": "Settle and discharge",
+            "body": "Prepare the final bill, adjust the advance and record the discharge."
+          }
+        ],
+        "sample": {
+          "title": "Today's admissions",
+          "caption": "Fictional patients and figures, for illustration only.",
+          "columns": [
+            "Admission",
+            "Patient",
+            "Ward / bed",
+            "Status"
+          ],
+          "rows": [
+            [
+              "IPD-2611-0412",
+              "Rahima Begum",
+              "Ward B · 07",
+              "Admitted"
+            ],
+            [
+              "IPD-2611-0413",
+              "Kamal Hossain",
+              "Cabin 304",
+              "Under observation"
+            ],
+            [
+              "IPD-2611-0414",
+              "Nusrat Jahan",
+              "Maternity · 12",
+              "Interim bill sent"
+            ],
+            [
+              "IPD-2611-0415",
+              "Abdul Karim",
+              "Ward A · 03",
+              "Ready for discharge"
+            ]
+          ]
+        },
+        "modules": [
+          "Issue OPD serials and manage each doctor's queue.",
+          "Admit patients and record advances.",
+          "See every ward and bed at a glance.",
+          "Build running and final bills automatically."
+        ],
+        "faqs": [
+          {
+            "q": "Can we run OPD and IPD from the same system?",
+            "a": "Yes. One patient record carries through outpatient visits, admissions, tests and billing."
+          },
+          {
+            "q": "Does Adon ERP store clinical notes?",
+            "a": "It keeps the administrative record of each visit. Decide with your medical team which clinical information is recorded and who can see it."
+          },
+          {
+            "q": "Are the patients on this page real?",
+            "a": "No. All names and figures on this page are fictional."
+          }
+        ],
+        "cta": {
+          "title": "See your hospital's patient flow in Adon ERP",
+          "body": "We will walk through registration, admission, billing and discharge with your own departments."
+        }
+      },
+      "medicalCenter": {
+        "meta": {
+          "title": "Clinic & Medical Center ERP",
+          "description": "Doctor chambers, patient serials, consultations and billing for clinics and medical centers in Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Health · Medical center / clinic",
+          "title": "Every chamber,",
+          "highlight": "every serial, on time.",
+          "lead": "Publish doctors' chamber times, issue serials by phone or at the counter, record consultations and collect fees, so patients wait less and the clinic knows each day's income."
+        },
+        "stats": [
+          {
+            "value": "Chambers",
+            "label": "schedules by doctor and day"
+          },
+          {
+            "value": "Serials",
+            "label": "by phone or at the counter"
+          },
+          {
+            "value": "Day close",
+            "label": "cash and doctors' shares each evening"
+          }
+        ],
+        "visual": {
+          "chamberTitle": "Today's chambers",
+          "chamberCaption": "Example schedule · fictional doctors",
+          "doc1": "Dr. Farhana Akter",
+          "spec1": "Gynaecology",
+          "time1": "10:00–13:00",
+          "serials1": "18 serials",
+          "doc2": "Dr. Mahmud Hasan",
+          "spec2": "Medicine",
+          "time2": "16:00–20:00",
+          "serials2": "26 serials",
+          "doc3": "Dr. Tanvir Ahmed",
+          "spec3": "Paediatrics",
+          "time3": "18:00–21:00",
+          "serials3": "14 serials",
+          "nowServing": "Now serving",
+          "serialNo": "Serial 12",
+          "pillarsTitle": "A clinic that runs on schedule",
+          "flowTitle": "From booking a serial to the evening close"
+        },
+        "pillars": [
+          {
+            "title": "Chamber schedules",
+            "body": "Set each doctor's days, times and patient limit, and pause a chamber when a doctor is away."
+          },
+          {
+            "title": "Serial booking",
+            "body": "Book serials by phone or at the counter and show patients their place in the queue."
+          },
+          {
+            "title": "Consultation record",
+            "body": "Record the visit, advice and follow-up date against the patient's ID."
+          },
+          {
+            "title": "Fees and shares",
+            "body": "Collect consultation fees and work out each doctor's share at the day close."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Book a serial",
+            "body": "Reception books the patient into the doctor's chamber and confirms the serial number."
+          },
+          {
+            "title": "Check in and wait",
+            "body": "On arrival the patient is checked in and called in serial order."
+          },
+          {
+            "title": "Consult and advise",
+            "body": "The doctor records the consultation, the tests advised and the next visit."
+          },
+          {
+            "title": "Close the day",
+            "body": "Cash, digital payments and doctors' shares are reconciled each evening."
+          }
+        ],
+        "sample": {
+          "title": "Evening chamber list",
+          "caption": "Fictional patients and figures, for illustration only.",
+          "columns": [
+            "Serial",
+            "Patient",
+            "Doctor",
+            "Status"
+          ],
+          "rows": [
+            [
+              "S-07",
+              "Shirin Akter",
+              "Dr. Mahmud Hasan",
+              "Consulted"
+            ],
+            [
+              "S-08",
+              "Rafiq Uddin",
+              "Dr. Mahmud Hasan",
+              "With the doctor"
+            ],
+            [
+              "S-09",
+              "Jannatul Ferdous",
+              "Dr. Mahmud Hasan",
+              "Waiting"
+            ],
+            [
+              "S-10",
+              "Habibur Rahman",
+              "Dr. Mahmud Hasan",
+              "Booked by phone"
+            ]
+          ]
+        },
+        "modules": [
+          "Set doctors' chamber days and times.",
+          "Issue and call patient serials.",
+          "Record consultations and follow-ups.",
+          "Close the day's cash and doctors' shares."
+        ],
+        "faqs": [
+          {
+            "q": "Can patients book a serial by phone?",
+            "a": "Yes. Reception can book phone serials, and the patient is checked in on arrival."
+          },
+          {
+            "q": "Can visiting doctors have different fee shares?",
+            "a": "Yes. Each doctor's fee and share is set separately and applied at the day close."
+          },
+          {
+            "q": "Are the doctors and patients real?",
+            "a": "No. All names and figures on this page are fictional."
+          }
+        ],
+        "cta": {
+          "title": "Plan your clinic's chambers with us",
+          "body": "We will set up a sample schedule, serials and day close for your clinic."
+        }
+      },
+      "diagnosticCenter": {
+        "meta": {
+          "title": "Diagnostic Center ERP",
+          "description": "Test orders, sample collection, lab and imaging reports, referral shares and billing for diagnostic centers in Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Health · Diagnostic center",
+          "title": "From sample collection",
+          "highlight": "to a verified report.",
+          "lead": "Book tests, label samples, follow each one through the lab or imaging room and deliver verified reports on time, with every bill and referral share recorded."
+        },
+        "stats": [
+          {
+            "value": "Barcode",
+            "label": "label on every sample"
+          },
+          {
+            "value": "TAT",
+            "label": "report turnaround by test"
+          },
+          {
+            "value": "Referrals",
+            "label": "shares by referring doctor"
+          }
+        ],
+        "visual": {
+          "pipeTitle": "Today's samples",
+          "pipeCollected": "Collected",
+          "pipeLab": "In the lab",
+          "pipeVerified": "Verified",
+          "pipeDelivered": "Delivered",
+          "nCollected": "142",
+          "nLab": "38",
+          "nVerified": "61",
+          "nDelivered": "43",
+          "pipeCaption": "Example sample tracker · fictional figures",
+          "tatLabel": "Reports delivered on time",
+          "tatValue": "94%",
+          "pillarsTitle": "Every test traced, every report checked",
+          "flowTitle": "How a test moves through the center",
+          "referralNote": "Referral payments must follow your center's policy and the applicable law. Adon ERP records the agreed shares; it does not set them."
+        },
+        "pillars": [
+          {
+            "title": "Test orders and billing",
+            "body": "Book single tests or packages, apply discounts and print the bill with sample instructions."
+          },
+          {
+            "title": "Sample tracking",
+            "body": "Each sample gets a barcode label, and its status is visible from collection to delivery."
+          },
+          {
+            "title": "Lab and imaging reports",
+            "body": "Results are entered, verified by a consultant and released only after approval."
+          },
+          {
+            "title": "Referral shares",
+            "body": "Shares for referring doctors are calculated from paid bills and settled on schedule."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Book the tests",
+            "body": "Reception books the tests, collects payment and prints the sample labels."
+          },
+          {
+            "title": "Collect the sample",
+            "body": "The sample is collected, labelled and sent to the right section."
+          },
+          {
+            "title": "Test and verify",
+            "body": "The lab or imaging team enters the results and a consultant verifies the report."
+          },
+          {
+            "title": "Deliver the report",
+            "body": "The patient collects the report at the counter, or gets an SMS when it is ready."
+          }
+        ],
+        "sample": {
+          "title": "Report status board",
+          "caption": "Fictional samples and results, for illustration only.",
+          "columns": [
+            "Sample",
+            "Test",
+            "Section",
+            "Status"
+          ],
+          "rows": [
+            [
+              "LAB-2611-1182",
+              "Complete blood count",
+              "Haematology",
+              "Verified"
+            ],
+            [
+              "LAB-2611-1183",
+              "Lipid profile",
+              "Biochemistry",
+              "In process"
+            ],
+            [
+              "IMG-2611-0341",
+              "Chest X-ray",
+              "Imaging",
+              "Awaiting report"
+            ],
+            [
+              "LAB-2611-1184",
+              "HbA1c",
+              "Biochemistry",
+              "Delivered"
+            ]
+          ]
+        },
+        "modules": [
+          "Track samples and verify lab results.",
+          "Schedule imaging and release reports.",
+          "Bill tests, packages and discounts.",
+          "Calculate and settle doctors' shares."
+        ],
+        "faqs": [
+          {
+            "q": "Can a consultant verify reports before release?",
+            "a": "Yes. Reports stay on hold until the assigned consultant verifies them."
+          },
+          {
+            "q": "Can patients be told when a report is ready?",
+            "a": "Yes. If you turn it on, an SMS is sent when the report is released."
+          },
+          {
+            "q": "Are the results on this page real?",
+            "a": "No. All samples, tests and figures on this page are fictional."
+          }
+        ],
+        "cta": {
+          "title": "Map your test workflow in Adon ERP",
+          "body": "We will follow a sample from booking to report with your own sections and tests."
+        }
+      },
+      "medicalCollege": {
+        "meta": {
+          "title": "Medical College Management ERP",
+          "description": "Admissions, professional exams, ward placements, internships and postgraduate trainees for medical colleges in Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Health · Medical college",
+          "title": "From admission to internship,",
+          "highlight": "every student on record.",
+          "lead": "Keep admissions, card and item exams, professional exams, ward placements and internship logbooks in one academic record, alongside the teaching hospital."
+        },
+        "stats": [
+          {
+            "value": "Prof exams",
+            "label": "eligibility and results by phase"
+          },
+          {
+            "value": "Wards",
+            "label": "clinical placements by batch"
+          },
+          {
+            "value": "Internship",
+            "label": "rotations and logbooks"
+          }
+        ],
+        "visual": {
+          "timelineTitle": "The MBBS journey",
+          "p1": "Admission",
+          "p2": "First professional",
+          "p3": "Second professional",
+          "p4": "Third professional",
+          "p5": "Final professional",
+          "p6": "Internship",
+          "timelineCaption": "Simplified illustration of the academic phases",
+          "pillarsTitle": "One academic record from first year to internship",
+          "flowTitle": "How a batch moves through the college",
+          "regNote": "Adon ERP keeps academic records. Curriculum, exam rules and registration follow the requirements of your university and the regulator."
+        },
+        "pillars": [
+          {
+            "title": "Admissions",
+            "body": "Record each session's admitted students, their documents and fee status."
+          },
+          {
+            "title": "Cards, items and exams",
+            "body": "Track card and item completion and see who is eligible for each professional exam."
+          },
+          {
+            "title": "Clinical placements",
+            "body": "Assign batches to wards and units, and record attendance during each placement."
+          },
+          {
+            "title": "Interns and trainees",
+            "body": "Keep internship rotations, logbooks and postgraduate trainee records together."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Admit the session",
+            "body": "Students are admitted, documents are checked and fees are set up."
+          },
+          {
+            "title": "Complete cards and items",
+            "body": "Departments record completed cards and items through each phase."
+          },
+          {
+            "title": "Sit the professional exams",
+            "body": "Eligible students sit the exam and results are recorded by subject."
+          },
+          {
+            "title": "Start the internship",
+            "body": "Graduates begin rotations at the teaching hospital with a logbook for each unit."
+          }
+        ],
+        "sample": {
+          "title": "Eligibility for the third professional exam",
+          "caption": "Fictional students and figures, for illustration only.",
+          "columns": [
+            "Roll",
+            "Student",
+            "Items completed",
+            "Eligibility"
+          ],
+          "rows": [
+            [
+              "MC-21-034",
+              "Sadia Islam",
+              "38 / 40",
+              "Eligible"
+            ],
+            [
+              "MC-21-035",
+              "Arif Chowdhury",
+              "40 / 40",
+              "Eligible"
+            ],
+            [
+              "MC-21-036",
+              "Mehedi Hasan",
+              "31 / 40",
+              "Items pending"
+            ],
+            [
+              "MC-21-037",
+              "Tasnim Rahman",
+              "36 / 40",
+              "Under review"
+            ]
+          ]
+        },
+        "modules": [
+          "Manage admissions and intake by session.",
+          "Track professional exam eligibility and results.",
+          "Plan ward placements for each batch.",
+          "Keep internship rotations and logbooks."
+        ],
+        "faqs": [
+          {
+            "q": "Does it work with our teaching hospital?",
+            "a": "Yes. Ward placements and internships can use the same departments and units as the hospital."
+          },
+          {
+            "q": "Can we follow each student's cards and items?",
+            "a": "Yes. Departments record completion, and eligibility updates automatically."
+          },
+          {
+            "q": "Are the students on this page real?",
+            "a": "No. All names and figures on this page are fictional."
+          }
+        ],
+        "cta": {
+          "title": "Review your academic records with us",
+          "body": "We will show admissions, exams and placements set up for your college."
+        }
+      },
+      "pharmacy": {
+        "meta": {
+          "title": "Pharmacy Management ERP",
+          "description": "Medicine counter sales, batch and expiry tracking, reorder levels and supplier purchases for pharmacies in Bangladesh."
+        },
+        "hero": {
+          "eyebrow": "Health · Pharmacy",
+          "title": "Sell faster at the counter,",
+          "highlight": "never miss an expiry.",
+          "lead": "Bill medicines in seconds, keep every batch and expiry date on record, reorder before stock runs out and buy from suppliers at agreed prices, for a single shop or a chain."
+        },
+        "stats": [
+          {
+            "value": "Batch",
+            "label": "and expiry on every item"
+          },
+          {
+            "value": "Reorder",
+            "label": "alerts before stock runs out"
+          },
+          {
+            "value": "Branches",
+            "label": "stock and sales for each outlet"
+          }
+        ],
+        "visual": {
+          "receiptTitle": "Counter bill",
+          "item1": "Paracetamol 500 mg",
+          "qty1": "2 strips",
+          "amt1": "40.00",
+          "batch1": "PC-2609",
+          "exp1": "08/2028",
+          "item2": "Omeprazole 20 mg",
+          "qty2": "1 strip",
+          "amt2": "70.00",
+          "batch2": "OM-2607",
+          "exp2": "05/2028",
+          "item3": "Oral saline",
+          "qty3": "5 sachets",
+          "amt3": "30.00",
+          "batch3": "OS-2610",
+          "exp3": "10/2027",
+          "batchLabel": "Batch",
+          "expiryLabel": "Expiry",
+          "totalLabel": "Total",
+          "totalValue": "140.00",
+          "receiptCaption": "Example bill · fictional prices",
+          "alertTitle": "Expiring within 90 days",
+          "alert1": "Cetirizine 10 mg · 3 boxes",
+          "alert2": "Antacid suspension · 6 bottles",
+          "pillarsTitle": "Counter, stock and purchases in step",
+          "flowTitle": "From supplier to counter",
+          "rxNote": "Adon ERP records sales and stock. Prescription medicines must be dispensed according to the applicable law and your pharmacist's judgement."
+        },
+        "pillars": [
+          {
+            "title": "Quick counter billing",
+            "body": "Search by brand or generic name, pick the batch and print the bill in seconds."
+          },
+          {
+            "title": "Batch and expiry",
+            "body": "Every purchase is stored by batch with its expiry date, and the oldest stock is sold first."
+          },
+          {
+            "title": "Reorder levels",
+            "body": "Set a minimum for each item and get a purchase list before it runs out."
+          },
+          {
+            "title": "Supplier purchases",
+            "body": "Record purchases, returns and dues for each pharmaceutical company or distributor."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Receive from suppliers",
+            "body": "Purchases are recorded with batch, expiry date and purchase price."
+          },
+          {
+            "title": "Sell at the counter",
+            "body": "The counter sells the earliest-expiring batch first and prints the bill."
+          },
+          {
+            "title": "Watch expiry and stock",
+            "body": "Near-expiry items and low stock show up before they become a loss."
+          },
+          {
+            "title": "Reorder and return",
+            "body": "Raise purchase orders for low stock and return expired items to suppliers."
+          }
+        ],
+        "sample": {
+          "title": "Stock nearing expiry",
+          "caption": "Fictional items and figures, for illustration only.",
+          "columns": [
+            "Batch",
+            "Medicine",
+            "Expiry",
+            "Stock"
+          ],
+          "rows": [
+            [
+              "CT-2508",
+              "Cetirizine 10 mg",
+              "Jan 2027",
+              "3 boxes"
+            ],
+            [
+              "AS-2504",
+              "Antacid suspension",
+              "Feb 2027",
+              "6 bottles"
+            ],
+            [
+              "VD-2511",
+              "Vitamin D 1000 IU",
+              "Mar 2027",
+              "12 strips"
+            ],
+            [
+              "ZN-2502",
+              "Zinc syrup",
+              "Mar 2027",
+              "4 bottles"
+            ]
+          ]
+        },
+        "modules": [
+          "Manage medicine stock by batch and expiry.",
+          "Bill customers quickly at the counter.",
+          "See stock levels across shops and stores.",
+          "Buy from suppliers and track their dues."
+        ],
+        "faqs": [
+          {
+            "q": "Can we search by generic name?",
+            "a": "Yes. Medicines can be found by brand or generic name at the counter."
+          },
+          {
+            "q": "Does it work for a pharmacy chain?",
+            "a": "Yes. Each outlet keeps its own stock and sales, and head office sees all of them."
+          },
+          {
+            "q": "Are the prices on this page real?",
+            "a": "No. All items and figures on this page are fictional."
+          }
+        ],
+        "cta": {
+          "title": "Set up your pharmacy counter with us",
+          "body": "We will show billing, batches and reorder alerts with a sample of your medicines."
         }
       }
     }

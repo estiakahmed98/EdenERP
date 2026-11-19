@@ -134,6 +134,33 @@ export const industriesMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.industries.health",
+    accentClass: "text-teal-600",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "menu.industries.healthHospital",
+        href: "/industries/health/hospital",
+      },
+      {
+        labelKey: "menu.industries.healthMedicalCenter",
+        href: "/industries/health/medical-center",
+      },
+      {
+        labelKey: "menu.industries.healthDiagnosticCenter",
+        href: "/industries/health/diagnostic-center",
+      },
+      {
+        labelKey: "menu.industries.healthMedicalCollege",
+        href: "/industries/health/medical-college",
+      },
+      {
+        labelKey: "menu.industries.healthPharmacy",
+        href: "/industries/health/pharmacy",
+      },
+    ],
+  },
+  {
     titleKey: "menu.industries.consulting",
     accentClass: "text-indigo-500",
     underlineClass: "bg-border",

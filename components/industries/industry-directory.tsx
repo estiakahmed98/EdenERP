@@ -12,6 +12,7 @@ import {
   ShoppingBasket,
   Globe2,
   GraduationCap,
+  HeartPulse,
   Search,
   Shirt,
   Store,
@@ -34,6 +35,7 @@ const icons: Record<string, LucideIcon> = {
   foodHospitality: UtensilsCrossed,
   education: GraduationCap,
   realEstate: Building2,
+  health: HeartPulse,
   consulting: BriefcaseBusiness,
   others: Globe2,
 };
