@@ -81,7 +81,7 @@ test("split-headline fragments keep the English leading/trailing spaces", () => 
 
 test("no machine-translation or encoding artefacts remain", () => {
   const bad = pairs
-    .filter((p) => /৷/.test(p.bn) || /\?{3,}/.test(p.bn) || /Adon\s+ERP/.test(p.bn) || /প্রকল্প/.test(p.bn))
+    .filter((p) => /৷/.test(p.bn) || /\?{3,}/.test(p.bn) || /অ্যাডন|আডন/.test(p.bn) || /প্রকল্প/.test(p.bn))
     .map((p) => p.path);
   assert.deepEqual(bad, []);
 });
