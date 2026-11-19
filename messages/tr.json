@@ -127,7 +127,7 @@
   "layout": {
     "header": {
       "nav": {
-        "blog": "Blog",
+        "blog": "Yazılar",
         "apps": "ERP",
         "industries": "Sektörler",
         "community": "Topluluk",
@@ -164,7 +164,7 @@
           "rental": "Kiralama",
           "websiteBuilder": "Web Sitesi Oluşturucu",
           "ecommerce": "E-Ticaret",
-          "blog": "Blog",
+          "blog": "Yazılar",
           "forum": "Forum",
           "liveChat": "Canlı Sohbet",
           "elearning": "E-Öğrenme",
@@ -270,7 +270,7 @@
           "tutorials": "Rehberler",
           "documentation": "Dokümantasyon",
           "training": "Eğitim",
-          "blog": "Blog",
+          "blog": "Yazılar",
           "findPartner": "İş Ortağı Bulun",
           "meetAdvisor": "Bir Danışmanla Görüşün",
           "implementation": "Devreye Alma",
@@ -38802,7 +38802,7 @@
       },
       "metadata": {
         "learnBlog": {
-          "title": "Blog | Adon ERP Topluluğu",
+          "title": "Yazılar | Adon ERP Topluluğu",
           "description": "Adon ERP topluluk blog yazılarını, ürün güncellemelerini ve pratik iş içgörülerini okuyun."
         }
       }
