@@ -38930,7 +38930,8 @@
           "archive": "আর্কাইভ: {month}",
           "searchLabel": "অনুসন্ধান: “{query}”",
           "totalPosts": "{count, plural, one {#টি পোস্ট} other {#টি পোস্ট}}",
-          "pageOf": "পৃষ্ঠা {page} / {pages}"
+          "pageOf": "পৃষ্ঠা {page} / {pages}",
+          "notFound": "পোস্ট পাওয়া যায়নি"
         },
         "hero": {
           "title": "আমাদের সর্বশেষ পোস্ট",

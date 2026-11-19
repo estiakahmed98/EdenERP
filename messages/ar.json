@@ -37706,7 +37706,8 @@
           "archive": "الأرشيف: {month}",
           "searchLabel": "بحث: “{query}”",
           "totalPosts": "{count, plural, zero {لا توجد مقالات} one {مقال واحد} two {مقالان} few {# مقالات} many {# مقالًا} other {# مقال}}",
-          "pageOf": "الصفحة {page} من {pages}"
+          "pageOf": "الصفحة {page} من {pages}",
+          "notFound": "المقال غير موجود"
         },
         "hero": {
           "title": "أحدث منشوراتنا",

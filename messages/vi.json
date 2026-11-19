@@ -39060,7 +39060,8 @@
           "archive": "Lưu trữ: {month}",
           "searchLabel": "Tìm kiếm: “{query}”",
           "totalPosts": "{count, plural, one {# bài viết} other {# bài viết}}",
-          "pageOf": "Trang {page} / {pages}"
+          "pageOf": "Trang {page} / {pages}",
+          "notFound": "Không tìm thấy bài viết"
         },
         "hero": {
           "title": "Bài viết mới nhất",
@@ -39161,7 +39162,7 @@
           "search": "Tìm kiếm…",
           "archives": "Lưu trữ",
           "tags": "Thẻ",
-          "allDates": "Tất cả ngày"
+          "allDates": "Tất cả thời gian"
         },
         "tags": [
           "Kế toán",

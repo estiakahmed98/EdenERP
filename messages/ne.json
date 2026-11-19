@@ -38810,7 +38810,8 @@
           "archive": "अभिलेख: {month}",
           "searchLabel": "खोज: “{query}”",
           "totalPosts": "{count, plural, one {# पोस्ट} other {# पोस्टहरू}}",
-          "pageOf": "पृष्ठ {page} / {pages}"
+          "pageOf": "पृष्ठ {page} / {pages}",
+          "notFound": "पोस्ट भेटिएन"
         },
         "hero": {
           "title": "हाम्रा नवीनतम पोस्टहरू",

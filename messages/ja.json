@@ -39047,8 +39047,8 @@
       },
       "blog": {
         "dynamic": {
-          "recent": "最新の投稿",
-          "sponsored": "スポンサー",
+          "recent": "最近の投稿",
+          "sponsored": "スポンサー広告",
           "previous": "前へ",
           "next": "次へ",
           "emptyTitle": "まだ投稿がありません",
@@ -39060,7 +39060,8 @@
           "archive": "アーカイブ：{month}",
           "searchLabel": "検索：「{query}」",
           "totalPosts": "{count, plural, one {#件の投稿} other {#件の投稿}}",
-          "pageOf": "{pages}ページ中{page}ページ"
+          "pageOf": "{pages}ページ中{page}ページ",
+          "notFound": "投稿が見つかりません"
         },
         "hero": {
           "title": "最新の投稿",
@@ -40989,7 +40990,7 @@
         },
         "learnBlog": {
           "title": "ブログ | Adon ERPコミュニティ",
-          "description": "Adon ERPコミュニティブログ投稿、製品更新、実践的なビジネス洞察を読みましょう。"
+          "description": "Adon ERP コミュニティのブログ記事、製品アップデート、実践的なビジネスのヒントをお読みください。"
         },
         "learnDocumentation": {
           "title": "ドキュメント | Adon ERPコミュニティ",

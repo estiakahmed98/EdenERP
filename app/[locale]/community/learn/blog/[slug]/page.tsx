@@ -30,7 +30,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogBySlug(slugOf(slug));
-  if (!post) return { title: "Not found", robots: { index: false } };
+  if (!post) {
+    const t = await getTranslations("pages.community.blog");
+    return { title: t("dynamic.notFound"), robots: { index: false } };
+  }
 
   const description = excerpt(post.summary, 160);
   return {

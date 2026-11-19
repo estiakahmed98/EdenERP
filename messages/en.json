@@ -38877,7 +38877,8 @@
           "archive": "Archive: {month}",
           "searchLabel": "Search: “{query}”",
           "totalPosts": "{count, plural, one {# post} other {# posts}}",
-          "pageOf": "Page {page} of {pages}"
+          "pageOf": "Page {page} of {pages}",
+          "notFound": "Post not found"
         },
         "hero": {
           "title": "Our Latest Posts",

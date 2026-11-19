@@ -38766,10 +38766,51 @@
       }
     },
 
+    "community": {
+      "blog": {
+        "dynamic": {
+          "recent": "Son yazılar",
+          "sponsored": "Sponsorlu",
+          "previous": "Önceki",
+          "next": "Sonraki",
+          "emptyTitle": "Henüz yazı yok",
+          "emptyText": "Yeni yazılar yayımlanır yayımlanmaz burada görünecek.",
+          "noResults": "“{query}” ile eşleşen yazı bulunamadı.",
+          "clearFilters": "Filtreleri temizle",
+          "back": "Tüm yazılara dön",
+          "by": "Yazar: {author}",
+          "archive": "Arşiv: {month}",
+          "searchLabel": "Arama: “{query}”",
+          "totalPosts": "{count, plural, one {# yazı} other {# yazı}}",
+          "pageOf": "Sayfa {page} / {pages}",
+          "notFound": "Yazı bulunamadı"
+        },
+        "hero": {
+          "title": "En Son Yazılarımız"
+        },
+        "description": "Modern işletmelerin operasyonlarını verimli biçimde büyütmek için akıllı ERP, CRM, otomasyon, analitik ve entegrasyonları nasıl kullandığını keşfedin.",
+        "readMore": "Devamını Oku",
+        "pagination": {
+          "aria": "Sayfalama"
+        },
+        "sidebar": {
+          "search": "Ara...",
+          "archives": "Arşiv",
+          "tags": "Etiketler",
+          "allDates": "Tüm tarihler"
+        }
+      },
+      "metadata": {
+        "learnBlog": {
+          "title": "Blog | Adon ERP Topluluğu",
+          "description": "Adon ERP topluluk blog yazılarını, ürün güncellemelerini ve pratik iş içgörülerini okuyun."
+        }
+      }
+    },
     "contact": {
       "metadata": {
         "title": "Adon ERP ile İletişim | Dakka, Bangladeş",
-        "description": "Visit or call Adon ERP at Tower 71, ECB Chattar, Dhaka Cantonment, Dhaka-1206. Call +880 1842-781978 or +880 1805412462 for ERP sales, support and implementation in Bangladesh."
+        "description": "Adon ERP ofisini Tower 71, ECB Meydanı, Dakka Askerî Bölgesi, Dakka-1206 adresinde ziyaret edin. Bangladeş’te ERP satışı, destek ve kurulum için +880 1842-781978 veya +880 1805412462 numaralarını arayın."
       },
       "hero": {
         "eyebrowLabel": "İletişime Geçin",
@@ -38792,9 +38833,9 @@
         },
         "address": {
           "title": "Bizi Ziyaret Edin",
-          "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
-          "line2": "Matikata Road, ECB Chattar, Dhaka Cantonment",
-          "line3": "Dhaka - 1206, Bangladesh"
+          "line1": "Tower 71, Daire No: 9 A-B, 516/3 Güney Manikdi",
+          "line2": "Matikata Yolu, ECB Meydanı, Dakka Askerî Bölgesi",
+          "line3": "Dakka - 1206, Bangladeş"
         },
         "hours": {
           "title": "Çalışma Saatleri",
@@ -50864,9 +50905,9 @@
             "support": "Destek"
           },
           "address": {
-            "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
-            "line2": "Matikata Road, ECB Chattar, Dhaka Cantonment",
-            "line3": "Dhaka - 1206, Bangladesh"
+            "line1": "Tower 71, Daire No: 9 A-B, 516/3 Güney Manikdi",
+            "line2": "Matikata Yolu, ECB Meydanı, Dakka Askerî Bölgesi",
+            "line3": "Dakka - 1206, Bangladeş"
           }
         }
       },
