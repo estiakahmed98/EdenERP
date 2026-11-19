@@ -994,7 +994,7 @@
         "requestDemo": "Discuss your hospital workflow",
         "requestDescription": "Explore how the modules could fit your facility with an advisor. No live patient information is needed.",
         "back": "Back",
-        "metadata": "{title} — Hospital Management | AdonERP"
+        "metadata": "{title} — Hospital Management"
       },
       "pages": {
         "hospital-dashboard": {

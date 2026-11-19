@@ -6,7 +6,7 @@ import { collegeHref, type CollegeSlug } from "./registry";
 export async function collegeMetadata(slug: CollegeSlug): Promise<Metadata> {
   const t = await getTranslations("pages.medicalCollegeApp");
   return {
-    title: { absolute: `${t(`pages.${slug}.title`)} | AdonERP` },
+    title: t(`pages.${slug}.title`),
     description: t(`pages.${slug}.description`),
     alternates: await getLocaleAlternates(collegeHref(slug)),
   };

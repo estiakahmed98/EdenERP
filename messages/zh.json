@@ -45,7 +45,8 @@
         "en": "EN",
         "bn": "বাংলা",
         "ar": "العربية"
-      }
+      },
+      "switchToEnglish": "切换到英文"
     },
     "theme": {
       "label": "主题",
@@ -86,6 +87,41 @@
         "attachedImage": "查看附加图片",
         "react": "回应消息",
         "reactionFailed": "无法更新回应，请重试。"
+      },
+      "title": "与我们聊天",
+      "open": "打开在线聊天",
+      "close": "关闭聊天",
+      "online": "客服在线",
+      "offline": "请留言，我们会尽快回复",
+      "reconnecting": "正在重新连接…",
+      "intro": "请告诉我们您是谁，我们会在这里回复您。",
+      "welcome": "{name}，您好！请发送消息，我们的团队会在这里回复您。",
+      "placeholder": "输入消息…",
+      "send": "发送",
+      "loadOlder": "加载更早的消息",
+      "typing": "{name} 正在输入…",
+      "support": "客服",
+      "closedNotice": "此对话已关闭。发送消息即可重新打开。",
+      "retry": "未发送，点击重试",
+      "status": {
+        "pending": "发送中",
+        "failed": "未发送",
+        "sent": "已发送",
+        "delivered": "已送达",
+        "read": "已读"
+      },
+      "form": {
+        "name": "您的姓名",
+        "email": "邮箱（选填）",
+        "phone": "电话（选填）",
+        "message": "需要什么帮助？（选填）",
+        "start": "开始聊天"
+      },
+      "errors": {
+        "RATE_LIMITED": "消息过多，请稍候。",
+        "TOO_LONG": "消息过长。",
+        "invalid": "请检查您填写的信息。",
+        "generic": "出现问题，请重试。"
       }
     }
 },
@@ -959,7 +995,7 @@
         "requestDemo": "讨论您的医院业务流程",
         "requestDescription": "与顾问一起了解模块如何适配您的机构，无需提供真实患者信息。",
         "back": "返回",
-        "metadata": "{title} — 医院管理 | AdonERP"
+        "metadata": "{title} — 医院管理"
       },
       "pages": {
         "hospital-dashboard": {
@@ -19466,7 +19502,14 @@
         "hero": {
           "title": "医疗中心：工厂诊所，与公司其他部门一样运作",
           "lead": "探访、排队、工伤、休息室的床位和药品库存，都在一页上。休息和病假建议无需纸条即可发送至 HR。",
-          "secondaryCta": "看诊所"
+          "secondaryCta": "看诊所",
+          "features": [
+            "今日诊所：就诊、排队和占用床位",
+            "工伤与疾病分开记录",
+            "库存不足或临近过期的药品",
+            "按部门列出到期的健康体检",
+            "病假和休息建议发送给人事部"
+          ]
         },
         "sample": {
           "count": "今天有 30 次访问",
@@ -19659,7 +19702,14 @@
         "hero": {
           "title": "就诊：每次就诊一份记录，从生命体征到建议",
           "lead": "生命体征、投诉、发现内容和提供内容都在一个屏幕上。返回工作、休息或转诊的结果将进入 HR，工伤将进入事故登记册。",
-          "secondaryCta": "查看访问"
+          "secondaryCta": "查看访问",
+          "features": [
+            "按员工记录工厂诊所的每次就诊",
+            "生命体征、主诉、检查结果和建议",
+            "从诊所自有库存发放的药品",
+            "工伤记录到事故登记簿",
+            "一键将休息或病假建议发送给人事部"
+          ]
         },
         "sample": {
           "count": "1 次访问",
@@ -19864,7 +19914,14 @@
         "hero": {
           "title": "药房：诊所的药品、日期和库存",
           "lead": "每种药品均按批次保存，并注明有效期。最旧的批次首先售出，短期库存标记为红色，任何低于最低数量的库存都可以重新订购。",
-          "secondaryCta": "查看库存"
+          "secondaryCta": "查看库存",
+          "features": [
+            "按批次管理诊所药品和急救用品库存",
+            "有效期管理，最早的批次优先发放",
+            "设置最低库存，夜班也不会断货",
+            "每次发药都关联到一次诊所就诊",
+            "库存不足时自动生成采购申请"
+          ]
         },
         "sample": {
           "count": "显示 6 件商品",
@@ -19885,7 +19942,13 @@
           "thExpiry": "到期时间",
           "belowMin": "低于分钟",
           "months": "个月",
-          "caption": "Adon ERP 中药剂的部分预览。公司、人员和数字是样本数据。"
+          "caption": "Adon ERP 中药剂的部分预览。公司、人员和数字是样本数据。",
+          "m0": "对乙酰氨基酚 500 mg 片",
+          "m1": "口服补液盐",
+          "m2": "抗酸剂 400 mg 片",
+          "m3": "聚维酮碘 10% 100 ml",
+          "m4": "西替利嗪 10 mg 片",
+          "m5": "弹力绷带 10 cm"
         },
         "flow": {
           "title": "诊所库存，遵循三个规则",
@@ -20053,7 +20116,14 @@
         "hero": {
           "title": "健康检查：每个人都进行检查，对任何有风险的人进行跟踪",
           "lead": "按部门计划检查，根据正常范围记录结果，并为超出正常范围的任何情况预订后续行动。 HR 是否适合、有限制地适合或不适合，而不是医疗细节。",
-          "secondaryCta": "查看检查"
+          "secondaryCta": "查看检查",
+          "features": [
+            "入职前、定期和特定岗位体检",
+            "按部门和日期列出待体检人员",
+            "结果对照正常范围，超出时标记",
+            "为被标记的人员预约复诊",
+            "合格、限制条件下合格或不合格，结果发送给人事部"
+          ]
         },
         "sample": {
           "count": "已完成 158 个（共 212 个）",
@@ -20070,7 +20140,17 @@
           "followUp": "随访：血糖",
           "verdict": "健身",
           "fit": "适合值班",
-          "caption": "Adon ERP 中健康检查的部分预览。公司、人员和数字是样本数据。"
+          "caption": "Adon ERP 中健康检查的部分预览。公司、人员和数字是样本数据。",
+          "dProduction": "生产",
+          "dQuality": "质量",
+          "dSupplyChain": "供应链",
+          "dSales": "销售",
+          "dOffice": "办公室",
+          "tHb": "血红蛋白",
+          "tFbs": "空腹血糖",
+          "tBp": "收缩压",
+          "tBmi": "体重指数",
+          "tHearing": "听力，4 kHz"
         },
         "flow": {
           "title": "一轮体检，分三步走",
@@ -66782,6 +66862,10 @@
         "blog": {
           "name": "博客",
           "description": "撰写并发布博客文章"
+        },
+        "liveChat": {
+          "name": "在线聊天",
+          "description": "实时回复网站访客"
         }
       }
     },
@@ -67276,6 +67360,64 @@
         "attachedImage": "查看附加图片",
         "react": "回应消息",
         "reactionFailed": "无法更新回应，请重试。"
+      },
+      "title": "在线聊天",
+      "subtitle": "与网站访客实时对话",
+      "connected": "在线",
+      "connecting": "正在连接…",
+      "search": "搜索姓名、邮箱、电话或消息",
+      "filters": {
+        "OPEN": "进行中",
+        "CLOSED": "已解决",
+        "ALL": "全部"
+      },
+      "empty": "暂无对话",
+      "noMessages": "暂无消息",
+      "typingShort": "正在输入…",
+      "typing": "{name} 正在输入…",
+      "colleagueTyping": "{name} 正在回复…",
+      "pick": "选择一个对话开始回复",
+      "back": "返回",
+      "onlineOn": "在线 · {path}",
+      "lastSeen": "最后在线 {time}",
+      "close": "标记为已解决",
+      "reopen": "重新打开",
+      "loadOlder": "加载更早的消息",
+      "placeholder": "输入回复（按 Enter 发送，Shift+Enter 换行）",
+      "placeholderClosed": "对话已解决，您的回复仍会送达",
+      "send": "发送",
+      "retry": "未发送，请重试",
+      "newMessage": "新消息",
+      "open": "打开",
+      "loadFailed": "无法加载对话。",
+      "status": {
+        "pending": "发送中",
+        "failed": "未发送",
+        "sent": "已发送",
+        "delivered": "已送达",
+        "read": "已读"
+      },
+      "errors": {
+        "RATE_LIMITED": "消息过多，请稍候。",
+        "TOO_LONG": "消息过长。",
+        "generic": "出现问题，请重试。"
+      },
+      "details": {
+        "title": "访客",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话",
+        "currentPage": "当前页面",
+        "startPage": "起始页面",
+        "account": "账户",
+        "registered": "注册用户",
+        "guest": "游客",
+        "language": "语言",
+        "started": "开始时间",
+        "lastSeen": "最后在线",
+        "now": "当前在线",
+        "status": "状态",
+        "device": "设备"
       }
     }
   }

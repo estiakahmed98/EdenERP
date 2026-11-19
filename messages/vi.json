@@ -45,7 +45,8 @@
         "en": "EN",
         "bn": "বাংলা",
         "ar": "العربية"
-      }
+      },
+      "switchToEnglish": "Chuyển sang tiếng Anh"
     },
     "theme": {
       "label": "Giao diện",
@@ -86,6 +87,41 @@
         "attachedImage": "Xem ảnh đính kèm",
         "react": "Bày tỏ cảm xúc với tin nhắn",
         "reactionFailed": "Không thể cập nhật cảm xúc. Vui lòng thử lại."
+      },
+      "title": "Trò chuyện với chúng tôi",
+      "open": "Mở trò chuyện trực tuyến",
+      "close": "Đóng trò chuyện",
+      "online": "Bộ phận hỗ trợ đang trực tuyến",
+      "offline": "Hãy để lại tin nhắn, chúng tôi sẽ sớm phản hồi",
+      "reconnecting": "Đang kết nối lại…",
+      "intro": "Hãy cho chúng tôi biết bạn là ai, chúng tôi sẽ trả lời ngay tại đây.",
+      "welcome": "Xin chào {name}! Hãy gửi tin nhắn, đội ngũ của chúng tôi sẽ trả lời tại đây.",
+      "placeholder": "Nhập tin nhắn…",
+      "send": "Gửi",
+      "loadOlder": "Tải tin nhắn cũ hơn",
+      "typing": "{name} đang nhập…",
+      "support": "Hỗ trợ",
+      "closedNotice": "Cuộc trò chuyện này đã đóng. Gửi tin nhắn để mở lại.",
+      "retry": "Chưa gửi được. Chạm để thử lại",
+      "status": {
+        "pending": "Đang gửi",
+        "failed": "Chưa gửi được",
+        "sent": "Đã gửi",
+        "delivered": "Đã chuyển",
+        "read": "Đã xem"
+      },
+      "form": {
+        "name": "Tên của bạn",
+        "email": "Email (không bắt buộc)",
+        "phone": "Số điện thoại (không bắt buộc)",
+        "message": "Chúng tôi có thể giúp gì? (không bắt buộc)",
+        "start": "Bắt đầu trò chuyện"
+      },
+      "errors": {
+        "RATE_LIMITED": "Quá nhiều tin nhắn. Vui lòng đợi một chút.",
+        "TOO_LONG": "Tin nhắn này quá dài.",
+        "invalid": "Vui lòng kiểm tra lại thông tin của bạn.",
+        "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
       }
     }
 },
@@ -959,7 +995,7 @@
         "requestDemo": "Trao đổi về quy trình bệnh viện của bạn",
         "requestDescription": "Khám phá cùng chuyên gia cách các mô-đun phù hợp với cơ sở của bạn. Không cần thông tin bệnh nhân thật.",
         "back": "Quay lại",
-        "metadata": "{title} — Quản lý bệnh viện | AdonERP"
+        "metadata": "{title} — Quản lý bệnh viện"
       },
       "pages": {
         "hospital-dashboard": {
@@ -19466,7 +19502,14 @@
         "hero": {
           "title": "Trung tâm y tế: phòng khám của nhà máy, hoạt động giống như các cơ sở khác của công ty",
           "lead": "Các chuyến thăm, hàng đợi, thương tích tại nơi làm việc, giường trong phòng vệ sinh và kho thuốc, trên một trang. Lời khuyên về nghỉ ngơi và nghỉ ốm được gửi tới HR mà không cần phiếu giấy.",
-          "secondaryCta": "Xem phòng khám"
+          "secondaryCta": "Xem phòng khám",
+          "features": [
+            "Phòng khám hôm nay: lượt khám, hàng chờ và giường đang dùng",
+            "Tai nạn lao động được tách riêng khỏi bệnh thông thường",
+            "Thuốc sắp hết hoặc sắp hết hạn",
+            "Lịch khám sức khỏe đến hạn theo phòng ban",
+            "Đề xuất nghỉ ốm và nghỉ ngơi được gửi đến bộ phận nhân sự"
+          ]
         },
         "sample": {
           "count": "30 lượt truy cập hôm nay",
@@ -19659,7 +19702,14 @@
         "hero": {
           "title": "Thăm khám tại phòng khám: một hồ sơ cho mỗi lần thăm khám, từ dấu hiệu sinh tồn đến lời khuyên",
           "lead": "Vitals, khiếu nại, những gì được tìm thấy và những gì được đưa ra, trên một màn hình. Kết quả, trở lại làm việc, nghỉ ngơi hoặc giới thiệu, sẽ được chuyển đến HR, và thương tích tại nơi làm việc sẽ được đưa vào sổ đăng ký tai nạn.",
-          "secondaryCta": "Xem chuyến thăm"
+          "secondaryCta": "Xem chuyến thăm",
+          "features": [
+            "Mọi lượt khám tại phòng khám nhà máy, theo từng nhân viên",
+            "Dấu hiệu sinh tồn, triệu chứng, kết quả khám và lời khuyên",
+            "Thuốc cấp phát từ kho riêng của phòng khám",
+            "Tai nạn lao động được ghi vào sổ tai nạn",
+            "Gửi đề xuất nghỉ ngơi hoặc nghỉ ốm đến bộ phận nhân sự chỉ với một cú nhấp"
+          ]
         },
         "sample": {
           "count": "1 lần ghé thăm",
@@ -19864,7 +19914,14 @@
         "hero": {
           "title": "Nhà thuốc: thuốc của phòng khám, còn hạn và còn trong kho",
           "lead": "Mỗi loại thuốc được lưu giữ theo đợt hết hạn sử dụng. Lô cũ nhất sẽ được xuất trước, hàng tồn kho ngắn hạn được gắn cờ màu đỏ và bất kỳ thứ gì dưới mức tối thiểu đều sẵn sàng được đặt hàng lại.",
-          "secondaryCta": "Xem cổ phiếu"
+          "secondaryCta": "Xem cổ phiếu",
+          "features": [
+            "Tồn kho thuốc và vật tư sơ cứu của phòng khám, theo lô",
+            "Theo dõi hạn dùng, lô cũ nhất được cấp phát trước",
+            "Tồn kho tối thiểu, để không thiếu thuốc trong ca đêm",
+            "Mỗi lần cấp phát đều gắn với một lượt khám",
+            "Tự động tạo yêu cầu mua hàng khi tồn kho xuống thấp"
+          ]
         },
         "sample": {
           "count": "6 mục được hiển thị",
@@ -19885,7 +19942,13 @@
           "thExpiry": "Hết hạn vào",
           "belowMin": "Dưới phút",
           "months": "tháng",
-          "caption": "Bản xem trước một phần của Dược phẩm trong Adon ERP. Công ty, con người và số liệu là dữ liệu mẫu."
+          "caption": "Bản xem trước một phần của Dược phẩm trong Adon ERP. Công ty, con người và số liệu là dữ liệu mẫu.",
+          "m0": "Paracetamol 500 mg viên nén",
+          "m1": "Muối bù nước đường uống (ORS)",
+          "m2": "Thuốc kháng axit 400 mg viên nén",
+          "m3": "Povidon iod 10% 100 ml",
+          "m4": "Cetirizin 10 mg viên nén",
+          "m5": "Băng thun 10 cm"
         },
         "flow": {
           "title": "Phòng khám chứng khoán, trong ba quy tắc",
@@ -20053,7 +20116,14 @@
         "hero": {
           "title": "Kiểm tra sức khỏe: mọi người đều được kiểm tra và ai có nguy cơ đều được theo dõi",
           "lead": "Lập kế hoạch kiểm tra theo bộ phận, ghi lại kết quả so với phạm vi bình thường và đặt lịch theo dõi cho bất kỳ điều gì nằm ngoài phạm vi đó. HR phù hợp, phù hợp với giới hạn hoặc không phù hợp, không phải chi tiết y tế.",
-          "secondaryCta": "Xem kiểm tra"
+          "secondaryCta": "Xem kiểm tra",
+          "features": [
+            "Khám sức khỏe trước tuyển dụng, định kỳ và theo đặc thù công việc",
+            "Ai đến hạn khám, theo phòng ban và theo ngày",
+            "Kết quả so với ngưỡng bình thường, đánh dấu khi vượt ngưỡng",
+            "Đặt lịch tái khám cho những người bị đánh dấu",
+            "Đủ sức khỏe, đủ sức khỏe có hạn chế hoặc không đủ sức khỏe, gửi đến bộ phận nhân sự"
+          ]
         },
         "sample": {
           "count": "158 trên 212 đã hoàn thành",
@@ -20070,7 +20140,17 @@
           "followUp": "Theo dõi: đường huyết",
           "verdict": "Thể hình",
           "fit": "Phù hợp với nhiệm vụ",
-          "caption": "Bản xem trước một phần của Kiểm tra sức khỏe trong Adon ERP. Công ty, con người và số liệu là dữ liệu mẫu."
+          "caption": "Bản xem trước một phần của Kiểm tra sức khỏe trong Adon ERP. Công ty, con người và số liệu là dữ liệu mẫu.",
+          "dProduction": "Sản xuất",
+          "dQuality": "Chất lượng",
+          "dSupplyChain": "Chuỗi cung ứng",
+          "dSales": "Kinh doanh",
+          "dOffice": "Văn phòng",
+          "tHb": "Huyết sắc tố",
+          "tFbs": "Đường huyết lúc đói",
+          "tBp": "Huyết áp tâm thu",
+          "tBmi": "Chỉ số khối cơ thể",
+          "tHearing": "Thính lực, 4 kHz"
         },
         "flow": {
           "title": "Một vòng kiểm tra, trong ba bước",
@@ -66782,6 +66862,10 @@
         "blog": {
           "name": "Blog",
           "description": "Viết và đăng bài blog"
+        },
+        "liveChat": {
+          "name": "Trò chuyện trực tuyến",
+          "description": "Trả lời khách truy cập website theo thời gian thực"
         }
       }
     },
@@ -67276,6 +67360,64 @@
         "attachedImage": "Xem ảnh đính kèm",
         "react": "Bày tỏ cảm xúc với tin nhắn",
         "reactionFailed": "Không thể cập nhật cảm xúc. Vui lòng thử lại."
+      },
+      "title": "Trò chuyện trực tuyến",
+      "subtitle": "Trò chuyện theo thời gian thực với khách truy cập website",
+      "connected": "Trực tuyến",
+      "connecting": "Đang kết nối…",
+      "search": "Tìm theo tên, email, số điện thoại hoặc tin nhắn",
+      "filters": {
+        "OPEN": "Đang mở",
+        "CLOSED": "Đã giải quyết",
+        "ALL": "Tất cả"
+      },
+      "empty": "Chưa có cuộc trò chuyện nào",
+      "noMessages": "Chưa có tin nhắn nào",
+      "typingShort": "đang nhập…",
+      "typing": "{name} đang nhập…",
+      "colleagueTyping": "{name} đang trả lời…",
+      "pick": "Chọn một cuộc trò chuyện để bắt đầu trả lời",
+      "back": "Quay lại",
+      "onlineOn": "Trực tuyến · {path}",
+      "lastSeen": "Truy cập lần cuối {time}",
+      "close": "Đánh dấu đã giải quyết",
+      "reopen": "Mở lại",
+      "loadOlder": "Tải tin nhắn cũ hơn",
+      "placeholder": "Nhập câu trả lời (Enter để gửi, Shift+Enter để xuống dòng)",
+      "placeholderClosed": "Cuộc trò chuyện đã được giải quyết. Câu trả lời của bạn vẫn sẽ được gửi đến",
+      "send": "Gửi",
+      "retry": "Chưa gửi được. Thử lại",
+      "newMessage": "Tin nhắn mới",
+      "open": "Mở",
+      "loadFailed": "Không thể tải các cuộc trò chuyện.",
+      "status": {
+        "pending": "Đang gửi",
+        "failed": "Chưa gửi được",
+        "sent": "Đã gửi",
+        "delivered": "Đã chuyển",
+        "read": "Đã xem"
+      },
+      "errors": {
+        "RATE_LIMITED": "Quá nhiều tin nhắn. Vui lòng đợi một chút.",
+        "TOO_LONG": "Tin nhắn này quá dài.",
+        "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+      },
+      "details": {
+        "title": "Khách truy cập",
+        "name": "Tên",
+        "email": "Địa chỉ email",
+        "phone": "Số điện thoại",
+        "currentPage": "Trang hiện tại",
+        "startPage": "Trang bắt đầu",
+        "account": "Tài khoản",
+        "registered": "Người dùng đã đăng ký",
+        "guest": "Khách",
+        "language": "Ngôn ngữ",
+        "started": "Bắt đầu",
+        "lastSeen": "Truy cập lần cuối",
+        "now": "Đang trực tuyến",
+        "status": "Trạng thái",
+        "device": "Thiết bị"
       }
     }
   }

@@ -284,7 +284,7 @@
             "patients": "Hastalar",
             "opd-serials": "Poliklinik Sıra Numaraları",
             "consultations": "Muayeneler",
-            "billing": "Faturalama",
+            "billing": "Faturalandırma",
             "day-close": "Gün Kapanışı",
             "doctors-money": "Hekim Hakedişleri",
             "wards-beds": "Servisler ve Yataklar",
@@ -994,11 +994,11 @@
         "requestDemo": "Hastane iş akışınızı görüşün",
         "requestDescription": "Modüllerin tesisinize nasıl uyarlanabileceğini bir danışmanla keşfedin. Gerçek hasta bilgisi gerekmez.",
         "back": "Geri",
-        "metadata": "{title} — Hastane Yönetimi | AdonERP"
+        "metadata": "{title} — Hastane Yönetimi"
       },
       "pages": {
         "hospital-dashboard": {
-          "title": "Hastane panosu",
+          "title": "Hastane Gösterge Paneli",
           "headline": "Net bir görünüm.\nDaha sakin bir hastane.",
           "description": "Hasta kabul faaliyetlerini, klinik sıraları ve mali devirleri tek bir görünümde birleştirin."
         },
@@ -1008,7 +1008,7 @@
           "description": "Yeni kayıt açmadan önce mevcut kaydı arayın. Kimlik, onam ve başvuru geçmişini birlikte görün."
         },
         "opd-serials": {
-          "title": "Poliklinik sıraları",
+          "title": "Poliklinik Sıra Numaraları",
           "headline": "Bekleme alanında\nbir sonraki adım net olsun.",
           "description": "Hekim oturumlarını, randevu kapasitesini ve gelişten muayeneye uzanan süreci keşfedin."
         },
@@ -1023,17 +1023,17 @@
           "description": "Kalem kalem tahmin oluşturun, toplamı inceleyin ve para kaydı oluşturmadan ödeme önizlemesini keşfedin."
         },
         "day-close": {
-          "title": "Gün sonu",
+          "title": "Gün Kapanışı",
           "headline": "Günü kapatırken\nayrıntıları dengeleyin.",
           "description": "Önceki açık günleri inceleyin, tahsilatları mutabık hâle getirin ve muhasebeye devri anlayın."
         },
         "doctors-money": {
-          "title": "Hekim ödemeleri",
+          "title": "Hekim Hakedişleri",
           "headline": "Tahsilattan ödemeye\naçık bir yol.",
           "description": "Tahsil edilen ücretleri, hekim paylarını ve kalan bakiyeyi ayrı ayrı görün."
         },
         "wards-beds": {
-          "title": "Servisler ve yataklar",
+          "title": "Servisler ve Yataklar",
           "headline": "Servisi görün.\nHer alanın durumunu anlayın.",
           "description": "Boş, dolu ve kullanıma kapalı yatakları gösteren örnek servis haritasını keşfedin. Paylaşılan tesisin ruhsatlı yatağı yoktur."
         },
@@ -1043,7 +1043,7 @@
           "description": "Kimlik kontrolünü, yatak talebini ve yatış devrini yönlendirmeli tek bir alanda keşfedin."
         },
         "bed-census": {
-          "title": "Yatak sayımı",
+          "title": "Yatak Sayımı",
           "headline": "Hastane kapasitesinin\ngünlük görünümü.",
           "description": "Gerçek dışı yatış faaliyeti oluşturmadan boş yatak ve doluluk hesaplarını anlayın."
         },
@@ -1068,17 +1068,17 @@
           "description": "Ameliyathane takvimini ve hazırlık kontrollerini keşfedin. Bu önizleme klinik güvenlik kontrol listesi değildir."
         },
         "emergency": {
-          "title": "Acil servis",
+          "title": "Acil Servis",
           "headline": "Her adım önemliyken\ndüzenli bir devir.",
           "description": "Kabul ve operasyonel devir aşamalarını keşfedin. Klinik triyaj ve tedavi kararları bu önizlemenin dışındadır."
         },
         "blood-bank": {
-          "title": "Kan bankası",
+          "title": "Kan Bankası",
           "headline": "Üniteyi izleyin.\nDevri güvenceye alın.",
           "description": "Stok durumlarını ve izlenebilirlik listesini keşfedin. Uyumluluk veya transfüzyon kararı hesaplanmaz."
         },
         "payers": {
-          "title": "Ödeyici kurumlar",
+          "title": "Ödeyici Kurumlar",
           "headline": "Kapsamı anlayın.\nBakiyeleri net görün.",
           "description": "Hasta ve ödeyici kurum arasındaki paylaşımı modelleyin; yetkilendirme ve ödeme talebi aşamalarını inceleyin."
         },
@@ -1088,32 +1088,32 @@
           "description": "Tanımlar, paydalar ve eksik veriyi açıkça gösteren durumlarla paylaşılan hastane görünümünü keşfedin."
         },
         "doctors-sittings": {
-          "title": "Hekimler ve çalışma saatleri",
+          "title": "Hekimler ve Çalışma Saatleri",
           "headline": "Doğru muayene oturumu.\nDaha iyi koordine edilen bir gün.",
           "description": "Birimlere göre örnek uygunluk durumunu ve her oturumun kapasitesini inceleyin."
         },
         "services-prices": {
-          "title": "Hizmetler ve fiyatlar",
+          "title": "Hizmetler ve Fiyatlar",
           "headline": "Düzenli bir katalog.\nMaliyet hakkında daha açık bir görüşme.",
           "description": "Açıkça örnek olarak belirtilen ücretlerle hizmetleri, fiyat listesi farklarını ve tahminleri keşfedin."
         },
         "hospital-departments": {
-          "title": "Hastane birimleri",
+          "title": "Hastane Bölümleri",
           "headline": "Farklı uzmanlıklar.\nTek bağlantılı kurum.",
           "description": "Klinik, tanı ve idari ekipleri ve hastane iş akışındaki yerlerini keşfedin."
         },
         "staff-registrations": {
-          "title": "Personel kayıtları",
+          "title": "Personel Kayıtları",
           "headline": "Mesleki kayıtlar görünür.\nYenilemeler odakta.",
           "description": "Seçtiğiniz tarihe göre örnek kayıt geçerliliğini inceleyin. Bu önizleme gerçek bir mesleki yetkinliği doğrulamaz."
         },
         "record-access-log": {
-          "title": "Kayıt erişim günlüğü",
+          "title": "Kayıt Erişim Günlüğü",
           "headline": "Her erişim,\nhikâyenin bir parçası.",
           "description": "Örnek erişim izini ve filtrelerini inceleyin. Bu bir güvenlik denetim günlüğü veya yetkilendirme sistemi değildir."
         },
         "hospital-settings": {
-          "title": "Hastane ayarları",
+          "title": "Hastane Ayarları",
           "headline": "Tesisinizin çalışma biçimine\ngöre tasarlandı.",
           "description": "Tesis kimliği, belge dili ve hizmet uygunluğu için yerel yapılandırma kontrollerini keşfedin."
         }
@@ -29494,9 +29494,9 @@
           "title": "Kredili sat??lar",
           "listTitle": "Kredi riski",
           "onHold": "1 bloke",
-          "daysOverdue": "g?n gecikmi?",
+          "daysOverdue": "gün gecikmiş",
           "hold": "Bekletiliyor",
-          "rule": "?rnek kural: kredi limiti kullan?m? %100'? a?t???nda veya gecikme 60 g?n? ge?ti?inde sipari? bloke edilir.",
+          "rule": "Örnek kural: kredi limiti kullanımı %100'ü aştığında veya gecikme 60 günü geçtiğinde sipariş bloke edilir.",
           "caption": "Adon ERP Kredili Satışlar ekranından sınırlı bir önizleme. Şirket, kişi ve tutar bilgileri örnek verilerden oluşur."
         },
         "flow": {
@@ -64125,7 +64125,7 @@
           "description": "Mevzuata dayalı sınava giriş uygunluğunu varsaymadan kurum ölçütlerini, sınav hazırlığını ve evre devrini inceleyin."
         },
         "ward-placement": {
-          "title": "Klinik Rotasyon",
+          "title": "Servis Yerleştirme",
           "headline": "Klinikte öğrenme.\nHer rotasyonda netlik.",
           "description": "Eğitim birimi oturumlarını planlayın, takvim çakışmalarını görün ve klinik veri içermeyen öğrenme notlarını düzenleyin."
         },
@@ -65743,6 +65743,10 @@
         "blog": {
           "name": "Blog",
           "description": "Blog yazıları yazın ve yayımlayın"
+        },
+        "liveChat": {
+          "name": "Canlı sohbet",
+          "description": "Web sitesi ziyaretçilerine gerçek zamanlı yanıt verin"
         }
       }
     },
@@ -66237,6 +66241,64 @@
         "attachedImage": "Eklenen görseli görüntüle",
         "react": "Mesaja tepki ver",
         "reactionFailed": "Tepki güncellenemedi. Tekrar deneyin."
+      },
+      "title": "Canlı sohbet",
+      "subtitle": "Web sitesi ziyaretçileriyle gerçek zamanlı görüşmeler",
+      "connected": "Canlı",
+      "connecting": "Bağlanılıyor…",
+      "search": "Ad, e-posta, telefon veya mesajda ara",
+      "filters": {
+        "OPEN": "Açık",
+        "CLOSED": "Çözüldü",
+        "ALL": "Tümü"
+      },
+      "empty": "Henüz görüşme yok",
+      "noMessages": "Henüz mesaj yok",
+      "typingShort": "yazıyor…",
+      "typing": "{name} yazıyor…",
+      "colleagueTyping": "{name} yanıtlıyor…",
+      "pick": "Yanıtlamaya başlamak için bir görüşme seçin",
+      "back": "Geri",
+      "onlineOn": "Çevrimiçi · {path}",
+      "lastSeen": "Son görülme: {time}",
+      "close": "Çözüldü olarak işaretle",
+      "reopen": "Yeniden aç",
+      "loadOlder": "Önceki mesajları yükle",
+      "placeholder": "Bir yanıt yazın (göndermek için Enter, yeni satır için Shift+Enter)",
+      "placeholderClosed": "Görüşme çözüldü. Yanıtınız yine de iletilecek",
+      "send": "Gönder",
+      "retry": "Gönderilemedi. Yeniden dene",
+      "newMessage": "Yeni mesaj",
+      "open": "Aç",
+      "loadFailed": "Görüşmeler yüklenemedi.",
+      "status": {
+        "pending": "Gönderiliyor",
+        "failed": "Gönderilemedi",
+        "sent": "Gönderildi",
+        "delivered": "İletildi",
+        "read": "Okundu"
+      },
+      "errors": {
+        "RATE_LIMITED": "Çok fazla mesaj gönderildi. Lütfen biraz bekleyin.",
+        "TOO_LONG": "Bu mesaj çok uzun.",
+        "generic": "Bir sorun oluştu. Lütfen yeniden deneyin."
+      },
+      "details": {
+        "title": "Ziyaretçi",
+        "name": "Ad",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "currentPage": "Geçerli sayfa",
+        "startPage": "Başladığı sayfa",
+        "account": "Hesap",
+        "registered": "Kayıtlı kullanıcı",
+        "guest": "Misafir",
+        "language": "Dil",
+        "started": "Başlangıç",
+        "lastSeen": "Son görülme",
+        "now": "Şu an çevrimiçi",
+        "status": "Durum",
+        "device": "Cihaz"
       }
     }
   }

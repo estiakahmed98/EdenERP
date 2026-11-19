@@ -7,7 +7,7 @@ import { hospitalHref, type HospitalSlug } from "./registry";
 export async function hospitalMetadata(slug: HospitalSlug): Promise<Metadata> {
   const t = await getTranslations("pages.hospitalApp");
   return {
-    title: { absolute: t("ui.metadata", { title: t(`pages.${slug}.title`) }) },
+    title: t("ui.metadata", { title: t(`pages.${slug}.title`) }),
     description: t(`pages.${slug}.description`),
     alternates: await getLocaleAlternates(hospitalHref(slug)),
   };

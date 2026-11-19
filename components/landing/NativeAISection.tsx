@@ -717,7 +717,7 @@ export default function NativeAISection() {
     <section
       ref={sectionRef}
       aria-labelledby="native-ai-title"
-      className={cn("relative bg-(--cream)", !reduced && "h-[260vh] lg:h-[380vh]")}
+      className={cn("relative bg-(--cream)", !reduced && "h-[210vh] lg:h-[280vh]")}
     >
       <style>{FLOAT_CSS}</style>
       <div

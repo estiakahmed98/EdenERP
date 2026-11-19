@@ -45,7 +45,7 @@ Use the Gen-Z touch only in hero headlines, CTAs and section titles. Examples: "
 | Overview | ওভারভিউ | সার্বিক চিত্র |
 | Real-time | রিয়েল-টাইম | রিয়াল-টাইম, রিয়েল টাইম |
 | Email | ইমেইল | ইমেল, ই-মেইল |
-| Brand | **AdonERP** | Adon ERP, অ্যাডন, আডন ইআরপি |
+| Brand | **Adon ERP** (the official business name in the Google Business Profile and lib/site.ts, see the SEO manual of 18 Nov 2026); AdonERP is tolerated in existing body copy | অ্যাডন, আডন ইআরপি, any other transliteration |
 | Acronyms | Keep in Latin: AI, ERP, CRM, HR, POS, VAT, PO, LC, BOM, MRP, QC, KPI, SLA, API, SMS, PF, TDS, NBR | এআই, ইআরপি, সিআরএম, এইচআর, পিওএস, এসএমএস |
 | Brands, companies, people | Registered Latin form: GitHub, WhatsApp, bKash, Wonder Toys | Transliterating a company name, or adding a duplicate in parentheses |
 
