@@ -1,3 +1,5 @@
+import design from "./health-design.module.css";
+import LiveDemoButton from "@/components/live-demo-button";
 import { Barcode, FileCheck2, FlaskConical, HandCoins } from "lucide-react";
 import { Closing, Crumbs, Eyebrow, SampleTable, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
@@ -18,18 +20,19 @@ export default async function HealthDiagnosticCenterPage() {
   const ring = 2 * Math.PI * 42;
 
   return (
-    <main className={sectorRoot}>
-      <section className="relative overflow-hidden border-b border-border">
+    <main className={`${sectorRoot} ${design.page} ${design.diagnostic}`}>
+      <section className={design.hero}>
         <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:36px_36px] opacity-40" />
         <Crumbs s={s} />
-        <div className={`${wrap} relative py-14 lg:py-20`}>
+        <div className={`${wrap} ${design.heroLayout} relative py-14 lg:py-20`}>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-end">
             <div>
               <Eyebrow>{p.hero.eyebrow}</Eyebrow>
-              <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl">
+              <h1 className={`${design.headline} mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl`}>
                 {p.hero.title} <span className="text-(--sector-blue)">{p.hero.highlight}</span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
+            <div className={design.heroActions}><LiveDemoButton /></div>
             </div>
             <dl className="grid gap-3">
               {p.stats.map((st) => (
@@ -42,7 +45,7 @@ export default async function HealthDiagnosticCenterPage() {
           </div>
 
           {/* Sample pipeline + on-time ring */}
-          <figure className="mt-12 grid gap-6 rounded-3xl border border-border bg-card p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <figure className={`${design.preview} mt-12 grid gap-6 rounded-3xl border border-border bg-card p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center`}>
             <div>
               <div className="flex items-baseline justify-between gap-4">
                 <figcaption className="font-semibold text-(--ink)">{v.pipeTitle}</figcaption>

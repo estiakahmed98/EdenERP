@@ -1,3 +1,5 @@
+import design from "./health-design.module.css";
+import LiveDemoButton from "@/components/live-demo-button";
 import { CalendarClock, ClipboardPen, PhoneCall, Wallet } from "lucide-react";
 import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
@@ -11,18 +13,19 @@ export default async function HealthMedicalCenterPage() {
   const v = p.visual;
 
   return (
-    <main className={sectorRoot}>
-      <section className="border-b border-border">
+    <main className={`${sectorRoot} ${design.page} ${design.clinic}`}>
+      <section className={design.hero}>
         <Crumbs s={s} />
-        <div className={`${wrap} grid gap-12 py-14 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-20`}>
+        <div className={`${wrap} ${design.heroLayout} grid gap-12 py-14 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-20`}>
           <div>
             <Eyebrow>{p.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl">
+            <h1 className={`${design.headline} mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl`}>
               {p.hero.title}
               <br />
               <span className="text-(--sector-blue)">{p.hero.highlight}</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
+            <div className={design.heroActions}><LiveDemoButton /></div>
             <dl className="mt-10 grid grid-cols-3 divide-x divide-border rounded-2xl border border-border rtl:divide-x-reverse">
               {p.stats.map((st) => (
                 <div key={st.label} className="flex flex-col px-4 py-4">
@@ -34,7 +37,7 @@ export default async function HealthMedicalCenterPage() {
           </div>
 
           {/* Chamber schedule with a serial display */}
-          <figure className="relative rounded-3xl border border-border bg-(--sector-wash) p-6 sm:p-8">
+          <figure className={`${design.preview} relative rounded-3xl border border-border bg-(--sector-wash) p-6 sm:p-8`}>
             <div className="flex items-center justify-between gap-4">
               <figcaption className="font-semibold text-(--ink)">{v.chamberTitle}</figcaption>
               <div className="rounded-xl bg-(--sector-blue) px-4 py-2 text-center text-card">

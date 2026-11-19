@@ -1,3 +1,5 @@
+import design from "./health-design.module.css";
+import LiveDemoButton from "@/components/live-demo-button";
 import { BedDouble, ClipboardList, ReceiptText, Stethoscope, UserRound } from "lucide-react";
 import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
@@ -24,20 +26,21 @@ export default async function HealthHospitalPage() {
   const v = p.visual;
 
   return (
-    <main className={sectorRoot}>
-      <section className="border-b border-border bg-gradient-to-b from-(--sector-wash) to-background">
+    <main className={`${sectorRoot} ${design.page} ${design.hospital}`}>
+      <section className={design.hero}>
         <Crumbs s={s} />
-        <div className={`${wrap} py-14 lg:py-20`}>
+        <div className={`${wrap} ${design.heroLayout} py-14 lg:py-20`}>
           <div className="max-w-3xl">
             <Eyebrow>{p.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl">
+            <h1 className={`${design.headline} mt-4 text-4xl font-bold leading-tight tracking-tight text-(--ink) sm:text-5xl`}>
               {p.hero.title} <span className="text-(--sector-blue)">{p.hero.highlight}</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
+            <div className={design.heroActions}><LiveDemoButton /></div>
           </div>
 
           {/* Patient journey */}
-          <figure className="mt-12 rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <figure className={`${design.preview} mt-12 rounded-3xl border border-border bg-card p-6 sm:p-8`}>
             <ol className="grid gap-4 sm:grid-cols-5">
               {journey.map(({ key, Icon }, i) => (
                 <li key={key} className="relative flex items-center gap-3 sm:flex-col sm:text-center">

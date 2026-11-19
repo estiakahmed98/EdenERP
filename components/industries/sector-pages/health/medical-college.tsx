@@ -1,3 +1,5 @@
+import design from "./health-design.module.css";
+import LiveDemoButton from "@/components/live-demo-button";
 import { BookOpenCheck, GraduationCap, Hospital, UsersRound } from "lucide-react";
 import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
@@ -11,28 +13,29 @@ export default async function HealthMedicalCollegePage() {
   const v = p.visual;
 
   return (
-    <main className={sectorRoot}>
-      <section className="border-b border-border bg-(--cream)">
+    <main className={`${sectorRoot} ${design.page} ${design.college}`}>
+      <section className={design.hero}>
         <Crumbs s={s} />
-        <div className={`${wrap} grid gap-12 py-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-20`}>
+        <div className={`${wrap} ${design.heroLayout} grid gap-12 py-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-20`}>
           <div>
             <Eyebrow>{p.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-4 font-serif text-4xl leading-tight text-(--ink) sm:text-5xl">
+            <h1 className={`${design.headline} mt-4 text-4xl leading-tight text-(--ink) sm:text-5xl`}>
               {p.hero.title} <span className="italic text-(--sector-blue)">{p.hero.highlight}</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
+            <div className={design.heroActions}><LiveDemoButton /></div>
             <dl className="mt-10 border-t border-foreground/40">
               {p.stats.map((st) => (
                 <div key={st.label} className="flex items-baseline justify-between gap-6 border-b border-foreground/40 py-4">
                   <dt className="text-sm text-muted-foreground">{st.label}</dt>
-                  <dd className="font-serif text-xl text-(--sector-blue)">{st.value}</dd>
+                  <dd className="text-xl text-(--sector-blue)">{st.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
           {/* Academic timeline */}
-          <figure className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <figure className={`${design.preview} rounded-3xl border border-border bg-card p-6 sm:p-8`}>
             <figcaption className="font-semibold text-(--ink)">{v.timelineTitle}</figcaption>
             <ol className="mt-6 space-y-0">
               {phases.map((k, i) => (
@@ -79,11 +82,11 @@ export default async function HealthMedicalCollegePage() {
       <section className="border-y border-border bg-(--sector-wash) py-16 sm:py-20">
         <div className={wrap}>
           <Eyebrow>{s.c.flowEyebrow}</Eyebrow>
-          <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-tight text-(--ink) sm:text-4xl">{v.flowTitle}</h2>
+          <h2 className="mt-3 max-w-2xl text-3xl leading-tight text-(--ink) sm:text-4xl">{v.flowTitle}</h2>
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {p.flow.map((step, i) => (
               <li key={step.title} className="rounded-2xl bg-card p-5">
-                <span className="font-serif text-3xl text-(--sector-blue)">{i + 1}</span>
+                <span className="text-3xl text-(--sector-blue)">{i + 1}</span>
                 <h3 className="mt-2 font-semibold text-(--ink)">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
               </li>
