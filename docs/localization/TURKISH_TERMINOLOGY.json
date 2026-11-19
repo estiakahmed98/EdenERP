@@ -1,0 +1,15 @@
+{
+  "status": "in_progress",
+  "terms": {
+    "rental": "kiralama",
+    "inventory": "stok",
+    "quotation": "fiyat teklifi",
+    "padding time": "haz?rl?k s?resi",
+    "delay costs": "gecikme ?creti",
+    "eCommerce": "E-ticaret",
+    "timesheet": "?al??ma ?izelgesi"
+  },
+  "notes": [
+    "Existing correct Turkish is retained. Technical values and proper names require explicit preservation reasons."
+  ]
+}

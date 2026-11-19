@@ -23140,6 +23140,7 @@
           "title": "Bring your project list. We will set up one tower in the demo."
         }
       },
+
       "reUnitsPage": {
         "meta": {
           "title": "Real Estate Unit Inventory: A Live Stacking Plan of Every Flat and Shop",
@@ -38743,6 +38744,7 @@
         }
       }
     },
+
     "community": {
       "become-a-partner": {
         "hero": {
@@ -42598,6 +42600,7 @@
         }
       }
     },
+
     "events": {
       "metadata": {
         "title": "Events | AdonERP",
@@ -44678,6 +44681,7 @@
         "button": "Start now"
       }
     },
+
     "hardwarestore": {
       "metadata": {
         "title": "Hardware Store | AdonERP",
@@ -46746,6 +46750,8 @@
         "button": "Start now"
       }
     },
+
+
     "manufacturingShowcase": {
       "annotations": {
         "blueprint": "One order, everything connected.",
@@ -48703,6 +48709,7 @@
         "button": "Start now"
       }
     },
+
     "pos-retail": {
       "metadata": {
         "title": "POS Retail",
@@ -52856,6 +52863,7 @@
         "button": "Start now"
       }
     },
+
     "rental": {
       "metadata": {
         "title": "Rental Management",
@@ -54759,6 +54767,7 @@
         "button": "Start now"
       }
     },
+    
     "timesheets": {
       "metadata": {
         "title": "Timesheets | AdonERP",
