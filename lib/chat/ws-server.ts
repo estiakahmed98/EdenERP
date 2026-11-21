@@ -47,7 +47,7 @@ import { reactionActor } from "@/lib/chat/reactions";
 import { sendAutoReplyIfFirst } from "@/lib/chat/auto-reply";
 
 type VisitorClient = { role: "visitor"; ws: WebSocket; conversationId: string; name: string; userId: string | null };
-type AdminClient = { role: "admin"; ws: WebSocket; userId: string; name: string };
+type AdminClient = { role: "admin"; ws: WebSocket; userId: string; name: string; sessionVersion: number };
 type Client = VisitorClient | AdminClient;
 type Identity = Omit<VisitorClient, "ws"> | Omit<AdminClient, "ws">;
 
@@ -66,6 +66,9 @@ class ChatHub {
 
   constructor() {
     const timer = setInterval(() => {
+      for (const admin of this.admins) {
+        void this.currentAdmin(admin).catch(() => admin.ws.close(1011, "Authorization unavailable"));
+      }
       for (const ws of this.wss.clients) {
         if (this.alive.get(ws) === false) {
           ws.terminate();
@@ -84,6 +87,23 @@ class ChatHub {
   }
 
   // ---------------------------------------------------------------- fan-out
+
+  revokeUserSessions(userId: string) {
+    for (const admin of this.admins) {
+      if (admin.userId === userId) {
+        this.admins.delete(admin);
+        admin.ws.close(1008, "Session revoked");
+      }
+    }
+    if (!this.admins.size) this.toAllVisitors({ t: "agents", online: false });
+  }
+
+  private async currentAdmin(client: AdminClient) {
+    const user = await db.user.findUnique({ where: { id: client.userId }, select: { role: true, isActive: true, sessionVersion: true } });
+    if (user?.isActive && user.role === "ADMIN" && user.sessionVersion === client.sessionVersion) return true;
+    this.revokeUserSessions(client.userId);
+    return false;
+  }
 
   publishReaction(message: ChatMessageDTO) {
     this.toVisitors(message.conversationId, { t: "reaction", message });
@@ -214,6 +234,7 @@ class ChatHub {
   // ---------------------------------------------------------------- frames
 
   private async onFrame(client: Client, data: RawData) {
+    if (client.role === "admin" && !(await this.currentAdmin(client))) return;
     const event = parseClientEvent(data.toString());
     if (!event) return this.send(client.ws, { t: "error", code: "BAD_FRAME" });
     if (event.t === "ping") return this.send(client.ws, { t: "pong" });
@@ -410,8 +431,8 @@ async function adminFromSession(cookieHeader: string, sessionUrl: string) {
   const session = (await res.json().catch(() => null)) as { user?: { id?: unknown } } | null;
   const id = typeof session?.user?.id === "string" ? session.user.id : null;
   if (!id) return null;
-  const user = await db.user.findUnique({ where: { id }, select: { id: true, role: true, name: true } });
-  if (!user || user.role !== "ADMIN") return null;
+  const user = await db.user.findUnique({ where: { id }, select: { id: true, role: true, name: true, isActive: true, sessionVersion: true } });
+  if (!user?.isActive || user.role !== "ADMIN") return null;
   return user;
 }
 
@@ -422,7 +443,7 @@ async function authenticate(req: IncomingMessage, url: URL, sessionUrl: string):
   if (url.searchParams.get("as") === "admin") {
     if (!cookieHeader) return null;
     const user = await adminFromSession(cookieHeader, sessionUrl);
-    return user ? { role: "admin", userId: user.id, name: user.name || "Support" } : null;
+    return user ? { role: "admin", userId: user.id, name: user.name || "Support", sessionVersion: user.sessionVersion } : null;
   }
 
   const conversation = await findConversationByToken(cookies[CHAT_COOKIE]);

@@ -60,7 +60,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         const user = await db.user.findUnique({ where: { email } });
-        if (!user || !user.passwordHash) return null;
+        if (!user || !user.passwordHash || !user.isActive) return null;
 
         const isPasswordValid = await bcrypt.compare(
           password,
@@ -68,6 +68,7 @@ export const authOptions: NextAuthOptions = {
         );
         if (!isPasswordValid) return null;
 
+        await db.user.update({ where: { id: user.id }, data: { lastLoginAt: new Date() } });
         loginPerAccount.reset(`${email}|${ip}`);
         return {
           id: user.id,
@@ -75,6 +76,7 @@ export const authOptions: NextAuthOptions = {
           name: user.name,
           image: user.image,
           role: user.role,
+          sessionVersion: user.sessionVersion,
         };
       },
     }),
@@ -84,8 +86,22 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        token.role = (user as any).role;
+        token.role = user.role;
+        token.sessionVersion = user.sessionVersion ?? 0;
       }
+      const current = token.id ? await db.user.findUnique({
+        where: { id: token.id },
+        select: { isActive: true, sessionVersion: true, role: true, name: true, email: true, image: true },
+      }) : null;
+      // NextAuth clears the cookie and returns no session when this callback throws.
+      // Read on every request so an old JWT cannot retain revoked admin access.
+      if (!current?.isActive || (token.sessionVersion ?? 0) !== current.sessionVersion) {
+        throw new Error("Session revoked. Please sign in again.");
+      }
+      token.role = current.role;
+      token.name = current.name;
+      token.email = current.email;
+      token.picture = current.image;
       return token;
     },
 

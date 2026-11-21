@@ -67563,6 +67563,10 @@
         "content": "Nội dung"
       },
       "items": {
+        "users": {
+          "name": "Người dùng",
+          "description": "Quản lý tài khoản, vai trò và quyền truy cập"
+        },
         "dashboard": {
           "name": "Bảng điều khiển",
           "description": "Lưu lượng, nội dung và hoạt động trong một cái nhìn"
@@ -68134,6 +68138,99 @@
         "now": "Đang trực tuyến",
         "status": "Trạng thái",
         "device": "Thiết bị"
+      }
+    },
+    "users": {
+      "eyebrow": "Quyền truy cập không gian làm việc",
+      "title": "Quản lý người dùng",
+      "description": "Quản lý nhóm của bạn, thông tin tài khoản và quyền truy cập vào bảng quản trị.",
+      "addUser": "Thêm người dùng",
+      "directory": "Danh bạ người dùng",
+      "directoryHint": "Tất cả tài khoản ở một nơi. Thay đổi quyền truy cập có hiệu lực ngay lập tức.",
+      "stats": {
+        "total": "Tổng số người dùng",
+        "active": "Tài khoản đang hoạt động",
+        "admins": "Quản trị viên đang hoạt động",
+        "inactive": "Tài khoản không hoạt động"
+      },
+      "refresh": "Làm mới",
+      "search": "Tìm theo tên, email hoặc số điện thoại…",
+      "role": "Vai trò",
+      "status": "Trạng thái",
+      "allRoles": "Tất cả vai trò",
+      "allStatuses": "Tất cả trạng thái",
+      "roles": {
+        "ADMIN": "Quản trị viên",
+        "USER": "Người dùng"
+      },
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động",
+      "loading": "Đang tải người dùng…",
+      "retry": "Thử lại",
+      "empty": "Không tìm thấy người dùng",
+      "emptyHint": "Hãy thử tìm kiếm khác hoặc thay đổi bộ lọc.",
+      "clearFilters": "Xóa bộ lọc",
+      "user": "Người dùng",
+      "joined": "Ngày tham gia",
+      "lastLogin": "Lần đăng nhập gần nhất",
+      "never": "Chưa có lần đăng nhập",
+      "unnamed": "Người dùng chưa đặt tên",
+      "you": "Bạn",
+      "actions": "Thao tác",
+      "actionsFor": "Thao tác cho {name}",
+      "edit": "Sửa người dùng",
+      "resetPassword": "Đặt lại mật khẩu",
+      "deactivate": "Vô hiệu hóa tài khoản",
+      "activate": "Kích hoạt tài khoản",
+      "delete": "Xóa người dùng",
+      "results": "Hiển thị {from}–{to} trong tổng số {total} người dùng",
+      "previous": "Trang trước",
+      "next": "Trang sau",
+      "page": "Trang {page} / {pages}",
+      "securityNote": "Bạn không thể gỡ quyền quản trị của chính mình hoặc của quản trị viên đang hoạt động cuối cùng. Thay đổi mật khẩu, email và quyền truy cập sẽ thu hồi các phiên hiện có.",
+      "createHint": "Tạo tài khoản kèm mật khẩu. Hãy chia sẻ thông tin đăng nhập với chủ tài khoản một cách an toàn.",
+      "editHint": "Cập nhật thông tin tài khoản và quyền hạn. Thay đổi quyền truy cập yêu cầu người dùng đăng nhập lại.",
+      "passwordHint": "Đặt mật khẩu mới cho {email}. Các phiên hiện có sẽ bị đăng xuất. Hãy chia sẻ mật khẩu mới một cách an toàn.",
+      "deleteHint": "Xóa vĩnh viễn {email} và các tài khoản đăng nhập liên kết. Không thể hoàn tác. Hãy vô hiệu hóa tài khoản nếu muốn giữ lại dữ liệu.",
+      "deactivateHint": "{email} sẽ bị đăng xuất và không thể đăng nhập cho đến khi tài khoản được kích hoạt lại.",
+      "activateHint": "{email} sẽ có thể đăng nhập lại bằng thông tin hiện có.",
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "phone": "Số điện thoại (không bắt buộc)",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "adminHint": "Quản trị viên có thể quản lý người dùng, bảng giá, nội dung và các công cụ quản trị khác.",
+      "userHint": "Người dùng có thể đăng nhập vào website nhưng không thể truy cập bảng quản trị.",
+      "selfHint": "Vai trò và trạng thái tài khoản của bạn được bảo vệ.",
+      "deleteConfirmation": "Nhập {email} để xác nhận xóa",
+      "cancel": "Hủy",
+      "save": "Lưu thay đổi",
+      "saving": "Đang lưu…",
+      "saved": "Đã lưu thay đổi người dùng.",
+      "validation": {
+        "name": "Nhập tên từ 1 đến 100 ký tự.",
+        "email": "Nhập địa chỉ email hợp lệ.",
+        "phone": "Nhập số điện thoại hợp lệ (5–40 ký tự).",
+        "password": "Dùng ít nhất 8 ký tự và tối đa 72 byte UTF-8.",
+        "confirmPassword": "Mật khẩu không khớp.",
+        "role": "Chọn một vai trò hợp lệ.",
+        "isActive": "Chọn trạng thái tài khoản.",
+        "updatedAt": "Hãy làm mới danh sách người dùng và thử lại."
+      },
+      "errors": {
+        "unauthorized": "Phiên của bạn đã hết hạn. Hãy đăng nhập lại.",
+        "forbidden": "Bạn không có quyền thực hiện thao tác này.",
+        "invalid": "Hãy kiểm tra các trường trong biểu mẫu và thử lại.",
+        "duplicateEmail": "Địa chỉ email này đã được sử dụng.",
+        "notFound": "Người dùng này không còn tồn tại. Hãy làm mới danh sách.",
+        "conflict": "Tài khoản này đã thay đổi kể từ khi bạn mở. Hãy đóng hộp thoại, làm mới danh sách và thử lại.",
+        "selfProtection": "Bạn không thể xóa, vô hiệu hóa hoặc gỡ quyền quản trị của chính tài khoản mình.",
+        "lastAdmin": "Phải còn ít nhất một quản trị viên đang hoạt động.",
+        "confirmation": "Email xác nhận không khớp.",
+        "rateLimit": "Quá nhiều thay đổi. Hãy đợi một phút rồi thử lại.",
+        "server": "Không thể tải hoặc lưu người dùng. Vui lòng thử lại."
       }
     }
   }
