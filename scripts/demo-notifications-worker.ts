@@ -38,6 +38,10 @@ async function main() {
 
   process.once("SIGINT", shutdown);
   process.once("SIGTERM", shutdown);
+  // When started by server.ts: graceful stop via IPC, and never outlive the web server.
+  const onParentMessage = (message: unknown) => { if ((message as { type?: string })?.type === "shutdown") shutdown(); };
+  process.on("message", onParentMessage);
+  process.once("disconnect", shutdown);
 
   function failureCode(error: unknown, channel: Channel) {
     const message = error instanceof Error ? error.message : "";
@@ -181,6 +185,10 @@ async function main() {
     sleepController.abort();
     process.removeListener("SIGINT", shutdown);
     process.removeListener("SIGTERM", shutdown);
+    process.removeListener("message", onParentMessage);
+    process.removeListener("disconnect", shutdown);
+    // An open IPC channel would keep the child alive after cleanup.
+    if (process.connected) process.disconnect();
     emailSender?.close();
     await whatsapp?.destroy().catch(() => {});
     if (ownsLock) await settings.markWorkerStopped().catch(() => {});
@@ -192,4 +200,6 @@ async function main() {
 main().catch(() => {
   console.error("[notifications] Startup failed. Check DATABASE_URL, the notification migration and notification environment settings.");
   process.exitCode = 1;
+}).finally(() => {
+  if (process.connected) process.disconnect();
 });

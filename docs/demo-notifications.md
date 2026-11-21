@@ -50,11 +50,9 @@ The website and worker communicate only through the database: the worker publish
 
 ## Connect WhatsApp
 
-Run this process in addition to the website:
+With `DEMO_NOTIFICATIONS_ENABLED=true`, `npm run dev` and `npm start` (the custom `server.ts`) start the worker automatically as a supervised child process: it restarts after a crash (5 s → 60 s backoff) and is stopped cleanly with the server. Do not also run `npm run notifications:worker` by hand; the second worker cannot take the database lock and only retries.
 
-```powershell
-npm run notifications:worker
-```
+To run the worker separately instead (another machine, or only one of several web instances), set `NOTIFICATIONS_WORKER=off` on those web servers and run `npm run notifications:worker` where it should live.
 
 Open **Admin → Notifications**. When the status shows **Waiting for scan**, on the sender phone open **WhatsApp → Linked devices → Link a device** and scan the QR code shown there. The worker also prints the QR in its terminal and saves `.wwebjs_auth/login-qr.png` as a fallback. Keep the QR private. A dedicated sender number is preferable; the configured numbers are recipients.
 
@@ -62,9 +60,18 @@ The bot uses `whatsapp-web.js` and WhatsApp Web, not the official Cloud API. It 
 
 The worker keeps email and WhatsApp delivery independent. Email can continue while WhatsApp waits for QR login. A database advisory lock prevents two workers from using the same account for the same database.
 
-## Run continuously
+## Deployment
 
-Keep both the application and notification worker running under a process supervisor on a machine with persistent storage. The worker must run as a persistent process; it should not be started from a Next.js request handler. If the website runs elsewhere, the worker can run on a separate machine with access to the same database and notification configuration.
+The site already needs a long-running Node host (VPS, Docker, Railway, Render…) because of the live-chat WebSocket; the worker runs on the same host:
+
+1. `npm ci`, `npx prisma migrate deploy`, `npm run build`.
+2. Set `DEMO_NOTIFICATIONS_ENABLED=true`, the `SMTP_*` values and `NEXT_PUBLIC_SITE_URL` on the server.
+3. Make Chrome/Chromium available: `npm run notifications:browser:install`, or install it and set `WHATSAPP_EXECUTABLE_PATH`. On Linux/Docker install Chromium's system libraries; set `WHATSAPP_NO_SANDBOX=true` only if the container requires it.
+4. Point `WHATSAPP_AUTH_PATH` at **persistent** storage (a Docker volume or a directory outside the release folder). If it is lost on redeploy, WhatsApp must be scanned again.
+5. Run `npm start` under a process manager (pm2, systemd, Docker restart policy).
+6. Open `https://<site>/admin/notifications` and scan the QR once.
+
+Budget roughly 300–500 MB extra RAM for Chromium. With several web instances, the database lock keeps exactly one worker active; set `NOTIFICATIONS_WORKER=off` on the others to avoid retry logs. On serverless hosting (e.g. Vercel) the worker cannot run: host it on a small VPS with `npm run notifications:worker` and the same `DATABASE_URL`; the admin panel works unchanged because everything goes through the database.
 
 The worker defaults to Chromium's normal sandbox. Only enable an explicit `WHATSAPP_NO_SANDBOX=true` override when the hosting environment requires it and provides equivalent process isolation. `WHATSAPP_EXECUTABLE_PATH` can select an existing compatible Chrome/Chromium installation. If Puppeteer's browser was not installed (for example, npm blocked its install script), run `npm run notifications:browser:install` or configure that executable path.
 

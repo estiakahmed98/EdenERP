@@ -5,6 +5,9 @@
  *   npm run dev     -> tsx server.ts          (development, Turbopack)
  *   npm run start   -> tsx server.ts --prod   (after `npm run build`)
  *
+ * Also supervises the demo-notification worker (WhatsApp/email) as a child
+ * process when DEMO_NOTIFICATIONS_ENABLED=true — see lib/demo-notifications/supervisor.ts.
+ *
  * Needs a long-running Node host (VPS, Docker, Railway, Render…). Serverless
  * platforms such as Vercel cannot hold WebSocket connections.
  */
@@ -38,9 +41,19 @@ async function main() {
     console.log(`> Ready on http://localhost:${port} (${prod ? "production" : "development"}) — chat WS on /api/chat/ws`);
   });
 
+  // Demo-request WhatsApp/email worker as a supervised child process
+  // (only when DEMO_NOTIFICATIONS_ENABLED=true; NOTIFICATIONS_WORKER=off to opt out).
+  const { startNotificationWorker } = await import("./lib/demo-notifications/supervisor");
+  const stopNotificationWorker = startNotificationWorker();
+
+  let shuttingDown = false;
   const shutdown = () => {
-    httpServer.close(() => process.exit(0));
-    setTimeout(() => process.exit(0), 5_000).unref();
+    if (shuttingDown) return;
+    shuttingDown = true;
+    setTimeout(() => process.exit(0), 10_000).unref();
+    void (stopNotificationWorker?.() ?? Promise.resolve()).finally(() => {
+      httpServer.close(() => process.exit(0));
+    });
   };
   process.on("SIGINT", shutdown);
   process.on("SIGTERM", shutdown);
