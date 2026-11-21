@@ -54,9 +54,12 @@ export function demoError(error: unknown) {
       },
     );
   // Never expose connection strings, SQL or personal data in a public response/log.
+  const diagnostic = error as { code?: unknown; meta?: { code?: unknown } } | null;
+  const safeCode = (value: unknown) => typeof value === "string" && /^[A-Z0-9]{5}$/.test(value) ? value : undefined;
   console.error(
     "Demo request operation failed",
     error instanceof Error ? error.name : "UnknownError",
+    { code: safeCode(diagnostic?.code), databaseCode: safeCode(diagnostic?.meta?.code) },
   );
   return NextResponse.json(
     { code: "SERVICE_UNAVAILABLE" },

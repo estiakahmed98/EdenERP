@@ -67567,6 +67567,10 @@
           "name": "Người dùng",
           "description": "Quản lý tài khoản, vai trò và quyền truy cập"
         },
+        "notifications": {
+          "name": "Thông báo",
+          "description": "Cảnh báo WhatsApp và email cho yêu cầu demo mới"
+        },
         "dashboard": {
           "name": "Bảng điều khiển",
           "description": "Lưu lượng, nội dung và hoạt động trong một cái nhìn"
@@ -68231,6 +68235,88 @@
         "confirmation": "Email xác nhận không khớp.",
         "rateLimit": "Quá nhiều thay đổi. Hãy đợi một phút rồi thử lại.",
         "server": "Không thể tải hoặc lưu người dùng. Vui lòng thử lại."
+      }
+    },
+    "notifications": {
+      "eyebrow": "Cảnh báo yêu cầu demo",
+      "title": "Thông báo",
+      "description": "Liên kết tài khoản WhatsApp gửi tin, chọn người nhận cảnh báo và theo dõi trạng thái gửi cho các yêu cầu demo mới.",
+      "refresh": "Làm mới",
+      "loading": "Đang tải cài đặt thông báo…",
+      "retry": "Thử lại",
+      "cancel": "Hủy",
+      "confirm": "Xác nhận",
+      "disabled": "Thông báo đang tắt. Đặt <code>DEMO_NOTIFICATIONS_ENABLED=true</code> trên máy chủ, sau đó khởi động lại website và worker.",
+      "whatsapp": {
+        "title": "Tài khoản gửi WhatsApp",
+        "hint": "Tài khoản WhatsApp dùng để gửi cảnh báo yêu cầu demo.",
+        "status": {
+          "offline": "Worker không chạy",
+          "disconnected": "Chưa kết nối",
+          "starting": "Đang khởi động…",
+          "qr": "Đang chờ quét",
+          "ready": "Đã kết nối",
+          "error": "Lỗi kết nối"
+        },
+        "offlineHint": "Worker thông báo không chạy trên máy chủ. Khởi động bằng <code>npm run notifications:worker</code> và luôn để nó chạy.",
+        "startingHint": "Đang mở WhatsApp Web. Mã QR sẽ xuất hiện sau vài giây.",
+        "errorHint": "Không thể kết nối WhatsApp. Worker sẽ tự động thử lại.",
+        "scanTitle": "Quét để liên kết WhatsApp",
+        "step1": "Mở WhatsApp trên điện thoại gửi tin.",
+        "step2": "Vào Cài đặt → Thiết bị đã liên kết → Liên kết thiết bị.",
+        "step3": "Hướng điện thoại vào mã QR này.",
+        "qrRefresh": "Mã sẽ tự động làm mới. Hãy giữ trang này riêng tư.",
+        "qrAlt": "Mã QR đăng nhập WhatsApp",
+        "readyTitle": "WhatsApp đã kết nối",
+        "connectedAs": "Đang gửi từ",
+        "logout": "Hủy liên kết số này",
+        "logoutHint": "Hủy liên kết để kết nối tài khoản WhatsApp khác.",
+        "logoutConfirm": "Cảnh báo WhatsApp sẽ tạm dừng cho đến khi bạn quét mã QR mới. Các cảnh báo đang chờ được giữ lại và gửi sau khi kết nối lại.",
+        "logoutRequested": "Đang hủy liên kết… mã QR mới sẽ sớm xuất hiện.",
+        "restart": "Khởi động lại phiên",
+        "restartHint": "Mã QR không hoạt động? Hãy bắt đầu phiên mới.",
+        "restartConfirm": "Worker sẽ đóng phiên WhatsApp hiện tại và hiển thị mã QR mới."
+      },
+      "recipients": {
+        "whatsappTitle": "Số WhatsApp",
+        "whatsappHint": "Mỗi số nhận một tin nhắn WhatsApp cho mỗi yêu cầu demo mới.",
+        "whatsappPlaceholder": "Số kèm mã quốc gia, ví dụ 8801XXXXXXXXX",
+        "emailTitle": "Địa chỉ email",
+        "emailHint": "Mỗi địa chỉ nhận một email cho mỗi yêu cầu demo mới.",
+        "emailPlaceholder": "name@example.com",
+        "add": "Thêm",
+        "remove": "Xóa {recipient}",
+        "empty": "Chưa có người nhận.",
+        "added": "Đã thêm người nhận.",
+        "removed": "Đã xóa người nhận.",
+        "appliesNew": "Thay đổi người nhận áp dụng cho các yêu cầu demo mới. Cảnh báo đang chờ vẫn gửi đến người nhận ban đầu."
+      },
+      "delivery": {
+        "title": "Trạng thái gửi",
+        "hint": "Các cảnh báo gần đây do worker gửi.",
+        "channel": {
+          "EMAIL": "Email",
+          "WHATSAPP": "WhatsApp"
+        },
+        "status": {
+          "PENDING": "Đang chờ",
+          "PROCESSING": "Đang gửi",
+          "SENT": "Đã gửi",
+          "FAILED": "Thất bại"
+        },
+        "retryFailed": "Gửi lại mục thất bại",
+        "retried": "Đã đưa {count} cảnh báo thất bại vào hàng đợi lại.",
+        "empty": "Chưa có cảnh báo nào được gửi."
+      },
+      "errors": {
+        "unauthorized": "Phiên của bạn đã hết hạn. Hãy đăng nhập lại.",
+        "forbidden": "Bạn không có quyền thực hiện thao tác này.",
+        "invalid": "Nhập số hợp lệ kèm mã quốc gia hoặc địa chỉ email hợp lệ.",
+        "duplicate": "Người nhận này đã có trong danh sách.",
+        "notFound": "Người nhận này không còn tồn tại. Hãy làm mới trang.",
+        "limit": "Mỗi kênh chỉ thêm được tối đa 25 người nhận.",
+        "rateLimit": "Quá nhiều thay đổi. Hãy đợi một phút rồi thử lại.",
+        "server": "Không thể tải hoặc lưu cài đặt thông báo. Vui lòng thử lại."
       }
     }
   }

@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import { Prisma } from "@/lib/generated/prisma/client";
 import { db } from "@/lib/db";
+import { enqueueDemoNotifications } from "@/lib/demo-notifications/queue";
 import type {
   DemoAdminCreate,
   DemoAdminData,
@@ -61,7 +62,10 @@ export async function saveDemoRequest(input: DemoSubmission, ip: string) {
       VALUES (${id}::uuid,${input.requestKey}::uuid,${dedupeKey},${payloadHash},${value.fullName},${value.companyName},${value.phone},${value.shareMore},${value.email || null},array_remove(${modules},NULL),${value.message || null},${input.locale},CURRENT_TIMESTAMP)
       ON CONFLICT DO NOTHING RETURNING "id"
     `);
-    if (rows[0]) return { id: rows[0].id, created: true };
+    if (rows[0]) {
+      await enqueueDemoNotifications(tx, rows[0].id);
+      return { id: rows[0].id, created: true };
+    }
     // A competing request can win either unique constraint while this transaction waits.
     const committed = await tx.$queryRaw<
       { id: string; payloadHash: string }[]

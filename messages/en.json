@@ -66455,6 +66455,10 @@
           "name": "Users",
           "description": "Manage accounts, roles and access"
         },
+        "notifications": {
+          "name": "Notifications",
+          "description": "WhatsApp and email alerts for new demo requests"
+        },
         "dashboard": {
           "name": "Dashboard",
           "description": "Traffic, content and activity at a glance"
@@ -67027,6 +67031,88 @@
       "newPlanTagline": "Custom pricing package",
       "newPlanCta": "Get started",
       "newPlanFeature": "Core module access"
+    },
+    "notifications": {
+      "eyebrow": "Demo request alerts",
+      "title": "Notifications",
+      "description": "Link the WhatsApp sender, choose who gets alerted and check delivery for new demo requests.",
+      "refresh": "Refresh",
+      "loading": "Loading notification settings…",
+      "retry": "Try again",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "disabled": "Notifications are turned off. Set <code>DEMO_NOTIFICATIONS_ENABLED=true</code> on the server, then restart the website and the worker.",
+      "whatsapp": {
+        "title": "WhatsApp sender",
+        "hint": "The WhatsApp account that sends demo request alerts.",
+        "status": {
+          "offline": "Worker not running",
+          "disconnected": "Disconnected",
+          "starting": "Starting…",
+          "qr": "Waiting for scan",
+          "ready": "Connected",
+          "error": "Connection error"
+        },
+        "offlineHint": "The notification worker is not running on the server. Start it with <code>npm run notifications:worker</code> and keep it running.",
+        "startingHint": "Opening WhatsApp Web. The QR code appears in a few seconds.",
+        "errorHint": "WhatsApp could not connect. The worker retries automatically.",
+        "scanTitle": "Scan to link WhatsApp",
+        "step1": "Open WhatsApp on the sender phone.",
+        "step2": "Go to Settings → Linked devices → Link a device.",
+        "step3": "Point the phone at this QR code.",
+        "qrRefresh": "The code refreshes automatically. Keep this page private.",
+        "qrAlt": "WhatsApp login QR code",
+        "readyTitle": "WhatsApp is connected",
+        "connectedAs": "Sending from",
+        "logout": "Unlink this number",
+        "logoutHint": "Unlink to connect a different WhatsApp account.",
+        "logoutConfirm": "WhatsApp alerts pause until you scan a new QR code. Queued alerts are kept and sent after you reconnect.",
+        "logoutRequested": "Unlinking… a new QR code appears shortly.",
+        "restart": "Restart session",
+        "restartHint": "QR code not working? Start a fresh session.",
+        "restartConfirm": "The worker closes the current WhatsApp session and shows a new QR code."
+      },
+      "recipients": {
+        "whatsappTitle": "WhatsApp numbers",
+        "whatsappHint": "Each number gets a WhatsApp message for every new demo request.",
+        "whatsappPlaceholder": "Number with country code, e.g. 8801XXXXXXXXX",
+        "emailTitle": "Email addresses",
+        "emailHint": "Each address gets an email for every new demo request.",
+        "emailPlaceholder": "name@example.com",
+        "add": "Add",
+        "remove": "Remove {recipient}",
+        "empty": "No recipients yet.",
+        "added": "Recipient added.",
+        "removed": "Recipient removed.",
+        "appliesNew": "Recipient changes apply to new demo requests. Alerts already queued keep their original recipients."
+      },
+      "delivery": {
+        "title": "Delivery status",
+        "hint": "Recent alerts sent by the worker.",
+        "channel": {
+          "EMAIL": "Email",
+          "WHATSAPP": "WhatsApp"
+        },
+        "status": {
+          "PENDING": "Pending",
+          "PROCESSING": "Sending",
+          "SENT": "Sent",
+          "FAILED": "Failed"
+        },
+        "retryFailed": "Retry failed",
+        "retried": "{count, plural, one {# failed alert queued again.} other {# failed alerts queued again.}}",
+        "empty": "No alerts sent yet."
+      },
+      "errors": {
+        "unauthorized": "Your session has expired. Sign in again.",
+        "forbidden": "You do not have permission to perform this action.",
+        "invalid": "Enter a valid number with country code or a valid email address.",
+        "duplicate": "This recipient is already in the list.",
+        "notFound": "This recipient no longer exists. Refresh the page.",
+        "limit": "You can add up to 25 recipients per channel.",
+        "rateLimit": "Too many changes. Wait a minute and try again.",
+        "server": "Unable to load or save notification settings. Please try again."
+      }
     }
   }
 }
