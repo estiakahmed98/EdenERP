@@ -1,5 +1,6 @@
 import {
   BadgeDollarSign,
+  BellRing,
   BookOpen,
   CalendarCheck,
   LayoutDashboard,
@@ -50,6 +51,11 @@ export const ADMIN_NAV: AdminNavGroup[] = [
         key: "demoBookings",
         href: "/admin/demo-bookings",
         icon: CalendarCheck,
+      },
+      {
+        key: "notifications",
+        href: "/admin/notifications",
+        icon: BellRing,
       },
       {
         key: "pricing",

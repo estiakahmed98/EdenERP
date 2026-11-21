@@ -42,10 +42,55 @@ model DemoRequest {
   version     Int               @default(0)
   createdAt   DateTime          @default(now()) @db.Timestamptz(3)
   updatedAt   DateTime          @updatedAt @db.Timestamptz(3)
+  notifications DemoNotification[]
 
   @@index([createdAt])
   @@index([status, createdAt])
   @@map("demo_requests")
+}
+
+model DemoNotification {
+  id          String      @id @default(uuid()) @db.Uuid
+  requestId   String      @db.Uuid
+  request     DemoRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  channel     String      @db.VarChar(16)
+  recipient   String      @db.VarChar(254)
+  status      String      @default("PENDING") @db.VarChar(16)
+  attempts    Int         @default(0)
+  availableAt DateTime    @default(now()) @db.Timestamptz(3)
+  lockedAt    DateTime?   @db.Timestamptz(3)
+  lockToken   String?     @db.Uuid
+  lastError   String?     @db.VarChar(160)
+  sentAt      DateTime?   @db.Timestamptz(3)
+  createdAt   DateTime    @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime    @default(now()) @updatedAt @db.Timestamptz(3)
+
+  @@unique([requestId, channel, recipient])
+  @@index([channel, status, availableAt])
+  @@map("demo_notifications")
+}
+
+model DemoNotificationRecipient {
+  id        String   @id @default(uuid()) @db.Uuid
+  channel   String   @db.VarChar(16)
+  recipient String   @db.VarChar(254)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+
+  @@unique([channel, recipient])
+  @@map("demo_notification_recipients")
+}
+
+model DemoNotificationWorker {
+  id          String    @id @db.VarChar(32)
+  state       String    @default("disconnected") @db.VarChar(16)
+  qr          String?
+  account     String?   @db.VarChar(32)
+  command     String?   @db.VarChar(16)
+  commandAt   DateTime? @db.Timestamptz(3)
+  heartbeatAt DateTime? @db.Timestamptz(3)
+  updatedAt   DateTime  @default(now()) @updatedAt @db.Timestamptz(3)
+
+  @@map("demo_notification_worker")
 }
 
 model DemoRequestRateLimit {

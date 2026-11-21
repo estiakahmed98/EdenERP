@@ -63055,6 +63055,10 @@
           "name": "Kullanıcılar",
           "description": "Hesapları, rolleri ve erişimi yönetin"
         },
+        "notifications": {
+          "name": "Bildirimler",
+          "description": "Yeni demo talepleri için WhatsApp ve e-posta uyarıları"
+        },
         "dashboard": {
           "name": "Genel Bakış",
           "description": "Trafik, içerik ve etkinlik tek bakışta"
@@ -63719,6 +63723,88 @@
         "confirmation": "Onay e-postası eşleşmiyor.",
         "rateLimit": "Çok fazla değişiklik yapıldı. Bir dakika bekleyip tekrar deneyin.",
         "server": "Kullanıcılar yüklenemedi veya kaydedilemedi. Lütfen tekrar deneyin."
+      }
+    },
+    "notifications": {
+      "eyebrow": "Demo talebi uyarıları",
+      "title": "Bildirimler",
+      "description": "Gönderen WhatsApp hesabını bağlayın, kimlerin uyarı alacağını seçin ve yeni demo taleplerinin teslim durumunu izleyin.",
+      "refresh": "Yenile",
+      "loading": "Bildirim ayarları yükleniyor…",
+      "retry": "Tekrar dene",
+      "cancel": "İptal",
+      "confirm": "Onayla",
+      "disabled": "Bildirimler kapalı. Sunucuda <code>DEMO_NOTIFICATIONS_ENABLED=true</code> ayarlayın, ardından web sitesini ve worker'ı yeniden başlatın.",
+      "whatsapp": {
+        "title": "WhatsApp gönderici",
+        "hint": "Demo talebi uyarılarını gönderen WhatsApp hesabı.",
+        "status": {
+          "offline": "Worker çalışmıyor",
+          "disconnected": "Bağlı değil",
+          "starting": "Başlatılıyor…",
+          "qr": "Tarama bekleniyor",
+          "ready": "Bağlı",
+          "error": "Bağlantı hatası"
+        },
+        "offlineHint": "Bildirim worker'ı sunucuda çalışmıyor. <code>npm run notifications:worker</code> ile başlatın ve sürekli çalışır durumda tutun.",
+        "startingHint": "WhatsApp Web açılıyor. QR kod birkaç saniye içinde görünecek.",
+        "errorHint": "WhatsApp'a bağlanılamadı. Worker otomatik olarak yeniden deneyecek.",
+        "scanTitle": "WhatsApp'ı bağlamak için tarayın",
+        "step1": "Gönderici telefonda WhatsApp'ı açın.",
+        "step2": "Ayarlar → Bağlı cihazlar → Cihaz bağla bölümüne gidin.",
+        "step3": "Telefonu bu QR koda doğrultun.",
+        "qrRefresh": "Kod otomatik olarak yenilenir. Bu sayfayı gizli tutun.",
+        "qrAlt": "WhatsApp giriş QR kodu",
+        "readyTitle": "WhatsApp bağlı",
+        "connectedAs": "Gönderen numara",
+        "logout": "Bu numaranın bağlantısını kaldır",
+        "logoutHint": "Farklı bir WhatsApp hesabı bağlamak için bağlantıyı kaldırın.",
+        "logoutConfirm": "Yeni bir QR kod tarayana kadar WhatsApp uyarıları durur. Sıradaki uyarılar saklanır ve yeniden bağlandıktan sonra gönderilir.",
+        "logoutRequested": "Bağlantı kaldırılıyor… yakında yeni bir QR kod görünecek.",
+        "restart": "Oturumu yeniden başlat",
+        "restartHint": "QR kod çalışmıyor mu? Yeni bir oturum başlatın.",
+        "restartConfirm": "Worker mevcut WhatsApp oturumunu kapatır ve yeni bir QR kod gösterir."
+      },
+      "recipients": {
+        "whatsappTitle": "WhatsApp numaraları",
+        "whatsappHint": "Her yeni demo talebinde her numaraya bir WhatsApp mesajı gönderilir.",
+        "whatsappPlaceholder": "Ülke koduyla numara, ör. 8801XXXXXXXXX",
+        "emailTitle": "E-posta adresleri",
+        "emailHint": "Her yeni demo talebinde her adrese bir e-posta gönderilir.",
+        "emailPlaceholder": "name@example.com",
+        "add": "Ekle",
+        "remove": "{recipient} kaldır",
+        "empty": "Henüz alıcı yok.",
+        "added": "Alıcı eklendi.",
+        "removed": "Alıcı kaldırıldı.",
+        "appliesNew": "Alıcı değişiklikleri yeni demo taleplerine uygulanır. Sıradaki uyarılar ilk alıcılarına gönderilir."
+      },
+      "delivery": {
+        "title": "Teslim durumu",
+        "hint": "Worker'ın gönderdiği son uyarılar.",
+        "channel": {
+          "EMAIL": "E-posta",
+          "WHATSAPP": "WhatsApp"
+        },
+        "status": {
+          "PENDING": "Bekliyor",
+          "PROCESSING": "Gönderiliyor",
+          "SENT": "Gönderildi",
+          "FAILED": "Başarısız"
+        },
+        "retryFailed": "Başarısızları yeniden dene",
+        "retried": "{count} başarısız uyarı yeniden sıraya alındı.",
+        "empty": "Henüz uyarı gönderilmedi."
+      },
+      "errors": {
+        "unauthorized": "Oturumunuzun süresi doldu. Tekrar giriş yapın.",
+        "forbidden": "Bu işlemi yapma izniniz yok.",
+        "invalid": "Ülke koduyla geçerli bir numara veya geçerli bir e-posta adresi girin.",
+        "duplicate": "Bu alıcı zaten listede.",
+        "notFound": "Bu alıcı artık mevcut değil. Sayfayı yenileyin.",
+        "limit": "Kanal başına en fazla 25 alıcı ekleyebilirsiniz.",
+        "rateLimit": "Çok fazla değişiklik yapıldı. Bir dakika bekleyip tekrar deneyin.",
+        "server": "Bildirim ayarları yüklenemedi veya kaydedilemedi. Lütfen tekrar deneyin."
       }
     }
   }

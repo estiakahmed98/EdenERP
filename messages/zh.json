@@ -67567,6 +67567,10 @@
           "name": "用户",
           "description": "管理账户、角色和访问权限"
         },
+        "notifications": {
+          "name": "通知",
+          "description": "新演示请求的 WhatsApp 和邮件提醒"
+        },
         "dashboard": {
           "name": "仪表盘",
           "description": "流量、内容与动态一览"
@@ -68231,6 +68235,88 @@
         "confirmation": "确认邮箱不匹配。",
         "rateLimit": "更改过于频繁，请等待一分钟后重试。",
         "server": "无法加载或保存用户，请重试。"
+      }
+    },
+    "notifications": {
+      "eyebrow": "演示请求提醒",
+      "title": "通知",
+      "description": "关联发送用的 WhatsApp 账号，选择提醒接收人，并查看新演示请求的发送状态。",
+      "refresh": "刷新",
+      "loading": "正在加载通知设置…",
+      "retry": "重试",
+      "cancel": "取消",
+      "confirm": "确认",
+      "disabled": "通知已关闭。请在服务器上设置 <code>DEMO_NOTIFICATIONS_ENABLED=true</code>，然后重启网站和 worker。",
+      "whatsapp": {
+        "title": "WhatsApp 发送账号",
+        "hint": "用于发送演示请求提醒的 WhatsApp 账号。",
+        "status": {
+          "offline": "Worker 未运行",
+          "disconnected": "未连接",
+          "starting": "正在启动…",
+          "qr": "等待扫码",
+          "ready": "已连接",
+          "error": "连接错误"
+        },
+        "offlineHint": "服务器上的通知 worker 未运行。请使用 <code>npm run notifications:worker</code> 启动并保持运行。",
+        "startingHint": "正在打开 WhatsApp Web，几秒后会显示二维码。",
+        "errorHint": "无法连接 WhatsApp，worker 会自动重试。",
+        "scanTitle": "扫码关联 WhatsApp",
+        "step1": "在发送用手机上打开 WhatsApp。",
+        "step2": "进入 设置 → 已关联的设备 → 关联新设备。",
+        "step3": "将手机对准此二维码。",
+        "qrRefresh": "二维码会自动刷新。请勿公开此页面。",
+        "qrAlt": "WhatsApp 登录二维码",
+        "readyTitle": "WhatsApp 已连接",
+        "connectedAs": "发送号码",
+        "logout": "解除关联此号码",
+        "logoutHint": "解除关联后可连接其他 WhatsApp 账号。",
+        "logoutConfirm": "在扫描新二维码之前，WhatsApp 提醒将暂停。排队中的提醒会被保留，并在重新连接后发送。",
+        "logoutRequested": "正在解除关联… 新二维码即将显示。",
+        "restart": "重启会话",
+        "restartHint": "二维码无法使用？请开始新的会话。",
+        "restartConfirm": "Worker 将关闭当前 WhatsApp 会话并显示新的二维码。"
+      },
+      "recipients": {
+        "whatsappTitle": "WhatsApp 号码",
+        "whatsappHint": "每个新的演示请求都会向每个号码发送一条 WhatsApp 消息。",
+        "whatsappPlaceholder": "带国家代码的号码，例如 8801XXXXXXXXX",
+        "emailTitle": "邮箱地址",
+        "emailHint": "每个新的演示请求都会向每个地址发送一封邮件。",
+        "emailPlaceholder": "name@example.com",
+        "add": "添加",
+        "remove": "移除 {recipient}",
+        "empty": "暂无接收人。",
+        "added": "已添加接收人。",
+        "removed": "已移除接收人。",
+        "appliesNew": "接收人更改适用于新的演示请求。排队中的提醒仍发送给原接收人。"
+      },
+      "delivery": {
+        "title": "发送状态",
+        "hint": "Worker 最近发送的提醒。",
+        "channel": {
+          "EMAIL": "邮件",
+          "WHATSAPP": "WhatsApp"
+        },
+        "status": {
+          "PENDING": "等待中",
+          "PROCESSING": "发送中",
+          "SENT": "已发送",
+          "FAILED": "失败"
+        },
+        "retryFailed": "重试失败项",
+        "retried": "已将 {count} 条失败的提醒重新加入队列。",
+        "empty": "尚未发送任何提醒。"
+      },
+      "errors": {
+        "unauthorized": "您的会话已过期，请重新登录。",
+        "forbidden": "您无权执行此操作。",
+        "invalid": "请输入带国家代码的有效号码或有效的邮箱地址。",
+        "duplicate": "该接收人已在列表中。",
+        "notFound": "该接收人已不存在，请刷新页面。",
+        "limit": "每个渠道最多可添加 25 个接收人。",
+        "rateLimit": "更改过于频繁，请等待一分钟后重试。",
+        "server": "无法加载或保存通知设置，请重试。"
       }
     }
   }

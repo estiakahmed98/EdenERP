@@ -17,3 +17,7 @@ node_modules
 .next/
 .DS_Store
 /lib/generated/prisma
+
+# Private WhatsApp linked-device sessions and browser cache
+.wwebjs_auth/
+.wwebjs_cache/
