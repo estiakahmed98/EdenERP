@@ -82,15 +82,16 @@ export default function LanguageSwitcher({
           className={
             variant === "mobile"
               ? "flex w-full items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold text-card-foreground transition-colors hover-gradient focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              : "hidden items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition-colors hover-gradient focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex"
+              : // Icon-only on phones, full label from sm up.
+                "inline-flex size-9 items-center justify-center gap-2 rounded-full border border-border bg-card/90 text-sm font-semibold text-foreground shadow-sm transition-colors hover-gradient focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:size-auto sm:px-3 sm:py-2"
           }
         >
           <Languages className="size-4 shrink-0" aria-hidden="true" />
           {variant === "mobile" && <span>{t("label")}</span>}
-          <span lang={activeLocale} className={variant === "mobile" ? "ms-auto" : undefined}>
+          <span lang={activeLocale} className={variant === "mobile" ? "ms-auto" : "hidden sm:inline"}>
             {languageNames[activeLocale]}
           </span>
-          <ChevronDown className="size-4 shrink-0" aria-hidden="true" />
+          <ChevronDown className={variant === "mobile" ? "size-4 shrink-0" : "hidden size-4 shrink-0 sm:block"} aria-hidden="true" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
