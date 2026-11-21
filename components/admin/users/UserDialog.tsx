@@ -24,6 +24,7 @@ export default function UserDialog({ action, currentUserId, onClose, onSaved }: 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const [visible, setVisible] = useState(false);
+  const [confirmVisible, setConfirmVisible] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [fields, setFields] = useState<Record<string, string>>({});
@@ -89,7 +90,7 @@ export default function UserDialog({ action, currentUserId, onClose, onSaved }: 
             </>}
             {isPassword && <>
               <div><Label htmlFor="user-password">{t("password")}</Label><div className="relative mt-1.5"><Input id="user-password" className="pe-11" dir="ltr" type={visible ? "text" : "password"} value={password} minLength={8} maxLength={72} autoComplete="new-password" required aria-invalid={!!fields.password} aria-describedby="password-help" onChange={(event) => setPassword(event.target.value)} /><Button type="button" size="icon" variant="ghost" className="absolute end-0 top-0 size-9" aria-label={t(visible ? "hidePassword" : "showPassword")} onClick={() => setVisible((v) => !v)}>{visible ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}</Button></div><p id="password-help" className={`mt-1 text-xs ${fields.password ? "text-destructive" : "text-muted-foreground"}`}>{fields.password || t("validation.password")}</p></div>
-              <div><Label htmlFor="user-confirm-password">{t("confirmPassword")}</Label><Input id="user-confirm-password" className={inputClass} dir="ltr" type={visible ? "text" : "password"} value={confirmPassword} autoComplete="new-password" required aria-invalid={!!fields.confirmPassword} aria-describedby={fields.confirmPassword ? "error-confirm" : undefined} onChange={(event) => setConfirmPassword(event.target.value)} />{fields.confirmPassword && <p id="error-confirm" className="mt-1 text-xs text-destructive">{fields.confirmPassword}</p>}</div>
+              <div><Label htmlFor="user-confirm-password">{t("confirmPassword")}</Label><div className="relative mt-1.5"><Input id="user-confirm-password" className="pe-11" dir="ltr" type={confirmVisible ? "text" : "password"} value={confirmPassword} autoComplete="new-password" required aria-invalid={!!fields.confirmPassword} aria-describedby={fields.confirmPassword ? "error-confirm" : undefined} onChange={(event) => setConfirmPassword(event.target.value)} /><Button type="button" size="icon" variant="ghost" className="absolute end-0 top-0 size-9" aria-label={t(confirmVisible ? "hidePassword" : "showPassword")} onClick={() => setConfirmVisible((v) => !v)}>{confirmVisible ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}</Button></div>{fields.confirmPassword && <p id="error-confirm" className="mt-1 text-xs text-destructive">{fields.confirmPassword}</p>}</div>
             </>}
             {action.kind === "delete" && <div><Label htmlFor="delete-confirmation">{t("deleteConfirmation", { email: user?.email || "" })}</Label><Input id="delete-confirmation" className={inputClass} dir="ltr" value={confirmation} autoComplete="off" required onChange={(event) => setConfirmation(event.target.value)} /></div>}
           </fieldset>
