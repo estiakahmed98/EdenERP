@@ -4,6 +4,7 @@ import {
   CalendarCheck,
   LayoutDashboard,
   MessagesSquare,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +30,11 @@ export const ADMIN_NAV: AdminNavGroup[] = [
         key: "dashboard",
         href: "/admin",
         icon: LayoutDashboard,
+      },
+      {
+        key: "users",
+        href: "/admin/users",
+        icon: Users,
       },
     ],
   },

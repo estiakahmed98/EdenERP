@@ -8,7 +8,7 @@ import { createRateLimiter } from "@/lib/security/rate-limit";
 const signupLimiter = createRateLimiter({ limit: 5, windowMs: 60 * 60_000 });
 // Fallback when no proxy IP header is present (all clients share this bucket).
 const signupUnknownIpLimiter = createRateLimiter({ limit: 30, windowMs: 60 * 60_000 });
-const EMAIL_RE = /^[^s@]+@[^s@]+.[^s@]+$/;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
   const ip = getClientIp(request.headers);

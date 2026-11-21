@@ -63051,6 +63051,10 @@
         "content": "İçerik"
       },
       "items": {
+        "users": {
+          "name": "Kullanıcılar",
+          "description": "Hesapları, rolleri ve erişimi yönetin"
+        },
         "dashboard": {
           "name": "Genel Bakış",
           "description": "Trafik, içerik ve etkinlik tek bakışta"
@@ -63622,6 +63626,99 @@
         "now": "Şu an çevrimiçi",
         "status": "Durum",
         "device": "Cihaz"
+      }
+    },
+    "users": {
+      "eyebrow": "Çalışma alanı erişimi",
+      "title": "Kullanıcı yönetimi",
+      "description": "Ekibinizi, hesap bilgilerini ve yönetim paneline erişimi yönetin.",
+      "addUser": "Kullanıcı ekle",
+      "directory": "Kullanıcı dizini",
+      "directoryHint": "Tüm hesaplar tek yerde. Erişim değişiklikleri hemen geçerli olur.",
+      "stats": {
+        "total": "Toplam kullanıcı",
+        "active": "Aktif hesaplar",
+        "admins": "Aktif yöneticiler",
+        "inactive": "Pasif hesaplar"
+      },
+      "refresh": "Yenile",
+      "search": "Ad, e-posta veya telefon ara…",
+      "role": "Rol",
+      "status": "Durum",
+      "allRoles": "Tüm roller",
+      "allStatuses": "Tüm durumlar",
+      "roles": {
+        "ADMIN": "Yönetici",
+        "USER": "Kullanıcı"
+      },
+      "active": "Aktif",
+      "inactive": "Pasif",
+      "loading": "Kullanıcılar yükleniyor…",
+      "retry": "Tekrar dene",
+      "empty": "Kullanıcı bulunamadı",
+      "emptyHint": "Farklı bir arama deneyin veya filtreleri değiştirin.",
+      "clearFilters": "Filtreleri temizle",
+      "user": "Kullanıcı",
+      "joined": "Katılma tarihi",
+      "lastLogin": "Son giriş",
+      "never": "Giriş kaydı yok",
+      "unnamed": "Adsız kullanıcı",
+      "you": "Siz",
+      "actions": "İşlemler",
+      "actionsFor": "{name} için işlemler",
+      "edit": "Kullanıcıyı düzenle",
+      "resetPassword": "Şifreyi sıfırla",
+      "deactivate": "Hesabı devre dışı bırak",
+      "activate": "Hesabı etkinleştir",
+      "delete": "Kullanıcıyı sil",
+      "results": "{total} kullanıcıdan {from}–{to} arası gösteriliyor",
+      "previous": "Önceki sayfa",
+      "next": "Sonraki sayfa",
+      "page": "Sayfa {page} / {pages}",
+      "securityNote": "Kendi yönetici erişiminizi veya son aktif yöneticiyi kaldıramazsınız. Şifre, e-posta ve erişim değişiklikleri mevcut oturumları sonlandırır.",
+      "createHint": "Şifreli bir hesap oluşturun. Giriş bilgilerini hesap sahibiyle güvenli bir şekilde paylaşın.",
+      "editHint": "Hesap bilgilerini ve izinleri güncelleyin. Erişim değişiklikleri kullanıcının yeniden giriş yapmasını gerektirir.",
+      "passwordHint": "{email} için yeni bir şifre belirleyin. Mevcut oturumlar kapatılacaktır. Yeni şifreyi güvenli bir şekilde paylaşın.",
+      "deleteHint": "{email} ve bağlı giriş hesaplarını kalıcı olarak silin. Bu işlem geri alınamaz. Kayıtlarını korumak için hesabı devre dışı bırakın.",
+      "deactivateHint": "{email} oturumdan çıkarılacak ve hesap yeniden etkinleştirilene kadar giriş yapamayacaktır.",
+      "activateHint": "{email} mevcut bilgileriyle yeniden giriş yapabilecektir.",
+      "name": "Ad soyad",
+      "email": "E-posta adresi",
+      "phone": "Telefon (isteğe bağlı)",
+      "password": "Şifre",
+      "confirmPassword": "Şifreyi onayla",
+      "showPassword": "Şifreyi göster",
+      "hidePassword": "Şifreyi gizle",
+      "adminHint": "Yöneticiler kullanıcıları, fiyatlandırmayı, içeriği ve diğer yönetim araçlarını yönetebilir.",
+      "userHint": "Kullanıcılar web sitesine giriş yapabilir ancak yönetim paneline erişemez.",
+      "selfHint": "Kendi rolünüz ve hesap durumunuz korunmaktadır.",
+      "deleteConfirmation": "Silmeyi onaylamak için {email} yazın",
+      "cancel": "İptal",
+      "save": "Değişiklikleri kaydet",
+      "saving": "Kaydediliyor…",
+      "saved": "Kullanıcı değişiklikleri kaydedildi.",
+      "validation": {
+        "name": "1 ile 100 karakter arasında bir ad girin.",
+        "email": "Geçerli bir e-posta adresi girin.",
+        "phone": "Geçerli bir telefon numarası girin (5–40 karakter).",
+        "password": "En az 8 karakter ve en fazla 72 UTF-8 bayt kullanın.",
+        "confirmPassword": "Şifreler eşleşmiyor.",
+        "role": "Geçerli bir rol seçin.",
+        "isActive": "Bir hesap durumu seçin.",
+        "updatedAt": "Kullanıcı listesini yenileyip tekrar deneyin."
+      },
+      "errors": {
+        "unauthorized": "Oturumunuzun süresi doldu. Tekrar giriş yapın.",
+        "forbidden": "Bu işlemi yapma izniniz yok.",
+        "invalid": "Form alanlarını kontrol edip tekrar deneyin.",
+        "duplicateEmail": "Bu e-posta adresi zaten kullanılıyor.",
+        "notFound": "Bu kullanıcı artık mevcut değil. Listeyi yenileyin.",
+        "conflict": "Bu hesap siz açtıktan sonra değişti. Bu pencereyi kapatın, listeyi yenileyin ve tekrar deneyin.",
+        "selfProtection": "Kendi hesabınızı silemez, devre dışı bırakamaz veya yönetici erişimini kaldıramazsınız.",
+        "lastAdmin": "En az bir aktif yönetici kalmalıdır.",
+        "confirmation": "Onay e-postası eşleşmiyor.",
+        "rateLimit": "Çok fazla değişiklik yapıldı. Bir dakika bekleyip tekrar deneyin.",
+        "server": "Kullanıcılar yüklenemedi veya kaydedilemedi. Lütfen tekrar deneyin."
       }
     }
   }

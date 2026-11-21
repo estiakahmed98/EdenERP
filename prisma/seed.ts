@@ -6,7 +6,7 @@ import { getDefaultPricingData } from "../lib/pricing/defaults";
 import { resetDemoBlogs, seedDemoBlogs } from "./seed-blogs";
 
 async function seedAdminUser() {
-  const email = (process.env.SEED_ADMIN_EMAIL || "admin@example.com").toLowerCase();
+  const email = (process.env.SEED_ADMIN_EMAIL || "admin@adonerp.com").toLowerCase();
   const password = process.env.SEED_ADMIN_PASSWORD;
 
   // Never create an admin with a well-known password. In development a random

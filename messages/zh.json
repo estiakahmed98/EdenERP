@@ -67563,6 +67563,10 @@
         "content": "内容"
       },
       "items": {
+        "users": {
+          "name": "用户",
+          "description": "管理账户、角色和访问权限"
+        },
         "dashboard": {
           "name": "仪表盘",
           "description": "流量、内容与动态一览"
@@ -68134,6 +68138,99 @@
         "now": "当前在线",
         "status": "状态",
         "device": "设备"
+      }
+    },
+    "users": {
+      "eyebrow": "工作区访问",
+      "title": "用户管理",
+      "description": "管理您的团队、账户信息以及管理后台的访问权限。",
+      "addUser": "添加用户",
+      "directory": "用户目录",
+      "directoryHint": "所有账户集中管理。访问权限的更改会立即生效。",
+      "stats": {
+        "total": "用户总数",
+        "active": "活跃账户",
+        "admins": "活跃管理员",
+        "inactive": "停用账户"
+      },
+      "refresh": "刷新",
+      "search": "搜索姓名、邮箱或手机号…",
+      "role": "角色",
+      "status": "状态",
+      "allRoles": "所有角色",
+      "allStatuses": "所有状态",
+      "roles": {
+        "ADMIN": "管理员",
+        "USER": "用户"
+      },
+      "active": "活跃",
+      "inactive": "已停用",
+      "loading": "正在加载用户…",
+      "retry": "重试",
+      "empty": "未找到用户",
+      "emptyHint": "请尝试其他搜索词或更改筛选条件。",
+      "clearFilters": "清除筛选",
+      "user": "用户",
+      "joined": "加入时间",
+      "lastLogin": "最近登录",
+      "never": "无登录记录",
+      "unnamed": "未命名用户",
+      "you": "您",
+      "actions": "操作",
+      "actionsFor": "{name} 的操作",
+      "edit": "编辑用户",
+      "resetPassword": "重置密码",
+      "deactivate": "停用账户",
+      "activate": "启用账户",
+      "delete": "删除用户",
+      "results": "显示第 {from}–{to} 条，共 {total} 位用户",
+      "previous": "上一页",
+      "next": "下一页",
+      "page": "第 {page} / {pages} 页",
+      "securityNote": "您不能移除自己的管理员权限，也不能移除最后一位活跃管理员。更改密码、邮箱和访问权限会使现有会话失效。",
+      "createHint": "创建带密码的账户。请通过安全方式将凭据告知账户所有者。",
+      "editHint": "更新账户信息和权限。更改访问权限后，用户需要重新登录。",
+      "passwordHint": "为 {email} 设置新密码。现有会话将被退出登录。请通过安全方式分享新密码。",
+      "deleteHint": "永久删除 {email} 及其关联的登录账户，此操作无法撤销。如需保留其记录，请改为停用账户。",
+      "deactivateHint": "{email} 将被退出登录，在账户重新启用之前无法登录。",
+      "activateHint": "{email} 将可以使用现有凭据再次登录。",
+      "name": "姓名",
+      "email": "邮箱地址",
+      "phone": "手机号（选填）",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "adminHint": "管理员可以管理用户、定价、内容和其他管理工具。",
+      "userHint": "用户可以登录网站，但无法访问管理后台。",
+      "selfHint": "您自己的角色和账户状态受到保护。",
+      "deleteConfirmation": "输入 {email} 以确认删除",
+      "cancel": "取消",
+      "save": "保存更改",
+      "saving": "正在保存…",
+      "saved": "用户更改已保存。",
+      "validation": {
+        "name": "请输入 1 到 100 个字符的姓名。",
+        "email": "请输入有效的邮箱地址。",
+        "phone": "请输入有效的手机号（5–40 个字符）。",
+        "password": "至少 8 个字符，且不超过 72 个 UTF-8 字节。",
+        "confirmPassword": "两次输入的密码不一致。",
+        "role": "请选择有效的角色。",
+        "isActive": "请选择账户状态。",
+        "updatedAt": "请刷新用户列表后重试。"
+      },
+      "errors": {
+        "unauthorized": "您的会话已过期，请重新登录。",
+        "forbidden": "您无权执行此操作。",
+        "invalid": "请检查表单字段后重试。",
+        "duplicateEmail": "该邮箱地址已被使用。",
+        "notFound": "该用户已不存在，请刷新列表。",
+        "conflict": "该账户在您打开后已发生变化。请关闭此对话框，刷新列表后重试。",
+        "selfProtection": "您不能删除、停用自己的账户，也不能移除自己的管理员权限。",
+        "lastAdmin": "至少必须保留一位活跃管理员。",
+        "confirmation": "确认邮箱不匹配。",
+        "rateLimit": "更改过于频繁，请等待一分钟后重试。",
+        "server": "无法加载或保存用户，请重试。"
       }
     }
   }

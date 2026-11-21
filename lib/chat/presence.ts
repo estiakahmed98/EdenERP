@@ -6,7 +6,12 @@
  */
 import type { ChatMessageDTO } from "@/lib/chat/shared";
 
-type HubLike = { isOnline(conversationId: string): boolean; publishReaction(message: ChatMessageDTO): void };
+type HubLike = { isOnline(conversationId: string): boolean; publishReaction(message: ChatMessageDTO): void; revokeUserSessions?(userId: string): void };
+
+export function disconnectUserChat(userId: string) {
+  const hub = (globalThis as unknown as { __adonChatHub?: HubLike }).__adonChatHub;
+  hub?.revokeUserSessions?.(userId);
+}
 
 export function isVisitorOnline(conversationId: string) {
   const hub = (globalThis as unknown as { __adonChatHub?: HubLike }).__adonChatHub;

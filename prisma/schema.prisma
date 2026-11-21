@@ -66,6 +66,9 @@ model User {
   phone         String?
   image         String?
   emailVerified DateTime?
+  isActive      Boolean   @default(true)
+  sessionVersion Int      @default(0)
+  lastLoginAt   DateTime?
 
   accounts Account[]
   sessions Session[]
