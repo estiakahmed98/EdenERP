@@ -74,7 +74,7 @@
     "next-auth": "^4.24.15",
     "next-intl": "^4.13.4",
     "next-themes": "^0.4.6",
-    "nodemailer": "^7.0.13",
+    "nodemailer": "^10.6.1",
     "pg": "^8.21.0",
     "picomatch": "file:vendor/picomatch",
     "qrcode": "^1.5.4",
@@ -129,6 +129,16 @@
     "@prisma/dev": {
       "@hono/node-server": "1.19.15",
       "find-my-way": "9.7.0"
+    },
+    "nodemailer": "$nodemailer",
+    "effect": "3.22.5",
+    "basic-ftp": "6.2.6",
+    "@puppeteer/browsers": "3.2.7",
+    "chromium-bidi": {
+      "zod": "$zod"
+    },
+    "archiver-utils": {
+      "glob": "14.0.6"
     }
   },
   "pnpm": {

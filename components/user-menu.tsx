@@ -51,14 +51,15 @@ export function UserMenu({ user }: { user: SessionUser }) {
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          className="flex items-center gap-2 rounded-xl btn-gradient py-1.5 pl-1.5 pr-3 text-sm font-semibold text-white outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-ring"
-          aria-label={t("account")}
+          // Avatar-only on phones; name + chevron from sm up.
+          className="flex items-center gap-2 rounded-xl btn-gradient p-1 text-sm font-semibold text-white outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-ring sm:py-1.5 sm:ps-1.5 sm:pe-3"
+          aria-label={`${t("account")}: ${displayName}`}
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/20 text-xs font-bold">
             {initials(user)}
           </span>
-          <span className="max-w-36 truncate">{displayName}</span>
-          <ChevronDown className="h-4 w-4 opacity-80" aria-hidden="true" />
+          <span className="hidden max-w-28 truncate sm:inline lg:max-w-36">{displayName}</span>
+          <ChevronDown className="hidden h-4 w-4 opacity-80 sm:block" aria-hidden="true" />
         </button>
       </DropdownMenuTrigger>
 

@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useMemo,
   useCallback,
+  useRef,
   useTransition,
 } from "react";
 import {
@@ -255,6 +256,7 @@ const AdminDashboard: React.FC = () => {
   const [errorBlogs, setErrorBlogs] = useState<string | null>(null);
   const [autoRefreshTick, setAutoRefreshTick] = useState(0);
   const [autoRefreshing, setAutoRefreshing] = useState(false);
+  const accessDenied = useRef(false);
   const [lastAnalyticsUpdatedAt, setLastAnalyticsUpdatedAt] = useState<Date | null>(null);
   const [lastBlogsUpdatedAt, setLastBlogsUpdatedAt] = useState<Date | null>(null);
 
@@ -361,6 +363,7 @@ const AdminDashboard: React.FC = () => {
   // Auto refresh (analytics + blogs) every 30s
   useEffect(() => {
     const id = window.setInterval(() => {
+      if (accessDenied.current) return;
       setAutoRefreshing(true);
       setAutoRefreshTick((t) => t + 1);
       window.setTimeout(() => setAutoRefreshing(false), 1200);
@@ -460,6 +463,7 @@ const AdminDashboard: React.FC = () => {
   }, [rangePreset, bucket, customFrom, customTo]);
 
   useEffect(() => {
+    if (accessDenied.current) return;
     const controller = new AbortController();
 
     const loadAnalytics = async () => {
@@ -487,35 +491,41 @@ const AdminDashboard: React.FC = () => {
             signal: controller.signal,
           },
         );
+        if (controller.signal.aborted) return;
+        if (res.status === 401 || res.status === 403) {
+          accessDenied.current = true;
+          setAnalytics(null);
+          // Reload the document so the sign-in page also gets a fresh session.
+          window.location.replace(
+            res.status === 401 ? "/auth/signin?callbackUrl=%2Fadmin" : "/",
+          );
+          return;
+        }
         if (!res.ok) {
           let message = `Failed to load analytics (${res.status})`;
+          const text = await res.text();
           try {
-            const body = await res.clone().json();
+            const body = JSON.parse(text);
             if (typeof body?.error === "string" && body.error.trim()) {
               message = body.error;
             }
           } catch {
-            // ignore
-          }
-          try {
-            const text = await res.text();
             if (text.trim()) message = text;
-          } catch {
-            // ignore
           }
           throw new Error(message);
         }
         const data = (await res.json()) as AnalyticsSummary;
+        if (controller.signal.aborted) return;
         startTransition(() => setAnalytics(data));
         setLastAnalyticsUpdatedAt(new Date());
       } catch (e) {
-        if (isAbortError(e)) return;
+        if (controller.signal.aborted || isAbortError(e)) return;
         console.error(e);
         setAnalyticsError(
           e instanceof Error ? e.message : tr("range.loadFailed"),
         );
       } finally {
-        setAnalyticsLoading(false);
+        if (!controller.signal.aborted) setAnalyticsLoading(false);
       }
     };
 
@@ -553,9 +563,9 @@ const AdminDashboard: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen p-6 text-foreground">
+    <div className="min-h-screen p-4 sm:p-6 text-foreground">
       {/* ---------- NEW Analytics ---------- */}
-      <section className="bg-card rounded-xl border border-border shadow-sm p-5 mb-8">
+      <section className="bg-card rounded-xl border border-border shadow-sm p-4 sm:p-5 mb-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
             <h2 className="text-xl font-semibold text-foreground">
@@ -621,7 +631,7 @@ const AdminDashboard: React.FC = () => {
         </div>
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-5">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,14rem),1fr))] gap-3 sm:gap-4 mt-5">
           <StatCard
             title={tr("kpi.liveUsers")}
             value={
@@ -1633,19 +1643,21 @@ const StatCard: React.FC<StatCardProps> = React.memo(function StatCard({
   loading,
 }) {
   return (
-    <div className="bg-card rounded-xl border border-border shadow-sm p-5 hover:shadow-md transition-shadow">
-      <div className="flex justify-between items-start">
-        <div className="flex-1">
-          <p className="text-sm font-medium text-muted-foreground">{title}</p>
-          <div className="mt-1">
-            {loading ? (
-              <SkeletonBox className="h-7 w-20" />
-            ) : (
-              <h3 className="text-2xl font-bold text-foreground">{value}</h3>
-            )}
-          </div>
+    <div className="bg-card rounded-xl border border-border shadow-sm p-4 hover:shadow-md transition-shadow min-w-0">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 gap-y-2">
+        <p className="text-sm font-medium text-muted-foreground wrap-anywhere">
+          {title}
+        </p>
+        <div className={`p-2.5 rounded-lg shrink-0 ${color}`}>{icon}</div>
+        <div className="col-span-2 min-w-0">
+          {loading ? (
+            <SkeletonBox className="h-7 w-20 max-w-full" />
+          ) : (
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground tabular-nums wrap-anywhere">
+              {value}
+            </h3>
+          )}
         </div>
-        <div className={`p-3 rounded-lg ${color}`}>{icon}</div>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export default function ThemeSwitcher({ variant }: ThemeSwitcherProps) {
     <div
       className={
         variant === "desktop"
-          ? "grid min-w-64 gap-2"
+          ? "grid gap-2 sm:min-w-64"
           : "grid grid-cols-2 gap-2"
       }
     >
@@ -126,21 +126,21 @@ export default function ThemeSwitcher({ variant }: ThemeSwitcherProps) {
   }
 
   return (
-    <div ref={containerRef} className="relative hidden md:block">
+    <div ref={containerRef} className="relative">
       <button
         type="button"
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={t("label")}
+        aria-label={`${t("label")}: ${t(activeTheme === "ocean" ? "oceanBlue" : activeTheme)}`}
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-sm font-semibold text-card-foreground shadow-xs transition-colors hover-gradient"
+        className="inline-flex size-9 items-center justify-center gap-2 rounded-xl border border-border bg-card text-sm font-semibold text-card-foreground shadow-xs transition-colors hover-gradient sm:size-auto sm:px-3 sm:py-2"
       >
         <ActiveIcon size={16} />
-        <span>{t(activeTheme === "ocean" ? "oceanBlue" : activeTheme)}</span>
+        <span className="hidden sm:inline">{t(activeTheme === "ocean" ? "oceanBlue" : activeTheme)}</span>
         <ChevronDown
           size={16}
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
+          className={`hidden transition-transform sm:block ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -149,7 +149,8 @@ export default function ThemeSwitcher({ variant }: ThemeSwitcherProps) {
           id={panelId}
           role="menu"
           aria-label={t("label")}
-          className="absolute right-0 top-[calc(100%+0.75rem)] z-50 rounded-2xl border border-border bg-popover p-3 shadow-2xl"
+          // Phones: full-width sheet under the header so it never overflows the screen.
+          className="fixed inset-x-4 top-16 z-50 rounded-2xl border border-border bg-popover p-3 shadow-2xl sm:absolute sm:inset-x-auto sm:right-0 sm:top-[calc(100%+0.75rem)] rtl:sm:left-0 rtl:sm:right-auto"
         >
           {optionsMarkup}
         </div>

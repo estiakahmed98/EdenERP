@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/lib/generated/prisma/client";
-import { isAdminRequest } from "@/lib/auth-admin";
+import { getAdminSession } from "@/lib/auth-admin";
 
 function parseDate(v: string | null, fallback: Date) {
   if (!v) return fallback;
@@ -11,8 +11,12 @@ function parseDate(v: string | null, fallback: Date) {
 }
 
 export async function GET(req: Request) {
-  if (!(await isAdminRequest())) {
+  const session = await getAdminSession();
+  if (!session?.user) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+  if (session.user.role !== "ADMIN") {
+    return NextResponse.json({ ok: false, error: "Forbidden" }, { status: 403 });
   }
   try {
     const { searchParams } = new URL(req.url);

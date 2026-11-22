@@ -452,18 +452,48 @@ export function TypeWriter({ words }: { words: string[] }) {
     const shown = Math.max(0, Math.min(token.length, typed - start));
     const showCursor = !reduceMotion && !cursorPlaced && typed >= start && typed <= offset;
     if (showCursor) cursorPlaced = true;
+    // Chinese/Japanese/Korean phrases have no spaces, so one "word" can be the
+    // whole phrase: let the browser apply CJK line-breaking rules instead of
+    // nowrap (auto-phrase keeps Japanese phrases whole where supported).
+    const cjk = /[぀-ヿ㐀-鿿가-힯豈-﫿＀-￯]/.test(token);
+    const typedPart = token.slice(0, shown);
+    const rest = token.slice(shown);
+    if (!showCursor) {
+      return (
+        <span key={i} className={cjk ? "[word-break:auto-phrase]" : "whitespace-nowrap"}>
+          {typedPart}
+          <span className="text-transparent">{rest}</span>
+        </span>
+      );
+    }
+    // The cursor is anchored to the character it follows (or precedes, before
+    // anything is typed), so it stays on the same line as the typed text even
+    // when the phrase wraps — an unanchored absolute cursor drops to the next line.
+    const cursor = (side: "after" | "before") => (
+      <span
+        aria-hidden="true"
+        className={`pointer-events-none absolute top-0 animate-[blink_1s_infinite] font-light ${side === "after" ? "start-full" : "end-full"}`}
+      >
+        |
+      </span>
+    );
     return (
-      <span key={i} className="whitespace-nowrap">
-        {token.slice(0, shown)}
-        {showCursor && (
-          <span
-            aria-hidden="true"
-            className="absolute animate-[blink_1s_infinite] font-light"
-          >
-            |
+      <span key={i} className={cjk ? "[word-break:auto-phrase]" : "whitespace-nowrap"}>
+        {shown > 0 ? (
+          <>
+            {typedPart.slice(0, -1)}
+            <span className="relative">{typedPart.slice(-1)}{cursor("after")}</span>
+            <span className="text-transparent">{rest}</span>
+          </>
+        ) : (
+          <span className="text-transparent">
+            <span className="relative">
+              <span className="text-(--teal)">{cursor("before")}</span>
+              {rest.slice(0, 1)}
+            </span>
+            {rest.slice(1)}
           </span>
         )}
-        <span className="text-transparent">{token.slice(shown)}</span>
       </span>
     );
   });

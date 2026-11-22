@@ -11,7 +11,7 @@ import { industriesMegaMenu } from "@/lib/industries-menu";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 
-import { MobileUserMenu, UserMenu } from "@/components/user-menu";
+import { UserMenu } from "@/components/user-menu";
 
 type MenuId = "apps" | "industries" | "community";
 
@@ -405,33 +405,31 @@ export default function Header({
           ))}
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          {/* Always visible; the switchers collapse to icons on phones. */}
+          <LanguageSwitcher variant="desktop" />
+          <ThemeSwitcher variant="desktop" />
+
+          {session?.user ? (
+            <UserMenu user={session.user} />
+          ) : (
+            <Link
+              href="/auth/signin"
+              className="whitespace-nowrap rounded-xl btn-gradient px-3 py-2 text-xs font-semibold text-white transition-colors sm:px-4 sm:text-sm"
+            >
+              {t("nav.signIn")}
+            </Link>
+          )}
+
           <button
             type="button"
             aria-label={t("mobileMenuLabel")}
-            className="rounded-xl p-2 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground xl:hidden"
+            aria-expanded={mobileMenuOpen}
+            className="rounded-xl p-1.5 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground sm:p-2 xl:hidden"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-
-          <div className="hidden items-center gap-2 xl:flex">
-            <LanguageSwitcher variant="desktop" />
-            <ThemeSwitcher variant="desktop" />
-
-            {session?.user ? (
-              <UserMenu user={session.user} />
-            ) : (
-              <div className="flex items-center gap-3 rounded-xl btn-gradient text-white">
-                <Link
-                  href="/auth/signin"
-                  className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
-                >
-                  {t("nav.signIn")}
-                </Link>
-              </div>
-            )}
-          </div>
         </div>
       </nav>
 
@@ -447,10 +445,6 @@ export default function Header({
                 : "100dvh",
           }}
         >
-          <div className="mb-5">
-            <ThemeSwitcher variant="mobile" />
-          </div>
-
           <div className="space-y-3">
             {/* Apps Accordion */}
             <div>
@@ -685,25 +679,6 @@ export default function Header({
             >
               {t("nav.help")}
             </Link>
-          </div>
-
-          <div className="mt-8 space-y-4">
-            <LanguageSwitcher variant="mobile" />
-
-            {session?.user ? (
-              <MobileUserMenu
-                user={session.user}
-                onNavigate={() => setMobileMenuOpen(false)}
-              />
-            ) : (
-              <Link
-                href="/auth/signin"
-                className="block w-full rounded-2xl btn-gradient px-5 py-4 text-center text-base font-bold text-white"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("nav.signIn")}
-              </Link>
-            )}
           </div>
         </div>
       )}
