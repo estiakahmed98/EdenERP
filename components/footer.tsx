@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowUpRight,
   Facebook,
   Headphones,
   Instagram,
@@ -98,6 +99,7 @@ export default function Footer({
 }) {
   const t = useTranslations("layout.footer");
   const contactT = useTranslations("pages.contact.contactInfo");
+  const mapT = useTranslations("pages.contact.map");
   const currentYear = new Date().getFullYear();
   const resolvedSections = footerSections.map((section) => ({
     ...section,
@@ -157,6 +159,14 @@ export default function Footer({
                 ))}
               </span>
             </a>
+            <Link
+              href="/contact#office-map"
+              className={css.mapLink}
+              data-footer-map-link
+            >
+              {mapT("title")}
+              <ArrowUpRight size={12} aria-hidden="true" />
+            </Link>
           </div>
           <div className={`${css.contactGroup} ${css.phoneGroup}`}>
             <p className={css.contactLabel}>

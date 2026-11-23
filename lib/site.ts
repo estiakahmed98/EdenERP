@@ -45,6 +45,11 @@ const officeAddressLines = [
   `${officeAddress.city} - ${officeAddress.postalCode}, ${officeAddress.country}`,
 ] as const;
 
+// The office's supplied Google Maps embed and its matching public place pin.
+const officeMapEmbedUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.9458590854933!2d90.390585!3d23.820524199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7e42bf9d07b%3A0x1b48a34d1a5a717c!2sAdon%20ERP!5e0!3m2!1sen!2sbd!4v1795430380256!5m2!1sen!2sbd";
+const officeMapUrl = "https://www.google.com/maps?cid=1966000788897165692";
+
 const businessPhones = [
   { number: "+8801842781978", display: "+880 1842-781978" },
   { number: "+8801805412462", display: "+880 1805412462" },
@@ -127,7 +132,8 @@ export const siteConfig = {
     /** Google Business Profile / Maps share link (optional). */
     mapUrl:
       process.env.NEXT_PUBLIC_GOOGLE_MAPS_URL ||
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddressLines.join(", "))}`,
+      officeMapUrl,
+    mapEmbedUrl: officeMapEmbedUrl,
     openingHours: [
       {
         days: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],

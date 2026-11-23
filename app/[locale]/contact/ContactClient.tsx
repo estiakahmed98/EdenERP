@@ -226,6 +226,37 @@ export default function ContactClient() {
               </div>
             </div>
           </div>
+          <figure
+            id="office-map"
+            className={css.mapPanel}
+            aria-labelledby="office-map-title"
+          >
+            <figcaption className={css.mapCaption}>
+              <div>
+                <h3 id="office-map-title">{t("map.title")}</h3>
+                <p>{business.companyName} · AdonERP</p>
+              </div>
+              <a
+                href={business.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("office.directions")}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </figcaption>
+            <div className={css.mapFrame}>
+              <iframe
+                src={business.mapEmbedUrl}
+                title={`${t("map.title")} — AdonERP`}
+                width="600"
+                height="450"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+          </figure>
         </div>
       </section>
 
