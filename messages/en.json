@@ -41063,6 +41063,24 @@
         "freeConsultation": "Free consultation",
         "support": "24/7 support",
         "customSolutions": "Custom solutions"
+      },
+      "experience": {
+        "heroNote": "A real conversation. Around your business.",
+        "contactOptions": "Find the right contact",
+        "visualTitle": "Your business. Better connected.",
+        "businessLabel": "Your business",
+        "teamLabel": "Your AdonERP team",
+        "channelsTitle": "Start with the right conversation.",
+        "channelsDescription": "Call, write, or come say hello. Here’s how to reach us.",
+        "productTitle": "Product & implementation",
+        "productDescription": "For modules, pricing, and getting started with AdonERP.",
+        "supportDescription": "Already using AdonERP? Tell us what you need help with.",
+        "locationTitle": "Meet the people behind your ERP.",
+        "demoTitle": "Your workflows. In focus.",
+        "demoDescription": "Explore AdonERP with an advisor, starting with the way your business works.",
+        "copyAddress": "Copy address",
+        "copiedAddress": "Address copied",
+        "copyError": "Couldn’t copy. You can select the address and copy it."
       }
     },
     "crm": {

@@ -39888,6 +39888,24 @@
         "freeConsultation": "استشارة مجانية",
         "support": "دعم 24/7",
         "customSolutions": "حلول مخصصة"
+      },
+      "experience": {
+        "heroNote": "حوار حقيقي حول احتياجات عملك.",
+        "contactOptions": "اختر وسيلة التواصل المناسبة",
+        "visualTitle": "أعمالك أكثر ترابطًا.",
+        "businessLabel": "أعمالك",
+        "teamLabel": "فريق AdonERP معك",
+        "channelsTitle": "ابدأ الحوار مع الفريق المناسب.",
+        "channelsDescription": "اتصل بنا، أو راسلنا، أو تفضّل بزيارتنا. إليك طرق التواصل معنا.",
+        "productTitle": "المنتج والتنفيذ",
+        "productDescription": "للاستفسار عن الوحدات والأسعار والبدء باستخدام AdonERP.",
+        "supportDescription": "تستخدم AdonERP بالفعل؟ أخبرنا بما تحتاج إلى المساعدة فيه.",
+        "locationTitle": "تعرّف على الفريق الذي يقف وراء نظام ERP لديك.",
+        "demoTitle": "عرض توضيحي يركّز على سير عملك.",
+        "demoDescription": "استكشف AdonERP مع مستشار، انطلاقًا من طريقة عمل مؤسستك.",
+        "copyAddress": "نسخ العنوان",
+        "copiedAddress": "تم نسخ العنوان",
+        "copyError": "تعذّر النسخ. يمكنك تحديد العنوان ونسخه."
       }
     },
     "crm": {

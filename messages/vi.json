@@ -41082,6 +41082,24 @@
         "freeConsultation": "Tư vấn miễn phí",
         "support": "Hỗ trợ 24/7",
         "customSolutions": "Giải pháp tùy chỉnh"
+      },
+      "experience": {
+        "heroNote": "Một cuộc trao đổi thực tế, xoay quanh doanh nghiệp của bạn.",
+        "contactOptions": "Xem các cách liên hệ",
+        "visualTitle": "Doanh nghiệp của bạn, kết nối chặt chẽ hơn.",
+        "businessLabel": "Doanh nghiệp của bạn",
+        "teamLabel": "Đội ngũ AdonERP của bạn",
+        "channelsTitle": "Bắt đầu với đúng người, đúng nhu cầu.",
+        "channelsDescription": "Gọi điện, gửi email hoặc ghé thăm văn phòng. Bạn có thể liên hệ với chúng tôi qua các kênh sau.",
+        "productTitle": "Sản phẩm & triển khai",
+        "productDescription": "Tìm hiểu về các phân hệ, giá và cách bắt đầu sử dụng AdonERP.",
+        "supportDescription": "Bạn đang sử dụng AdonERP? Hãy cho chúng tôi biết bạn cần hỗ trợ điều gì.",
+        "locationTitle": "Gặp gỡ đội ngũ đứng sau hệ thống ERP của bạn.",
+        "demoTitle": "Tập trung vào quy trình của bạn.",
+        "demoDescription": "Khám phá AdonERP cùng chuyên viên tư vấn, dựa trên cách doanh nghiệp của bạn vận hành.",
+        "copyAddress": "Sao chép địa chỉ",
+        "copiedAddress": "Đã sao chép địa chỉ",
+        "copyError": "Không thể sao chép. Bạn có thể chọn địa chỉ và sao chép thủ công."
       }
     },
     "crm": {

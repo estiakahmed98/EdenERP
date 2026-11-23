@@ -41300,6 +41300,24 @@
         "freeConsultation": "免费咨询",
         "support": "7×24 小时支持",
         "customSolutions": "定制解决方案"
+      },
+      "experience": {
+        "heroNote": "从您的业务需求开始，认真聊一聊。",
+        "contactOptions": "查看联系方式",
+        "visualTitle": "让业务更紧密地连接。",
+        "businessLabel": "您的业务",
+        "teamLabel": "您的AdonERP团队",
+        "channelsTitle": "找到合适的沟通起点。",
+        "channelsDescription": "欢迎来电、来信或到访。您可以通过以下方式联系我们。",
+        "productTitle": "产品与实施咨询",
+        "productDescription": "了解模块、价格，以及如何开始使用AdonERP。",
+        "supportDescription": "已经在使用AdonERP？请告诉我们您需要哪些帮助。",
+        "locationTitle": "认识为您的ERP提供支持的团队。",
+        "demoTitle": "围绕您的工作流程，体验产品。",
+        "demoDescription": "从您的业务运作方式出发，与顾问一起了解AdonERP。",
+        "copyAddress": "复制地址",
+        "copiedAddress": "地址已复制",
+        "copyError": "无法复制。您可以选中地址后手动复制。"
       }
     },
     "crm": {

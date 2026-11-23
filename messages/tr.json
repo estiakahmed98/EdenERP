@@ -38895,6 +38895,24 @@
         "freeConsultation": "Ücretsiz danışmanlık",
         "support": "24/7 support",
         "customSolutions": "Özel çözümler"
+      },
+      "experience": {
+        "heroNote": "İşletmenize odaklanan bir görüşme.",
+        "contactOptions": "İletişim seçeneklerini görün",
+        "visualTitle": "İşletmeniz, daha güçlü bağlantılarla.",
+        "businessLabel": "İşletmeniz",
+        "teamLabel": "AdonERP ekibiniz",
+        "channelsTitle": "Doğru ekiple görüşerek başlayın.",
+        "channelsDescription": "Arayın, yazın veya ofisimize uğrayın. Bize buradan ulaşabilirsiniz.",
+        "productTitle": "Ürün ve uygulama",
+        "productDescription": "Modüller, fiyatlandırma ve AdonERP kullanmaya başlama hakkında bilgi alın.",
+        "supportDescription": "AdonERP kullanıyor musunuz? Hangi konuda desteğe ihtiyacınız olduğunu bize anlatın.",
+        "locationTitle": "ERP sisteminizin arkasındaki ekiple tanışın.",
+        "demoTitle": "İş akışlarınız odak noktasında.",
+        "demoDescription": "İşletmenizin çalışma biçiminden yola çıkarak AdonERP’yi bir danışmanla keşfedin.",
+        "copyAddress": "Adresi kopyala",
+        "copiedAddress": "Adres kopyalandı",
+        "copyError": "Kopyalanamadı. Adresi seçerek kopyalayabilirsiniz."
       }
     },
     "crm": {

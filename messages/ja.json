@@ -40932,6 +40932,24 @@
         "freeConsultation": "無料相談",
         "support": "24時間365日サポート",
         "customSolutions": "カスタムソリューション"
+      },
+      "experience": {
+        "heroNote": "貴社の業務を出発点に、じっくりお話ししましょう。",
+        "contactOptions": "お問い合わせ方法を見る",
+        "visualTitle": "業務が、もっとつながる。",
+        "businessLabel": "貴社のビジネス",
+        "teamLabel": "AdonERPチーム",
+        "channelsTitle": "ご相談内容に合った窓口へ。",
+        "channelsDescription": "お電話、メール、ご来訪でお気軽にご相談ください。",
+        "productTitle": "製品・導入のご相談",
+        "productDescription": "モジュール、料金、AdonERPの導入についてお問い合わせください。",
+        "supportDescription": "AdonERPをご利用中ですか？お困りの内容をお知らせください。",
+        "locationTitle": "ERPを支えるチームに会いに来ませんか。",
+        "demoTitle": "貴社の業務に沿ったデモを。",
+        "demoDescription": "貴社の業務の進め方をもとに、アドバイザーとAdonERPをご確認いただけます。",
+        "copyAddress": "住所をコピー",
+        "copiedAddress": "住所をコピーしました",
+        "copyError": "コピーできませんでした。住所を選択してコピーしてください。"
       }
     },
     "crm": {
